@@ -1,0 +1,44 @@
+---
+description: Repo conventions and agent behaviour for the trading strategy repository
+alwaysApply: true
+---
+
+# Trading Strategy Repo — Agent Rules
+
+## Repo Structure
+
+```
+trading-strategy/
+├── .cursor/
+│   ├── rules/
+│   │   └── trading-agent.mdc         ← this file — always-on conventions
+│   └── skills/
+│       ├── analyse-tickers/
+│       │   └── SKILL.md              ← research, scoring, output format
+│       ├── log-trade-csv/
+│       │   └── SKILL.md              ← CSV schema and writing rules
+│       └── track-outcomes/
+│           └── SKILL.md              ← 14-day outcome lookback and CSV update
+├── strategies/
+│   └── <strategy-name>/
+│       ├── AGENT.md                  ← workflow steps for this strategy's agent
+│       ├── config.md                 ← scan URL, universe, style, entry filters
+│       ├── trades-log.csv            ← trade log scoped to this strategy only
+│       └── report.md                 ← current report, overwritten each run
+└── README.md
+```
+
+## Rules for All Agents in This Repo
+
+- Every strategy agent MUST load the `analyse-tickers`, `log-trade-csv`, and `track-outcomes` skills before running
+- Each strategy writes ONLY to its own `trades-log.csv` — never to another strategy's log
+- Never overwrite existing CSV rows — always append
+- Never fabricate financial data; if data is unavailable, note it and downrank the ticker
+- Always check for upcoming earnings dates before recommending an entry
+
+## Adding a New Strategy
+
+1. Create `strategies/<name>/config.md` — scan URL, universe, trading style, and custom entry filters
+2. Create `strategies/<name>/AGENT.md` — load the three skills, then define the workflow steps (use existing strategy as template)
+3. Create `strategies/<name>/trades-log.csv` — use the header row from the `log-trade-csv` skill
+4. Create `strategies/<name>/report.md` — placeholder; will be overwritten on first run
