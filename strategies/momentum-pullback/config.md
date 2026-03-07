@@ -2,15 +2,17 @@
 
 ## Identity
 
-| Field | Value |
-|---|---|
-| Strategy name | Momentum After Pullback |
-| Scan source | TrendSpider Scheduled Scan |
-| Scan URL | `https://charts.trendspider.com/scheduled_scans/view/sub-294213843b440f9793b6b7bb0432e5/json` |
-| Universe | S&P 500 Index |
-| Trading style | Position trading (weeks to months) |
-| Max picks per run | 3 |
-| Log file | `strategies/momentum-pullback/trades-log.csv` |
+
+| Field             | Value                                                                                         |
+| ----------------- | --------------------------------------------------------------------------------------------- |
+| Strategy name     | Momentum After Pullback                                                                       |
+| Scan source       | TrendSpider Scheduled Scan                                                                    |
+| Scan URL          | `https://charts.trendspider.com/scheduled_scans/view/sub-294213843b440f9793b6b7bb0432e5/json` |
+| Universe          | S&P 500 Index                                                                                 |
+| Trading style     | Position trading (weeks to months)                                                            |
+| Max picks per run | 3                                                                                             |
+| Log file          | `strategies/momentum-pullback/trades-log.csv`                                                 |
+
 
 ## Strategy Thesis
 
@@ -23,34 +25,38 @@ This scan identifies S&P 500 stocks that are in a momentum uptrend but have rece
 The TrendSpider scan applies the following conditions. A ticker only appears in `symbolsFound` if **all** of these are true. Understanding this helps the agent know what has already been pre-filtered before any manual analysis begins.
 
 ### Group 1 — Trend alignment (enhanced weekly structure)
+
 All of the following, on the **current symbol**:
+
 - **Daily**: `Price.Close` (last) **greater than** `EMA(200, 0, close)` (last) — price is above the daily 200 EMA
 - **Weekly**: `EMA(50, 0, close)` (last) **greater than** `EMA(200, 0, close)` (last) — weekly 50 EMA is above weekly 200 EMA (golden cross structure)
 - **Weekly**: `Price.Close` (last) **greater than** `EMA(50, 0, close)` (last) — price is above the weekly 50 EMA
 
 ### Group 2 — Rising trend confirmation (EMAs trending up)
+
 All of the following, on the **current symbol**:
+
 - **Daily**: `EMA(200, 0, close)` (last) **greater than** `EMA(200, 0, close)` **40 candles ago** — 200 EMA is rising
 - **Daily**: `EMA(50, 0, close)` (last) **greater than** `EMA(50, 0, close)` **20 candles ago** — 50 EMA is rising
 
 ### Group 3 — Asymmetric pullback: price within ±3% of daily 50 EMA
-All of the following, on the **current symbol**:
-- **Daily**: `Price.Close` (last) **is within range of** `EMA(50, 0, close)` (last) **by ±3%** — price has pulled back to the 50 EMA zone
 
+All of the following, on the **current symbol**:
+
+- **Daily**: `Price.Close` (last) **is within range of** `EMA(50, 0, close)` (last) **by ±3%** — price has pulled back to the 50 EMA zone
   AND any of the following (actual test of 50 EMA in last 5 bars):
   - **Daily**: `Price.Low` (last) **less than or equal to** `EMA(50, 0, close)` (last) — within the last 5 candles, price has actually touched or dipped below the 50 EMA
 
 ### Group 4 — Timing triggers (at least one must be true)
+
 Any of the following, on the **current symbol**:
 
 - **Trigger A — Close back above 20 EMA after being below:**
   - **Daily**: `Price.Close` (last) **greater than** `EMA(20, 0, close)` (last)
   - **Daily**: `Price.Close` 1 candle ago **less than** `EMA(20, 0, close)` 1 candle ago
-
 - **Trigger B — RSI crossing back above 50:**
   - **Daily**: `RSI(14, 70, 30, close)` (last) **greater than** constant `50`
   - **Daily**: `RSI(14, 70, 30, close)` 1 candle ago **less than or equal to** constant `50`
-
 - **Trigger C — Close above prior day's high after pullback:**
   - **Daily**: `Price.Close` (last) **greater than** `Price.High` 1 candle ago
 
@@ -58,14 +64,9 @@ Any of the following, on the **current symbol**:
 
 ## What the Scan Guarantees
 
-Every ticker that appears has already passed these pre-filters:
-1. Price is above the daily 200 EMA (in a long-term uptrend)
-2. Weekly structure is bullish (50 EMA > 200 EMA, price above weekly 50 EMA)
-3. Both the 50 and 200 EMAs are sloping upward on the daily chart
-4. Price has pulled back to within 3% of the daily 50 EMA and has actually touched it
-5. At least one timing signal has fired: recross of 20 EMA, RSI recross of 50, or outside day breakout
+Every ticker that appears has already passed these pre-filters.
 
-The agent's job is **not** to re-verify these scan conditions — it can take them as given. The agent's job is to assess quality (how clean is the setup, how strong are fundamentals, is R:R compelling) and apply the scoring system to select the best 3.
+The agent's job is **not** to re-verify these scan conditions — it can take them as given. The agent's job is to assess quality (how clean the setup is, how strong the fundamentals are, is R:R compelling) and apply the scoring system to select the best 3.
 
 ---
 
@@ -86,49 +87,59 @@ Scores are out of **100 points**. A ticker must reach the **minimum threshold** 
 
 ### Category A — Technical Setup (40 pts max)
 
-| Check | Points |
-|---|---|
-| Stock in uptrend on weekly chart (higher highs / higher lows) | 10 |
-| Stock in uptrend on daily chart | 8 |
-| Pulling back to a logical support zone (MA, breakout level, trendline) | 10 |
-| Volume declining on pullback (healthy consolidation, not breakdown) | 7 |
-| Recognisable continuation pattern (bull flag, flat base, wedge, etc.) | 5 |
+
+| Check                                                                  | Points |
+| ---------------------------------------------------------------------- | ------ |
+| Stock in uptrend on weekly chart (higher highs / higher lows)          | 10     |
+| Stock in uptrend on daily chart                                        | 8      |
+| Pulling back to a logical support zone (MA, breakout level, trendline) | 10     |
+| Volume declining on pullback (healthy consolidation, not breakdown)    | 7      |
+| Recognisable continuation pattern (bull flag, flat base, wedge, etc.)  | 5      |
+
 
 ### Category B — Risk / Reward (25 pts max)
 
+
 | R:R Ratio | Points |
-|---|---|
-| ≥ 3:1 | 25 |
-| ≥ 2:1 | 18 |
-| ≥ 1.5:1 | 10 |
-| < 1.5:1 | 0 |
+| --------- | ------ |
+| ≥ 3:1     | 25     |
+| ≥ 2:1     | 18     |
+| ≥ 1.5:1   | 10     |
+| < 1.5:1   | 0      |
+
 
 ### Category C — Fundamentals (20 pts max)
 
-| Check | Points |
-|---|---|
-| Beat earnings estimates in most recent report | 6 |
-| Revenue growth positive year-over-year | 5 |
-| EPS growth positive year-over-year | 5 |
-| Analyst upgrade in the last 30 days | 4 |
+
+| Check                                         | Points |
+| --------------------------------------------- | ------ |
+| Beat earnings estimates in most recent report | 6      |
+| Revenue growth positive year-over-year        | 5      |
+| EPS growth positive year-over-year            | 5      |
+| Analyst upgrade in the last 30 days           | 4      |
+
 
 ### Category D — Catalyst & Momentum (15 pts max)
 
-| Check | Points |
-|---|---|
-| Positive news catalyst in the last 2 weeks | 8 |
-| Sector in uptrend / currently in favour | 7 |
+
+| Check                                      | Points |
+| ------------------------------------------ | ------ |
+| Positive news catalyst in the last 2 weeks | 8      |
+| Sector in uptrend / currently in favour    | 7      |
+
 
 ---
 
 ### Deductions
 
-| Condition | Deduction |
-|---|---|
-| Earnings within 3 weeks of entry | −20 pts |
-| Stock below its 200-day MA | −8 pts |
-| Sector in confirmed downtrend | −10 pts |
-| Recent insider selling (last 30 days) | −5 pts |
+
+| Condition                             | Deduction |
+| ------------------------------------- | --------- |
+| Earnings within 3 weeks of entry      | −20 pts   |
+| Stock below its 200-day MA            | −8 pts    |
+| Sector in confirmed downtrend         | −10 pts   |
+| Recent insider selling (last 30 days) | −5 pts    |
+
 
 ---
 
@@ -147,3 +158,4 @@ Use this header in the final session output:
 === MOMENTUM PULLBACK SCAN — [DATE] ===
 Universe: S&P 500 | Style: Position Trade
 ```
+
