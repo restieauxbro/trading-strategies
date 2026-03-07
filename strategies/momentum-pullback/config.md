@@ -16,6 +16,59 @@
 
 This scan identifies S&P 500 stocks that are in a momentum uptrend but have recently pulled back — creating a potential re-entry or continuation opportunity. The pullback should be orderly (not a breakdown), with the broader uptrend still intact.
 
+---
+
+## Scan Logic (TrendSpider Conditions)
+
+The TrendSpider scan applies the following conditions. A ticker only appears in `symbolsFound` if **all** of these are true. Understanding this helps the agent know what has already been pre-filtered before any manual analysis begins.
+
+### Group 1 — Trend alignment (enhanced weekly structure)
+All of the following, on the **current symbol**:
+- **Daily**: `Price.Close` (last) **greater than** `EMA(200, 0, close)` (last) — price is above the daily 200 EMA
+- **Weekly**: `EMA(50, 0, close)` (last) **greater than** `EMA(200, 0, close)` (last) — weekly 50 EMA is above weekly 200 EMA (golden cross structure)
+- **Weekly**: `Price.Close` (last) **greater than** `EMA(50, 0, close)` (last) — price is above the weekly 50 EMA
+
+### Group 2 — Rising trend confirmation (EMAs trending up)
+All of the following, on the **current symbol**:
+- **Daily**: `EMA(200, 0, close)` (last) **greater than** `EMA(200, 0, close)` **40 candles ago** — 200 EMA is rising
+- **Daily**: `EMA(50, 0, close)` (last) **greater than** `EMA(50, 0, close)` **20 candles ago** — 50 EMA is rising
+
+### Group 3 — Asymmetric pullback: price within ±3% of daily 50 EMA
+All of the following, on the **current symbol**:
+- **Daily**: `Price.Close` (last) **is within range of** `EMA(50, 0, close)` (last) **by ±3%** — price has pulled back to the 50 EMA zone
+
+  AND any of the following (actual test of 50 EMA in last 5 bars):
+  - **Daily**: `Price.Low` (last) **less than or equal to** `EMA(50, 0, close)` (last) — within the last 5 candles, price has actually touched or dipped below the 50 EMA
+
+### Group 4 — Timing triggers (at least one must be true)
+Any of the following, on the **current symbol**:
+
+- **Trigger A — Close back above 20 EMA after being below:**
+  - **Daily**: `Price.Close` (last) **greater than** `EMA(20, 0, close)` (last)
+  - **Daily**: `Price.Close` 1 candle ago **less than** `EMA(20, 0, close)` 1 candle ago
+
+- **Trigger B — RSI crossing back above 50:**
+  - **Daily**: `RSI(14, 70, 30, close)` (last) **greater than** constant `50`
+  - **Daily**: `RSI(14, 70, 30, close)` 1 candle ago **less than or equal to** constant `50`
+
+- **Trigger C — Close above prior day's high after pullback:**
+  - **Daily**: `Price.Close` (last) **greater than** `Price.High` 1 candle ago
+
+---
+
+## What the Scan Guarantees
+
+Every ticker that appears has already passed these pre-filters:
+1. Price is above the daily 200 EMA (in a long-term uptrend)
+2. Weekly structure is bullish (50 EMA > 200 EMA, price above weekly 50 EMA)
+3. Both the 50 and 200 EMAs are sloping upward on the daily chart
+4. Price has pulled back to within 3% of the daily 50 EMA and has actually touched it
+5. At least one timing signal has fired: recross of 20 EMA, RSI recross of 50, or outside day breakout
+
+The agent's job is **not** to re-verify these scan conditions — it can take them as given. The agent's job is to assess quality (how clean is the setup, how strong are fundamentals, is R:R compelling) and apply the scoring system to select the best 3.
+
+---
+
 ## Entry Criteria
 
 - Stock must be in a clear uptrend on the daily and/or weekly chart
