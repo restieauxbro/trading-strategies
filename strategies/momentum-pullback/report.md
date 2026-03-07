@@ -5,123 +5,133 @@ _Last updated: 2026-03-07_
 
 ## Market Context
 
-The S&P 500 closed at approximately 6,740 on March 6, 2026, having broken below its 50-day and 100-day moving averages over the past two weeks and approaching the 200-day MA (identified as "the final line of defense" by analysts). VIX spiked to **29.49** — its highest reading since autumn 2025 and well above the 25 elevated-volatility threshold — driven by geopolitical tensions (Iranian missile strikes on commercial tankers), oil above $84/barrel, and looming 15% global tariff implementation fears. The market is in a **short-term downtrend / consolidation** after erasing all 2026 year-to-date gains. The weekly uptrend from 2025 remains technically intact as long as the 200-day MA holds (~5,800–6,000 range). This elevated volatility environment warrants **stricter position sizing** and preference for lower-beta, higher-quality setups. Only tickers with compelling risk/reward and solid fundamentals were selected.
+The S&P 500 is testing — and briefly slipping below — its critical 200-day moving average (~5,731), putting the index in near-correction territory (down ~6.6% from its February 19 record). The Nasdaq has entered a formal correction (down 10.4%). VIX is elevated at 25–29, driven by geopolitical friction (Iran, Taiwan Strait), tariff uncertainty, and disappointing AI-sector earnings guidance. Treasury yields are falling below their own 200-day MAs, signalling broad risk-off dynamics. The market is in a **confirmed short-term downtrend / consolidation phase** — stricter entry filters are applied. Individual stock setups must show exceptional fundamentals and strong support levels to qualify.
 
 ---
 
 ## Today's Top Picks
 
-### 1. RMD — ResMed pulling back to 50-day MA in intact weekly uptrend
+### 1. MDT — Medtronic | Defensive healthcare giant testing 200-day MA after strong earnings beat
 
 ```
-Ticker: RMD
-Current Price: $252.86
+Ticker: MDT
+Current Price: $90.90
 Sector: Healthcare
-Score: 84/100 (A:35 B:18 C:16 D:15 Ded:0)
+Score: 85/100 (A:37 B:18 C:15 D:15 Ded:0)
 
 Setup Summary:
-ResMed has staged a clean, orderly pullback from its 52-week high of $293.81 back toward
-the $248–$257 zone, which aligns with likely 50-day MA support. The weekly uptrend is
-firmly intact — the stock ran from a 52-week low of $199.92 and is now digesting gains in
-a healthy, low-volume consolidation. Volume has been declining on down days, suggesting
-institutional holders are not distributing. A bounce from this support zone targets the
-prior resistance near $280, and ultimately a retest of the 52-week high.
+Medtronic has corrected 14% from its 52-week high of $106.33 down to $90.90, bringing price back to
+the 200-day MA support zone — a level the scan has confirmed the stock is holding above. The pullback
+follows a strong Q3 FY2026 earnings beat and has been orderly, with declining volume on down days.
+Multiple analyst upgrades in late 2025 and early 2026 reflect growing institutional conviction in the
+multi-year growth story anchored by Hugo robotics, Symplicity renal denervation, and the MiniMed
+spin-off. In a volatile, risk-off market, defensive healthcare names at major support offer the best
+risk-adjusted setups.
 
-Entry Zone: $248–$257
-Stop Loss: $237.00 — below swing low and prior support base
-Target 1: $280.00 — prior resistance zone
-Target 2: $294.00 — 52-week high retest
-Risk/Reward: 2.0:1 (to T1)
+Entry Zone: $88–$93
+Stop Loss: $84.50 — below recent swing low and 200-day MA support
+Target 1: $103.00 — prior resistance zone and measured move target
+Target 2: $112.00 — analyst consensus target (Needham $121, avg $110.84)
+Risk/Reward: 2.1:1
 
 Key Risks:
-- Next earnings ~late April 2026 (~7 weeks away, outside the hard filter)
-- Broader healthcare sector risk if market sells off further
-- GLP-1/obesity drug competition narrative (though data shows CPAP still needed)
-- Elevated VIX 29+ macro backdrop warrants caution on position sizing
+- Next earnings May 20, 2026 (~10 weeks away — outside 3-week window, no deduction)
+- Tariff headwinds: ~$185M FY2026 impact, $300M projected for FY2027
+- Gross margin compression (-265 bps in Q3); broader market correction risk
 
 Fundamental Note:
-ResMed beat Q2 FY2026 earnings (EPS ~$2.80 vs $2.68 estimate) and delivers 34% operating
-margins with strong free cash flow (33% FCF/revenue). Revenue growing ~8%+ YoY. The GLP-1
-drug tailwind — obese patients remaining CPAP users — is a positive narrative. Beta 0.88
-offers relative stability in a volatile market.
+Q3 FY2026 beat: revenue $9.02B (+8.7% YoY, +6% organic) vs $8.89B estimate; adj EPS $1.36 vs $1.33.
+FY2026 guidance maintained at 5.5% organic growth and adj EPS $5.62–$5.66. William Blair upgraded to
+Outperform in January 2026; Needham raised target to $121 in February 2026. MiniMed spin-off and Hugo
+robotics platform are key 2026/2027 catalysts.
 ```
 
 ---
 
-### 2. CPAY — Corpay retesting 200-day MA after strong earnings gap
+### 2. AFL — Aflac | Low-beta insurance leader pulling back to 50-day MA on declining volume
 
 ```
-Ticker: CPAY
-Current Price: $314.40
-Sector: Technology (Payments Infrastructure)
-Score: 83/100 (A:32 B:18 C:20 D:13 Ded:0)
+Ticker: AFL
+Current Price: $111.30
+Sector: Financials (Insurance)
+Score: 80/100 (A:40 B:18 C:14 D:8 Ded:0)
 
 Setup Summary:
-Corpay has pulled back from its post-earnings high of ~$354 (following a blowout Q4 2025
-beat) to retest the 200-day moving average — a textbook momentum pullback to key support.
-Price is essentially sitting on the 200-day MA (SMA200 +0.39%), with volume declining on
-the pullback. The fundamental picture is exceptionally strong with 2026 guidance well above
-analyst consensus. A successful hold of the 200-day triggers a measured move back toward
-prior highs and ultimately the analyst consensus target near $388.
+Aflac reached a new 52-week high of $118.92 in early February 2026, then pulled back ~6% to $111.30 —
+a textbook momentum pullback to the 50-day MA support zone. Volume has declined on the pullback,
+confirming this is healthy consolidation rather than a distribution breakdown. The weekly uptrend from
+the $96.95 low is intact with higher highs and higher lows. With a beta of 0.66, AFL offers relative
+stability compared to most market participants in a VIX-25+ environment. Multiple analyst target
+upgrades in February/March 2026 (Wells Fargo, Raymond James, Morgan Stanley) add institutional support
+to the setup.
 
-Entry Zone: $308–$320
-Stop Loss: $294.00 — below 200-day MA and February swing low
-Target 1: $355.00 — prior post-earnings high / all-time high area
-Target 2: $388.00 — analyst consensus target (Morgan Stanley, Cantor Fitzgerald)
-Risk/Reward: 2.0:1 (to T1)
+Entry Zone: $109–$113
+Stop Loss: $105.50 — below February swing low and 50-day MA support zone
+Target 1: $119.00 — 52-week high retest
+Target 2: $124.00 — measured move / analyst targets (Raymond James $119, Morgan Stanley $120)
+Risk/Reward: 2.4:1
 
 Key Risks:
-- Broad market risk appetite risk (payments/fintech sensitive to risk-off moves)
-- Elevated VIX 29+ could push CPAY through 200-day before stabilizing
-- Institutional selling noted in recent period (-2.05% inst trans)
-- Next earnings ~May 2026 (~8 weeks away)
+- Next earnings ~April 29, 2026 (~7.5 weeks away — outside 3-week window)
+- Q4 2025 EPS missed ($1.57 vs $1.69 estimate); mixed analyst consensus (Hold)
+- Japan FX headwinds; broader financial sector under pressure in current market
 
 Fundamental Note:
-Corpay delivered Q4 2025 revenue +20.7% YoY to $1.25B with adjusted EPS of $6.04 (+13%),
-both beating estimates. FY2026 EPS guidance of $25.50–$26.50 (22% growth) exceeded Wall
-Street consensus. Alpha Group acquisition and Mastercard's $300M strategic investment are
-key catalysts. PEG of 0.61 at current price suggests significant undervaluation vs growth
-rate. ROE 30.5%, operating margins 45.9%.
+Q4 2025 revenue $4.87B (+12.7% YoY), beating estimate. Full-year 2025 adj EPS $7.49. Japan segment
+sales grew 15.7% on new cancer/medical products; U.S. premium persistency at 79.2%. Company
+authorized 5.2% dividend increase and completed $3.5B in share buybacks in 2025. Wells Fargo raised
+target to $118; Raymond James raised to $119 with Outperform in March 2026.
 ```
 
 ---
 
-### 3. BA — Boeing bouncing from orderly pullback to breakout zone
+### 3. ROK — Rockwell Automation | Approaching 200-day MA support with exceptional R:R after 16% pullback
 
 ```
-Ticker: BA
-Current Price: $231.15
-Sector: Industrials (Aerospace & Defense)
-Score: 81/100 (A:40 B:10 C:16 D:15 Ded:0)
+Ticker: ROK
+Current Price: $369.72
+Sector: Industrials (Automation)
+Score: 75/100 (A:27 B:25 C:20 D:8 Ded:-5)
 
 Setup Summary:
-Boeing has staged an impressive turnaround rally from lows near $160 to above $234, driven
-by its best commercial delivery quarter since 2018 and the first year of positive free cash
-flow. The stock pulled back in an orderly fashion to the $210–$218 prior breakout zone
-(volume dried up on the lows) and is now recovering strongly (+3.75% today on above-average
-volume of 9.47M shares). The broader weekly uptrend is intact and the pullback respected
-key support. Production ramp milestones and the 777X certification timeline are near-term
-catalysts.
+Rockwell Automation has pulled back 16% from its 52-week high of $438.72 to $369.72, approaching the
+200-day MA at $362.71 — a major support level that has defined the long-term uptrend from the $215
+low. The stock's Q1 FY2026 results strongly beat estimates (EPS $2.75 vs $2.46; revenue +11.9% YoY),
+and FY2026 EPS guidance was raised. If the 200-day MA holds, the measured move targets the 50-day MA
+at ~$407 and ultimately a 52-week high retest, creating an exceptional 3.4:1 risk/reward ratio.
+AI-driven industrial automation demand from semiconductor, automotive, and logistics sectors provides
+a durable long-term tailwind.
 
-Entry Zone: $224–$234
-Stop Loss: $209.00 — below the pullback swing low and prior breakout area
-Target 1: $252.00 — measured move resistance / gap area
-Target 2: $270.00 — extended target / Morningstar fair value region
-Risk/Reward: 1.9:1 (to T1)
+Entry Zone: $362–$378
+Stop Loss: $356.00 — below the 200-day MA ($362.71); confirms breakdown if breached
+Target 1: $410.00 — 50-day MA and prior consolidation area
+Target 2: $438.00 — 52-week high retest
+Risk/Reward: 3.4:1
 
 Key Risks:
-- Ongoing FAA regulatory oversight and production cap risk
-- $54 billion debt load remains a structural headwind
-- 737 MAX 7 and MAX 10 certification delays remain possible
-- Elevated VIX macro backdrop; Boeing is a cyclical, risk-on stock
-- Next earnings ~late April 2026
+- Heavy insider selling: $68M+ sold by multiple SVPs in Feb/Mar 2026 — -5 deduction applied
+- Industrial sector headwinds from tariff/trade war concerns
+- High valuation (P/E 46.66) leaves limited margin for earnings execution misses
+- If 200-day MA breaks, next support is ~$340
 
 Fundamental Note:
-Boeing Q4 2025 revenue surged 57% YoY to $23.9B with 600 commercial aircraft deliveries
-(highest since 2018) and FCF turned positive for the first time in years. 737 MAX production
-ramping from 38 to 47/month by mid-2026. Record $682B order backlog. Morningstar fair value
-$246/share. The 2026 turnaround thesis is gaining operational credibility.
+Q1 FY2026 beat: adj EPS $2.75 vs $2.46 estimate; revenue $2.11B (+11.9% YoY). FY2026 EPS guidance
+raised to $11.40–$12.20. Zacks raised FY2026 EPS estimate to $11.81 in February 2026. Barclays
+Overweight with $450 target; Morgan Stanley Overweight with $440 target. AI/factory automation demand
+from automotive, semiconductor, and logistics sectors is a structural tailwind.
 ```
+
+---
+
+## Excluded Tickers — This Run
+
+| Ticker | Score | Reason |
+|---|---|---|
+| ALLE | 30/100 | Price below both 50-day ($165) and 200-day ($168) MA; Q4 EPS miss; post-earnings breakdown not a healthy pullback |
+| STT | 49/100 | Just missed threshold (50 pts); weak technical setup, declining on elevated volume, below 50-day MA |
+| BA | 67/100 | Qualified (above threshold) but ranked 4th — strong catalyst today (+3.75%) but R:R only 1.9:1 and negative EPS history |
+| CPAY | 77/100 | Qualified but already logged in prior run today (06:40 UTC) — not re-logged |
+| RMD | 84/100 | Qualified but already logged in prior run today (06:40 UTC) — not re-logged |
 
 ---
 
@@ -133,10 +143,11 @@ _Recommendations from the last 14 days with no outcome recorded yet._
 | 2026-03-07 | RMD | $248–$257 | $237.00 | $280.00 | $294.00 | 2.0:1 |
 | 2026-03-07 | CPAY | $308–$320 | $294.00 | $355.00 | $388.00 | 2.0:1 |
 | 2026-03-07 | BA | $224–$234 | $209.00 | $252.00 | $270.00 | 1.9:1 |
+| 2026-03-07 | MDT | $88–$93 | $84.50 | $103.00 | $112.00 | 2.1:1 |
+| 2026-03-07 | AFL | $109–$113 | $105.50 | $119.00 | $124.00 | 2.4:1 |
+| 2026-03-07 | ROK | $362–$378 | $356.00 | $410.00 | $438.00 | 3.4:1 |
 
 ---
 
 ## Performance Summary
-_All closed trades (outcome recorded)._
-
 _No closed trades yet._
