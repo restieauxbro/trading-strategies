@@ -52,7 +52,7 @@ The agent will work through all 8 steps autonomously — fetching the scan, rese
   ```
    Run the momentum-pullback strategy. Follow strategies/momentum-pullback/AGENT.md
   ```
-3. Set the schedule (e.g. every weekday at 08:00 ET after market open)
+3. Set the schedule (e.g. every weekday at 08:00 ET after the market opens)
 4. Point it at this repository
 5. The agent will commit `trades-log.csv` and `report.md` updates on each run
 
