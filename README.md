@@ -112,7 +112,7 @@ trading-strategy/
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `AGENT.md`          | Step-by-step workflow the agent follows for a strategy. Load this in your prompt.                                                                                          |
 | `config.md`         | Scan URL, universe, trading style, entry criteria, and the full scoring system (points table, deductions, minimum threshold). Customise this to change strategy behaviour. |
-| `trades-log.csv`    | Append-only trade log. The agent adds new rows and fills in outcome columns 14 days later. Never manually edited.                                                          |
+| `trades-log.csv`    | Append-only trade log. The agent adds new rows and fills in outcome columns 14 days later. Never manually edit this file.                                                    |
 | `report.md`         | Full markdown report overwritten on every run. Human-readable summary of market context, top picks, open trades, and performance stats.                                    |
 | `SKILL.md` files    | Reusable logic loaded by every strategy agent. Defines how to research tickers, how to write to the CSV, and how to score outcomes.                                        |
 | `trading-agent.mdc` | Always-on Cursor rule enforcing repo-wide conventions (e.g. never overwrite CSV rows, never fabricate data).                                                               |
