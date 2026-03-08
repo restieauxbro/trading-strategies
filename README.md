@@ -41,7 +41,7 @@ In Cursor, open the chat panel and type:
 Run the momentum-pullback strategy. Follow strategies/momentum-pullback/AGENT.md
 ```
 
-The agent will work through all 8 steps autonomously — fetching the scan, researching tickers, scoring, logging picks, and writing the report. Expect it to take 3–5 minutes.
+The agent will work through all 8 steps autonomously — fetching the scan, researching tickers, scoring, logging picks, and writing the report. Expect it to take about 3–5 minutes.
 
 ### 4. Schedule recurring runs (Cursor Cloud Agents)
 
