@@ -1,149 +1,158 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-03-09_
+_Last updated: 2026-03-10_
 
 ---
 
 ## Market Context
 
-The S&P 500 sits at approximately 6,700–6,740 on March 9, 2026 — still above its 200-day moving average (~6,542–6,570) by roughly 2.5%, keeping the longer-term uptrend technically intact. However, the index has pulled back ~3.5% from January highs, driven by a deteriorating geopolitical backdrop (Operation Epic Fury / Iran Shock, Strait of Hormuz closure threat), a weak February jobs print (−92,000 nonfarm payrolls, unemployment at 4.4%), and stagflation concerns. VIX stands at 26.81 on March 9, declining from 29.49 on March 6 but remaining well above the elevated threshold of 25. Boeing surged ~4% intraday on unconfirmed reports of a China mega-order, adding single-stock noise to the session. The market is in a near-term corrective phase within a longer-term bull trend — **stricter filters are applied and low-beta defensive names are preferred.** The TrendSpider scan timestamp is 2026-03-03 02:00 UTC; two new tickers (ALLE, STT) appeared in the scan today alongside the established six from prior runs.
+The S&P 500 closed at approximately 6,796 on March 9–10, 2026, sitting above its 200-day MA (≈6,582) but below the 50-day MA (≈6,902). Long-term trend remains intact (bullish above 200-day), but the market is in an active short-term correction — down roughly 4.3% from the intraday high of 7,100 reached on March 3. RSI has reached oversold territory (38.14) and the CCI is deeply negative (−225.66). VIX spiked intraday to 35.30 on March 10 before closing near 23.50; the elevated volatility regime reflects tariff anxiety and geopolitical tensions (Iran/oil). In this environment, the strategy applies slightly stricter filters, favouring names with clear fundamental catalysts, long earnings runways (>6 weeks), and above-average R:R to justify entries into the pullback zone. **Recommendation: proceed with top picks while keeping position sizes moderate given elevated VIX.**
 
 ---
 
 ## Today's Top Picks
 
-### 1. AFL — Aflac: Defensive insurance at 50-day EMA, third consecutive scan appearance
+### 1. EME — AI data center infrastructure leader retesting 50-day EMA
 
 ```
-Ticker: AFL
-Current Price: $112.00
-Sector: Financials (Insurance – Life)
-Score: 82/100 (A:40 B:18 C:14 D:15 Ded:-5)
+Ticker: EME
+Current Price: $706.00
+Sector: Industrials (Mechanical & Electrical Construction)
+Score: 90/100 (A:38 B:25 C:20 D:12 Ded:-5)
 
 Setup Summary:
-Aflac has pulled back 5.8% from its $118.92 52-week high and is consolidating just
-above the 50-day EMA (~$111) on declining volume — a textbook momentum continuation
-setup now appearing in the scan for the third consecutive run. The stock's ultra-low
-beta (0.48) and insurance sector defensive characteristics make it one of the strongest
-candidates in an elevated-VIX environment. Multiple analyst price target upgrades in
-February–March 2026 (Wells Fargo $118, Raymond James $119, Morgan Stanley $120) add
-institutional conviction. An EVP insider sale (7,387 shares, ~$839K on Feb 24) is
-applied as a −5 pt deduction, but the broader institutional flow remains positive
-(Norges Bank opened a new ~$432M position recently).
+EMCOR has pulled back 15.5% from its $835 52-week high to retest the
+50-day EMA support zone near $705–$718 on declining volume. The company
+is a structural beneficiary of AI data center infrastructure build-out,
+posting a Q4 2025 beat (EPS $7.19 vs $6.68) and raising FY2026 guidance
+to $27.25–$29.25 EPS. Analyst targets of $808–$900 offer compelling
+upside from the 50-day EMA retest with a 3.6:1 R:R.
 
-Entry Zone: $109–$113
-Stop Loss: $105.50 — below Feb swing low and 50-day EMA support
-Target 1: $119.00 — 52-week high retest
-Target 2: $124.00 — measured move / analyst consensus targets
+Entry Zone: $695–$720
+Stop Loss: $678 — below pullback support zone (50-day EMA at ~$719)
+Target 1: $808 — Robert W. Baird analyst target / prior resistance
+Target 2: $900 — DA Davidson target / measured move extension
+Risk/Reward: 3.6:1
+
+Key Risks:
+- CEO Anthony Guzzi insider selling $26M on March 5 (10b5-1 pre-arranged plan)
+- Next earnings April 23–29, 2026 (~7 weeks away)
+- Industrial sector tariff headwinds (manufacturing cost inflation)
+- Capital goods multiple compression in risk-off environment
+
+Fundamental Note:
+Q4 2025 EPS $7.19 beat $6.68 estimate; revenue $4.51B (+19.7% YoY). FY2026
+guidance raised to $27.25–$29.25 EPS ($17.75–$18.5B revenue). EMCOR is the
+dominant mechanical and electrical contractor for AI data centers, healthcare,
+and grid automation. DA Davidson raised target to $900; Robert W. Baird to $808.
+```
+
+---
+
+### 2. VRTX — Healthcare defensive with Phase 3 IgA nephropathy catalyst at 50-day EMA
+
+```
+Ticker: VRTX
+Current Price: $457.00
+Sector: Healthcare (Biopharmaceuticals)
+Score: 87/100 (A:38 B:25 C:14 D:15 Ded:-5)
+
+Setup Summary:
+Vertex has pulled back to its 50-day EMA ($467) zone in an orderly
+consolidation within a clean long-term uptrend (200-day MA at $435).
+A positive Phase 3 IgA nephropathy trial announced March 9 (disease marker
+reduced by half) adds a fresh near-term catalyst. The 200-day MA at $435
+provides a firm backstop, with 18–25% upside to analyst targets
+offering a 3.2:1 R:R from the 50-day EMA entry.
+
+Entry Zone: $452–$470
+Stop Loss: $430 — below 200-day MA ($435.35)
+Target 1: $542 — analyst consensus target
+Target 2: $570 — Morgan Stanley Overweight target
+Risk/Reward: 3.2:1
+
+Key Risks:
+- Significant insider selling: $77.9M over 90 days (~168,937 shares)
+- Q4 EPS slightly missed consensus ($5.03 vs $5.05 estimate)
+- Next earnings May 4, 2026 (~8 weeks away)
+- Premium valuation at 37x forward P/E
+- Binary pipeline risk if drug approvals disappoint
+
+Fundamental Note:
+Q4 2025 revenue $3.19B (+9.5% YoY); EPS $5.03 vs $5.05 estimate (marginal miss).
+Positive Phase 3 IgA nephropathy trial (March 9, 2026): disease marker reduced by
+half — a differentiated renal pipeline. Analyst consensus "Moderate Buy" with $542
+average target; Morgan Stanley Overweight $570; Scotiabank raised to $558; Wells
+Fargo raised to $515.
+```
+
+---
+
+### 3. KLAC — Semiconductor equipment leader at 50-day EMA after 15% correction
+
+```
+Ticker: KLAC
+Current Price: $1,442.00
+Sector: Technology (Semiconductor Equipment)
+Score: 83/100 (A:38 B:18 C:20 D:12 Ded:-5)
+
+Setup Summary:
+KLA Corp has corrected 14.8% from its $1,693 52-week high to test the
+50-day EMA zone, driven by broad semiconductor sector weakness rather than
+company-specific deterioration. Q2 FY2026 delivered record results
+(EPS $8.85, revenue $3.30B) with positive Q3 guidance underpinned by AI
+infrastructure buildout across foundry, HBM, and advanced packaging. The
+50-day EMA support zone provides a defined entry with a 2.4:1 R:R to the
+$1,600 resistance target.
+
+Entry Zone: $1,420–$1,460
+Stop Loss: $1,375 — below 50-day EMA and recent pullback support
+Target 1: $1,600 — prior resistance zone / measured move
+Target 2: $1,693 — 52-week high retest
 Risk/Reward: 2.4:1
 
 Key Risks:
-- EVP insider selling Feb 24 (7,387 shares ~$839K — within 30-day window)
-- EPS missed Q4 2025 estimates ($1.57 vs $1.69)
-- Consensus analyst rating is Hold; limited near-term upside to consensus
-- Japan yen exposure adds FX risk
-- Broader market correction risk if geopolitical tensions escalate further
+- Heavy insider selling: CEO, CFO, EVP all sold (12 trades, 0 purchases in 6 months)
+- Semiconductor sector geopolitical and tariff risk (China export restrictions)
+- Next earnings April 29, 2026 (~7 weeks away)
+- Tech sector in correction mode; elevated VIX dampens risk appetite
 
 Fundamental Note:
-Q4 2025 revenue $4.87B (+12.7% YoY), beat revenue estimate. Full-year 2025 adj EPS
-$7.49. Japan segment sales +15.7%; Miraito cancer insurance +35.6%. Multiple analyst
-price target upgrades: Wells Fargo to $118, Raymond James to $119 (Outperform),
-Morgan Stanley $120. 5.2% dividend increase approved; $3.5B in 2025 share buybacks.
-Norges Bank opened a ~$432M new position in recent weeks.
+Q2 FY2026: EPS $8.85, revenue $3.30B (record quarter, above guidance); FY2025
+full-year revenue $12.745B (+17%), EPS +29% YoY. AI infrastructure capex driving
+demand across foundry/logic, DRAM, advanced packaging, and services. Positive Q3
+FY2026 guidance. Analyst avg target $1,669 (high $1,900); Zacks Rank #2 Buy.
 ```
 
 ---
 
-### 2. MDT — Medtronic: 200-day MA support hold, strong fundamentals, 10+ weeks to earnings
+### Scoring Summary — All 24 Tickers
 
-```
-Ticker: MDT
-Current Price: $92.00
-Sector: Healthcare (Medical Devices)
-Score: 80/100 (A:40 B:18 C:20 D:7 Ded:-5)
-
-Setup Summary:
-Medtronic has staged a 14% pullback from its $106.33 52-week high to the 200-day MA
-support zone ($88–$93), which the stock is currently testing and holding. A Q3 FY2026
-earnings beat (revenue +8.7% YoY, adj EPS $1.36 vs $1.33 estimate) with maintained
-FY2026 guidance provides strong fundamental conviction. The weekly uptrend from the
-$79.55 52-week low remains intact, and defensive healthcare rotation in the current
-elevated-VIX environment supports the floor. Multiple analyst upgrades in early 2026
-(William Blair Outperform, Needham target raised to $121) add institutional conviction.
-An EVP insider sale of $5.1M on Feb 19 (from an options exercise) is applied as a
-−5 pt deduction.
-
-Entry Zone: $88–$93
-Stop Loss: $84.50 — below recent swing low and 200-day MA zone
-Target 1: $103.00 — prior resistance and measured move target
-Target 2: $112.00 — analyst consensus target
-Risk/Reward: 2.1:1
-
-Key Risks:
-- EVP insider selling Feb 19 ($5.1M options exercise — within 30-day window)
-- Tariff headwinds (~$185M estimated FY2026 impact)
-- Gross margin compression (−265 bps in Q3 FY2026)
-- Next earnings May 20 2026 (~10.5 weeks — well outside 3-week filter)
-- Broader market correction risk
-
-Fundamental Note:
-Q3 FY2026 beat: revenue $9.02B (+8.7% reported, +6% organic) vs $8.89B estimate;
-adj EPS $1.36 vs $1.33. FY2026 guidance maintained: 5.5% organic growth, adj EPS
-$5.62–$5.66. William Blair upgraded to Outperform (Jan 2026); Needham raised target
-to $121 (Feb 2026). MiniMed diabetes unit IPO and Hugo robotics surgical platform
-are key near-term catalysts.
-```
-
----
-
-### 3. RMD — ResMed: Orderly pullback to 50-day EMA, earnings beat, dividend near-term
-
-```
-Ticker: RMD
-Current Price: $255.00
-Sector: Healthcare (Medical Devices)
-Score: 79/100 (A:40 B:18 C:16 D:10 Ded:-5)
-
-Setup Summary:
-ResMed continues to hold its orderly pullback zone ($248–$257) for the third
-consecutive scan, aligning precisely with 50-day EMA support (~$256). The weekly
-chart shows a clean higher-highs/higher-lows structure from the $199.92 52-week low,
-and volume on the pullback has been declining — confirming institutional holders are
-not exiting. An upcoming quarterly dividend of $0.60/share (payable March 19, 2026)
-provides near-term income. Two insider sales occurred in the last 30 days (Director
-$520K on March 4, CFO $254K on March 2 under a pre-arranged 10b5-1 plan), applied
-as a −5 pt deduction.
-
-Entry Zone: $248–$257
-Stop Loss: $237.00 — below recent swing low and prior support level
-Target 1: $280.00 — prior resistance zone
-Target 2: $294.00 — 52-week high retest
-Risk/Reward: 2.8:1
-
-Key Risks:
-- Director insider selling March 4 (~$520K)
-- CFO 10b5-1 plan sale March 2 (~$254K — pre-scheduled, lower concern)
-- Next earnings ~Apr 22 2026 (~6.5 weeks — outside 3-week filter)
-- GLP-1 drug competition narrative (potential long-term CPAP demand reduction)
-- Broader healthcare sector risk in volatile market
-
-Fundamental Note:
-Q2 FY2026 beat: EPS $2.81 vs $2.68 estimate; revenue $1.42B (+11% YoY). Quarterly
-dividend $0.60/share payable March 19, 2026. Strong free cash flow and operating
-margin ~34%. GLP-1 counter-narrative: obese patients still require CPAP regardless of
-weight loss. Low beta (0.88) offers relative stability. 52-week range $199.92–$293.81.
-```
-
----
-
-## Tickers Analysed But Not Selected
-
-| Ticker | Score | Reason Not Selected |
-|--------|-------|---------------------|
-| CPAY | 77/100 | Ranked #4. Entry zone ($308–$320) has been exceeded — stock now at ~$328, pushing R:R to T1 below 1.5:1. Still a quality setup but timing has shifted unfavourably since the March 3 scan. |
-| BA | 71/100 | Ranked #5. Today's ~4% intraday spike on unconfirmed China mega-order reports has blown the stock above the $224–$234 entry zone (estimated ~$240). R:R to T1 is now < 1.5:1. Buying into an unconfirmed news spike is inappropriate for a pullback strategy. |
-| STT | 53/100 | Ranked #6. State Street is trading at ~$120.85, at or marginally below its 200-day MA ($121.66) — triggering the −8 pt deduction and resulting in a weak daily uptrend score. Volume pattern on the pullback was not declining (market-driven selling). |
-| ALLE | 51/100 | Ranked #7. Barely above the 50-point threshold. Q4 2025 EPS missed estimate ($1.94 vs $2.01); post-earnings analyst downgrades (Barclays target cut to $176, JPM to $180). The 9%+ post-earnings drop is not an orderly pullback — it is a catalyst-driven breakdown. |
-| ROK | 44/100 — **EXCLUDED** | Below 50-point minimum. Heavy insider selling ($68M+ in prior month confirmed in previous run). Stock has rallied from ~$369 to ~$400+, rendering the original entry zone moot and R:R well below 1.5:1 to T1. |
+| Ticker | Score | Status |
+|--------|-------|--------|
+| EME | 90 | ✅ Pick #1 |
+| VRTX | 87 | ✅ Pick #2 |
+| KLAC | 83 | ✅ Pick #3 |
+| PM | 77 | Near miss — R:R 1.9:1 (≥1.5:1 only), consumer staples defensive but limited technical upside to T1 |
+| CPAY | 78 | Near miss — already picked Mar 7–9; R:R <2:1 at current levels |
+| WMT | 76 | Near miss — defensive setup, but R:R <2:1 with current entry/stop |
+| VRTX | — | See Pick #2 |
+| STX | 75 | Near miss — AI storage supercycle, but tech sector in correction; sector deduction applied |
+| CAT | 70 | Excluded — R:R 1.9:1, industrials tariff risk, insider selling |
+| MCD | 72 | Excluded — limited upside to T1 from current levels, R:R 1.7:1 |
+| HAS | 63 | Excluded — long-term revenue decline 3% annually; consumer discretionary sector weak |
+| ETN | 68 | Excluded — sector headwinds, high valuation, modest R:R |
+| HLT | 68 | Excluded — cautious 2026 guidance, limited R:R from current levels |
+| HUBB | 66 | Excluded — valuation conflict (DCF vs analyst target), moderate setup |
+| COR | 65 | Excluded — limited R:R from current entry zone |
+| CMI | 64 | Excluded — guidance miss triggered 7.4% selloff, sector tariff risk |
+| AME | 63 | Excluded — decent setup but outpaced by top 3 on R:R and catalysts |
+| MAR | 61 | Excluded — Q1 EPS miss, insider selling, soft hotel pricing |
+| SRE | 60 | Excluded — UBS Neutral, limited upside (~6%) to $100 target |
+| CSX | 57 | Excluded — Q4 EPS and revenue miss, flat revenue growth |
+| PEG | 55 | Excluded — 2026 guidance below consensus, Sell rating from some analysts |
+| TT | 62 | Excluded — premium valuation, 2.8% upside to median analyst target |
+| ANET | 52 | Excluded — reported 50/200-day SMA death cross; mixed technical signals despite EMA filter pass |
+| INTC | 28 | Excluded — revenue -4% YoY, foundry -$2.5B operating loss, consensus "Reduce" rating |
 
 ---
 
@@ -151,19 +160,22 @@ weight loss. Low beta (0.88) offers relative stability. 52-week range $199.92–
 _Recommendations from the last 14 days with no outcome recorded yet._
 
 | Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
-|---|---|---|---|---|---|---|
-| 2026-03-07 | RMD | $248–$257 | $237.00 | $280.00 | $294.00 | 2.0:1 |
-| 2026-03-07 | CPAY | $308–$320 | $294.00 | $355.00 | $388.00 | 2.0:1 |
-| 2026-03-07 | BA | $224–$234 | $209.00 | $252.00 | $270.00 | 1.9:1 |
-| 2026-03-07 | MDT | $88–$93 | $84.50 | $103.00 | $112.00 | 2.1:1 |
-| 2026-03-07 | AFL | $109–$113 | $105.50 | $119.00 | $124.00 | 2.4:1 |
-| 2026-03-07 | ROK | $362–$378 | $356.00 | $410.00 | $438.00 | 3.4:1 |
-| 2026-03-08 | AFL | $109–$113 | $105.50 | $119.00 | $124.00 | 2.4:1 |
-| 2026-03-08 | MDT | $88–$93 | $84.50 | $103.00 | $112.00 | 1.9:1 |
-| 2026-03-08 | RMD | $248–$257 | $237.00 | $280.00 | $294.00 | 2.8:1 |
-| 2026-03-09 | AFL | $109–$113 | $105.50 | $119.00 | $124.00 | 2.4:1 |
-| 2026-03-09 | MDT | $88–$93 | $84.50 | $103.00 | $112.00 | 2.1:1 |
-| 2026-03-09 | RMD | $248–$257 | $237.00 | $280.00 | $294.00 | 2.8:1 |
+|------|--------|------------|------|----------|----------|-----|
+| 2026-03-07 | RMD | $248–$257 | $237.00 – below swing low | $280.00 – prior resistance | $294.00 – 52W high retest | 2.0:1 |
+| 2026-03-07 | CPAY | $308–$320 | $294.00 – below 200-day MA | $355.00 – prior ATH area | $388.00 – analyst consensus | 2.0:1 |
+| 2026-03-07 | BA | $224–$234 | $209.00 – below pullback swing low | $252.00 – measured move | $270.00 – prior 2024 high | 1.9:1 |
+| 2026-03-07 | MDT | $88–$93 | $84.50 – below swing low / 200-day | $103.00 – prior resistance | $112.00 – analyst consensus | 2.1:1 |
+| 2026-03-07 | AFL | $109–$113 | $105.50 – below Feb swing low | $119.00 – 52W high retest | $124.00 – measured move | 2.4:1 |
+| 2026-03-07 | ROK | $362–$378 | $356.00 – below 200-day MA | $410.00 – 50-day / consolidation | $438.00 – 52W high retest | 3.4:1 |
+| 2026-03-08 | AFL | $109–$113 | $105.50 – below Feb swing low | $119.00 – 52W high retest | $124.00 – measured move | 2.4:1 |
+| 2026-03-08 | MDT | $88–$93 | $84.50 – below swing low / 200-day | $103.00 – prior resistance | $112.00 – analyst consensus | 1.9:1 |
+| 2026-03-08 | RMD | $248–$257 | $237.00 – below swing low | $280.00 – prior resistance | $294.00 – 52W high retest | 2.8:1 |
+| 2026-03-09 | AFL | $109–$113 | $105.50 – below Feb swing low | $119.00 – 52W high retest | $124.00 – measured move | 2.4:1 |
+| 2026-03-09 | MDT | $88–$93 | $84.50 – below swing low / 200-day | $103.00 – prior resistance | $112.00 – analyst consensus | 2.1:1 |
+| 2026-03-09 | RMD | $248–$257 | $237.00 – below swing low | $280.00 – prior resistance | $294.00 – 52W high retest | 2.8:1 |
+| 2026-03-10 | EME | $695–$720 | $678 – below pullback support | $808 – Baird target | $900 – DA Davidson target | 3.6:1 |
+| 2026-03-10 | VRTX | $452–$470 | $430 – below 200-day MA | $542 – consensus target | $570 – Morgan Stanley target | 3.2:1 |
+| 2026-03-10 | KLAC | $1,420–$1,460 | $1,375 – below 50-day EMA | $1,600 – prior resistance | $1,693 – 52W high retest | 2.4:1 |
 
 ---
 
