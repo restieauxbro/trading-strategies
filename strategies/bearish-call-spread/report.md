@@ -1,193 +1,200 @@
 # Bearish Call Spread — Current Report
-_Last updated: 2026-03-07_
+_Last updated: 2026-03-07 (Scan 2)_
 
 ---
 
 ## Market Context
 
-The S&P 500 broke below its 100-day moving average on March 5 and is now testing its 200-day MA (~$5,780 area), which represents the final line of defence for long-term bullish sentiment. The breakdown was driven by geopolitical escalation (Iran strikes, Taiwan Strait tensions), a 9% oil price surge stoking inflation concerns, and 15% global tariffs taking effect. VIX has pushed above 21, entering the historically elevated zone. This is a constructive environment for bear call spreads: elevated IV inflates premiums while the broader market backdrop keeps recovery rallies short-lived. Bearish setups with confirmed overhead resistance are high-conviction in this context.
+The S&P 500 broke below its 100-day moving average on March 5 and is now testing its 200-day MA, representing the final line of defence for long-term sentiment. Geopolitical escalation (Iran strikes, Taiwan Strait tensions), a 9% oil spike stoking inflation fears, and 15% global tariffs taking effect drove the breakdown. VIX has pushed above 21 — elevated but not yet extreme. Today's broad market is seeing a partial bounce (most tickers up 0.5–2.5%), which reinforces that this is a volatile, uncertain environment rather than a clean recovery — a constructive backdrop for bear call spreads where elevated IV inflates premiums and overhead resistance levels are likely to hold.
 
 ---
 
-## Triage Summary
+## Scan 2 — Triage Summary (2026-03-07, later run)
 
-14 tickers from scan: ABT, SCHW, AAPL, LRCX, PM, TSLA, BA, JPM, DIS, KKR, APH, MS, AMD, NVDA
+14 tickers: TXN, AAPL, SCHW, TSLA, GOOG, NEM, LRCX, ABT, BA, NVDA, MS, DIS, UNH, QCOM
 
-**Cut at triage (8):**
+**Cut at triage (10):**
+
 | Ticker | Reason |
 |---|---|
-| AMD | Near 200-day MA with 80% historical bounce rate; extreme options bearishness = mean reversion risk |
-| JPM | Analyst "conviction buy at oversold"; described as setup for relief rally |
-| NVDA | Multiple analysts raising targets to $265–$275; strong institutional positive sentiment |
-| PM | Moderate Buy consensus; price above 200-day MA; long-term uptrend intact |
-| BA | +3.75% reversal day signal; showing clear positive momentum against the scan's trend filters |
-| APH | Reportedly trading above both 50 and 200-day MAs; 96% 12-month gain = strong intact uptrend |
-| SCHW | Insufficient bearish narrative; rate-sensitive financials with bounce potential |
-| MS | Broad financials weakness but limited bearish conviction relative to peers |
-| DIS | No hard resistance level identifiable in quick pass |
+| LRCX | +5.96% today — strong reversal day; also disqualified at scoring in Scan 1 |
+| NVDA | +2.54%, analysts raising targets to $265–$275; institutional positive sentiment |
+| GOOG | +2.32%, AI tailwinds intact; no bearish narrative |
+| TXN | +1.55%, semiconductor, positive day |
+| QCOM | +1.94%, semiconductor, positive day |
+| NEM | Gold miner — gold rallying in geopolitical/inflation environment; dangerous for short calls |
+| AAPL | +1.00%, MACD still positive/bullish, price at/above 200-day MA |
+| ABT | Already in open trades from Scan 1 (short $120/$130, Apr); up to $112.56, still below short strike ✓ |
+| TSLA | Already in open trades from Scan 1 (short $480/$510, Apr); at $398.40, well below short strike ✓ |
+| BA | Down 2.64% but "2026 turnaround story" — positive FCF for first time since 2018, record $682B backlog, 56% one-year gain; strong recovery narrative underneath |
 
-**Carried to full research (5):** AAPL, LRCX, ABT, TSLA, KKR
+**Cut at scoring (1):**
+- **SCHW** — Insufficient data: MA levels and key resistance levels could not be verified. Per scoring rules, unverifiable data points cannot be awarded — score would be unreliably low.
 
-**Cut at scoring (2):**
-- **LRCX** — Score: 32/100 (below 55 threshold). 52-week high was set *last week* (late Feb 2026) — this is a sudden sharp dip in a strong uptrend, not an established downtrend. 27 analyst buy ratings, median price target $280, MACD showing oversold reversal signal. Buy-the-dip narrative is strong. Not suitable.
-- **AAPL** — Score: 53/100 (below 55 threshold). MACD positive/above signal line (short-term bullish momentum); price is essentially *at* its 200-day MA ($257 vs $258.90 SMA200), creating strong nearby support; Category C fundamentals thin. Borderline but excluded.
+**Carried to full research:** UNH, MS, DIS
 
 ---
 
 ## Today's Top Picks
 
-### 1. ABT — Confirmed breakdown, multiple downgrades, clean MA resistance
+### 1. UNH — Death cross, historic revenue contraction, layered MA resistance
 
 ```
-Ticker: ABT
-Current Price: $108.66
-Sector: Healthcare / Medical Devices
-Score: 85/100 (A:40 B:25 C:17 D:13 Ded:0)
+Ticker: UNH
+Current Price: $284.75
+Sector: Healthcare / Managed Care
+Score: 93/100 (A:33 B:25 C:20 D:15 Ded:0)
 
 Setup Summary:
-ABT is in a confirmed, established downtrend after a severe earnings-driven breakdown in
-January 2026 — a 6-day, 14% losing streak following a Q4 revenue miss and full-year
-guidance shock. Price is now 23% below its 52-week high and trading well beneath both
-the 50-day ($122.77) and 200-day ($127.43) moving averages. These moving averages form
-a layered ceiling overhead, with the 50-day being the nearest and most actionable
-resistance level for short call placement. Multiple analysts have cut price targets,
-reinforcing that the $120–$125 zone is a wall of resistance, not a recovery target.
+UNH is in a confirmed structural downtrend with a death cross (50-day SMA below
+200-day SMA), trading 12% below its 200-day MA ($324.7). The fundamental case is
+exceptionally strong: 2026 revenue guidance marks the first projected annual revenue
+contraction in company history, operating margins collapsed from 5.4% to 2.8%, and
+the medical care ratio surged to 89.1% — signalling a business under real structural
+pressure, not just a cyclical dip. Senior leadership departures and active legal/
+fiduciary investigations add further narrative weight. The 50-day SMA ($299.50) and
+200-day SMA ($324.70) form a layered ceiling, with the $315 area providing the optimal
+short call placement — above immediate resistance but at a level the stock would need
+a significant, sustained recovery to reach.
 
-Resistance Level: $122.77 — 50-day SMA, coinciding with the breakdown origin zone from
-January 2026. Multiple analyst cuts (Citigroup $140→$122, Wells Fargo $146→$122) have
-converged targets around this level, creating a ceiling both technically and narratively.
+Resistance Level: $299.50 (50-day SMA) and $324.70 (200-day SMA) — both acting as
+dynamic ceilings after the death cross. Placing the short call at $315 sits between
+the two MAs, ensuring the stock must first reclaim the 50-day SMA AND continue rising
+before the spread is threatened.
 
 Suggested Spread:
-  Short Call Strike: $120 (~0.17 delta) — just below 50-day MA / analyst target cluster
-  Long Call Strike:  $130 — $10 wide (~9.2% spread width)
+  Short Call Strike: $315 (~0.16 delta) — between 50-day and 200-day SMA resistance
+  Long Call Strike:  $330 — $15 wide (~5.3% spread width)
   Target Expiry:     April 2026 (~35 DTE)
-  Est. Probability of Profit: ~83% (based on ~0.17 short strike delta)
+  Est. Probability of Profit: ~84% (based on ~0.16 short strike delta)
 
-Short Strike Level (Stop Reference): $120 — prior breakdown origin, 50-day MA, analyst
-consensus ceiling
+Short Strike Level (Stop Reference): $315 — above 50-day SMA, mid-range between the
+two key MAs forming the resistance ceiling
 
 Key Risks:
-- Stock near 52-week lows ($108 area) — any stabilisation could trigger a relief rally
-- Consensus rating remains "Moderate Buy" despite downgrades — floor of institutional
-  support exists
-- Healthcare sector broadly flat; not in a confirmed sector-wide downtrend
+- RSI at 42.4 is neutral — not extended to the downside, leaving room for a bounce
+- Healthcare sector can reprice quickly on positive legislative/regulatory news
+- Stock near identified support at $281.78 — a bounce from here could pressure the
+  spread within the first week
 
 Fundamental Note:
-Q4 2025 revenue missed by $340M ($11.46B vs $11.80B expected); nutrition segment down
-8.9% and diagnostics down 2.5%. Full-year 2026 EPS guidance of $5.55–$5.80 missed
-consensus midpoint. Barclays, Citigroup, Wells Fargo, Daiwa, and Piper Sandler all cut
-price targets in January 2026.
+2026 revenue outlook of $439B marks the first projected annual revenue contraction in
+UNH history. Medical care ratio rose to 89.1% (from 5.4% margin). Leadership departures
+and Scott+Scott fiduciary investigations are adding execution and legal risk. Analysts
+have cut fair-value estimates citing Medicare Advantage cost exposure.
 ```
 
 ---
 
-### 2. TSLA — High IV, hard supply resistance, brand erosion narrative
+### 2. MS — Below 200-day MA, insider selling, 50-day SMA as overhead ceiling
 
 ```
-Ticker: TSLA
-Current Price: $394.68
-Sector: Consumer Discretionary / Electric Vehicles
-Score: 73/100 (A:25 B:25 C:13 D:15 Ded:-5)
+Ticker: MS
+Current Price: $160.47
+Sector: Financials / Investment Banking
+Score: 69/100 (A:37 B:25 C:2 D:10 Ded:-5)
 
 Setup Summary:
-TSLA is trading below its 50-day SMA ($436) and just above its 200-day SMA ($390),
-with a well-defined supply zone at $480–$490 that has acted as a strong rejection level
-multiple times. Crucially, TSLA's elevated implied volatility (IV ~62%) makes spread
-construction extremely attractive: the $480 strike sits almost exactly at 1 standard
-deviation OTM for a 45-day expiry, giving approximately 0.16–0.17 delta and an ~83%
-probability of profit. The bearish narrative is reinforced by genuine business headwinds —
-European EV sales declining, margin compression, and significant brand damage from Musk's
-involvement in DOGE, which has led to organised boycotts and showroom vandalism reports.
+Morgan Stanley is trading below both its 50-day ($181.7) and 200-day ($163.5) SMAs,
+with the price currently at $160.47 — marginally below the 200-day MA. The 50-day MA
+sits 13.2% overhead and represents the key resistance ceiling. MACD is below the signal
+line confirming bearish short-term momentum, and significant insider selling over the past
+3 months suggests those closest to the business are not buying this dip. The 50-day at
+$181.70 is the structural resistance level: for the spread to be threatened, the stock
+must recover through its 200-day MA AND continue to the 50-day — a substantial two-stage
+recovery required.
 
-Resistance Level: $480–$490 — strong supply zone, repeatedly tested and rejected on
-recent rally attempts. Also aligns with the approximate 50-day SMA recovery level and
-the concentration of large open interest in the options market (410–440 strikes show
-heaviest OI, confirming $480 area as upper boundary).
+⚠️ Note: One data source puts RSI at 32.6, which would be near/below the oversold
+threshold (35). The scan's RSI > 35 filter should have caught this, so RSI is likely
+just above 35 — but this is borderline and bounce risk is elevated. This is the weakest
+of the three picks on that basis.
+
+Resistance Level: $181.70 — 50-day SMA, 13.2% above current price. Also aligns with
+the recent area where price broke down, creating a prior support / now resistance zone.
 
 Suggested Spread:
-  Short Call Strike: $480 (~0.16–0.17 delta) — at the hard supply resistance zone
-  Long Call Strike:  $510 — $30 wide (~7.6% spread width)
+  Short Call Strike: $180 (~0.12–0.13 delta) — just below 50-day SMA resistance
+  Long Call Strike:  $190 — $10 wide (~6.2% spread width)
   Target Expiry:     April 2026 (~35 DTE)
-  Est. Probability of Profit: ~83–84% (based on short strike delta, IV ~62%)
+  Est. Probability of Profit: ~87–88% (based on ~0.12–0.13 short strike delta)
 
-Short Strike Level (Stop Reference): $480 — supply zone / prior rejection ceiling
+Short Strike Level (Stop Reference): $180 — prior support / now resistance, near
+50-day SMA ceiling
 
 Key Risks:
-- Price is just above the 200-day SMA ($390) — a meaningful support level that could
-  slow further declines and reduce downward pressure
-- TSLA is highly news-driven; any positive catalyst (strong China delivery numbers, new
-  product announcement, Musk stepping back from DOGE) could spark a sharp rally
-- High IV cuts both ways — a volatility spike could widen the spread against the position
+- ⚠️ RSI near 35 — borderline oversold, elevated bounce risk relative to other picks
+- 50-day SMA above 200-day SMA = technically bullish longer-term structure; the spread
+  bets against the broader trend
+- Earnings grew 26.9% YoY — strong underlying fundamentals limit the downside narrative
 
 Fundamental Note:
-EV demand softness in Europe and mounting brand damage from Musk's political involvement
-have pressured sentiment. Operating margins have compressed from peak levels amid price
-cuts. Some analysts have issued downgrades citing the brand risk as a structural headwind
-beyond short-term cyclical factors.
+Earnings grew 26.9% over the past year; projected growth 5.36% annually. However,
+significant insider selling over the past 3 months and recent workforce layoffs (~2,500
+employees, 3% of staff) point to internal caution. High debt load of $360B and
+dividends not fully covered by free cash flow add balance sheet risk.
 ```
 
 ---
 
-### 3. KKR — Private equity sector rout, severe drawdown, clean overhead structure
+### 3. DIS — Below both SMAs, geopolitical cruise/experiences pressure, clean resistance (⚠️ weakest qualifier)
 
 ```
-Ticker: KKR
-Current Price: $90.99
-Sector: Financials / Alternative Asset Management
-Score: 71/100 (A:30 B:25 C:14 D:15 Ded:-13)
+Ticker: DIS
+Current Price: $101.66
+Sector: Consumer Discretionary / Media & Entertainment
+Score: 59/100 (A:27 B:25 C:5 D:10 Ded:-8)
+
+⚠️ This pick barely clears the 55-point minimum threshold and is included as a
+third option only. Consider it a watch candidate rather than a high-conviction pick.
 
 Setup Summary:
-KKR has fallen 41% from its 52-week high of $153.87 and is trading near 52-week lows
-($84.52), driven by a sector-wide private equity rout in late February 2026 amid
-concerns about private credit redemptions and liquidity panic across alternative asset
-managers. The stock shows a well-established lower-highs structure and is firmly below
-its moving average complex. The $105 level (prior support zone from the breakdown range)
-represents the most actionable overhead resistance for spread construction. With beta of
-1.99 and elevated IV reflecting the recent volatility, the $105 strike provides attractive
-delta positioning at approximately 0.14.
+Disney is trading below both its 20-day and 50-day SMAs, with defined resistance at
+the $114–$116 range. The current weakness is partly driven by investor selling of
+travel-and-leisure stocks following U.S./Iran conflict, which directly impacts Disney's
+Cruise Line and Experiences segment — a meaningful revenue contributor. The resistance
+cluster at $114–116 is 12–14% above current price, placing a short call well outside
+one standard deviation on a typical 45-day expiry, which keeps PoP high. The main
+concern is the "mixed" technical picture: a Pocket Pivot pattern formed in late January
+suggesting latent bullish pressure.
 
-⚠️ **Risk flag:** KKR CEO Scott Nuttall purchased ~$12.8M of shares recently, with
-total insider buying at ~$35.4M (343,872 shares). This is significant insider conviction
-that the stock is undervalued and should be weighed carefully.
-
-Resistance Level: $105 — prior support zone from the breakdown trajectory, approximately
-at the 10-week MA recovery area. Analyst consensus at $151.80 means the $105 area
-represents a much lower-bar recovery level that the market has already failed to sustain.
+Resistance Level: $114.28–$115.34 — SMA cluster (20-day and 50-day MA zone), which
+has consistently capped rally attempts. A clean, testable ceiling.
 
 Suggested Spread:
-  Short Call Strike: $105 (~0.14 delta) — at prior support/resistance breakdown zone
-  Long Call Strike:  $115 — $10 wide (~11.0% spread width)
+  Short Call Strike: $115 (~0.09–0.11 delta) — at the SMA resistance cluster
+  Long Call Strike:  $125 — $10 wide (~9.9% spread width)
   Target Expiry:     April 2026 (~35 DTE)
-  Est. Probability of Profit: ~86% (based on ~0.14 short strike delta)
+  Est. Probability of Profit: ~89–91% (based on ~0.09–0.11 short strike delta)
 
-Short Strike Level (Stop Reference): $105 — prior support turned resistance from the
-breakdown zone
+Short Strike Level (Stop Reference): $115 — 20/50-day SMA cluster, prior breakdown
+support turned resistance
 
 Key Risks:
-- ⚠️ CEO and insider buying ($35M total) is a meaningful contrarian signal against this
-  position — insiders are actively buying this dip
-- Stock is near its 52-week low ($84.52) — support base is very close and a relief
-  rally could move price quickly toward $105
-- Analyst consensus target is $151.80 — enormous implied upside means institutional
-  buyers may step in at these levels
+- Pocket Pivot signal from late January suggests hidden bullish momentum; any positive
+  catalyst could trigger a sharp re-rating
+- Theme park/streaming positive news flow (franchise launches, subscriber beats) could
+  override geopolitical pressure quickly
+- Technical picture described as "mixed" — both bullish and bearish signals present
 
 Fundamental Note:
-Q4 EPS came in fractionally below estimates ($1.12 vs $1.14) but revenue was up 76.1%
-YoY to $5.93B. TD Cowen downgraded to Hold; Barclays cut target from $136 to $127
-(maintains overweight). The private equity liquidity panic was the primary driver of
-the selloff rather than underlying business deterioration.
+Geopolitical tensions (US/Iran) are directly weighing on the Experiences segment
+(cruises, international parks). Limited earnings or analyst data available for March
+2026 — fundamental conviction is lower than the other two picks.
 ```
 
 ---
 
 ## Open Trades
-_Recommendations from the last 14 days with no outcome recorded yet._
+_All recommendations from the last 14 days with no outcome recorded yet._
 
 | Date | Ticker | Entry Price | Short Strike | Setup Summary |
 |---|---|---|---|---|
-| 2026-03-07 | ABT | $108.66 | $120 – 50-day MA / analyst ceiling | Short $120/$130 call spread, Apr 2026, ~83% PoP |
-| 2026-03-07 | TSLA | $394.68 | $480 – hard supply zone | Short $480/$510 call spread, Apr 2026, ~84% PoP |
-| 2026-03-07 | KKR | $90.99 | $105 – prior support/resistance | Short $105/$115 call spread, Apr 2026, ~86% PoP |
+| 2026-03-07 | ABT | $108.66 | $120 – 50-day MA / analyst ceiling | Short $120/$130, Apr 2026, ~83% PoP. Up to $112.56 — still $7.44 below short strike ✓ |
+| 2026-03-07 | TSLA | $394.68 | $480 – hard supply zone | Short $480/$510, Apr 2026, ~84% PoP. At $398.40 — well below short strike ✓ |
+| 2026-03-07 | KKR | $90.99 | $105 – prior support/resistance | Short $105/$115, Apr 2026, ~86% PoP. ⚠️ Watch CEO insider buying risk |
+| 2026-03-07 | UNH | $284.75 | $315 – between 50-day and 200-day SMA | Short $315/$330, Apr 2026, ~84% PoP |
+| 2026-03-07 | MS | $160.47 | $180 – near 50-day SMA | Short $180/$190, Apr 2026, ~87% PoP. ⚠️ RSI borderline |
+| 2026-03-07 | DIS | $101.66 | $115 – SMA cluster resistance | Short $115/$125, Apr 2026, ~90% PoP. Weakest qualifier |
 
 ---
 
