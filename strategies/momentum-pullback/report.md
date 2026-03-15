@@ -1,143 +1,161 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-03-12_
+_Last updated: 2026-03-15_
 
 ---
 
 ## Market Context
 
-The S&P 500 is trading around 6,740–6,775, **below** its 200-day moving average (~6,875) — a confirmed bearish signal. The VIX closed at 25.74 on March 11, firmly above the ~25 elevated-volatility threshold, with daily swings expected of ~1.5%. A "mini death cross" has formed on the index (20-day crossing below the 50-day MA), shifting market psychology from "buy the dip" to "sell the rip." The primary driver of the current correction is escalating geopolitical tensions (US/Israel/Iran conflict triggered by Operation "Midnight Hammer" on February 28), which has caused a blockade of the Strait of Hormuz, sent oil prices up ~36%, and catalysed aggressive defensive sector rotation. **Stricter filters applied this session — preference given to low-beta, defensive names with earnings well outside the 3-week window.**
+The S&P 500 closed at approximately 6,623 on Friday March 13, 2026 — sitting precariously just above its 200-day moving average (~6,582–6,600) after having already breached both the 50-day and 100-day MAs in early March. The primary catalyst for the decline is an oil price surge toward $100+ (the "Iran Shock," driven by US-Israeli strikes and Strait of Hormuz disruption concerns) combined with a weak February jobs report (−92,000 jobs), which together have triggered institutional de-risking. VIX closed around 28–31 — firmly elevated — indicating persistent market fear. Overall market trend: **correction/downtrend**, not yet a confirmed 200-day breakdown but at a critical decision point. **Stricter filters applied this session**: preference for low-beta defensive names and setups with R:R ≥ 2:1. Defensive sectors (Healthcare, Consumer Staples, Utilities) are in relative favor; Technology and Industrials face sector headwinds.
 
 ---
 
 ## Today's Top Picks
 
-### 1. WMT — Walmart pulling back to 50-day EMA; top defensive consumer staples setup
+### 1. COR — Cencora pulling back to 50-day MA in defensive healthcare with multiple analyst upgrades
 
 ```
-Ticker: WMT
-Current Price: $124.57
-Sector: Consumer Staples
-Score: 85/100 (A:40 B:10 C:20 D:15 Ded:0)
+Ticker: COR
+Current Price: $349.95 (as of March 13, 2026 close)
+Sector: Healthcare (Pharmaceutical Distribution)
+Score: 92/100 (A:35 B:25 C:20 D:15 Ded:0)
 
 Setup Summary:
-Walmart is pulling back to its rising 50-day EMA ($121.63) in a clean orderly
-consolidation following strong Q4 FY2026 results. Price at $124.57 sits just 2.4%
-above the 50-day EMA with neutral RSI (46.05), confirming healthy digestion rather
-than a breakdown. Consumer Staples sector is in strong relative favour as investors
-rotate defensively amid elevated VIX and the geopolitical oil shock. Multiple analyst
-upgrades (UBS $147, TD Cowen $145) post-Q4 reinforce institutional demand at current
-levels. Next earnings are 9 weeks away — ample time for the trade to develop.
+Cencora has pulled back from its $377.54 52-week high to retest the rising 50-day
+MA ($347.51) — at $349.95 the stock sits just $2.44 above the 50-day, offering
+a defined low-risk entry in a defensive healthcare distribution name. Multiple
+analyst upgrades post-Q1 FY2026 beat reinforce conviction (Leerink $447
+Outperform; Wells Fargo $429; JPMorgan $419; Barclays $425). Healthcare
+distribution is a defensive sector well-positioned in the elevated-VIX environment,
+and the completed OneOncology acquisition is driving revenue growth above prior
+guidance.
 
-Entry Zone: $122–$127
-Stop Loss: $119 — below 50-day EMA ($121.63) with buffer
-Target 1: $134 — analyst consensus target zone
-Target 2: $147 — UBS / TD Cowen elevated price targets
-Risk/Reward: 1.7:1
+Entry Zone: $348–$355
+Stop Loss: $337 — below rising 50-day MA ($347.51) with buffer; a close below
+           the 50-day would invalidate the setup
+Target 1: $377 — 52-week high resistance / near-term breakout target
+Target 2: $420 — analyst consensus target zone (average $395, high $447 Leerink)
+Risk/Reward: 3.0:1
 
 Key Risks:
-- Next earnings May 14, 2026 (~9 weeks away) — ample trade development time
-- Erste Group downgraded to Hold March 5, 2026 (valuation concerns at 47x P/E)
-- Consumer spending pressure if oil-driven inflation accelerates
-- USD strength headwind on international revenues
+- Next earnings May 6 2026 (~7.5 weeks away — sufficient runway)
+- Elevated valuation versus distribution peers
+- Oil-driven inflation could pressure healthcare supply chain costs
+- Broader market correction risk if S&P 500 breaks below 200-day MA
 
 Fundamental Note:
-Q4 FY2026: EPS $0.74 beat $0.73 estimate; revenue $190.66B (+5.6% YoY). Global
-e-commerce +22% YoY and profitable for the first time. FY2027 guidance $2.75–$2.85 EPS.
-Analyst consensus target $134; UBS raised to $147; TD Cowen raised to $145.
+Q1 FY2026: adj EPS $4.08 beat $4.05 estimate; revenue $85.9B (+5.5% YoY); adj
+operating income +11.9% YoY. FY2026 EPS guidance $17.45–$17.75 reaffirmed with
+revenue growth raised to 7–9% (from 5–7%). Analyst consensus Buy rating; average
+target $395.23 (13 analysts, 4 Strong Buy, 7 Buy). OneOncology acquisition driving
+above-guidance growth in oncology distribution.
 ```
 
 ---
 
-### 2. PM — Philip Morris at 50-day EMA after 12% pullback; ultra-low beta defensive
+### 2. EME — EMCOR retesting 50-day SMA after 15% pullback; AI data center structural demand intact
 
 ```
-Ticker: PM
-Current Price: $166.84
-Sector: Consumer Staples
-Score: 82/100 (A:40 B:18 C:14 D:15 Ded:-5)
+Ticker: EME
+Current Price: $709.91 (as of March 13, 2026 close)
+Sector: Industrials (Mechanical & Electrical Contracting)
+Score: 86/100 (A:35 B:25 C:20 D:11 Ded:-5)
 
 Setup Summary:
-Philip Morris has pulled back 12.1% from its February 25 all-time high of $189.80 to
-$166.84 — testing the rising 50-day EMA zone ($163.48). Beta of 0.39 makes PM one of
-the most defensive names in the S&P 500, ideally positioned for the current
-geopolitical/elevated-VIX environment. Smoke-free products (IQOS heated tobacco, ZYN
-nicotine pouches) continue to accelerate with FY2026 organic revenue growth guidance of
-5–7%, above consensus. Multiple analyst targets of $200–$210 offer 20–26% upside from
-the current 50-day EMA test — an exceptional longer-term reward profile.
+EMCOR has pulled back 15% from its $835 52-week high to retest the 50-day SMA
+($703.51) — sitting just 0.9% above key moving average support at $709.91 on
+declining volume. Q4 FY2025 was exceptional (EPS $9.66 beat estimate of $6.68;
+revenue $4.51B +19.7% YoY) with FY2026 EPS guidance of $27.25–$29.25. EMCOR
+is the dominant mechanical and electrical contractor for AI data center
+infrastructure — a structural multi-year demand cycle — with UBS targeting $945
+and DA Davidson $900, delivering a compelling 3.1:1 R:R from the 50-day SMA
+retest. The correction appears orderly and attributable to broader market risk-off,
+not any deterioration in EMCOR's fundamentals.
 
-Entry Zone: $163–$170
-Stop Loss: $158 — below rising 50-day EMA ($163.48) with cushion
-Target 1: $185 — prior Feb 25 high / near-term resistance
-Target 2: $205 — analyst consensus (Barclays $205, Citigroup $210, Needham $205)
-Risk/Reward: 2.1:1
+Entry Zone: $695–$720
+Stop Loss: $678 — below 50-day SMA ($703.51) and pullback swing low support
+Target 1: $808 — Baird analyst target / prior resistance zone
+Target 2: $945 — UBS analyst target (raised March 6)
+Risk/Reward: 3.1:1
 
 Key Risks:
-- Insider selling ~$28M in February 2026 (multiple insiders)
-- Next earnings April 21, 2026 (~6 weeks away)
-- Jefferies downgraded to Hold in January 2026
-- Regulatory risk on nicotine product classification
-- Market downtrend / elevated VIX dampening broader risk appetite
+- CEO insider selling $26M on March 5 (10b5-1 pre-planned program, somewhat
+  mitigates concern but volume is notable)
+- Next earnings April 23–29 2026 (~6 weeks — adequate runway)
+- Industrial sector tariff headwinds (though EME's AI data center exposure is
+  less tariff-sensitive than heavy manufacturing)
+- Capital goods valuation compression in risk-off environment
 
 Fundamental Note:
-Q4 2025: EPS $1.70 met estimates; FY2026 guidance EPS $8.38–$8.53 (above $8.33
-consensus); organic revenue growth 5–7% guided. Barclays raised to $205 (Feb 23);
-Citigroup raised to $210 (Feb 10); Needham raised to $205 (Feb 10); Morgan Stanley
-Overweight $205. 1-year total return +29%. Beta 0.39.
+Q4 FY2025: EPS $9.66 beat $6.68 estimate; revenue $4.51B (+19.7% YoY). FY2026
+EPS guidance raised to $27.25–$29.25; revenue guidance $17.8–$18.5B. UBS raised
+target to $945 (March 6); DA Davidson $900; Baird $808. EMCOR is the dominant
+provider of mechanical/electrical services for AI data center build-out — a
+structural, multi-year secular demand cycle driven by hyperscaler capex.
 ```
 
 ---
 
-### 3. ETN — Eaton Corp exactly at 50-day EMA; AI power infrastructure secular tailwind
+### 3. KLAC — KLA Corp near 50-day SMA with fresh Investor Day catalyst: $7B buyback + 21% dividend hike
 
 ```
-Ticker: ETN
-Current Price: $355.79
-Sector: Industrials
-Score: 58/100 (A:36 B:10 C:12 D:10 Ded:-10)
+Ticker: KLAC
+Current Price: $1,418.64 (as of March 13, 2026 close)
+Sector: Technology (Semiconductor Equipment)
+Score: 83/100 (A:35 B:25 C:20 D:8 Ded:-5)
 
 Setup Summary:
-Eaton's stock has pulled back to its 50-day EMA ($355.79) — a textbook test of key
-moving average support after a 6.5% decline from recent highs. ETN is a structural
-beneficiary of AI data centre power management, EV charging infrastructure, and utility
-grid upgrades, with FY2026 EPS guidance of $13.00–$13.50. The technical setup is clean
-with a well-defined entry at the 50-day and clear stop below. Industrial sector tariff
-headwinds and a missed Q4 revenue estimate cap the score; however, ETN's power
-management exposure is more aligned with utilities/infrastructure than cyclical
-manufacturing, providing relative resilience.
+KLA Corp has pulled back 16% from its $1,693 52-week high and is testing the
+50-day SMA zone — at $1,418.64 the stock is 2.9% below the SMA ($1,461),
+consistent with the scan's ±3% criterion. A powerful fresh catalyst arrived on
+March 12: KLA's Investor Day announced a $7 billion share repurchase program and
+a 21% quarterly dividend increase, while management reaffirmed Q3 FY2026
+guidance. Oppenheimer and Wells Fargo simultaneously raised their price targets
+to $1,900 (34% upside). Entry near the lower end of the range ($1,415–$1,420)
+with stop at $1,375 delivers a ~4:1 R:R to the $1,600 prior resistance target.
+AI infrastructure capex drives record demand across foundry, DRAM, and advanced
+packaging — KLA's core process-control market.
 
-Entry Zone: $354–$363
-Stop Loss: $338 — below 50-day EMA ($355.79) with buffer
-Target 1: $384 — analyst consensus average target
-Target 2: $420 — high analyst targets / extended measured move
-Risk/Reward: 1.6:1
+Entry Zone: $1,415–$1,450
+Stop Loss: $1,375 — below recent pullback support and clear of 50-day SMA ($1,461)
+           overshoot risk; well-defined invalidation level
+Target 1: $1,600 — prior resistance zone / measured move target
+Target 2: $1,900 — Oppenheimer / Wells Fargo analyst target (raised March 13)
+Risk/Reward: 4.0:1
 
 Key Risks:
-- Industrial sector tariff headwinds (Industrials sector in confirmed downtrend)
-- Q4 revenue slightly missed estimates ($7.06B vs $7.15B expected)
-- Next earnings late April 2026 (~7 weeks away)
-- High forward P/E 26.7x in a risk-off environment
-- Free cash flow growth declined 65.75% YoY
+- Multiple insider sellers: CEO, CFO, EVP (12 trades, 0 purchases in last 6
+  months) — significant concentrated selling pressure (−5 pts deduction)
+- Next earnings ~late April 2026 (~6 weeks — adequate runway)
+- Technology sector in correction mode; semiconductor geopolitical risk
+  (China export controls; elevated VIX environment dampens tech multiples)
+- Higher beta stock in a risk-off market — position sizing discipline required
 
 Fundamental Note:
-Q4 2025: EPS $3.33 met consensus; revenue $7.06B (+10.3% YoY). FY2026 adj EPS guidance
-$13.00–$13.50. Analyst average target $384.30 (Moderate Buy consensus). AI data centre
-and grid electrification demand is a multi-year secular growth driver. FCF growth
-decline is a monitoring risk.
+Q2 FY2026: revenue $3.30B (record, beat guidance); non-GAAP EPS $8.85. FY2025:
+revenue $12.745B (+17% YoY), EPS +29% YoY, gross margins 62.8%, operating
+margins 43.6%, $4.4B free cash flow. Investor Day (March 12): $7B share
+repurchase + 21% quarterly dividend increase + Q3 guidance reaffirmed. Oppenheimer
+and Wells Fargo raised targets to $1,900 on March 13.
 ```
 
 ---
 
-### Excluded Tickers (below threshold or disqualified)
+## Tickers Scanned and Excluded
 
-| Ticker | Score | Reason Excluded |
-|---|---|---|
-| VRTX | ~55 | Already picked March 10; surged from $457 → ~$499 on Phase 3 IgA news; R:R at current price < 1.5:1 — setup has played out |
-| TT | ~48 | Only 2.8% upside to analyst median target ($470 vs $457 price); R:R < 1.5:1 → 0 pts in Category B; below threshold |
-| AAPL | ~57 | Below 50-day SMA; death cross forming (50-day crossing below 100-day); tech sector confirmed downtrend (-10 deduction); borderline qualifier but weaker than top 3 |
-| ANET | ~45 | Death cross on daily chart (50-day crossed below 200-day MA, $138 vs $143); stock below 200-day MA contradicts scan pre-filter on daily timeframe; below threshold |
-| INTC | ~30 | Negative EPS expected Q1 2026 (-$0.04 to -$0.21 EPS); structural competitive headwinds in semiconductor market; no fundamental qualification |
-| EME / HUBB / MCD | 85–90 | Already logged as picks on March 10–11; setups remain valid but avoided repetition in favour of new entries |
-| Others (AME, CAT, CMI, COR, CSX, ETN, HAS, HLT, INTC, MAR, PEG, SRE, STX) | Various | Insufficient data to verify R:R and fundamentals at scoring threshold, or lower expected score than top 3 |
+**Scan timestamp:** 2026-03-10 01:00 UTC | **Tickers in scan (24):** AAPL, AME, ANET, CAT, CMI, COR, CPAY, CSX, EME, ETN, HAS, HLT, HUBB, INTC, KLAC, MAR, MCD, PEG, PM, SRE, STX, TT, VRTX, WMT
+
+| Ticker | Est. Score | Reason for Exclusion |
+|--------|-----------|----------------------|
+| WMT | 80 | Passes threshold; R:R compressed at $126.52 (~1.5:1 to analyst T1 $134) at current entry; less compelling than top 3 in absolute R:R terms |
+| PM | 73 | Already bounced significantly from the 50-day EMA zone ($166→$175 in one day); R:R diminished from prior analysis; insider selling ~$28M Feb 2026 |
+| VRTX | 70 | EVP sold 49.86% of position ($27.5M Feb 19); Q4 FY2025 EPS slight miss vs estimate; R:R moderately compressed at $469 |
+| HUBB | 75 | Valid setup but second to EME in the AI data center industrial sub-theme with similar fundamentals; next earnings April 30 (~6.5 weeks) |
+| MCD | 68 | Consumer defensive setup but R:R <1.5:1 at $328 with stop at $314 and T1 at $341.75 |
+| CPAY | 70 | Previously high-scoring but stock has corrected and R:R less compelling without new catalysts this session |
+| HLT | 68 | Q4 2025 beat but 2026 guidance fell below analyst expectations; hospitality sector less defensive in current environment |
+| ANET | 66 | Technology sector in correction; next earnings May 5 (~7 weeks); stock at ~$137, R:R less defined |
+| ETN | 58 | Previously scored 58 on March 12; industrial sector tariff headwinds persist; Q4 revenue slight miss |
+| Remaining 15 (AAPL, AME, CAT, CMI, CSX, HAS, INTC, MAR, PEG, SRE, STX, TT + others) | 50–65 | Combination of: tech/industrial sector correction headwinds, tariff risk, weak R:R at current prices, insufficient differentiated catalysts, or fundamental concerns |
 
 ---
 
@@ -160,13 +178,16 @@ _Recommendations from the last 14 days with no outcome recorded yet._
 | 2026-03-09 | RMD | $248–$257 | $237.00 | $280.00 | $294.00 | 2.8:1 |
 | 2026-03-10 | EME | $695–$720 | $678.00 | $808.00 | $900.00 | 3.6:1 |
 | 2026-03-10 | VRTX | $452–$470 | $430.00 | $542.00 | $570.00 | 3.2:1 |
-| 2026-03-10 | KLAC | $1420–$1460 | $1,375.00 | $1,600.00 | $1,693.00 | 2.4:1 |
+| 2026-03-10 | KLAC | $1,420–$1,460 | $1,375.00 | $1,600.00 | $1,693.00 | 2.4:1 |
 | 2026-03-11 | EME | $695–$720 | $678.00 | $808.00 | $900.00 | 4.2:1 |
 | 2026-03-11 | HUBB | $470–$490 | $455.00 | $533.00 | $565.00 | 3.6:1 |
 | 2026-03-11 | MCD | $320–$330 | $314.00 | $341.75 | $354.00 | 2.8:1 |
 | 2026-03-12 | WMT | $122–$127 | $119.00 | $134.00 | $147.00 | 1.7:1 |
 | 2026-03-12 | PM | $163–$170 | $158.00 | $185.00 | $205.00 | 2.1:1 |
 | 2026-03-12 | ETN | $354–$363 | $338.00 | $384.00 | $420.00 | 1.6:1 |
+| 2026-03-15 | COR | $348–$355 | $337.00 | $377.00 | $420.00 | 3.0:1 |
+| 2026-03-15 | EME | $695–$720 | $678.00 | $808.00 | $945.00 | 3.1:1 |
+| 2026-03-15 | KLAC | $1,415–$1,450 | $1,375.00 | $1,600.00 | $1,900.00 | 4.0:1 |
 
 ---
 
@@ -176,4 +197,10 @@ _All closed trades (outcome recorded)._
 _No closed trades yet._
 
 ### Aggregate Stats
-_No closed trades yet._
+- **Total closed trades:** 0
+- **Win rate (HIT_T1 or HIT_T2):** N/A
+- **Average % gain on wins:** N/A
+- **Average % loss on stops:** N/A
+- **Expired (inconclusive):** 0
+- **Best trade:** N/A
+- **Worst trade:** N/A
