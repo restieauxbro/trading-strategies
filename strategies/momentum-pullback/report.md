@@ -1,148 +1,136 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-03-16_
+_Last updated: 2026-03-17_
 
 ---
 
 ## Market Context
 
-The S&P 500 closed at approximately 6,632 on March 16, 2026 — below its 200-day moving average, confirming the index is in a near-term downtrend. This marks roughly two weeks of trading below the key long-term MA benchmark after a 336-session streak above it ended in early March. VIX stands at ~25.16 (previous close 27.19), reflecting elevated but moderating fear. The overall environment is a confirmed correction: institutional distribution is orderly rather than panic-driven, but the macro backdrop remains challenging with tariff uncertainty, geopolitical tensions (Middle East), and mixed economic data. **Stricter entry filters have been applied for this run.** Only defensive sectors (Healthcare, Utilities) and tickers with clean setups and clear R:R to analyst targets are recommended. Cyclical sectors (Technology, Industrials) carry an additional -10 pt deduction in today's scoring.
+The S&P 500 closed at approximately 6,699 on March 16, firmly below its 200-day moving average (6,841) — confirming a short-term downtrend that began with a technical breakdown around the 6,770 support level in mid-March. The breakdown was attributed to geopolitical escalation (US-Iran strikes on Gulf energy infrastructure with the Strait of Hormuz largely paralyzed), Federal Reserve leadership uncertainty, and an oil-price spike (WTI crude to ~$95). The VIX stands at approximately 22.74 — elevated and still in "caution" territory, though cooling from the recent peak of ~30 on March 6. In this environment, stricter entry filters have been applied: preference given to defensive sectors (Consumer Staples, Insurance/Financials), low-beta names, and stocks with earnings well beyond 3 weeks. Industrials exposure is accepted only with a strong fresh catalyst. The overall posture is **selective long** — the underlying uptrend in individual names (weekly EMA structure intact) warrants continued participation, but position sizing and stop discipline are critical.
 
 ---
 
 ## Today's Top Picks
 
-### 1. COR — Cencora (Healthcare distribution, defensive)
+### 1. CL — Colgate-Palmolive at 50-day MA; defensive staples in favor
 
 ```
-Ticker: COR
-Current Price: $349.95
-Sector: Healthcare
-Score: 93/100 (A:40 B:18 C:20 D:15 Ded:0)
+Ticker: CL
+Current Price: $90.30
+Sector: Consumer Staples
+Score: 96/100 (A:40 B:25 C:16 D:15 Ded:0)
 
 Setup Summary:
-Cencora holds its 50-day MA pullback zone for the second consecutive session —
-at $349.95 the stock sits just $2.44 above the rising 50-day MA ($347.51),
-offering a defined low-risk entry in a defensive healthcare distribution name.
-The completed OneOncology acquisition is driving FY2026 revenue guidance upgrades
-(7–9%, up from 5–7%) and multiple analyst price target raises. Volume has been
-declining on the pullback, confirming healthy consolidation rather than institutional
-exit. Healthcare distribution is one of the most defensive sub-sectors available
-during a market correction.
+Colgate-Palmolive has pulled back 9.1% from its $99.33 52-week high to retest
+the 50-day MA ($89.89) — at $90.30 the stock is essentially at this key support
+level in a clean orderly consolidation on declining volume. The Consumer Staples
+sector is firmly in favor amid defensive rotation in the current confirmed S&P 500
+downtrend and elevated-VIX geopolitical environment. A fresh institutional buy
+(DoubleLine ETF Adviser, March 15) and the 63rd consecutive annual dividend
+increase ($0.53/quarter declared March 13) reinforce conviction. Multiple analyst
+targets of $97–$105 offer 7–16% upside with a 3.1:1 R:R from the 50-day retest.
 
-Entry Zone: $348–$355
-Stop Loss: $337 — below rising 50-day MA ($347.51) and prior support
-Target 1: $377 — 52-week high resistance / near-term breakout target
-Target 2: $420 — analyst consensus target zone ($395–$447)
-Risk/Reward: 2.3:1
+Entry Zone: $88–$92 (around the 50-day MA at $89.89)
+Stop Loss: $85.50 — below 50-day MA zone with buffer; above 200-day MA ($83.20)
+Target 1: $97 — JPMorgan analyst target / near-term resistance
+Target 2: $105 — BofA/Citi analyst targets / measured move from base
+Risk/Reward: 3.1:1
 
 Key Risks:
-- Next earnings May 6 2026 (~7 weeks) — ample time for trade development
-- Healthcare supply chain inflation risk
-- Elevated valuation vs distribution peers
-- Broader market correction risk (S&P 500 below 200-day MA)
+- Next earnings April 23, 2026 (~5.4 weeks) — ample trade development time
+- USD strength headwind on international/EM revenues
+- Consumer spending pressure if oil-driven inflation accelerates
+- Barclays maintains Equal Weight with $88 target (below current price)
+```
 
 Fundamental Note:
-Q1 FY2026 beat: adj EPS $4.08 vs $4.05 estimate; revenue $85.9B (+5.5% YoY);
-adj operating income +11.9% YoY. FY2026 revenue growth guidance raised to 7–9%.
-Analyst consensus Buy; Leerink $447 Outperform; Wells Fargo $429; JPMorgan $419;
-Barclays $425.
-```
+Q4 2025 beat: EPS $0.95 vs $0.91 estimate; revenue $5.23B (+5.8% YoY). FY2026 guidance calls for organic sales growth of 1–4% and net sales 2–6%. 2030 Strategy launched (brand investment, digital capabilities, innovation). BofA raised target to $105; Citi to $105; Goldman Sachs $100; Morgan Stanley raised to $100 from $87; JPMorgan $97. YTD gain +22.6% reflects improving fundamentals and defensive sector rotation.
 
 ---
 
-### 2. PEG — PSEG Public Service Enterprise Group (Utilities, defensive)
+### 2. ALL — Allstate near all-time highs; massive Q4 beat in defensive insurance
 
 ```
-Ticker: PEG
-Current Price: $83.00
-Sector: Utilities
-Score: 85/100 (A:38 B:18 C:14 D:15 Ded:0)
+Ticker: ALL
+Current Price: $207.81
+Sector: Financials (Insurance)
+Score: 88/100 (A:33 B:25 C:20 D:10 Ded:0)
 
 Setup Summary:
-PSEG is consolidating in a tight range just above its converging 50-day SMA
-($81.37) and 200-day SMA ($81.59) following an orderly 9% pullback from its
-$91.26 52-week high. At $83, the stock is essentially at the key double-MA
-support zone — a textbook momentum pullback entry. Evercore ISI upgraded to
-Outperform on March 5 with a $96 price target, providing a fresh institutional
-catalyst. Ultra-low beta (0.35) and strong utilities sector defensive rotation
-in the current confirmed S&P 500 downtrend make PEG a standout risk-adjusted
-opportunity. The $79 stop sits below both the 50-day and 200-day MAs, defining
-the absolute risk clearly.
+Allstate is pulling back from its all-time closing high of $214.18 (March 4) to
+the 50-day MA zone — offering a defined entry in the most defensive corner of the
+market. Q4 2025 EPS beat estimates by 45.7% — an exceptional print driven by
+lower catastrophe losses, improving underwriting margins, and 6.3% premium growth.
+The Insurance sector is in strong relative favor as investors rotate defensively
+amid the S&P 500 downtrend and elevated oil-driven inflation. Median analyst target
+of $244 (17% upside) delivers a compelling 3.7:1 R:R from the 200-day MA stop,
+with Raymond James carrying a $260 Strong Buy target.
 
-Entry Zone: $81–$84
-Stop Loss: $79 — below converging 50-day SMA ($81.37) and 200-day SMA ($81.59)
-Target 1: $91 — 52-week high ($91.26) retest
-Target 2: $96 — Evercore ISI Outperform price target (raised March 5 2026)
-Risk/Reward: 2.5:1
+Entry Zone: $205–$210 (around 50-day MA, just above 200-day MA at $202.29)
+Stop Loss: $198 — below 200-day MA ($202.29) with buffer
+Target 1: $244 — median analyst target / prior resistance zone
+Target 2: $260 — Raymond James Strong Buy target / measured move
+Risk/Reward: 3.7:1
 
 Key Risks:
-- 2026 EPS guidance midpoint ($4.34) slightly below analyst consensus ($4.40)
-- Regulatory rate case risk
-- Breakout above 52-week high $91.26 needed to achieve T2 ($96)
-- Broad market derisking pressure if recession fears escalate
+- Next earnings April 29, 2026 (~6 weeks) — sufficient trade development time
+- Catastrophe exposure in an elevated weather/geopolitical volatility environment
+- Goldman Sachs maintains Neutral with $231 target (March 5, 2026)
+- Insurance cycle softening risk as competition returns
+- Broader market correction risk given S&P 500 below 200-day MA
+```
 
 Fundamental Note:
-FY2025 adj EPS $4.05 (vs $3.68 in 2024, +10% YoY). Q4 2025 revenue $2.92B beat
-estimates. 2026 guidance $4.28–$4.40 EPS. $24–$28B regulated capital plan 2026–2030.
-6% dividend increase to $2.68 annually. Evercore ISI upgraded to Outperform with
-$96 target (March 5 2026). Beta 0.35 — near-ideal stability for a market correction.
-```
+Q4 2025: adj EPS beat estimates by 45.7%; P&C premiums +6.3% YoY; significantly lower catastrophe losses vs prior year. FY2026 consensus: EPS +7.7% YoY, revenue +5.4%. Raymond James Strong Buy $260 (reaffirmed March 3, 2026); Mizuho target $281; analyst median $244. Digitally-enabled "Affordable, Simple, Connected" auto and homeowner products expected to drive profitable policy growth and improved margins.
 
 ---
 
-### 3. VRTX — Vertex Pharmaceuticals (Healthcare/Biotech)
+### 3. DOV — Dover at 50-day MA with fresh Wells Fargo upgrade and CEO catalyst
 
 ```
-Ticker: VRTX
-Current Price: $469.34
-Sector: Healthcare
-Score: 78/100 (A:36 B:18 C:14 D:15 Ded:-5)
+Ticker: DOV
+Current Price: $211.92
+Sector: Industrials
+Score: 86/100 (A:33 B:25 C:20 D:8 Ded:0)
 
 Setup Summary:
-Vertex Pharmaceuticals has pulled back from near-$500 levels to retest its
-50-day EMA ($465–466) zone at $469.34, offering a defined entry in a confirmed
-healthcare uptrend. A positive Phase 3 IgA nephropathy trial announced March 9
-(disease marker reduced by half) provides a meaningful near-term pipeline catalyst
-beyond the core cystic fibrosis franchise. Healthcare sector defensive rotation
-and the stock's historically low correlation to the broader market correction
-support the trade thesis, though significant insider selling remains the primary
-risk flag.
+Dover has pulled back 10.4% from its $237.54 52-week high to retest the 50-day MA
+zone — a textbook momentum continuation setup in a diversified industrial
+compounder with a 68-year dividend growth streak. Q4 2025 organic growth reached
+5.0% (strongest of the year) with consolidated bookings rising 10.3% YoY to
+$2.14B, signaling meaningful short-cycle industrial recovery. Wells Fargo upgraded
+to Overweight with a $230 target on March 17 and CEO Richard Tobin is presenting
+at the JPMorgan Industrials Conference today — two simultaneous institutional
+catalysts at precisely the 50-day MA support zone. Wolfe Research carries a $262
+Outperform target, delivering a 3.4:1 R:R from the swing-low stop.
 
-Entry Zone: $462–$480
-Stop Loss: $430 — below 200-day MA ($432) with buffer
-Target 1: $542 — analyst consensus target (Moderate Buy; 22 Buy / 5 Hold)
-Target 2: $570 — Morgan Stanley Overweight price target
-Risk/Reward: 2.1:1
+Entry Zone: $208–$216 (around 50-day MA support zone)
+Stop Loss: $197 — below 50-day MA and recent pullback swing low
+Target 1: $230 — Wells Fargo analyst target / near-term resistance
+Target 2: $262 — Wolfe Research Outperform target / extended measured move
+Risk/Reward: 3.4:1
 
 Key Risks:
-- Significant insider selling: $77.9M over 90 days (multiple EVPs and CAO)
-- Q4 EPS slight miss ($5.03 vs $5.05 estimate)
-- Next earnings May 4 2026 (~7 weeks)
-- Premium valuation at 37x forward P/E
-- Pipeline binary risk (Phase 3 IgAN interim data interpretation)
+- Q1 2026 earnings April 23, 2026 (~5.4 weeks) — ample trade development time
+- Industrials sector tariff headwinds (reciprocal tariff uncertainty dampens capex)
+- Geopolitical risk to industrial end-market spending
+- Capital goods multiple compression in a risk-off market environment
+- S&P 500 confirmed downtrend context warrants reduced position sizing
+```
 
 Fundamental Note:
-Q4 2025 revenue $3.19B (+9.5% YoY), EPS $5.03 (slight miss vs $5.05). Positive
-Phase 3 IgA nephropathy trial (March 9): disease marker reduced by half, expanding
-pipeline beyond CF. Analyst consensus Moderate Buy; avg target $542 from 27 analysts
-(22 Buy / 5 Hold). Morgan Stanley Overweight $570; Scotiabank $558; Wells Fargo $515.
-```
+Q4 2025: organic growth 5.0% (strongest rate of the year); consolidated bookings $2.14B (+10.3% YoY from $1.94B). FY2026 adj EPS guidance $10.45–$10.65 (double-digit growth at midpoint). FCF $1.12B in FY2025; $500M accelerated share repurchase ongoing. Wells Fargo Overweight $230 (March 17 upgrade); Wolfe Research Outperform $262; JPMorgan Overweight $240; Goldman Sachs Buy $224. 68-year consecutive dividend growth streak.
 
 ---
 
-## Scan Coverage (2026-03-16)
+## Scan Exclusions (Notable)
 
-**Scan source:** TrendSpider | **Scan timestamp:** 2026-03-10 01:00 UTC | **Universe:** S&P 500 (24 tickers found)
-
-**All 24 tickers scanned:** AAPL, AME, ANET, CAT, CMI, COR, CPAY, CSX, EME, ETN, HAS, HLT, HUBB, INTC, KLAC, MAR, MCD, PEG, PM, SRE, STX, TT, VRTX, WMT
-
-**Notable exclusions (score too low or setup degraded):**
-- **INTC** (38 pts — FAIL): R:R below 1.5:1; Q1 2026 EPS guidance breakeven to negative; risk/reward does not support entry
-- **ANET** (54 pts): Death cross forming on daily chart; technology sector headwinds; borderline pass
-- **SRE** (52 pts): RSI 79 (overbought); price extended ~6% above 50-day EMA; not a genuine pullback entry
-- **PM** (~60 pts): Extended to $174.66, ~6–7% above 50-day EMA ($163–165); entry zone passed; R:R to T1 <0.9:1 at current price
-- **WMT** (73 pts — qualified but ranked below threshold top 3): R:R to T1 ($134) deteriorated to <1:1 at current price $126.52; stock moved above ideal entry zone
-- **EME** (76 pts), **KLAC** (76 pts): Both qualified; excluded from top 3 in favour of PEG/VRTX due to industrials/tech sector headwinds in current downtrend; both picked on 2026-03-15
+- **PEG** (PSEG): Valid setup — already recommended on March 16, 2026 (yesterday). Avoiding same-week duplicate.
+- **LRCX** (Lam Research): Technology sector in confirmed correction with geopolitical chip export restriction risk; sector deduction brings score below qualifying peers.
+- **ETN** (Eaton): Previously scored 58/100 on March 12; industrial tariff headwinds persist; R:R to T1 only ~1.2:1.
+- **CB** (Chubb): Trading near 52-week highs post-record Q4 earnings rally; pullback is shallow and R:R is limited.
+- **ODFL** (Old Dominion): 12% pullback from recent highs is steeper than ideal; analyst consensus is "Hold" (13 Hold / 4 Sell / 9 Buy); limited R:R to average target.
+- **CSCO** (Cisco): Above 50-day MA but technology sector headwinds and limited R:R to analyst consensus target.
+- **Others** (ALL, CB, CINF, CL, CSX, DOV, DRI, EW, GL, LYV, PLD, SNA, YUM): Scored below the top 3 on combined technical, R:R, fundamental, and sector-fit criteria in the current defensive-rotation market environment.
 
 ---
 
@@ -178,6 +166,9 @@ _Recommendations from the last 14 days with no outcome recorded yet._
 | 2026-03-16 | COR | $348–$355 | $337 | $377 | $420 | 2.3:1 |
 | 2026-03-16 | PEG | $81–$84 | $79 | $91 | $96 | 2.5:1 |
 | 2026-03-16 | VRTX | $462–$480 | $430 | $542 | $570 | 2.1:1 |
+| 2026-03-17 | CL | $88–$92 | $85.50 | $97 | $105 | 3.1:1 |
+| 2026-03-17 | ALL | $205–$210 | $198 | $244 | $260 | 3.7:1 |
+| 2026-03-17 | DOV | $208–$216 | $197 | $230 | $262 | 3.4:1 |
 
 ---
 
