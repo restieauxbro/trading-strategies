@@ -11,6 +11,24 @@ An AI-powered trading workflow for Cursor. A Cursor agent fetches a live market 
 - [Cursor](https://cursor.com) with a Pro or Business plan (required for background agents and cloud runs)
 - A [TrendSpider](https://trendspider.com) account with a scheduled scan — or swap in any scan URL that returns JSON
 
+### Optional: Python + yfinance (quotes, MAs, option chains)
+
+For local runs, agents can call **`scripts/yfinance_tools.py`** instead of scraping Yahoo by hand. [yfinance](https://github.com/ranaroussi/yfinance) is **unofficial**; data can lag, omit fields, or rate-limit — verify anything material in your broker platform.
+
+```bash
+cd trading-strategy
+python3 -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+
+python scripts/yfinance_tools.py summary ORCL
+python scripts/yfinance_tools.py technicals ORCL --days 260
+python scripts/yfinance_tools.py option-expiries ORCL
+python scripts/yfinance_tools.py option-calls ORCL --expiration 2026-04-17 --strike-min 160 --strike-max 200 --max-rows 30
+```
+
+Use **`.venv/bin/python`** in commands if you skip activating the venv.
+
 ### 1. Clone the repo
 
 ```bash
@@ -102,6 +120,9 @@ trading-strategy/
 │       ├── trades-log.csv                 ← persistent trade log for this strategy
 │       └── report.md                      ← current report, overwritten each run
 │
+├── scripts/
+│   └── yfinance_tools.py                ← optional CLI: summary / technicals / option chains
+├── requirements.txt                     ← optional: yfinance (see README)
 └── README.md
 ```
 

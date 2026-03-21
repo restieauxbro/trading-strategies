@@ -3,15 +3,15 @@
 ## Identity
 
 
-| Field             | Value                                                |
-| ----------------- | ---------------------------------------------------- |
-| Strategy name     | Bearish Call Spread                                  |
-| Scan source       | TrendSpider Scheduled Scan                           |
-| Scan URL          | *(not yet configured — add URL here when available)* |
-| Universe          | S&P 500 / Large Cap (Market Cap > $10B, Price > $50) |
-| Trading style     | Monthly options — bear call spreads (credit spreads) |
-| Max picks per run | 3                                                    |
-| Log file          | `strategies/bearish-call-spread/trades-log.csv`      |
+| Field             | Value                                                                                  |
+| ----------------- | -------------------------------------------------------------------------------------- |
+| Strategy name     | Bearish Call Spread                                                                    |
+| Scan source       | TrendSpider Scheduled Scan                                                             |
+| Scan URL          | https://charts.trendspider.com/scheduled_scans/view/sub-400848764c44d4b092d9442ad4d904 |
+| Universe          | S&P 500 / Large Cap (Market Cap > $10B, Price > $50)                                   |
+| Trading style     | Monthly options — bear call spreads (credit spreads)                                   |
+| Max picks per run | 3                                                                                      |
+| Log file          | `strategies/bearish-call-spread/trades-log.csv`                                        |
 
 
 ---
@@ -131,29 +131,32 @@ Scores are out of **100 points**. A ticker must reach the **minimum threshold** 
 
 ### Category C — Bearish Conviction (20 pts max)
 
-_Does the fundamental and narrative picture make a recovery unlikely?_
+*Does the fundamental and narrative picture make a recovery unlikely?*
 
-| Check                                                                          | Points |
-| ------------------------------------------------------------------------------ | ------ |
-| Revenue or EPS declining year-over-year (deteriorating business)               | 6      |
-| Analyst downgrade or price target cut in the last 30 days                      | 6      |
-| Recent earnings miss (most recent report came in below estimates)               | 5      |
-| Sector rotation out of this stock's sector (institutional selling pressure)     | 3      |
+
+| Check                                                                       | Points |
+| --------------------------------------------------------------------------- | ------ |
+| Revenue or EPS declining year-over-year (deteriorating business)            | 6      |
+| Analyst downgrade or price target cut in the last 30 days                   | 6      |
+| Recent earnings miss (most recent report came in below estimates)           | 5      |
+| Sector rotation out of this stock's sector (institutional selling pressure) | 3      |
 
 
 ### Category D — Bearish Narrative & Macro (15 pts max)
 
-_Is the broader context reinforcing the downside case?_
+*Is the broader context reinforcing the downside case?*
 
-| Check                                                                          | Points |
-| ------------------------------------------------------------------------------ | ------ |
-| Negative news catalyst in the last 2 weeks (guidance cut, regulatory issue, etc.) | 8  |
-| Sector in confirmed downtrend / currently out of favour                        | 7      |
+
+| Check                                                                             | Points |
+| --------------------------------------------------------------------------------- | ------ |
+| Negative news catalyst in the last 2 weeks (guidance cut, regulatory issue, etc.) | 8      |
+| Sector in confirmed downtrend / currently out of favour                           | 7      |
 
 
 ---
 
 ### Deductions
+
 
 | Condition                                                                   | Deduction |
 | --------------------------------------------------------------------------- | --------- |
@@ -171,6 +174,12 @@ _Is the broader context reinforcing the downside case?_
 - For Category B, award only the highest applicable delta band
 - If a data point cannot be verified, do not award the points for it — note this in the output
 - Show the score breakdown in the per-ticker output: e.g. `Score: 68/100 (A:28 B:25 C:10 D:8 Ded:-3)`
+
+---
+
+## Optional: yfinance CLI (local)
+
+For **quotes, SMAs, expirations, and call-chain slices** (bid/ask, implied vol as reported by Yahoo), run the repo script from a venv — see root **`README.md`** (`scripts/yfinance_tools.py`). Data is unofficial; confirm strikes and greeks in your platform when possible.
 
 ---
 

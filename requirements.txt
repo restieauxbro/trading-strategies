@@ -1,0 +1,2 @@
+# Optional tooling for agents / local runs (see README — Market data via yfinance).
+yfinance>=0.2.40
