@@ -7,7 +7,8 @@ Before starting, load the following files:
 1. **Skill: `analyse-tickers`** — located at `.cursor/skills/analyse-tickers/SKILL.md` — research checklist, scoring criteria, market context check, and per-ticker output format
 2. **Skill: `log-trade-csv`** — located at `.cursor/skills/log-trade-csv/SKILL.md` — CSV schema and writing rules
 3. **Skill: `track-outcomes`** — located at `.cursor/skills/track-outcomes/SKILL.md` — 14-day outcome lookback and CSV update rules
-4. `strategies/bearish-call-spread/config.md` — this strategy's scan URL, filters, scoring system, and spread construction notes
+4. **Skill: `read-tradingview-chart`** — located at `.cursor/skills/read-tradingview-chart/SKILL.md` — headed Chrome (profile **Tim**), saved TradingView layout URL, VTO + B-Xtrender bearish confirmation rules (uses **Skill: `browser-use`** at `.cursor/skills/browser-use/SKILL.md` for CLI commands)
+5. `strategies/bearish-call-spread/config.md` — this strategy's scan URL, filters, scoring system, and spread construction notes
 
 All behaviour rules, scoring weights, output formats, and CSV conventions are defined in those files. This `AGENT.md` defines only the workflow steps specific to this strategy.
 
@@ -23,7 +24,7 @@ Fetch the scan URL from `config.md`.
 
 Extract `symbolsFound` (the ticker list) and `timestamp` (convert from Unix ms to a human-readable datetime).
 
-If `symbolsFound` is empty, write the empty-scan row per the `log-trade-csv` skill and skip to Step 6.
+If `symbolsFound` is empty, write the empty-scan row per the `log-trade-csv` skill, complete Steps 2–3 (outcomes + market context), skip Steps 4–8, then continue at Step 9.
 
 ---
 
@@ -99,11 +100,13 @@ For the triage survivors only, follow the full research checklist in the `analys
 
 ---
 
-### Step 6 — Score and Select Top 3
+### Step 6 — Score and Select Top 3 (pre–chart shortlist)
 
 Score each ticker using the points table in `config.md`. Discard any ticker that scores below the minimum threshold (55 pts). Rank the remainder by total score.
 
-Select the top 3 scoring tickers. For each, present the standard output format from the `analyse-tickers` skill **plus** the spread construction details:
+Select the **top 3 scoring tickers** as the initial shortlist. **Do not** append to CSV or treat these as final until **Step 7 (TradingView)** is complete.
+
+For each shortlist ticker, present the standard output format from the `analyse-tickers` skill **plus** the spread construction details:
 
 ```
 Ticker: [SYMBOL]
@@ -135,7 +138,32 @@ If fewer than 3 tickers reach the minimum threshold, only present those that do 
 
 ---
 
-### Step 7 — Save New Picks to CSV
+### Step 7 — TradingView visual confirmation (top 3)
+
+After Step 6, **confirm each shortlist ticker on the shared TradingView layout** using the **`read-tradingview-chart`** skill end to end.
+
+**Goal:** For bearish call spreads, prefer names where **both** are true on the **latest** bar (per that skill):
+
+- **VTO:** red dot **sell** signal visible.
+- **B-Xtrender:** **bearish territory** — red histogram **below** the zero line (not still green / bullish above zero).
+
+**Procedure:**
+
+1. **Clear prior chart snapshots** (fresh scan): delete `strategies/bearish-call-spread/assets/tradingview-*.png` before any new screenshots — see **Fresh scan** in `read-tradingview-chart` so this run’s report cannot reuse stale images. `mkdir -p strategies/bearish-call-spread/assets` if the folder is missing.
+2. Follow the skill exactly: **headed** browser, Chrome profile **`Tim`**, base URL `https://www.tradingview.com/chart/z25AhAlV/?symbol=` + correct `EXCHANGE%3ATICKER`.
+3. Check each of the three symbols in turn; capture a **screenshot** per symbol when possible (path noted in output).
+4. Record the skill’s **output snippet** for each ticker (VTO yes/no, B-Xtrender yes/no, chart confirm: full / partial / none / unable).
+
+**If a shortlist ticker fails full confirmation:**
+
+- First try to **substitute** the next-highest scoring ticker from Step 6 (that still meets the 55 pt threshold) and run the same TradingView check, until you have **up to 3** picks that are **fully chart-confirmed**, **or** you run out of qualified alternates.
+- Any pick kept without full confirmation must be labelled **not chart-confirmed** in the report and in the session summary, with a one-line reason.
+
+Merge the TradingView lines into each final pick’s write-up before Step 8.
+
+---
+
+### Step 8 — Save New Picks to CSV
 
 Append one row per pick to:
 
@@ -154,13 +182,13 @@ Follow all rules in the `log-trade-csv` skill. Leave all four outcome columns em
 
 ---
 
-### Step 8 — Generate Report
+### Step 9 — Generate Report
 
 Overwrite `strategies/bearish-call-spread/report.md` with the full current report. See the **Report Format** section below.
 
 ---
 
-### Step 9 — Final Summary
+### Step 10 — Final Summary
 
 Output a session summary:
 
@@ -172,10 +200,10 @@ Outcomes recorded today: [N rows updated, or "none due"]
 Tickers in scan ([count]): [list]
 Market context: [one line]
 
-TOP 3 PICKS:
-1. [SYMBOL] — Short $[strike]/$[strike] call spread, ~[X]% PoP, exp [Month]
-2. [SYMBOL] — Short $[strike]/$[strike] call spread, ~[X]% PoP, exp [Month]
-3. [SYMBOL] — Short $[strike]/$[strike] call spread, ~[X]% PoP, exp [Month]
+TOP 3 PICKS (after TradingView VTO + B-Xtrender check):
+1. [SYMBOL] — Short $[strike]/$[strike] call spread, ~[X]% PoP, exp [Month] — Chart: [confirmed / partial / not confirmed]
+2. [SYMBOL] — … — Chart: […]
+3. [SYMBOL] — … — Chart: […]
 
 Full details above. Results saved to strategies/bearish-call-spread/trades-log.csv.
 Report written to strategies/bearish-call-spread/report.md.
@@ -186,6 +214,8 @@ Report written to strategies/bearish-call-spread/report.md.
 ## Report Format
 
 `report.md` is overwritten every run. Use this structure:
+
+**TradingView images:** Step 7 deletes `assets/tradingview-*.png` at the start of a fresh scan; embed only `assets/tradingview-<TICKER>.png` files created in that same Step 7 (so Markdown image links always match the current run).
 
 ```markdown
 # Bearish Call Spread — Current Report
@@ -201,13 +231,13 @@ _Last updated: [YYYY-MM-DD]_
 ## Today's Top Picks
 
 ### 1. [SYMBOL] — [one-line summary]
-[Full trade plan block from Step 5 output format]
+[Full trade plan block from Step 6 output format, including **TradingView** line from Step 7]
 
 ### 2. [SYMBOL] — [one-line summary]
-[Full trade plan block]
+[Full trade plan block including TradingView line]
 
 ### 3. [SYMBOL] — [one-line summary]
-[Full trade plan block]
+[Full trade plan block including TradingView line]
 
 ---
 

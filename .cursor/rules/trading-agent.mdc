@@ -17,8 +17,12 @@ trading-strategy/
 │       │   └── SKILL.md              ← research, scoring, output format
 │       ├── log-trade-csv/
 │       │   └── SKILL.md              ← CSV schema and writing rules
-│       └── track-outcomes/
-│           └── SKILL.md              ← 14-day outcome lookback and CSV update
+│       ├── track-outcomes/
+│       │   └── SKILL.md              ← 14-day outcome lookback and CSV update
+│       ├── browser-use/
+│       │   └── SKILL.md              ← browser-use CLI automation (optional)
+│       └── read-tradingview-chart/
+│           └── SKILL.md              ← TradingView layout + VTO / B-Xtrender read (optional)
 ├── strategies/
 │   └── <strategy-name>/
 │       ├── AGENT.md                  ← workflow steps for this strategy's agent

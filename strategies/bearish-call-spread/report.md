@@ -1,5 +1,5 @@
 # Bearish Call Spread — Current Report
-_Last updated: 2026-03-21_
+_Last updated: 2026-03-23_
 
 ---
 
@@ -54,6 +54,10 @@ Fundamental Note:
 Adobe remains highly cash-generative, but growth has cooled and sentiment is still normalizing after the abandoned Figma acquisition and a slower digital-media expansion path.
 ```
 
+**TradingView** (saved layout `z25AhAlV`, 1D, NASDAQ:ADBE): VTO red **sell** dot **yes**; B-Xtrender **bearish** (red below zero) **yes**. **Chart confirm: full** (snapshot below).
+
+![TradingView — ADBE — VTO + B-Xtrender](assets/tradingview-ADBE.png)
+
 ---
 
 ### 2. ORCL — AI multiple unwind with 50-day and pivot band overhead
@@ -91,6 +95,10 @@ Fundamental Note:
 The business is not “broken,” but the **equity** is de-rating on debate over durability and payback on AI/datacenter spend—exactly the kind of narrative that keeps recovery paths uneven.
 ```
 
+**TradingView** (saved layout `z25AhAlV`, 1D, NYSE:ORCL): VTO red **sell** dot **yes**; B-Xtrender **bearish** (red below zero) **yes**. **Chart confirm: full** (snapshot below).
+
+![TradingView — ORCL — VTO + B-Xtrender](assets/tradingview-ORCL.png)
+
 ---
 
 ### 3. NOW — Large-cap SaaS breakdown; 50-day + $120–$126 pivot band
@@ -127,6 +135,10 @@ Key Risks:
 Fundamental Note:
 ServiceNow is still a durable grower; the thesis here is **primarily technical**—selling defined-risk calls above a well-defined MA + pivot ceiling after persistent lower highs.
 ```
+
+**TradingView** (saved layout `z25AhAlV`, 1D, NYSE:NOW): VTO red **sell** dot **yes**; B-Xtrender **bearish** (red below zero) **yes**. **Chart confirm: full** (snapshot below).
+
+![TradingView — NOW — VTO + B-Xtrender](assets/tradingview-NOW.png)
 
 ---
 
