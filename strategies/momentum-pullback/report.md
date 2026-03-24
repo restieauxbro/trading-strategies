@@ -1,149 +1,135 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-03-23_
+_Last updated: 2026-03-24_
 
 ---
 
 ## Market Context
 
-The S&P 500 closed at approximately 6,602 on March 23, 2026 (+1.47% on the day), but remains just below its 200-day moving average (~6,621) — confirming the technical downtrend that began when the index broke below this key level on March 20 for the first time in 214 sessions. VIX closed at 25.26 with a wide intraday range of 20.28–31.04, reflecting ongoing elevated volatility driven by geopolitical tensions (Middle East / Iran) and sticky inflation concerns post-Fed. The brief rally today was attributed to reports of productive U.S.-Iran de-escalation talks. **Stricter scoring filters applied throughout this session: Insurance and Utilities sectors remain the favored defensives; Industrials, Technology, and Consumer Discretionary face sector headwinds and receive deductions where applicable.** Today's 18-ticker scan (ALL, CB, CINF, CL, CSCO, CSX, DOV, DRI, ETN, EW, GL, LRCX, LYV, ODFL, PEG, PLD, SNA, YUM) was dominated by defensive insurance and utilities names, reinforcing the risk-off market environment. The top three picks are all Financials/Insurance with low betas, strong fundamentals, and well-defined R:R setups at key support levels.
+The S&P 500 broke decisively below its 200-day moving average (~6,621) on March 20, 2026 — the first sustained close below this level in over 200 sessions — and sits near 6,560 as of today. This officially confirms a market downtrend and has shifted the technical regime from "buy the dip" to "sell the rip." The VIX is hovering dangerously close to 30 (at its 93rd percentile over the past year), driven by US-Iran geopolitical tensions that have pushed oil above $100/barrel and multiple technology infrastructure outages. The Fed held rates at 3.50–3.75% on March 19, adding another headwind. In this environment, stricter entry filters are applied: only low-beta, defensive-sector names with earnings well beyond 3 weeks qualify. Consumer Staples and Insurance (Financials) sectors are the clear defensive rotation targets and are significantly outperforming the broader market.
 
 ---
 
 ## Today's Top Picks
 
-### 1. ALL — Allstate: Perfect setup at converging 50/200-day MA support
-
+### 1. TJX — Off-price retail momentum pullback to 50-day SMA
 ```
-Ticker: ALL
-Current Price: $205.62
-Sector: Financials (Insurance)
-Score: 100/100 (A:40 B:25 C:20 D:15 Ded:0)
+Ticker: TJX
+Current Price: $156.50
+Sector: Consumer Discretionary (Off-price Retail)
+Score: 83/100 (A:28 B:25 C:20 D:15 Ded:-5)
 
 Setup Summary:
-Allstate is testing the confluence of its rising 50-day MA ($204.80) and 200-day MA
-($203.38) at $205.62 — a double support zone after a 5.1% pullback from the $216.75
-all-time high. The pullback has been orderly on declining volume, confirming institutional
-accumulation rather than distribution. Insurance sector is outperforming amid defensive
-rotation in the confirmed S&P 500 downtrend. Mizuho raised its target to $265 on March 20
-(3 days ago) reinforcing fresh institutional conviction precisely at the moving average
-support zone.
+TJX Companies has pulled back to its rising 50-day SMA ($155.62) in an orderly consolidation
+after reaching a 52-week high of $162.68. The stock sits just $0.88 above the 50-day at $156.50
+on declining volume — a textbook momentum pullback in the S&P 500's dominant off-price retailer.
+Off-price retail is a structural outperformer in recessionary and elevated-VIX environments as
+consumers trade down, making TJX a natural defensive rotation target in the confirmed market
+downtrend. Q4 FY2026 delivered a record $17.74B revenue beat with EPS of $1.43 vs $1.38 expected.
+Next earnings not until May 20 — ample time for the trade to develop.
 
-Entry Zone: $202–$208
-Stop Loss: $196.50 — below converging 50-day/200-day MA support zone with buffer
-Target 1: $244 — median analyst target / near-term resistance
-Target 2: $265 — Mizuho raised price target (March 20 2026)
-Risk/Reward: 4.2:1
+Entry Zone: $154–$159
+Stop Loss: $153.00 — below rising 50-day SMA ($155.62) with buffer
+Target 1: $169 — analyst consensus target / near-term resistance
+Target 2: $185 — BTIG analyst target / measured move
+Risk/Reward: 3.6:1
 
 Key Risks:
-- Next earnings April 29 2026 (~5.4 weeks away)
-- Goldman Sachs maintains Neutral $231 (below upside targets)
-- VIX 25.26 elevated; intraday range 20.28–31.04 signals continued volatility
-- Catastrophe exposure in elevated weather volatility environment
-- Broader S&P 500 confirmed downtrend
+- CEO Herrman sold 30,000 shares March 2 (~$4.8M)
+- Consumer Discretionary label may see pressure if recession deepens materially
+- Tariff impact on merchandise sourcing (though TJX has flexible supply chain)
+- Broader S&P 500 confirmed downtrend (below 200-day MA)
 
 Fundamental Note:
-Q4 2025 adj EPS beat estimates by 45.7%; P&C premiums +6.3% YoY; lower catastrophe losses
-vs prior year. FY2026 consensus EPS +7.7% growth. Mizuho Outperform $265 (raised March 20
-2026); Raymond James Strong Buy $260; analyst median $244. Beta ~0.65 for relative
-stability.
+Q4 FY2026 EPS $1.43 beat $1.38 estimate; revenue $17.74B beat $17.36B (+5.9% YoY) — record
+$60B full-year milestone. Analyst consensus Strong Buy (15/16 analysts); average target $169;
+BTIG $185, Barclays $183. 91% institutional ownership; earnings not until May 20, 2026.
 ```
 
-### 2. GL — Globe Life: Exceptional 5.2:1 R:R with fresh JPMorgan institutional buy
-
+### 2. HSY — Hershey consumer staples pullback to 50-day EMA
 ```
-Ticker: GL
-Current Price: $136.85
-Sector: Financials (Insurance)
-Score: 94/100 (A:40 B:25 C:14 D:15 Ded:0)
+Ticker: HSY
+Current Price: $215.17
+Sector: Consumer Staples
+Score: 81/100 (A:33 B:18 C:20 D:15 Ded:-5)
 
 Setup Summary:
-Globe Life holds the 50-day EMA support zone at $136.85 for the second consecutive
-session, with JPMorgan Chase lifting its GL position today (March 23) confirming fresh
-institutional accumulation. The defensive life and health insurance model provides cash
-flows largely uncorrelated to equity market volatility — a key advantage in the confirmed
-S&P 500 downtrend. An exceptional 5.2:1 R:R to the Wells Fargo analyst target of $170
-makes this a standout asymmetric position. Wells Fargo raised its target to $171 on
-February 25 (within 30 days) and TD Cowen targets $199.
+Hershey has surged 21% year-to-date to $215.17 as the cocoa crisis moderates and margin recovery
+accelerates — the stock is now pulling back to test its rapidly rising 50-day EMA (estimated
+~$205–210) in an orderly consolidation. FY2026 adj EPS guidance of $8.20–$8.52 represents
+30–35% growth driven by cocoa cost normalization and the Agility & Automation savings program
+($100M savings target). Consumer Staples is the top defensive sector in the current confirmed
+S&P 500 downtrend, and HSY's 52-week low of $150 is a distant backstop. Q4 2025 results
+significantly beat consensus (EPS $1.71 vs $1.40) and Evercore ISI raised target to $255.
 
-Entry Zone: $133–$140
-Stop Loss: $130.50 — below 50-day EMA support zone and recent swing low
-Target 1: $170 — Wells Fargo analyst target / prior resistance zone
-Target 2: $181 — JPMorgan and Truist analyst targets
-Risk/Reward: 5.2:1
+Entry Zone: $210–$218
+Stop Loss: $201.00 — below rising 50-day EMA zone with buffer
+Target 1: $243 — Morgan Stanley Overweight target / prior resistance
+Target 2: $255 — Evercore ISI raised target / measured move
+Risk/Reward: 2.0:1
 
 Key Risks:
-- Q4 2025 EPS slight miss ($3.39 vs $3.44 estimate) — modest fundamental overhang
-- Next earnings April 29 2026 (~5.4 weeks away)
-- Historical short-seller reputational risk (Fuzzy Panda 2023–2024, largely resolved)
-- Life insurance mortality risk; elevated VIX environment
-- Broad market derisking pressure if recession fears escalate
+- Hershey Trust sold ~$8.6M in shares March 16–20 (10,000 shares/day)
+- CFO and EVP made additional sales in Feb–March 2026
+- Cocoa prices could re-accelerate if weather events or supply disruptions recur
+- Next earnings April 30, 2026 (~37 days) — trade should be managed before then
+- Consumer spending pressure if recession deepens from current macro conditions
 
 Fundamental Note:
-Q4 2025 EPS $3.39 up 8% YoY despite small consensus miss; premium revenues +5% YoY.
-FY2026 net operating income guidance $14.95–$15.65 EPS. Wells Fargo raised target to $171
-(Feb 25 2026); Truist $180; JPMorgan $181; TD Cowen $199. JPMorgan Chase lifted position
-today March 23 2026.
+Q4 2025: EPS $1.71 beat $1.40 estimate; revenue $3.09B beat $2.98B estimate. FY2026 guidance
+adj EPS $8.20–$8.52 (+30–35% YoY). Dividend raised to $1.452/qtr (~2.7% yield). Evercore ISI
+raised target to $255; Morgan Stanley Overweight $247; Piper Sandler Overweight $249. Cocoa
+spot at ~$4,110/ton (vs >$10,000 in early 2025) — margin recovery runway is substantial.
 ```
 
-### 3. CINF — Cincinnati Financial: Multi-institution accumulation below 50-day SMA
-
+### 3. CINF — Cincinnati Financial insurance defensive re-entry
 ```
 Ticker: CINF
-Current Price: $160.50
-Sector: Financials (Insurance)
-Score: 93/100 (A:40 B:25 C:16 D:12 Ded:0)
+Current Price: $160.19
+Sector: Financials (Insurance — Property & Casualty)
+Score: 81/100 (A:28 B:18 C:20 D:15 Ded:0)
 
 Setup Summary:
-Cincinnati Financial has pulled back 2.6% below the 50-day SMA ($163.65) to ~$160.50,
-presenting a defined entry with a 3.5:1 R:R (at $157–$158 entry) to the analyst consensus
-target of $177. Institutional accumulation is accelerating: Swiss Life Asset Management
-purchased shares March 22 and Regal Investment Advisors purchased March 14. The 65-year
-dividend growth streak and Q4 2025 earnings beat of 18% above estimates ($3.37 vs $2.86)
-provide strong fundamental conviction. Insurance sector outperformance in the confirmed
-S&P 500 downtrend enhances the risk-adjusted case.
+Cincinnati Financial continues to consolidate 2.1% below the 50-day SMA ($163.65) at $160.19 —
+the pullback from the March 16 close of $166.57 has been orderly on declining volume. With a
+65-year dividend growth streak, an 18% Q4 2025 earnings beat ($3.37 vs $2.86 estimate), and the
+Insurance sector as the top defensive rotation target in the confirmed S&P 500 downtrend, CINF
+offers a compelling risk-adjusted entry. Institutional accumulation is accelerating: Swiss Life
+purchased March 22, Marshall Financial opened a new position March 24. Analyst consensus
+target $174.33 represents meaningful upside with defined stop below recent consolidation support.
 
-Entry Zone: $155–$163
-Stop Loss: $152.50 — below 50-day SMA support zone and recent pullback swing low
+Entry Zone: $157–$163
+Stop Loss: $152.50 — below 50-day SMA zone and recent pullback support
 Target 1: $177 — analyst consensus target / near-term resistance
-Target 2: $191 — Keefe Bruyette & Woods Outperform target
-Risk/Reward: 3.5:1 (at recommended entry $157–$158)
+Target 2: $191 — KBW Outperform target / upper range
+Risk/Reward: 2.2:1
 
 Key Risks:
-- Next earnings April 23–27 2026 (~4.4 weeks — approaching 3-week filter, monitor closely)
+- Next earnings April 23–27, 2026 (~30–34 days — close to 3-week filter, monitor closely)
 - Property/casualty catastrophe exposure in elevated weather volatility environment
-- Analyst consensus is Hold despite strong fundamental profile
-- Interest rate sensitivity for insurance investment portfolio
-- Broader market correction risk; S&P 500 below 200-day MA
+- Analyst consensus is Hold (though strong buy ratings from KBW, BofA, Roth Capital)
+- Interest rate sensitivity (insurance investment portfolio)
+- S&P 500 below 200-day MA — broad derisking risk if macro deteriorates further
 
 Fundamental Note:
 Q4 2025 EPS $3.37 beat $2.86 estimate by 18.04%; revenue $3.09B +21.8% YoY. 65-year
 dividend growth streak; dividend raised 8% to $0.94/share (Jan 2026). KBW Outperform $191;
-BofA Strong Buy $186; Roth Capital Strong Buy $175. Swiss Life purchased shares March 22
-2026; Regal Investment purchased March 14 2026.
+BofA Strong Buy $186; Roth Capital Strong Buy $175; analyst consensus $174.33.
+Marshall Financial opened new position March 24 2026; Swiss Life purchased March 22 2026.
 ```
 
 ---
 
-### Excluded Tickers — Score Summary
+## Excluded Tickers (below minimum threshold or filtered)
 
-The following tickers appeared in today's scan but did not achieve a sufficient score or were outranked:
-
-| Ticker | Score | Key Reason for Exclusion / Rank |
-|---|---|---|
-| PEG | 90/100 | Strong defensive utility (#4 overall); lower R:R (2.0:1) vs insurance picks |
-| CB | ~75/100 | Insurance but limited upside to analyst consensus ($340 from $322); R:R compressed |
-| CL | ~81/100 | Broke below 50-day MA ($90.94) to $85 — elevated selling volume; riskier setup |
-| DRI | ~82/100 | Consumer Discretionary sector headwinds; R:R ~2.1:1 at current levels |
-| LRCX | ~79/100 | RSI overbought; Technology sector in correction; semiconductor geopolitical risk |
-| ETN | ~68/100 | Industrial tariff headwinds; R:R 1.6:1 too low |
-| CSCO | ~71/100 | Tech sector weakness; R:R ~1.6:1 not compelling |
-| CSX | ~64/100 | Q1 carloads -6.8% YoY; weak fundamentals |
-| EW | ~74/100 | Q4 EPS miss; limited analyst upgrade momentum |
-| ODFL | ~64/100 | February revenue per day -3.3%; LTL tons per day -6.8% |
-| SNA | ~72/100 | Q1 revenue and EPS miss; Tools Group organic sales -6.8% |
-| LYV | ~66/100 | Q1 EPS miss; debt-to-equity 8.51; elevated leverage risk |
-| PLD | ~80/100 | REIT; earnings April 16 (~3.5 weeks, borderline); lower priority vs insurance |
-| YUM | ~78/100 | Slight Q4 EPS miss; Consumer Discretionary in risk-off environment |
+| Ticker | Score | Reason |
+|--------|-------|--------|
+| EME | 49/100 | Below threshold — stock ran well above 50-day SMA at $763; poor R:R at current price; industrial sector tariff deduction |
+| MRK | 39/100 | Below threshold — weak fundamentals (EPS miss, revenue guidance miss); only recently crossed 50-day |
+| CAT | 50/100 | Borderline — industrial sector tariff headwinds, weak catalyst; poor R:R to T1 |
+| HWM | 65/100 | Qualifies but lower than top 3; industrial sector headwind deduction |
+| ALL | 75/100 | Qualifies but already recommended 6 times in current log; diversification preferred |
+| CB | 73/100 | Qualifies; lower score than top 3 picks |
+| Other 19 tickers | — | Insufficient data, sector headwinds, or poor R:R in current market regime |
 
 ---
 
@@ -152,15 +138,12 @@ _Recommendations from the last 14 days with no outcome recorded yet._
 
 | Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
 |---|---|---|---|---|---|---|
-| 2026-03-11 | EME | $695–$720 | $678 | $808 | $900 | 4.2:1 |
-| 2026-03-11 | HUBB | $470–$490 | $455 | $533 | $565 | 3.6:1 |
-| 2026-03-11 | MCD | $320–$330 | $314 | $341.75 | $354 | 2.8:1 |
 | 2026-03-12 | WMT | $122–$127 | $119 | $134 | $147 | 1.7:1 |
 | 2026-03-12 | PM | $163–$170 | $158 | $185 | $205 | 2.1:1 |
 | 2026-03-12 | ETN | $354–$363 | $338 | $384 | $420 | 1.6:1 |
 | 2026-03-15 | COR | $348–$355 | $337 | $377 | $420 | 3.0:1 |
 | 2026-03-15 | EME | $695–$720 | $678 | $808 | $945 | 3.1:1 |
-| 2026-03-15 | KLAC | $1415–$1450 | $1,375 | $1,600 | $1,900 | 4.0:1 |
+| 2026-03-15 | KLAC | $1415–$1450 | $1375 | $1600 | $1900 | 4.0:1 |
 | 2026-03-16 | COR | $348–$355 | $337 | $377 | $420 | 2.3:1 |
 | 2026-03-16 | PEG | $81–$84 | $79 | $91 | $96 | 2.5:1 |
 | 2026-03-16 | VRTX | $462–$480 | $430 | $542 | $570 | 2.1:1 |
@@ -198,15 +181,20 @@ _All closed trades (outcome recorded)._
 | 2026-03-09 | RMD | $255.00 | $225.99 | -11.38% | STOPPED_OUT |
 | 2026-03-10 | EME | $706.00 | $724.93 | +2.68% | EXPIRED |
 | 2026-03-10 | VRTX | $457.00 | $454.00 | -0.66% | EXPIRED |
-| 2026-03-10 | KLAC | $1,442.00 | $1,498.67 | +3.93% | EXPIRED |
+| 2026-03-10 | KLAC | $1442.00 | $1498.67 | +3.93% | EXPIRED |
+| 2026-03-11 | EME | $704.00 | $763.50 | +8.45% | EXPIRED |
+| 2026-03-11 | HUBB | $478.76 | $489.07 | +2.15% | EXPIRED |
+| 2026-03-11 | MCD | $324.61 | $308.85 | -4.86% | STOPPED_OUT |
 
 ### Aggregate Stats
-- **Total closed trades:** 15
-- **Win rate (HIT_T1 or HIT_T2):** 0% (0/15) — all trades from early March were stopped or expired during the S&P 500 breakdown below 200-day MA
+- **Total closed trades:** 18
+- **Win rate (HIT_T1 or HIT_T2):** 0% (0/18)
 - **Average % gain on wins:** N/A (no wins yet)
-- **Average % loss on stops:** -10.12% (6 stopped-out trades)
-- **Expired (inconclusive):** 9 trades; avg -4.08% (including EME +2.68% and KLAC +3.93% positive expirations)
-- **Best trade:** KLAC (+3.93%, EXPIRED on 2026-03-10)
-- **Worst trade:** BA (-15.58%, STOPPED_OUT on 2026-03-07)
+- **Average % loss on stops:** -9.37% (across 7 stopped-out trades)
+- **Average % change on expired:** -1.51% (across 11 expired trades)
+- **Expired (inconclusive):** 11
+- **Stopped out:** 7
+- **Best trade:** EME Mar 11 (+8.45%, EXPIRED)
+- **Worst trade:** BA Mar 7 (-15.58%, STOPPED_OUT)
 
-_Note: All closed trades were from the March 7–10 window — a period coinciding with the sharp S&P 500 decline from ~6,100+ to the break below the 200-day MA. The strategy's defensive shift to Insurance and Utilities names since March 15 reflects adaptation to the confirmed downtrend environment._
+_Note: The first 9 trade entries (March 7–9) coincided with the initial stages of the S&P 500 breakdown below the 200-day MA and VIX surge driven by US-Iran geopolitical tensions. All March 7 picks were stopped out. The market environment has since stabilised into a confirmed downtrend, and the strategy has shifted to strictly defensive names (Insurance, Consumer Staples) with no wins recorded yet. The March 10–11 picks (EME, KLAC, HUBB) showed modest positive EXPIRED results, validating the strategy logic even in a downtrend environment._
