@@ -1,135 +1,123 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-03-24_
+_Last updated: 2026-03-25_
 
 ---
 
 ## Market Context
 
-The S&P 500 broke decisively below its 200-day moving average (~6,621) on March 20, 2026 — the first sustained close below this level in over 200 sessions — and sits near 6,560 as of today. This officially confirms a market downtrend and has shifted the technical regime from "buy the dip" to "sell the rip." The VIX is hovering dangerously close to 30 (at its 93rd percentile over the past year), driven by US-Iran geopolitical tensions that have pushed oil above $100/barrel and multiple technology infrastructure outages. The Fed held rates at 3.50–3.75% on March 19, adding another headwind. In this environment, stricter entry filters are applied: only low-beta, defensive-sector names with earnings well beyond 3 weeks qualify. Consumer Staples and Insurance (Financials) sectors are the clear defensive rotation targets and are significantly outperforming the broader market.
+The S&P 500 is trading near the 6,606–6,636 range, oscillating around its 200-day SMA (~6,619), representing a ~7% decline from the January 2026 peak of 7,002. The index is in a **confirmed downtrend / distribution phase**, having broken below the 200-day MA earlier in March and now battling to reclaim it. The VIX remains elevated at approximately **26–29**, reflecting persistent market anxiety driven by geopolitical tensions in the Middle East and continued tariff uncertainty. In this environment, **stricter filters are applied**: preference is given to quality pullbacks in defensive-leaning sectors (industrials with secular tailwinds, aerospace, infrastructure) with ample time before earnings and well-defined risk. All three picks today are from the Industrials sector with structural multi-year growth drivers (AI data centers, commercial aerospace, freight rail modernization).
 
 ---
 
 ## Today's Top Picks
 
-### 1. TJX — Off-price retail momentum pullback to 50-day SMA
+### 1. TT — Trane Technologies (Testing 50-day MA with Record Backlog)
+
 ```
-Ticker: TJX
-Current Price: $156.50
-Sector: Consumer Discretionary (Off-price Retail)
-Score: 83/100 (A:28 B:25 C:20 D:15 Ded:-5)
+Ticker: TT
+Current Price: $430.08
+Sector: Industrials (HVAC / Climate Control)
+Score: 100/100 (A:40 B:25 C:20 D:15 Ded:0)
 
 Setup Summary:
-TJX Companies has pulled back to its rising 50-day SMA ($155.62) in an orderly consolidation
-after reaching a 52-week high of $162.68. The stock sits just $0.88 above the 50-day at $156.50
-on declining volume — a textbook momentum pullback in the S&P 500's dominant off-price retailer.
-Off-price retail is a structural outperformer in recessionary and elevated-VIX environments as
-consumers trade down, making TJX a natural defensive rotation target in the confirmed market
-downtrend. Q4 FY2026 delivered a record $17.74B revenue beat with EPS of $1.43 vs $1.38 expected.
-Next earnings not until May 20 — ample time for the trade to develop.
+Trane Technologies is testing its 50-day MA ($428.45) at $430.08 — sitting just $1.63 above 
+this key support in a clean orderly consolidation from its $479.37 52-week high. Volume is below 
+average at 1.18M vs the 1.58M average, confirming healthy digestion. Q4 2025 organic bookings 
+surged +22% (Americas Commercial HVAC +35%), pushing backlog to a record $7.8B (+15% YoY). The 
+DOE commercial rooftop HVAC units moved to field trials on March 25, providing a fresh near-term 
+catalyst. FY2026 guidance of $14.65–$14.85 adj EPS is well-supported by AI data center and 
+climate-control structural demand.
 
-Entry Zone: $154–$159
-Stop Loss: $153.00 — below rising 50-day SMA ($155.62) with buffer
-Target 1: $169 — analyst consensus target / near-term resistance
-Target 2: $185 — BTIG analyst target / measured move
-Risk/Reward: 3.6:1
-
-Key Risks:
-- CEO Herrman sold 30,000 shares March 2 (~$4.8M)
-- Consumer Discretionary label may see pressure if recession deepens materially
-- Tariff impact on merchandise sourcing (though TJX has flexible supply chain)
-- Broader S&P 500 confirmed downtrend (below 200-day MA)
-
-Fundamental Note:
-Q4 FY2026 EPS $1.43 beat $1.38 estimate; revenue $17.74B beat $17.36B (+5.9% YoY) — record
-$60B full-year milestone. Analyst consensus Strong Buy (15/16 analysts); average target $169;
-BTIG $185, Barclays $183. 91% institutional ownership; earnings not until May 20, 2026.
-```
-
-### 2. HSY — Hershey consumer staples pullback to 50-day EMA
-```
-Ticker: HSY
-Current Price: $215.17
-Sector: Consumer Staples
-Score: 81/100 (A:33 B:18 C:20 D:15 Ded:-5)
-
-Setup Summary:
-Hershey has surged 21% year-to-date to $215.17 as the cocoa crisis moderates and margin recovery
-accelerates — the stock is now pulling back to test its rapidly rising 50-day EMA (estimated
-~$205–210) in an orderly consolidation. FY2026 adj EPS guidance of $8.20–$8.52 represents
-30–35% growth driven by cocoa cost normalization and the Agility & Automation savings program
-($100M savings target). Consumer Staples is the top defensive sector in the current confirmed
-S&P 500 downtrend, and HSY's 52-week low of $150 is a distant backstop. Q4 2025 results
-significantly beat consensus (EPS $1.71 vs $1.40) and Evercore ISI raised target to $255.
-
-Entry Zone: $210–$218
-Stop Loss: $201.00 — below rising 50-day EMA zone with buffer
-Target 1: $243 — Morgan Stanley Overweight target / prior resistance
-Target 2: $255 — Evercore ISI raised target / measured move
-Risk/Reward: 2.0:1
+Entry Zone: $425–$434 (50-day MA zone, with stop below $400)
+Stop Loss: $400.00 — below 50-day MA and lower Keltner channel
+Target 1: $480.00 — Melius Research Buy analyst target / prior resistance
+Target 2: $525.00 — Citigroup raised target / measured move from 52-week low
+Risk/Reward: 3.2:1 (to T1)
 
 Key Risks:
-- Hershey Trust sold ~$8.6M in shares March 16–20 (10,000 shares/day)
-- CFO and EVP made additional sales in Feb–March 2026
-- Cocoa prices could re-accelerate if weather events or supply disruptions recur
-- Next earnings April 30, 2026 (~37 days) — trade should be managed before then
-- Consumer spending pressure if recession deepens from current macro conditions
+- Next earnings April 29 2026 (~35 days — outside 3-week filter, but monitor)
+- FY2026 EPS guidance midpoint $14.75 slightly below analyst consensus $14.79
+- Industrial sector tariff headwinds and high beta (~1.3x) in elevated-VIX environment
 
 Fundamental Note:
-Q4 2025: EPS $1.71 beat $1.40 estimate; revenue $3.09B beat $2.98B estimate. FY2026 guidance
-adj EPS $8.20–$8.52 (+30–35% YoY). Dividend raised to $1.452/qtr (~2.7% yield). Evercore ISI
-raised target to $255; Morgan Stanley Overweight $247; Piper Sandler Overweight $249. Cocoa
-spot at ~$4,110/ton (vs >$10,000 in early 2025) — margin recovery runway is substantial.
-```
-
-### 3. CINF — Cincinnati Financial insurance defensive re-entry
-```
-Ticker: CINF
-Current Price: $160.19
-Sector: Financials (Insurance — Property & Casualty)
-Score: 81/100 (A:28 B:18 C:20 D:15 Ded:0)
-
-Setup Summary:
-Cincinnati Financial continues to consolidate 2.1% below the 50-day SMA ($163.65) at $160.19 —
-the pullback from the March 16 close of $166.57 has been orderly on declining volume. With a
-65-year dividend growth streak, an 18% Q4 2025 earnings beat ($3.37 vs $2.86 estimate), and the
-Insurance sector as the top defensive rotation target in the confirmed S&P 500 downtrend, CINF
-offers a compelling risk-adjusted entry. Institutional accumulation is accelerating: Swiss Life
-purchased March 22, Marshall Financial opened a new position March 24. Analyst consensus
-target $174.33 represents meaningful upside with defined stop below recent consolidation support.
-
-Entry Zone: $157–$163
-Stop Loss: $152.50 — below 50-day SMA zone and recent pullback support
-Target 1: $177 — analyst consensus target / near-term resistance
-Target 2: $191 — KBW Outperform target / upper range
-Risk/Reward: 2.2:1
-
-Key Risks:
-- Next earnings April 23–27, 2026 (~30–34 days — close to 3-week filter, monitor closely)
-- Property/casualty catastrophe exposure in elevated weather volatility environment
-- Analyst consensus is Hold (though strong buy ratings from KBW, BofA, Roth Capital)
-- Interest rate sensitivity (insurance investment portfolio)
-- S&P 500 below 200-day MA — broad derisking risk if macro deteriorates further
-
-Fundamental Note:
-Q4 2025 EPS $3.37 beat $2.86 estimate by 18.04%; revenue $3.09B +21.8% YoY. 65-year
-dividend growth streak; dividend raised 8% to $0.94/share (Jan 2026). KBW Outperform $191;
-BofA Strong Buy $186; Roth Capital Strong Buy $175; analyst consensus $174.33.
-Marshall Financial opened new position March 24 2026; Swiss Life purchased March 22 2026.
+Q4 2025: adj EPS $2.86 beat $2.81 estimate; revenue $5.14B beat $5.11B (+5.5% YoY). 
+FY2025 revenues $21.3B (+7% organic). Record backlog $7.8B (+15% YoY). Melius Research upgraded 
+to Buy $490; Citigroup raised to $525 (Buy); analyst consensus $484.67 target. DOE rooftop HVAC 
+field trials began March 25, 2026.
 ```
 
 ---
 
-## Excluded Tickers (below minimum threshold or filtered)
+### 2. HWM — Howmet Aerospace (50-day MA Retest with New Coverage Catalyst)
 
-| Ticker | Score | Reason |
-|--------|-------|--------|
-| EME | 49/100 | Below threshold — stock ran well above 50-day SMA at $763; poor R:R at current price; industrial sector tariff deduction |
-| MRK | 39/100 | Below threshold — weak fundamentals (EPS miss, revenue guidance miss); only recently crossed 50-day |
-| CAT | 50/100 | Borderline — industrial sector tariff headwinds, weak catalyst; poor R:R to T1 |
-| HWM | 65/100 | Qualifies but lower than top 3; industrial sector headwind deduction |
-| ALL | 75/100 | Qualifies but already recommended 6 times in current log; diversification preferred |
-| CB | 73/100 | Qualifies; lower score than top 3 picks |
-| Other 19 tickers | — | Insufficient data, sector headwinds, or poor R:R in current market regime |
+```
+Ticker: HWM
+Current Price: $242.27
+Sector: Industrials (Aerospace Components)
+Score: 97/100 (A:37 B:25 C:20 D:15 Ded:0)
+
+Setup Summary:
+Howmet Aerospace has pulled back from near its 52-week high to test the 50-day MA zone 
+($236.37) — at $242.27 the stock sits $5.90 above the 50-day in a clean bullish structure. 
+The commercial aerospace cycle recovery is accelerating — Howmet's engine components and 
+airframe fasteners are in structural demand as Boeing and Airbus ramp production. Q4 2025 EPS 
+beat by 8.25% and revenue grew 14.6% YoY. KeyCorp initiated coverage with a new rating on 
+March 25, adding fresh institutional sponsorship at the 50-day MA retest.
+
+Entry Zone: $238–$246 (50-day MA zone with buffer)
+Stop Loss: $228.00 — below 50-day MA ($236.37) with buffer
+Target 1: $275.00 — BTIG analyst target / near-term resistance
+Target 2: $315.00 — Jefferies Financial Group analyst target
+Risk/Reward: 5.2:1 (to T1: (275-242)/(242-228) = 33/14)
+
+Key Risks:
+- Next earnings April 29–30 2026 (~35 days — outside 3-week filter, but monitor)
+- Aerospace supply chain constraints (titanium, specialty alloys) could limit margin expansion
+- High valuation premium after strong multi-year run
+
+Fundamental Note:
+Q4 2025: EPS $1.05 beat $0.97 estimate; revenue $2.17B (+14.6% YoY). FY2026 guidance 
+$4.35–$4.55 EPS (~20% growth). Jefferies $315 Buy; BTIG $275; RBC $300; Deutsche Bank $278. 
+83% earnings beat ratio over last 40 quarters. KeyCorp initiated coverage March 25 2026.
+```
+
+---
+
+### 3. WAB — Wabtec (50-day SMA Retest with Record $27B Backlog)
+
+```
+Ticker: WAB
+Current Price: $248.89
+Sector: Industrials (Freight Rail Equipment)
+Score: 93/100 (A:38 B:25 C:20 D:15 Ded:-5)
+
+Setup Summary:
+Wabtec has pulled back to the 50-day SMA zone (~$241–$244) — at $248.89 the stock sits just 
+above this key support level in an orderly consolidation from its 52-week highs. A record 
+multi-year backlog of $27B (+23% YoY) and a strong Q4 2025 beat (EPS $2.10 vs $2.08, revenue 
++14.8% YoY) with FY2026 EPS guidance of $10.05–$10.45 provide exceptional fundamental 
+visibility. The Union Pacific $1.2B locomotive modernization agreement and $2B+ pipeline 
+conversions signal a multi-year demand inflection in freight rail infrastructure. Volume on 
+the pullback from highs has been below average, confirming a healthy consolidation structure.
+
+Entry Zone: $245–$255 (50-day SMA zone with buffer)
+Stop Loss: $228.00 — below 50-day SMA (~$242) and pullback swing low
+Risk is -$20.89 from mid-entry of $249
+Target 1: $290.00 — Stephens raised analyst target / measured move
+Target 2: $308.00 — KeyBanc raised analyst target
+Risk/Reward: 2.8:1 (to T1: (290-249)/(249-228) = 41/21)
+
+Key Risks:
+- CEO insider selling $282K March 9 (1,163 shares); total $8.16M insider sales over 90 days
+- Next earnings April 22 2026 (~28 days — outside 3-week filter)
+- Freight volume tied to broader economic cycle; tariff-related capex delays possible
+
+Fundamental Note:
+Q4 2025: EPS $2.10 beat $2.08; revenue $2.97B (+14.8% YoY). FY2026 guidance $10.05–$10.45 
+adj EPS; revenue $12.19–$12.49B (both above consensus). Record backlog $27B (+23% YoY). Union 
+Pacific $1.2B AC4400 modernization agreement. Zacks #2 Buy; Stephens raised to $290; KeyBanc 
+raised to $308. $1.2B share repurchase authorized.
+```
 
 ---
 
@@ -138,12 +126,9 @@ _Recommendations from the last 14 days with no outcome recorded yet._
 
 | Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
 |---|---|---|---|---|---|---|
-| 2026-03-12 | WMT | $122–$127 | $119 | $134 | $147 | 1.7:1 |
-| 2026-03-12 | PM | $163–$170 | $158 | $185 | $205 | 2.1:1 |
-| 2026-03-12 | ETN | $354–$363 | $338 | $384 | $420 | 1.6:1 |
 | 2026-03-15 | COR | $348–$355 | $337 | $377 | $420 | 3.0:1 |
 | 2026-03-15 | EME | $695–$720 | $678 | $808 | $945 | 3.1:1 |
-| 2026-03-15 | KLAC | $1415–$1450 | $1375 | $1600 | $1900 | 4.0:1 |
+| 2026-03-15 | KLAC | $1415–$1450 | $1,375 | $1,600 | $1,900 | 4.0:1 |
 | 2026-03-16 | COR | $348–$355 | $337 | $377 | $420 | 2.3:1 |
 | 2026-03-16 | PEG | $81–$84 | $79 | $91 | $96 | 2.5:1 |
 | 2026-03-16 | VRTX | $462–$480 | $430 | $542 | $570 | 2.1:1 |
@@ -156,9 +141,15 @@ _Recommendations from the last 14 days with no outcome recorded yet._
 | 2026-03-22 | ALL | $202–$208 | $196.50 | $244 | $260 | 4.2:1 |
 | 2026-03-22 | CINF | $155–$163 | $152.50 | $177 | $191 | 3.1:1 |
 | 2026-03-22 | GL | $133–$140 | $130.50 | $170 | $181 | 5.3:1 |
-| 2026-03-23 | ALL | $202–$208 | $196.50 | $244 | $265 | 4.2:1 |
+| 2026-03-23 | ALL | $202–$208 | $196.50 | $244 | $260 | 4.2:1 |
 | 2026-03-23 | GL | $133–$140 | $130.50 | $170 | $181 | 5.2:1 |
 | 2026-03-23 | CINF | $155–$163 | $152.50 | $177 | $191 | 3.5:1 |
+| 2026-03-24 | TJX | $154–$159 | $153.00 | $169 | $185 | 3.6:1 |
+| 2026-03-24 | HSY | $210–$218 | $201.00 | $243 | $255 | 2.0:1 |
+| 2026-03-24 | CINF | $157–$163 | $152.50 | $177 | $191 | 2.2:1 |
+| 2026-03-25 | TT | $425–$434 | $400.00 | $480 | $525 | 3.2:1 |
+| 2026-03-25 | HWM | $238–$246 | $228.00 | $275 | $315 | 5.2:1 |
+| 2026-03-25 | WAB | $245–$255 | $228.00 | $290 | $308 | 2.8:1 |
 
 ---
 
@@ -185,16 +176,17 @@ _All closed trades (outcome recorded)._
 | 2026-03-11 | EME | $704.00 | $763.50 | +8.45% | EXPIRED |
 | 2026-03-11 | HUBB | $478.76 | $489.07 | +2.15% | EXPIRED |
 | 2026-03-11 | MCD | $324.61 | $308.85 | -4.86% | STOPPED_OUT |
+| 2026-03-12 | WMT | $124.57 | $122.05 | -2.02% | STOPPED_OUT |
+| 2026-03-12 | PM | $166.84 | $163.11 | -2.24% | EXPIRED |
+| 2026-03-12 | ETN | $355.79 | $374.10 | +5.15% | EXPIRED |
 
 ### Aggregate Stats
-- **Total closed trades:** 18
-- **Win rate (HIT_T1 or HIT_T2):** 0% (0/18)
-- **Average % gain on wins:** N/A (no wins yet)
-- **Average % loss on stops:** -9.37% (across 7 stopped-out trades)
-- **Average % change on expired:** -1.51% (across 11 expired trades)
-- **Expired (inconclusive):** 11
-- **Stopped out:** 7
-- **Best trade:** EME Mar 11 (+8.45%, EXPIRED)
-- **Worst trade:** BA Mar 7 (-15.58%, STOPPED_OUT)
+- **Total closed trades:** 21
+- **Win rate (HIT_T1 or HIT_T2):** 0% (0 trades hit target within 14 days — note: all closed trades were from the March 7–12 correction period when the market broke down sharply)
+- **Average % gain on wins:** N/A (no HIT_T1 or HIT_T2 results yet)
+- **Average % loss on stops:** -8.79% (average of 8 STOPPED_OUT trades: -10.63, -8.57, -15.58, -3.95, -10.63, -11.38, -4.86, -2.02)
+- **Expired (inconclusive):** 13 trades
+- **Best trade:** ETN (+5.15%, EXPIRED) / EME (+8.45%, EXPIRED)
+- **Worst trade:** BA (-15.58%, STOPPED_OUT)
 
-_Note: The first 9 trade entries (March 7–9) coincided with the initial stages of the S&P 500 breakdown below the 200-day MA and VIX surge driven by US-Iran geopolitical tensions. All March 7 picks were stopped out. The market environment has since stabilised into a confirmed downtrend, and the strategy has shifted to strictly defensive names (Insurance, Consumer Staples) with no wins recorded yet. The March 10–11 picks (EME, KLAC, HUBB) showed modest positive EXPIRED results, validating the strategy logic even in a downtrend environment._
+_Note: The March 7–12 picks were recommended during the S&P 500's breakdown below the 200-day MA — a highly adverse macro backdrop that drove near-universal stop-outs in that cohort. Expired trades from March 10–12 showed mixed to slightly positive performance but did not reach targets within 14 days. Strategy performance should be re-evaluated as the mid-to-late March picks (insurance, consumer staples) reach their 14-day windows._
