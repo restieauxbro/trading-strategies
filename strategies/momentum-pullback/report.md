@@ -1,142 +1,133 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-03-30_
+_Last updated: 2026-04-01_
 
 ---
 
 ## Market Context
 
-The S&P 500 is in a **confirmed downtrend**, trading below its 200-day moving average following a technical breakdown on March 19–20, 2026 — ending a 214-session streak above this key support level. The index has posted five consecutive weekly losses, its longest such streak in nearly four years. VIX closed at 31.05 on March 28 and spiked intraday to 35.3 amid the US-Iran geopolitical escalation; oil has surged above $110/barrel (Brent). Despite the macro stress, the S&P 500 remains up 17% on a trailing 52-week basis, and historical data suggests the median 12-month return after such long-streak breakdowns is +10%. Stricter filters are being applied to today's picks: only the most defensive setups with confirmed uptrends, low beta, and clean technical structure qualify.
+The S&P 500 closed at 6,528.52 on March 31, 2026 (+2.9% on the day), its largest single-day gain since May 2025, driven by hopes of US-Iran de-escalation. Despite this rally, the index remains below its 200-day moving average (~6,851) — confirming a medium-term downtrend that began in mid-March. VIX fell to ~25.25 on April 1 from a recent high of ~31+, but remains well above the 25 fear threshold. Q1 2026 was on track for the steepest quarterly decline since 2022, with the index roughly 9% below its all-time high. The current environment favours defensive, low-beta names with strong earnings visibility. Consumer Defensive, Utilities, and Insurance sectors are the primary rotation targets. Today's scan heavily reflects this bias — 11 of 17 tickers are utilities, and the remaining picks are Consumer Defensive names. **Stricter entry filters applied given S&P 500 below 200-day MA.**
 
 ---
 
 ## Today's Top Picks
 
-### 1. CB — Chubb Limited: Gulf Maritime Catalyst + Insurance Sector Leader
+### 1. COST — Costco Wholesale Corp — 50-day MA retest; golden cross + counter-cyclical outperformer
 
 ```
-Ticker: CB
-Current Price: $324.52
-Sector: Financials (Property & Casualty Insurance)
-Score: 97/100 (A:40 B:25 C:20 D:15 Ded:-3)
-⚠️ EARNINGS APRIL 21 (~22 DAYS) — borderline outside 3-week filter; flagged as risk
+Ticker: COST
+Current Price: $997.23
+Sector: Consumer Defensive
+Score: 88/100 (A:35 B:18 C:20 D:15 Ded:0)
 
 Setup Summary:
-Chubb holds the 50-day SMA zone ($320.92) at $324.52 — a clean orderly
-consolidation after a 6.1% pullback from its $345.67 52-week high. The Gulf
-Maritime Reinsurance Plan (March 20 2026) makes CB the direct beneficiary of
-the US-Iran Hormuz conflict: selected as lead underwriter for the $20B DFC
-facility insuring commercial shipping through the Strait. Q4 2025 EPS beat
-+18.8% with record underwriting margins. As the world's largest publicly traded
-P&C insurer (beta 0.49), CB is the top defensive sector play in the confirmed
-S&P 500 downtrend with geopolitical tailwinds from elevated oil and shipping risk.
+Costco has pulled back 6.5% from its $1,067.08 52-week high to retest the 50-day MA zone (~$983)
+— at $997 the stock sits just $14 above the 50-day following the bullish golden cross that formed
+on March 5 (first in three years). Q2 FY2026 delivered a double beat (EPS $4.58 vs $4.02 YoY;
+comps +6.7%; fee income +13.6%). The Consumer Defensive sector is the top defensive rotation play
+in the S&P 500 downtrend — COST is outperforming the broader index by +15.64% YTD. IBD named COST
+Stock of the Day (April 1) as it approaches a new buy zone above the 50-day MA. Beta 0.99 is
+higher than ideal for this environment but the structural counter-cyclical thesis overrides.
 
-Entry Zone: $320–$328
-Stop Loss: $308.00 — below 50-day SMA ($320.92) and prior support zone
-Target 1: $340.00 — prior 52-week high resistance / near-term breakout
-Target 2: $385.00 — Citigroup Buy analyst target
-Risk/Reward: 3.7:1 (to T2)
+Entry Zone: $990–$1,005
+Stop Loss: $958.00 — below 200-day MA (~$946) with buffer and recent swing low support
+Target 1: $1,067.00 — 52-week high resistance / near-term breakout
+Target 2: $1,125.00 — Telsey Advisory Group analyst target / extended measured move
+Risk/Reward: 2.0:1
 
 Key Risks:
-- Earnings April 21, 2026 (~22 days) — borderline 3-week filter; gap risk elevated
-- Insider selling: 6 trades all sells in 6 months ($55.6M total); Director sold $658K March 19
-- Gulf maritime program execution risk (new program, limited claims history)
-- S&P 500 confirmed downtrend / VIX 31
+- Insider selling (CEO/CFO options activity January 2026)
+- Tariff refund lawsuit exposure (customer suit filed March 2026)
+- Next earnings May 28 2026 (~57 days — ample runway)
 
 Fundamental Note:
-Q4 2025: EPS $7.52 beat $6.33 estimate (+18.8%); revenue +6.5% YoY; net income +11.2% YoY.
-FY2026 EPS consensus $26.75 (+13.1%). Citigroup Buy $385; Raymond James Strong Buy $380;
-KBW Outperform $373; consensus Buy target $331.90. Gulf Maritime Reinsurance Plan (March 20
-2026): $20B DFC facility as direct Hormuz Crisis beneficiary. 33rd consecutive annual dividend.
+Q2 FY2026: EPS $4.58 beat YoY; revenue $69.6B beat (+9.2% YoY); membership renewal rate 92.1%;
+fee income +13.6%. Golden cross March 5 2026 (first in 3 years). BofA initiated Buy $1,185;
+Telsey raised to $1,125; analyst consensus Buy $1,083.
 ```
 
 ---
 
-### 2. ALL — Allstate Corporation: Pristine Insurance Pullback at Dual MA Support
+### 2. WMT — Walmart Inc — 50-day MA support; dominant trade-down retailer
 
 ```
-Ticker: ALL
-Current Price: $207.01
-Sector: Financials (Property & Casualty Insurance)
-Score: 88/100 (A:40 B:25 C:16 D:7 Ded:0)
+Ticker: WMT
+Current Price: $124.92
+Sector: Consumer Defensive
+Score: 87/100 (A:35 B:10 C:20 D:14 Ded:-5 [insider selling deduction])
 
 Setup Summary:
-Allstate continues to consolidate at the confluence of its 50-day MA (~$204.80)
-and 200-day MA (~$203.70) at $207.01 — one of the most defined dual moving average
-support zones in the S&P 500. The stock has pulled back 4.5% from its $216.75
-all-time high on orderly declining volume. Beta 0.21 makes ALL the most
-defensively positioned major insurer in the universe. A massive Q4 2025 EPS beat
-of 45.7% (adj EPS $14.31 vs $8.72 estimate) with improving P&C underwriting
-margins and lowest catastrophe losses in recent years provides exceptional
-fundamental conviction. Earnings April 29 is comfortably outside the 3-week filter.
+Walmart is pulling back to its rising 50-day MA ($124.69) — at $124.92 the stock sits just $0.23
+above the 50-day in an orderly consolidation from its $134.69 52-week high. Consumer Defensive is
+firmly in favour for defensive rotation. Walmart is outperforming the broader market +12.13% YTD
+as it benefits from consumer trade-down during elevated-VIX / recession-fear environments. Q4
+FY2026 delivered an EPS beat with e-commerce turning profitable and global e-commerce +22% YoY.
+Beta 0.66 suits the current environment. Next earnings May 21 (51 days) provides ample trade runway.
 
-Entry Zone: $203–$210
-Stop Loss: $197.00 — below converging 50-day/200-day MA support zone with buffer
-Target 1: $244.00 — median analyst target / near-term resistance
-Target 2: $265.00 — Mizuho Outperform raised target
-Risk/Reward: 4.3:1
+Entry Zone: $122–$127
+Stop Loss: $117.00 — below rising 50-day MA with buffer (SMA currently ~$124.69)
+Target 1: $134.00 — analyst consensus target / near-term resistance
+Target 2: $145.00 — UBS / TD Cowen elevated price targets
+Risk/Reward: 2.1:1
 
 Key Risks:
-- Earnings April 29, 2026 (~30 days — comfortably outside 3-week filter)
-- Catastrophe exposure in elevated oil/geopolitical volatility environment
-- Privacy lawsuit (cellphone tracking data) proceeding to trial
-- Goldman Sachs maintains Neutral $231; not all analysts bullish
-- S&P 500 confirmed downtrend
+- Insider selling: Walton Family Trust sold $220M in shares (March 27 2026); multiple other insider sales in March
+- Erste Group downgraded to Hold on valuation (47x P/E)
+- Consumer spending pressure if oil prices continue to rise
+- USD strength headwind on international revenues
 
 Fundamental Note:
-Q4 2025: adj EPS $14.31 beat consensus $8.72 by 45.7%; P&C premiums +6.3% YoY;
-revenue $17.35B +5.1% YoY; net income +120.3% YoY. FY2026 EPS consensus +7.7%
-growth. Dividend raised 8% to $1.08/share (2.1% yield). Mizuho Outperform $265
-(raised March 20 2026); Raymond James Strong Buy $260; consensus Buy target
-$225.94. Beta 0.21 — lowest in insurance sector.
+Q4 FY2026: EPS $0.74 beat $0.73 estimate; revenue $190.66B (+5.6% YoY). E-commerce profitable
+for first time; global e-commerce +22% YoY. FY2027 guidance $2.75–$2.85 EPS. BofA Buy $150;
+Telsey Outperform $140; analyst consensus Buy $139.11.
 ```
 
 ---
 
-### 3. TJX — TJX Companies: Counter-Cyclical Off-Price Retail at 50-Day SMA
+### 3. KO — The Coca-Cola Company — 50-day MA retest; ultra-low beta defensive safe haven
 
 ```
-Ticker: TJX
-Current Price: $155.42
-Sector: Consumer Discretionary (Off-Price Retail)
-Score: 83/100 (A:40 B:25 C:16 D:7 Ded:-5)
+Ticker: KO
+Current Price: $76.19
+Sector: Consumer Defensive
+Score: 83/100 (A:40 B:10 C:18 D:15 Ded:0)
 
 Setup Summary:
-TJX Companies has pulled back to its rising 50-day SMA ($155.62) in an orderly
-consolidation at $155.42 — the stock sits just $0.20 below the SMA with today's
-13% dividend increase announcement (to $0.48/quarter) reinforcing management
-confidence. Off-price retail is structurally counter-cyclical: consumer trade-down
-in recession/elevated-VIX environments drives TJX's value proposition and
-accelerates market share gains from full-price competitors. Q4 FY2026 delivered
-record $17.74B revenue (beat by $380M) with EPS $1.43 vs $1.38 estimate. The
-3.5:1 R:R with next earnings May 20 (51 days away) provides ample trade runway.
+Coca-Cola has pulled back 7.1% from its $82.00 52-week high to retest the 50-day MA zone — at
+$76.19 the stock is trading 1.03% below the 50-day MA, offering a defined entry in one of the most
+defensive names in the S&P 500. Beta 0.36 and the 64th consecutive annual dividend increase make
+KO an institutional safe-haven choice in elevated-VIX environments. The Consumer Defensive sector
+is the top rotation play in the S&P 500 downtrend. FIFA World Cup 2026 partnership (March 17) and
+NBA Sprite deal reinstatement provide near-term catalyst momentum. Next earnings April 28 (27 days)
+— just outside the 3-week filter; flagged as approaching risk.
 
-Entry Zone: $153–$158
-Stop Loss: $149.50 — below rising 50-day SMA ($155.62) and recent pullback support
-Target 1: $169.00 — analyst consensus target / near-term resistance
-Target 2: $185.00 — BTIG analyst target / measured move
-Risk/Reward: 3.5:1
+Entry Zone: $74–$78
+Stop Loss: $71.50 — below rising 200-day MA (~$71.33) with buffer
+Target 1: $85.00 — analyst consensus target / prior resistance
+Target 2: $91.00 — 52-week high / extended target
+Risk/Reward: 2.1:1
 
 Key Risks:
-- CEO Herrman sold 30,000 shares March 2 ($4.8M) — insider selling deduction applied
-- Consumer Discretionary headwinds if recession deepens beyond trade-down thesis
-- Tariff impact on merchandise sourcing costs
-- S&P 500 confirmed downtrend
+- Next earnings April 28 2026 (~27 days — just outside 3-week filter; monitor closely)
+- CEO transition: James Quincy to Henrique Braun in 2026
+- IRS $6B tax dispute (transfer pricing) could create headline risk
+- USD strength headwind (60%+ international revenue)
 
 Fundamental Note:
-Q4 FY2026: EPS $1.43 beat $1.38 estimate; revenue $17.74B beat $17.36B (+5.9% YoY).
-Record $60B full-year revenue milestone. 13% dividend increase announced March 30 2026
-(29th hike in 30 years). Analyst consensus Strong Buy (15 of 16 analysts); avg target
-$169; BTIG $185; Barclays $183. Beta ~0.6 suits elevated-VIX environment.
+FY2025: EPS $3.04 beat estimates; revenue $47.9B (+3.5% YoY). FY2026 guidance: comparable EPS
+growth 7–8%; organic revenue +4–5%. 64th consecutive annual dividend increase to $2.12/share
+annually (~2.78% yield). Analyst consensus Overweight; avg target $84.95.
 ```
 
 ---
 
-## Excluded Tickers (Notable)
-- **MRK** (80 pts): Below 50-day MA, weak technical momentum; R:R only 1.65:1 — scored below threshold relative to top 3
-- **CSCO** (81 pts): Tech sector in correction mode; low volume confirmation; scored lower than top 3
-- **CINF** (dropped this run): Earnings April 27 (~28 days) is approaching 3-week threshold; scored 78 this run after applying stricter downtrend filter — below top 3
-- **CAT**: High P/E 37x, $2.6B tariff headwinds, cyclical Industrial — scored below threshold
-- **HSY, TT, HWM, WAB**: Already in open trades from prior runs — not re-entered to avoid concentration
+### Excluded Tickers (scored below 50 or notable exclusions)
+
+- **AEE, CMS, DTE, EVRG, LNT, NI, PNW, WEC, XEL** (Utilities): All pass the scan filters but score 50–65. Utilities have very limited upside at current levels (most near 52-week highs), R:R ratios are generally below 1.5:1, and regulated utility EPS growth of 5–7% doesn't support premium expansion in a rising-rate environment. Beaten by Consumer Defensive picks on R:R and catalyst quality.
+- **CNP** (CenterPoint Energy): Scored 58. Regulatory risk from Texas grid oversight is an ongoing headwind. R:R <1.5:1 from current levels.
+- **MO** (Altria): Scored 65. Near 50-day MA with a compelling 6.4% yield and ultra-low beta 0.37 — but long-term structural volume decline (-10% cigarette shipments in 2025) and weak smoke-free product diversification cap the upside. Consensus Hold. Excluded on fundamentals.
+- **ODFL** (Old Dominion Freight): Scored 52. February LTL metrics showed YoY declines in tons/day and revenue/day; consensus analyst target of $161 is 25% below current price of $216 — poor R:R. Excluded.
+- **ALL** (Allstate): Scored 82 but was recommended 8 consecutive times (March 19–30). Excluded today to avoid over-concentration; still a valid open trade from prior entries.
+- **WM** (Waste Management): Scored 68. Earnings April 28 (~27 days away — approaching 3-week filter). Q4 2025 EPS $1.93 slightly missed estimates. Excluded on R:R (target $254 vs current $225 is only 13% upside with stop at $215 → 1.3:1 R:R).
 
 ---
 
@@ -145,9 +136,6 @@ _Recommendations from the last 14 days with no outcome recorded yet._
 
 | Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
 |---|---|---|---|---|---|---|
-| 2026-03-19 | ALL | $202–$207 | $196.50 | $244.00 | $260.00 | 5.0:1 |
-| 2026-03-19 | CINF | $158–$164 | $152.50 | $177.00 | $191.00 | 2.2:1 |
-| 2026-03-19 | GL | $135–$141 | $130.50 | $170.00 | $181.00 | 4.5:1 |
 | 2026-03-22 | ALL | $202–$208 | $196.50 | $244.00 | $260.00 | 4.2:1 |
 | 2026-03-22 | CINF | $155–$163 | $152.50 | $177.00 | $191.00 | 3.1:1 |
 | 2026-03-22 | GL | $133–$140 | $130.50 | $170.00 | $181.00 | 5.3:1 |
@@ -159,13 +147,16 @@ _Recommendations from the last 14 days with no outcome recorded yet._
 | 2026-03-24 | CINF | $157–$163 | $152.50 | $177.00 | $191.00 | 2.2:1 |
 | 2026-03-25 | TT | $425–$434 | $400.00 | $480.00 | $525.00 | 3.2:1 |
 | 2026-03-25 | HWM | $238–$246 | $228.00 | $275.00 | $315.00 | 5.2:1 |
-| 2026-03-25 | WAB | $245–$255 | $228.00 | $290.00 | $308.00 | 2.8:1 |
+| 2026-03-25 | WAB | $245–$255 | $228.00 | $308.00 | $290.00 | 2.8:1 |
 | 2026-03-26 | ALL | $203–$208 | $196.50 | $244.00 | $265.00 | 5.2:1 |
 | 2026-03-26 | CB | $320–$328 | $308.00 | $340.00 | $385.00 | 3.6:1 |
 | 2026-03-26 | SRE | $93–$97 | $89.00 | $106.00 | $113.00 | 3.2:1 |
 | 2026-03-30 | CB | $320–$328 | $308.00 | $340.00 | $385.00 | 3.7:1 |
 | 2026-03-30 | ALL | $203–$210 | $197.00 | $244.00 | $265.00 | 4.3:1 |
 | 2026-03-30 | TJX | $153–$158 | $149.50 | $169.00 | $185.00 | 3.5:1 |
+| 2026-04-01 | COST | $990–$1,005 | $958.00 | $1,067.00 | $1,125.00 | 2.0:1 |
+| 2026-04-01 | WMT | $122–$127 | $117.00 | $134.00 | $145.00 | 2.1:1 |
+| 2026-04-01 | KO | $74–$78 | $71.50 | $85.00 | $91.00 | 2.1:1 |
 
 ---
 
@@ -204,14 +195,17 @@ _All closed trades (outcome recorded)._
 | 2026-03-17 | CL | 90.30 | 85.78 | -5.01% | STOPPED_OUT |
 | 2026-03-17 | ALL | 207.81 | 207.01 | -0.38% | EXPIRED |
 | 2026-03-17 | DOV | 211.92 | 202.34 | -4.52% | EXPIRED |
+| 2026-03-19 | ALL | 204.38 | 204.79 | +0.20% | EXPIRED |
+| 2026-03-19 | CINF | 160.20 | 158.01 | -1.37% | EXPIRED |
+| 2026-03-19 | GL | 137.62 | 140.35 | +1.98% | EXPIRED |
 
 ### Aggregate Stats
-- **Total closed trades:** 30
-- **Win rate (HIT_T1 or HIT_T2):** 0% (0 of 30)
-- **Average % gain on wins:** N/A — no trades have hit targets yet
-- **Average % loss on stops:** -8.02% (average across 12 stopped-out trades)
-- **Expired (inconclusive):** 18
-- **Best trade:** EME 2026-03-11 (+8.45%, EXPIRED — held above entry at 14-day mark)
+- **Total closed trades:** 33
+- **Win rate (HIT_T1 or HIT_T2):** 0% (0 of 33)
+- **Average % gain on wins:** N/A — no T1 or T2 hits yet
+- **Average % loss on stops:** -8.02% (avg of 12 stopped-out trades)
+- **Expired (inconclusive):** 21
+- **Best trade:** EME 2026-03-11 (+8.45%, EXPIRED)
 - **Worst trade:** BA 2026-03-07 (-15.58%, STOPPED_OUT)
 
-> **Context note:** The strategy launched into a confirmed S&P 500 downtrend environment (VIX 25–35, market below 200-day MA). The 0% win rate reflects a market where even scan-qualified momentum names experienced broad selling. No picks have reached T1 in 14 days — consistent with an elevated-VIX bear phase. The EXPIRED category includes several trades that held above their stop and showed positive price action (EME +8.45%, ETN +5.15%, KLAC +3.93%); under different time framing, several of these would have been winners.
+_Note: The strategy began running in a confirmed S&P 500 downtrend (below 200-day MA from mid-March 2026 onward). No trades have reached Target 1 or Target 2 yet within the 14-day window. The majority of stopped-out trades were concentrated in early-March industrial/healthcare names that faced the sharpest market drawdown. Defensive rotation picks (Insurance, Consumer Staples) from mid-March onward have largely expired at small losses or near breakeven, consistent with capital preservation in a downtrend._
