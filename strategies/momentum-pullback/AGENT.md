@@ -7,7 +7,8 @@ Before starting, load the following files:
 1. **Skill: `analyse-tickers`** — located at `.cursor/skills/analyse-tickers/SKILL.md` — research checklist, scoring criteria, market context check, and per-ticker output format
 2. **Skill: `log-trade-csv`** — located at `.cursor/skills/log-trade-csv/SKILL.md` — CSV schema and writing rules
 3. **Skill: `track-outcomes`** — located at `.cursor/skills/track-outcomes/SKILL.md` — 14-day outcome lookback and CSV update rules
-4. `strategies/momentum-pullback/config.md` — this strategy's scan URL, filters, and settings
+4. **Skill: `read-trendspider-chart`** — located at `.cursor/skills/read-trendspider-chart/SKILL.md` — how to open TrendSpider, read the B-Xtrender layers, and score the indicator state
+5. `strategies/momentum-pullback/config.md` — this strategy's scan URL, filters, and settings
 
 All behaviour rules, scoring weights, output formats, and CSV conventions are defined in those files. This `AGENT.md` defines only the workflow steps specific to this strategy.
 
@@ -66,9 +67,27 @@ Apply the strategy-specific entry criteria from `config.md` — in particular, t
 
 ---
 
+### Step 4b — B-Xtrender Chart Check (TrendSpider)
+
+> ⛔ **This step is mandatory before scoring. Do not skip it and do not proceed to Step 5 until it is complete.**
+> Tickers where B-Xtrender state is unverified must have their B-Xtrender scoring categories left at zero — do not assume or estimate the indicator state.
+
+For each ticker researched in Step 4, open TrendSpider using the `read-trendspider-chart` skill and check the B-Xtrender indicator state. Record the following for each ticker:
+
+- **Background bars**: green (bullish) or red (bearish) during the pullback period?
+- **Green dot**: has one printed on the signal line recently (last 1–3 bars)?
+- **Foreground histogram**: recovering toward zero / crossed back above zero, or still falling?
+- **Signal line**: rising (green) or falling (red)?
+
+Use `.cursor/skills/read-trendspider-chart/set_symbol.py` to switch between tickers in the same browser session — do not re-open the browser for each ticker.
+
+This data feeds directly into the Category A B-Xtrender scoring checks and deductions in `config.md`.
+
+---
+
 ### Step 5 — Score and Select Top 3
 
-Score each ticker using the points table in `config.md`. Discard any ticker that scores below the minimum threshold (50 pts). Rank the remainder by total score.
+Score each ticker using the points table in `config.md`. Discard any ticker that scores below the minimum threshold (55 pts). Rank the remainder by total score.
 
 Select the top 3 scoring tickers. Present each using the output format defined in the `analyse-tickers` skill, including the full score breakdown.
 

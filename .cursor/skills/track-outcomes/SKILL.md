@@ -1,13 +1,21 @@
 ---
 name: track-outcomes
-description: Looks up trade recommendations made approximately 14 days ago in a strategy's trades-log.csv, fetches current prices from the web, calculates performance, and writes the outcome columns back to the CSV. Use at the start of each agent run to backfill performance data before generating a new report.
+description: Looks up trade recommendations made approximately 14 days ago in a strategy's trades-log.csv, fetches current prices from the web, calculates performance, and writes the outcome columns back to the CSV. This is a deliberate, heavyweight step — do NOT run it automatically on every agent run.
 ---
 
 # Track Trade Outcomes
 
+## When to Run
+
+**This skill is heavyweight — do not run it automatically.**
+
+Run it only when explicitly requested, or when the user asks for a performance update. Each outcome row requires a web lookup per ticker, which adds significant time when many trades are due.
+
+If running a standard strategy scan, skip this skill unless the user has asked for outcome tracking in the same session. Note in the session summary how many rows are due (if any) so the user can decide whether to run it separately.
+
 ## Purpose
 
-At the start of each agent run, check if any previously recommended trades are due for their 14-day outcome review. If so, look up current prices and record the result.
+When invoked, check if any previously recommended trades are due for their 14-day outcome review. If so, look up current prices and record the result.
 
 ---
 

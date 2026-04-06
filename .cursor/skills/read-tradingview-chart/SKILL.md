@@ -1,10 +1,12 @@
 ---
 name: read-tradingview-chart
-description: Opens a saved TradingView layout in a headed Chrome session and interprets the VTO and B-Xtrender indicators for bearish confirmation. Use when confirming chart signals after shortlisting tickers (e.g. bearish call spread top picks), or when the user asks to verify TradingView indicators on the shared layout.
+description: Legacy option — opens a saved TradingView layout in headed Chrome (profile Tim) for VTO + B-Xtrender. Prefer read-trendspider-chart when you need TrendSpider B-Xtrender buy/sell signals. Use only when explicitly falling back to TradingView.
 allowed-tools: Bash(browser-use:*)
 ---
 
-# Read TradingView Chart (VTO + B-Xtrender)
+# Read TradingView Chart (VTO + B-Xtrender) — legacy
+
+**Prefer** `.cursor/skills/read-trendspider-chart/SKILL.md` for bearish call spread confirmation when using TrendSpider.
 
 This skill assumes the workspace uses a **fixed saved chart layout** on TradingView with **VTO** and **B-Xtrender** (@Puppytherapy) already on the chart. The agent does not add indicators; it opens the layout and reads what is on screen.
 
@@ -72,6 +74,8 @@ Use `browser-use state` to see structure; **indicator interpretation is visual**
 - Locate the **B-Xtrender** pane (often titled `B-Xtrender` / `@Puppytherapy`).
 - **Bearish confirmation:** histogram in **bearish territory** — i.e. **red** bars **below** the zero line (momentum flipped negative). A **small red bar** on the far right after a green run is the typical “just flipped bearish” pattern.
 - If the last bar is still green above zero, record **B-Xtrender: still bullish territory** (not confirming).
+- **Green “buy” dot / signal (if shown on your layout):** If the **latest** bar (or the signal tied to the latest bar) shows a **green buy** on B-Xtrender — or the histogram is **green above zero** — record **B-Xtrender: bullish / buy signal — not bearish**. For **bear call spreads**, this usually means **mean-reversion or bounce risk** after a slump; **do not** describe that state as bearish confirmation, even if price is still under moving averages.
+- **Stocks bouncing off a mean slump:** It is common for the whole scan universe to show a **fresh green** B-Xtrender leg while price remains weak on the daily chart. Call that out honestly: **chart does not support a new bearish credit structure** until B-Xtrender is again **red below zero** (and VTO sell aligns, if the strategy requires both).
 
 ## Interpreting results
 

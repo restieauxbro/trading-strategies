@@ -79,13 +79,13 @@ The agent's job is **not** to re-verify these scan conditions — it can take th
 
 ## Scoring System
 
-Scores are out of **100 points**. A ticker must reach the **minimum threshold** to qualify as a pick. Apply every applicable check and sum the points, then apply deductions.
+Scores are out of **115 points**. A ticker must reach the **minimum threshold** to qualify as a pick. Apply every applicable check and sum the points, then apply deductions.
 
-**Minimum score to qualify: 50 pts**
+**Minimum score to qualify: 55 pts**
 
 ---
 
-### Category A — Technical Setup (40 pts max)
+### Category A — Technical Setup (55 pts max)
 
 
 | Check                                                                  | Points |
@@ -95,6 +95,9 @@ Scores are out of **100 points**. A ticker must reach the **minimum threshold** 
 | Pulling back to a logical support zone (MA, breakout level, trendline) | 10     |
 | Volume declining on pullback (healthy consolidation, not breakdown)    | 7      |
 | Recognisable continuation pattern (bull flag, flat base, wedge, etc.)  | 5      |
+| B-Xtrender background bars green during pullback (long-term trend intact) | 5  |
+| B-Xtrender green dot printed on signal line (momentum of pullback reversing) | 7 |
+| B-Xtrender foreground histogram recovering toward zero or crossed back above | 3 |
 
 
 ### Category B — Risk / Reward (25 pts max)
@@ -133,12 +136,14 @@ Scores are out of **100 points**. A ticker must reach the **minimum threshold** 
 ### Deductions
 
 
-| Condition                             | Deduction |
-| ------------------------------------- | --------- |
-| Earnings within 3 weeks of entry      | −20 pts   |
-| Stock below its 200-day MA            | −8 pts    |
-| Sector in confirmed downtrend         | −10 pts   |
-| Recent insider selling (last 30 days) | −5 pts    |
+| Condition                                                               | Deduction |
+| ----------------------------------------------------------------------- | --------- |
+| Earnings within 3 weeks of entry                                        | −20 pts   |
+| Stock below its 200-day MA                                              | −8 pts    |
+| Sector in confirmed downtrend                                           | −10 pts   |
+| Recent insider selling (last 30 days)                                   | −5 pts    |
+| B-Xtrender background bars red (long-term trend bearish during pullback) | −8 pts   |
+| B-Xtrender red dot printed on signal line (momentum still falling)      | −6 pts    |
 
 
 ---

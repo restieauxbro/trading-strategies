@@ -21,8 +21,12 @@ trading-strategy/
 │       │   └── SKILL.md              ← 14-day outcome lookback and CSV update
 │       ├── browser-use/
 │       │   └── SKILL.md              ← browser-use CLI automation (optional)
+│       ├── read-trendspider-chart/
+│       │   ├── SKILL.md              ← TrendSpider chart + VTO / B-Xtrender (profile Tim)
+│       │   ├── maximize_chart.py     ← fullscreen toggle helper for screenshots
+│       │   └── set_symbol.py         ← top-left symbol search: focus, type ticker, Enter
 │       └── read-tradingview-chart/
-│           └── SKILL.md              ← TradingView layout + VTO / B-Xtrender read (optional)
+│           └── SKILL.md              ← legacy TradingView layout (optional; profile Tim)
 ├── strategies/
 │   └── <strategy-name>/
 │       ├── AGENT.md                  ← workflow steps for this strategy's agent

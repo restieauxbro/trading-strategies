@@ -7,7 +7,7 @@ Before starting, load the following files:
 1. **Skill: `analyse-tickers`** — located at `.cursor/skills/analyse-tickers/SKILL.md` — research checklist, scoring criteria, market context check, and per-ticker output format
 2. **Skill: `log-trade-csv`** — located at `.cursor/skills/log-trade-csv/SKILL.md` — CSV schema and writing rules
 3. **Skill: `track-outcomes`** — located at `.cursor/skills/track-outcomes/SKILL.md` — 14-day outcome lookback and CSV update rules
-4. **Skill: `read-tradingview-chart`** — located at `.cursor/skills/read-tradingview-chart/SKILL.md` — headed Chrome (profile **Tim**), saved TradingView layout URL, VTO + B-Xtrender bearish confirmation rules (uses **Skill: `browser-use`** at `.cursor/skills/browser-use/SKILL.md` for CLI commands)
+4. **Skill: `read-trendspider-chart`** — located at `.cursor/skills/read-trendspider-chart/SKILL.md` — **headed Chrome, profile `Tim` (mandatory)** for [TrendSpider](https://charts.trendspider.com/) chart workspace, VTO + B-Xtrender (with buy/sell signals), fullscreen helper script, and bearish confirmation rules (uses **Skill: `browser-use`** at `.cursor/skills/browser-use/SKILL.md`). _Optional legacy:_ `.cursor/skills/read-tradingview-chart/SKILL.md` if you must fall back to TradingView — still use **`--profile "Tim"`**._
 5. `strategies/bearish-call-spread/config.md` — this strategy's scan URL, filters, scoring system, and spread construction notes
 
 All behaviour rules, scoring weights, output formats, and CSV conventions are defined in those files. This `AGENT.md` defines only the workflow steps specific to this strategy.
@@ -31,6 +31,8 @@ If `symbolsFound` is empty, write the empty-scan row per the `log-trade-csv` ski
 ### Step 2 — Track 14-Day Outcomes
 
 Before analysing new tickers, check `strategies/bearish-call-spread/trades-log.csv` for any rows where `outcome_date` is empty and `date` is approximately 14 days ago (±2 days).
+
+**Skip** rows where `ticker` is **`ABSTAIN`** or `short_strike` is empty — those are audit rows, not trades; **do not** fill outcome columns for them.
 
 **Do not use the `track-outcomes` skill logic for this strategy — the outcome check here is simpler:**
 
@@ -104,7 +106,10 @@ For the triage survivors only, follow the full research checklist in the `analys
 
 Score each ticker using the points table in `config.md`. Discard any ticker that scores below the minimum threshold (55 pts). Rank the remainder by total score.
 
-Select the **top 3 scoring tickers** as the initial shortlist. **Do not** append to CSV or treat these as final until **Step 7 (TradingView)** is complete.
+Select the **top 3 scoring tickers** as the initial shortlist.
+
+> ⛔ **HARD STOP — DO NOT WRITE TO CSV YET.**
+> These are candidates only. Nothing is logged until Step 7 (TrendSpider B-Xtrender + VTO confirmation) is complete. Any ticker that fails Step 7 is dropped regardless of its research score. If all candidates fail, the run abstains — see Step 8a.
 
 For each shortlist ticker, present the standard output format from the `analyse-tickers` skill **plus** the spread construction details:
 
@@ -138,34 +143,66 @@ If fewer than 3 tickers reach the minimum threshold, only present those that do 
 
 ---
 
-### Step 7 — TradingView visual confirmation (top 3)
+### Step 7 — TrendSpider visual confirmation (top 3)
 
-After Step 6, **confirm each shortlist ticker on the shared TradingView layout** using the **`read-tradingview-chart`** skill end to end.
+After Step 6, **confirm each shortlist ticker on your TrendSpider chart workspace** using the **`read-trendspider-chart`** skill end to end.
 
-**Goal:** For bearish call spreads, prefer names where **both** are true on the **latest** bar (per that skill):
+**Chrome profile `Tim` is mandatory** for every `browser-use open` in this step (your TrendSpider login + saved layout live in that profile). Do **not** use headless default Chromium without `--profile "Tim"`.
 
-- **VTO:** red dot **sell** signal visible.
-- **B-Xtrender:** **bearish territory** — red histogram **below** the zero line (not still green / bullish above zero).
+**Goal:** For bearish call spreads, **only** names where **both** are true on the **latest** bar (per that skill) may be **recommended and saved** to the CSV:
+
+- **VTO:** **sell** signal visible (red / sell dot per your TrendSpider template).
+- **B-Xtrender:** **bearish territory** — red histogram **below** the zero line, **and** use TrendSpider’s **buy/sell signals** — **no green buy** on the latest bar for a new bear call.
+
+**Hard disqualifiers (do not treat as “partial” for entry — ticker is out for this run):**
+
+- **B-Xtrender:** green histogram **above** the zero line on the latest bar, **or** a **green “buy” dot/signal** on the latest bar (common when names are **bouncing off a mean slump**). That state is **bounce / mean-reversion risk** and **conflicts** with opening a **new** bear call spread.
+- If the scan universe mostly shows this pattern, expect **few or zero** qualified names — that is **correct behaviour**, not a failure of the workflow.
 
 **Procedure:**
 
-1. **Clear prior chart snapshots** (fresh scan): delete `strategies/bearish-call-spread/assets/tradingview-*.png` before any new screenshots — see **Fresh scan** in `read-tradingview-chart` so this run’s report cannot reuse stale images. `mkdir -p strategies/bearish-call-spread/assets` if the folder is missing.
-2. Follow the skill exactly: **headed** browser, Chrome profile **`Tim`**, base URL `https://www.tradingview.com/chart/z25AhAlV/?symbol=` + correct `EXCHANGE%3ATICKER`.
-3. Check each of the three symbols in turn; capture a **screenshot** per symbol when possible (path noted in output).
-4. Record the skill’s **output snippet** for each ticker (VTO yes/no, B-Xtrender yes/no, chart confirm: full / partial / none / unable).
+1. **Clear prior chart snapshots** (fresh scan): delete `strategies/bearish-call-spread/assets/trendspider-*.png` before any new screenshots — see **Fresh scan** in `read-trendspider-chart`. `mkdir -p strategies/bearish-call-spread/assets` if the folder is missing.
+2. Open the **Chart workspace URL** from `config.md` (or navigate after login) using **headed** Chrome and profile **`Tim`**:
 
-**If a shortlist ticker fails full confirmation:**
+   `browser-use --profile "Tim" --headed open "CHART_WORKSPACE_URL_FROM_CONFIG"`
 
-- First try to **substitute** the next-highest scoring ticker from Step 6 (that still meets the 55 pt threshold) and run the same TradingView check, until you have **up to 3** picks that are **fully chart-confirmed**, **or** you run out of qualified alternates.
-- Any pick kept without full confirmation must be labelled **not chart-confirmed** in the report and in the session summary, with a one-line reason.
+3. For each shortlist symbol, load that ticker in TrendSpider — e.g. `python3 .cursor/skills/read-trendspider-chart/set_symbol.py <TICKER>` in the same headed `browser-use` session (see `read-trendspider-chart` skill), or symbol search / watchlist / your workspace flow.
+4. **Maximize the chart** for readable screenshots: run `python3 .cursor/skills/read-trendspider-chart/maximize_chart.py` after the chart toolbar is visible (or use the `browser-use eval` one-liner in that skill). Optionally chain with `--headed --open-url` only if you are opening the workspace in the same command.
+5. Capture **screenshot** per symbol: `strategies/bearish-call-spread/assets/trendspider-<TICKER>.png`
+6. Record the skill’s **output snippet** for each ticker (VTO yes/no, B-Xtrender yes/no, green buy present yes/no, chart confirm: full / partial / none / unable).
 
-Merge the TradingView lines into each final pick’s write-up before Step 8.
+**Substitution and abstention:**
+
+- If a shortlist ticker **fails** full confirmation (including **any** hard B-Xtrender disqualifier above), try the **next-highest** scoring ticker from Step 6 (still ≥ 55 pts) and repeat the TrendSpider check.
+- **Do not** append a “pick” that lacks **full** VTO + B-Xtrender bearish alignment. **Partial** or **not confirmed** names may be **mentioned in the report as watched / not recommended**, but **must not** appear in Step 8 CSV pick rows.
+- If, after exhausting all Step 6 qualifiers (or optionally after triaging additional scan symbols not in the original top 5 if you explicitly extend the funnel), **zero** tickers pass **full** confirmation → **abstain for the day** (see Step 8a).
+
+Merge the **TrendSpider** lines into each **final** pick’s write-up before Step 8 — or document abstention in the report instead of pick blocks.
+
+---
+
+### Step 8a — Abstain (no recommendations)
+
+If **no** ticker passes Step 7 **full** confirmation:
+
+1. **Do not** append normal recommendation rows (no ORCL/ADBE/etc. pick lines).
+2. Append **exactly one** row to `trategies/bearish-call-spread/trades-log.csv`:
+   - `date` → today (`YYYY-MM-DD`)
+   - `scan_timestamp` → same convention as other runs
+   - `ticker` → `ABSTAIN`
+   - `score`, `current_price`, `sector`, `entry_zone`, `short_strike`, `key_risks`, `fundamental_note` → leave **empty**
+   - `setup_summary` → short explicit reason, e.g. `ABSTAIN — no chart-confirmed bear call candidates (B-Xtrender buy/green or above zero on latest bar; VTO sell not aligned) — mean-reversion risk across scan`
+   - Outcome columns → empty
+3. In `report.md`, replace **Today’s Top Picks** with an **## Abstention** section explaining what was seen on B-Xtrender/VTO across checked names (and optionally embed 1–2 screenshots if you captured any for documentation). Still include **Market Context**, **Open Trades**, and **Performance Summary**.
+4. Session summary (Step 10): state **TOP PICKS: none (abstained)** and that one `ABSTAIN` row was logged.
 
 ---
 
 ### Step 8 — Save New Picks to CSV
 
-Append one row per pick to:
+**Skip this step if Step 8a (abstain) applied** — the abstention row is already the only append for that run.
+
+Otherwise append **one row per qualified pick** (max 3) to:
 
 ```
 strategies/bearish-call-spread/trades-log.csv
@@ -200,10 +237,13 @@ Outcomes recorded today: [N rows updated, or "none due"]
 Tickers in scan ([count]): [list]
 Market context: [one line]
 
-TOP 3 PICKS (after TradingView VTO + B-Xtrender check):
-1. [SYMBOL] — Short $[strike]/$[strike] call spread, ~[X]% PoP, exp [Month] — Chart: [confirmed / partial / not confirmed]
-2. [SYMBOL] — … — Chart: […]
-3. [SYMBOL] — … — Chart: […]
+TOP 3 PICKS (after TrendSpider VTO + B-Xtrender check — **full** bearish alignment only; browser profile **Tim**):
+[If picks:] 
+1. [SYMBOL] — Short $[strike]/$[strike] call spread, ~[X]% PoP, exp [Month] — Chart: confirmed
+2. …
+3. …
+[If abstain:]
+**None — abstained.** (B-Xtrender green buy / above zero and/or VTO not confirming sell on all qualified candidates.) One `ABSTAIN` row appended to CSV for audit trail.
 
 Full details above. Results saved to strategies/bearish-call-spread/trades-log.csv.
 Report written to strategies/bearish-call-spread/report.md.
@@ -215,7 +255,7 @@ Report written to strategies/bearish-call-spread/report.md.
 
 `report.md` is overwritten every run. Use this structure:
 
-**TradingView images:** Step 7 deletes `assets/tradingview-*.png` at the start of a fresh scan; embed only `assets/tradingview-<TICKER>.png` files created in that same Step 7 (so Markdown image links always match the current run).
+**TrendSpider images:** Step 7 deletes `assets/trendspider-*.png` at the start of a fresh scan; embed only `assets/trendspider-<TICKER>.png` files created in that same Step 7 (Markdown links match the current run). All chart `browser-use` opens use **`--profile "Tim"`**.
 
 ```markdown
 # Bearish Call Spread — Current Report
@@ -230,19 +270,26 @@ _Last updated: [YYYY-MM-DD]_
 
 ## Today's Top Picks
 
+[If no qualified picks after Step 7, use this instead of numbered picks:]
+
+### Abstention — no new bear call spreads
+_Reason (e.g. B-Xtrender green buy / above zero on latest bar across checked names; VTO not showing sell on latest bar). Optional screenshots from Step 7._
+
+[If picks exist:]
+
 ### 1. [SYMBOL] — [one-line summary]
-[Full trade plan block from Step 6 output format, including **TradingView** line from Step 7]
+[Full trade plan block from Step 6 output format, including **TrendSpider** line from Step 7]
 
 ### 2. [SYMBOL] — [one-line summary]
-[Full trade plan block including TradingView line]
+[Full trade plan block including TrendSpider line]
 
 ### 3. [SYMBOL] — [one-line summary]
-[Full trade plan block including TradingView line]
+[Full trade plan block including TrendSpider line]
 
 ---
 
 ## Open Trades
-_Recommendations from the last 14 days with no outcome recorded yet._
+_Recommendations from the last 14 days with no outcome recorded yet. **Exclude** rows where `ticker` is `ABSTAIN`._
 
 | Date | Ticker | Entry Price | Short Strike | Setup Summary |
 |---|---|---|---|---|
