@@ -159,6 +159,28 @@ Dots appear when the **signal line reverses direction** (local minimum or maximu
 
 These are the most actionable signals — a dot marks the moment momentum flips.
 
+### How to identify the last dot correctly
+
+**Always identify the rightmost dot explicitly before drawing any conclusion.**
+
+Step-by-step dot check:
+1. Scan the B-Xtrender panel from right to left — the first dot you hit is the most recent one
+2. State its color explicitly: "Last dot is GREEN" or "Last dot is RED" — never assume
+3. Cross-check with signal line direction on the current bar:
+   - Signal line currently FALLING → consistent with red dot (peaked and turned down)
+   - Signal line currently RISING → consistent with green dot (troughed and turned up)
+   - If the dot and signal line direction conflict, the dot may be from an earlier bar — look more carefully
+
+**Common misread:** a chart zoomed out can make green and red dots look similar in color, especially at low resolution. If unsure, note it as "dot color unclear" and do not award or deduct points — treat as unverified.
+
+**Context matters — WHERE the dot printed relative to zero:**
+- A green dot that prints while the histogram is ABOVE zero (signal line declining from a bullish peak) is a **weakening bullish** signal, not a fresh entry trigger. This is equivalent to a setup that has peaked.
+- A green dot that prints while the histogram is BELOW zero (signal line rising from a bearish trough) is a **recovery signal** — this is the momentum-pullback entry trigger.
+- A red dot that prints while the histogram is ABOVE zero indicates the bullish momentum has peaked and selling is starting — the stock has likely just topped.
+- A red dot that prints while the histogram is BELOW zero indicates the bearish momentum is re-accelerating after a brief pause — continued downside likely.
+
+**For momentum-pullback entries specifically:** you need a green dot printed at the BOTTOM of a below-zero histogram cycle, not at a declining phase from above zero. Always note where the histogram was when the dot printed.
+
 ---
 
 ## Reading all layers together
@@ -181,6 +203,22 @@ These are the most actionable signals — a dot marks the moment momentum flips.
 - Green dot just printed
 
 **Zero-line crossovers** on the histogram or signal line are significant — a cross from below to above zero is a bullish shift, above to below is bearish.
+
+---
+
+## What to read (bullish confirmation — momentum-pullback)
+
+For momentum-pullback entries, confirm ALL of the following before awarding B-Xtrender points or approving an entry:
+
+- [ ] **Last dot color:** explicitly identify — must be **GREEN** (signal line turned UP from a trough)
+- [ ] **Histogram level when dot printed:** must be **below zero** or crossing back above — confirms the green dot is a recovery signal, not a fading-bullish-peak signal
+- [ ] **Current histogram direction:** recovering toward zero (bright red brightening, or crossing back above) — dark red and falling means the pullback is still accelerating
+- [ ] **Signal line direction now:** rising or flat — falling signal line contradicts a recent green dot
+- [ ] **Background bars:** green — long-term trend still bullish despite the pullback
+
+**Fail any of these → do not confirm bullish entry. State which check failed.**
+
+If the last dot is RED (signal line turned down from a peak), apply the −6 deduction and note the setup as "watching — green dot not yet printed." Do not award the +7 green dot bonus.
 
 ---
 
