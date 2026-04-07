@@ -12,6 +12,7 @@
 | Trading style     | Position trading (weeks to months)                                                            |
 | Max picks per run | 3                                                                                             |
 | Log file          | `strategies/momentum-pullback/trades-log.csv`                                                 |
+| **Instrument**    | Agent's discretion per pick — `stock` · `bull_call_spread` · `put_credit_spread`             |
 
 
 ## Strategy Thesis
@@ -154,6 +155,115 @@ Scores are out of **115 points**. A ticker must reach the **minimum threshold** 
 - For Category B, award only the highest applicable R:R band (not cumulative)
 - If a data point cannot be verified, do not award the points for it — note this in the output
 - Show the score breakdown in the per-ticker output: e.g. `Score: 72/100 (A:32 B:18 C:16 D:15 Ded:-9)`
+
+---
+
+## Instrument & Spread Construction
+
+The stock-selection logic (scan, B-Xtrender check, scoring) is identical regardless of instrument. After scoring, the agent selects the instrument for each pick based on the decision framework below. Different picks in the same run can use different instruments.
+
+### Instrument decision framework
+
+For each pick, work through these factors in order:
+
+**1. IV environment (primary driver)**
+- IV rank < 35%: favour `bull_call_spread` — premium is cheap, buying spreads is cost-effective
+- IV rank 35–55%: neutral — use setup conviction and R:R to decide
+- IV rank > 55%: favour `put_credit_spread` — premium is expensive, selling is advantageous
+
+**2. Setup conviction and R:R**
+- High conviction (score ≥ 80, B-Xtrender green dot, clean pattern, strong fundamentals) + R:R ≥ 3:1: consider `stock` — don't cap a high-quality setup
+- Moderate conviction (score 55–79) or R:R 2:1–2.9:1: `bull_call_spread` or `put_credit_spread` depending on IV
+- Low R:R (< 2:1) but setup is otherwise clean: `put_credit_spread` is often better — the stock only needs to stay above support rather than advance to T1
+
+**3. Market regime (from orchestrator or Step 3 market context)**
+- Risk-On: `stock` or `bull_call_spread` — lean into the move
+- Mixed or Sector-Divergent: `bull_call_spread` or `put_credit_spread` preferred — defined risk in uncertain tape
+- Risk-Off (restricted run): `put_credit_spread` preferred — theta decay and defined risk suit a cautious posture
+
+**4. Override rules**
+- If IV rank is very high (>70%) and setup is only moderate conviction: strongly prefer `put_credit_spread` over stock
+- If IV rank is very low (<25%) and the move to T1 is well-defined: `bull_call_spread` can outperform stock on a risk-adjusted basis
+- Never use `bull_call_spread` when IV rank > 60% — you are overpaying for the long leg
+
+State the chosen instrument and a one-line rationale for each pick before presenting the spread construction (or confirming stock entry).
+
+---
+
+### Bull Call Spread Construction
+
+| Parameter | Rule |
+|---|---|
+| Long call strike | ATM or 1 strike OTM (~0.40–0.50 delta) — this is your directional exposure |
+| Short call strike | At or just above T1 target (~0.20–0.25 delta) — caps upside, funds the long |
+| Spread width | Difference between strikes; typically $5–$10 wide on large-caps |
+| Target DTE | 30–45 days — enough time for the move, not so much that you overpay |
+| Max profit | (Short strike − Long strike) − Net debit paid |
+| Max loss | Net debit paid |
+| Breakeven | Long strike + Net debit |
+| IV filter | Prefer low IV rank (<40%) — avoid buying spreads into inflated premium |
+
+**CSV field mapping:**
+- `entry_zone` → current stock price at analysis time
+- `stop_loss` → long call strike (your max-loss anchor)
+- `target_1` → short call strike (max profit level)
+- `risk_reward` → max profit ÷ net debit
+- `setup_summary` → spread details: strikes, expiry, net debit, PoP estimate
+
+**Outcome at 14 days:** Did the stock close at or above the short call strike?
+- `WIN` → stock ≥ short call strike (spread at or near max profit)
+- `LOSS` → stock below long call strike (spread near worthless)
+- `PARTIAL` → stock between strikes (partial profit — log as WIN with note)
+
+---
+
+### Put Credit Spread Construction
+
+| Parameter | Rule |
+|---|---|
+| Short put strike | At or just below entry zone (~0.25–0.30 delta) — stock must stay above this |
+| Long put strike | At the stock's stop level (~0.10–0.15 delta) — limits max loss |
+| Spread width | Difference between strikes; typically $5–$10 wide on large-caps |
+| Target DTE | 21–35 days — shorter than call spreads; theta decay accelerates near expiry |
+| Max profit | Net credit received (kept if stock stays above short put at expiry) |
+| Max loss | Spread width − Net credit |
+| Breakeven | Short put strike − Net credit |
+| IV filter | Prefer elevated IV rank (>50%) — sell premium when it's expensive |
+
+**CSV field mapping:**
+- `entry_zone` → current stock price at analysis time
+- `stop_loss` → short put strike (the breach level — same as bearish-call-spread logic)
+- `target_1` → long put strike (max-loss anchor)
+- `risk_reward` → net credit ÷ max loss
+- `setup_summary` → spread details: strikes, expiry, net credit, PoP estimate
+
+**Outcome at 14 days:** Did the stock close above the short put strike?
+- `WIN` → stock > short put strike (spread retains premium)
+- `LOSS` → stock ≤ short put strike (spread breached — max loss risk)
+
+---
+
+### Spread output block (add after standard trade plan if instrument ≠ stock)
+
+```
+Instrument: [Bull Call Spread / Put Credit Spread]
+IV Rank: ~[X]% ([low/moderate/elevated])
+
+Suggested Spread:
+  [Long / Short] Call/Put Strike: $[strike] (~[delta] delta)
+  [Short / Long] Call/Put Strike: $[strike] (~[delta] delta)
+  Spread Width: $[width]
+  Target Expiry: [Month YYYY] (~[DTE] DTE)
+  Net [Debit / Credit]: ~$[amount] per share ($[amount] per contract)
+  Max Profit: $[amount] per contract
+  Max Loss:   $[amount] per contract
+  Breakeven:  $[price]
+  Est. Probability of Profit: ~[X]%
+
+Short Strike Level (Breach Reference): $[strike] — [reason this is hard support: e.g. 50-day MA, prior breakout zone]
+```
+
+---
 
 ## Output Summary Header
 

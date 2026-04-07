@@ -40,6 +40,8 @@ strategies/momentum-pullback/trades-log.csv
 
 This will find any rows recommended ~14 days ago that have not yet had their outcome recorded, look up current prices, and write the result back to the CSV. Note how many rows were updated (if any) — include this in the final summary.
 
+**Spread rows** (where `setup_summary` contains "Bull Call Spread" or "Put Credit Spread"): do **not** use the standard HIT_T1/HIT_T2/STOP outcome logic. Instead apply the spread-specific WIN/LOSS rules from `config.md` — check whether the stock closed above/below the relevant strike (`stop_loss` column for put credit spreads, `target_1` for call spreads).
+
 ---
 
 ### Step 3 — Market Context Check
@@ -92,6 +94,24 @@ Score each ticker using the points table in `config.md`. Discard any ticker that
 Select the top 3 scoring tickers. Present each using the output format defined in the `analyse-tickers` skill, including the full score breakdown.
 
 If fewer than 3 tickers reach the minimum threshold, only present those that do and briefly explain why the others were excluded (including their score).
+
+---
+
+### Step 5b — Instrument Selection & Spread Construction
+
+For each top pick from Step 5:
+
+1. **Select the instrument** using the decision framework in `config.md` — consider IV rank, setup conviction, R:R, and market regime. State the chosen instrument and a one-line rationale.
+
+2. **If `stock`**: no further action — present the standard trade plan only.
+
+3. **If `bull_call_spread` or `put_credit_spread`**: construct the spread:
+   - Note the current IV rank/percentile (quick lookup or broker estimate — use delta approximations if exact IV rank is unavailable)
+   - Select strikes from the scoring-derived entry zone, stop, and T1 target per the construction rules in `config.md`
+   - Calculate max profit, max loss, breakeven, and approximate PoP
+   - Present the spread output block from `config.md` appended to the standard trade plan
+
+Different picks in the same run may use different instruments — this is expected and correct.
 
 ---
 
