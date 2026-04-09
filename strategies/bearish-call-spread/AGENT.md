@@ -8,7 +8,7 @@ Before starting, load the following files:
 2. **Skill: `log-trade-csv`** — located at `.cursor/skills/log-trade-csv/SKILL.md` — CSV schema and writing rules
 3. **Skill: `track-outcomes`** — located at `.cursor/skills/track-outcomes/SKILL.md` — 14-day outcome lookback and CSV update rules
 4. **Skill: `read-trendspider-chart`** — located at `.cursor/skills/read-trendspider-chart/SKILL.md` — **headed Chrome, profile `Tim` (mandatory)** for [TrendSpider](https://charts.trendspider.com/) chart workspace, VTO + B-Xtrender (with buy/sell signals), fullscreen helper script, and bearish confirmation rules (uses **Skill: `browser-use`** at `.cursor/skills/browser-use/SKILL.md`). _Optional legacy:_ `.cursor/skills/read-tradingview-chart/SKILL.md` if you must fall back to TradingView — still use **`--profile "Tim"`**._
-5. `strategies/bearish-call-spread/config.md` — this strategy's scan URL, filters, scoring system, and spread construction notes
+5. `strategies/bearish-call-spread/config.md` — this strategy's saved scanner name, filters, scoring system, and spread construction notes
 
 All behaviour rules, scoring weights, output formats, and CSV conventions are defined in those files. This `AGENT.md` defines only the workflow steps specific to this strategy.
 
@@ -18,11 +18,15 @@ All behaviour rules, scoring weights, output formats, and CSV conventions are de
 
 ### Step 1 — Fetch the Scan
 
-Fetch the scan URL from `config.md`.
+Run the saved TrendSpider scanner from `config.md` via the live UI:
 
-> **Note:** If the scan URL is not yet configured (shown as a placeholder), ask the user to provide the TrendSpider scan URL before continuing. Do not proceed with Step 4 without a ticker list.
+```bash
+python3 scripts/trendspider_scan.py --scanner-name "Bearish Case Market Scanner"
+```
 
-Extract `symbolsFound` (the ticker list) and `timestamp` (convert from Unix ms to a human-readable datetime).
+This uses `browser-use`, Chrome profile `Tim`, and `Default Workspace`, then runs the scan from the Market Scanner pane and returns fresh JSON.
+
+Extract `symbolsFound` (the ticker list) and `timestamp` (convert from Unix ms to a human-readable datetime) from the script output.
 
 If `symbolsFound` is empty, write the empty-scan row per the `log-trade-csv` skill, complete Steps 2–3 (outcomes + market context), skip Steps 4–8, then continue at Step 9.
 

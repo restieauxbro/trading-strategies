@@ -8,7 +8,7 @@ Before starting, load the following files:
 2. **Skill: `log-trade-csv`** — located at `.cursor/skills/log-trade-csv/SKILL.md` — CSV schema and writing rules
 3. **Skill: `track-outcomes`** — located at `.cursor/skills/track-outcomes/SKILL.md` — 14-day outcome lookback and CSV update rules
 4. **Skill: `read-trendspider-chart`** — located at `.cursor/skills/read-trendspider-chart/SKILL.md` — how to open TrendSpider, read the B-Xtrender layers, and score the indicator state
-5. `strategies/momentum-pullback/config.md` — this strategy's scan URL, filters, and settings
+5. `strategies/momentum-pullback/config.md` — this strategy's saved scanner name, filters, and settings
 
 All behaviour rules, scoring weights, output formats, and CSV conventions are defined in those files. This `AGENT.md` defines only the workflow steps specific to this strategy.
 
@@ -18,13 +18,15 @@ All behaviour rules, scoring weights, output formats, and CSV conventions are de
 
 ### Step 1 — Fetch the Scan
 
-Fetch the scan URL from `config.md`:
+Run the saved TrendSpider scanner from `config.md` via the live UI:
 
-```
-https://charts.trendspider.com/scheduled_scans/view/sub-294213843b440f9793b6b7bb0432e5/json
+```bash
+python3 scripts/trendspider_scan.py --scanner-name "Momentum after pullback"
 ```
 
-Extract `symbolsFound` (the ticker list) and `timestamp` (convert from Unix ms to a human-readable datetime).
+This uses `browser-use`, Chrome profile `Tim`, and `Default Workspace`, then runs the scan from the Market Scanner pane and returns fresh JSON.
+
+Extract `symbolsFound` (the ticker list) and `timestamp` (convert from Unix ms to a human-readable datetime) from the script output.
 
 If `symbolsFound` is empty, write the empty-scan row per the `log-trade-csv` skill and skip to Step 6.
 

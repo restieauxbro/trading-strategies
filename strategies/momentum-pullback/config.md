@@ -6,8 +6,9 @@
 | Field             | Value                                                                                         |
 | ----------------- | --------------------------------------------------------------------------------------------- |
 | Strategy name     | Momentum After Pullback                                                                       |
-| Scan source       | TrendSpider Scheduled Scan                                                                    |
-| Scan URL          | `https://charts.trendspider.com/scheduled_scans/view/sub-294213843b440f9793b6b7bb0432e5/json` |
+| Scan source       | TrendSpider Market Scanner via live UI                                                        |
+| Saved scanner     | `Momentum after pullback`                                                                     |
+| Scan runner       | `python3 scripts/trendspider_scan.py --scanner-name "Momentum after pullback"`               |
 | Universe          | S&P 500 Index                                                                                 |
 | Trading style     | Position trading (weeks to months)                                                            |
 | Max picks per run | 3                                                                                             |
@@ -273,4 +274,3 @@ Use this header in the final session output:
 === MOMENTUM PULLBACK SCAN — [DATE] ===
 Universe: S&P 500 | Style: Position Trade
 ```
-

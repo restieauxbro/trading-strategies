@@ -6,8 +6,9 @@
 | Field             | Value                                                                                  |
 | ----------------- | -------------------------------------------------------------------------------------- |
 | Strategy name     | Bearish Call Spread                                                                    |
-| Scan source       | TrendSpider Scheduled Scan                                                             |
-| Scan URL          | https://charts.trendspider.com/scheduled_scans/view/sub-400848764c44d4b092d9442ad4d904 |
+| Scan source       | TrendSpider Market Scanner via live UI                                                 |
+| Saved scanner     | `Bearish Case Market Scanner`                                                          |
+| Scan runner       | `python3 scripts/trendspider_scan.py --scanner-name "Bearish Case Market Scanner"`    |
 | Universe          | S&P 500 / Large Cap (Market Cap > $10B, Price > $50)                                   |
 | Trading style     | Monthly options — bear call spreads (credit spreads)                                   |
 | Max picks per run | 3                                                                                      |
@@ -192,4 +193,3 @@ Use this header in the final session output:
 === BEARISH CALL SPREAD SCAN — [DATE] ===
 Universe: Large Cap (S&P 500) | Style: Monthly Bear Call Spreads
 ```
-

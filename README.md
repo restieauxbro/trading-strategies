@@ -1,6 +1,6 @@
 # Trading Strategy — Agent-Driven Analysis
 
-An AI-powered trading workflow for Cursor. A Cursor agent fetches a live market scan, researches each ticker with real-time web data, scores and ranks setups, logs picks to a CSV, and overwrites a markdown report — all from a single prompt.
+An AI-powered trading workflow for Cursor. A Cursor agent runs a live TrendSpider Market Scanner from the UI, researches each ticker with real-time web data, scores and ranks setups, logs picks to a CSV, and overwrites a markdown report — all from a single prompt.
 
 ---
 
@@ -9,7 +9,8 @@ An AI-powered trading workflow for Cursor. A Cursor agent fetches a live market 
 ### Prerequisites
 
 - [Cursor](https://cursor.com) with a Pro or Business plan (required for background agents and cloud runs)
-- A [TrendSpider](https://trendspider.com) account with a scheduled scan — or swap in any scan URL that returns JSON
+- A [TrendSpider](https://trendspider.com) account with saved Market Scanners in `Default Workspace`
+- `browser-use` installed and able to open Chrome profile `Tim`
 
 ### Optional: Python + yfinance (quotes, MAs, option chains)
 
@@ -38,18 +39,18 @@ cd trading-strategy
 
 Open the folder in Cursor: **File → Open Folder**.
 
-### 2. Point the scan at your TrendSpider scan (or any JSON scan URL)
+### 2. Configure your saved TrendSpider scanners
 
-Edit `strategies/momentum-pullback/config.md` and replace the `Scan URL` with your own TrendSpider scheduled scan URL. The URL must return JSON in this shape:
+Edit each strategy `config.md` so the `Saved scanner` entry matches the scanner name visible in TrendSpider’s Market Scanner list inside `Default Workspace`.
 
-```json
-{
-  "timestamp": 1234567890000,
-  "symbolsFound": ["AAPL", "MSFT", "..."]
-}
+The repo now uses:
+
+```bash
+python3 scripts/trendspider_scan.py --scanner-name "Momentum after pullback"
+python3 scripts/trendspider_scan.py --scanner-name "Bearish Case Market Scanner"
 ```
 
-If you want to use a different scan source, update the URL and adjust the extraction step in `strategies/momentum-pullback/AGENT.md` accordingly.
+This opens TrendSpider with `browser-use`, selects `Default Workspace`, runs the saved scanner from the UI, and returns fresh JSON with `timestamp` and `symbolsFound`.
 
 ### 3. Run the agent manually
 
@@ -59,7 +60,7 @@ In Cursor, open the chat panel and type:
 Run the momentum-pullback strategy. Follow strategies/momentum-pullback/AGENT.md
 ```
 
-The agent will work through all 8 steps autonomously — fetching the scan, researching tickers, scoring, logging picks, and writing the report. Expect it to take 3–5 minutes.
+The agent will work through all 8 steps autonomously — running the scanner, researching tickers, scoring, logging picks, and writing the report. Expect it to take 3–5 minutes.
 
 ### 4. Schedule recurring runs (Cursor Cloud Agents)
 
@@ -83,7 +84,7 @@ Each agent run follows 8 steps defined in `strategies/momentum-pullback/AGENT.md
 
 | Step | What happens                                                                             |
 | ---- | ---------------------------------------------------------------------------------------- |
-| 1    | Fetch the live scan JSON → extract ticker list and timestamp                             |
+| 1    | Run the live TrendSpider Market Scanner UI → extract ticker list and timestamp           |
 | 2    | Check `trades-log.csv` for picks ~14 days old → look up current prices → record outcomes |
 | 3    | Market context check (S&P 500 vs 200-day MA, VIX level, overall trend)                   |
 | 4    | Research each ticker: technicals, fundamentals, news, earnings dates                     |
@@ -121,6 +122,7 @@ trading-strategy/
 │       └── report.md                      ← current report, overwritten each run
 │
 ├── scripts/
+│   ├── trendspider_scan.py              ← live TrendSpider scanner runner via browser-use + profile Tim
 │   └── yfinance_tools.py                ← optional CLI: summary / technicals / option chains
 ├── requirements.txt                     ← optional: yfinance (see README)
 └── README.md
@@ -132,7 +134,7 @@ trading-strategy/
 | File                | Purpose                                                                                                                                                                    |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `AGENT.md`          | Step-by-step workflow the agent follows for a strategy. Load this in your prompt.                                                                                          |
-| `config.md`         | Scan URL, universe, trading style, entry criteria, and the full scoring system (points table, deductions, minimum threshold). Customise this to change strategy behaviour. |
+| `config.md`         | Saved scanner name, universe, trading style, entry criteria, and the full scoring system (points table, deductions, minimum threshold). Customise this to change strategy behaviour. |
 | `trades-log.csv`    | Append-only trade log. The agent adds new rows and fills in outcome columns 14 days later. Never manually edit this file.                                                    |
 | `report.md`         | Full markdown report overwritten on every run. Human-readable summary of market context, top picks, open trades, and performance stats.                                    |
 | `SKILL.md` files    | Reusable logic loaded by every strategy agent. Defines how to research tickers, how to write to the CSV, and how to score outcomes.                                        |
@@ -146,14 +148,14 @@ trading-strategy/
 
 | Strategy                                                         | Universe | Style                   | Scan source                |
 | ---------------------------------------------------------------- | -------- | ----------------------- | -------------------------- |
-| [Momentum After Pullback](strategies/momentum-pullback/AGENT.md) | S&P 500  | Position (weeks–months) | TrendSpider scheduled scan |
+| [Momentum After Pullback](strategies/momentum-pullback/AGENT.md) | S&P 500  | Position (weeks–months) | TrendSpider Market Scanner UI |
 
 
 ---
 
 ## Adding a New Strategy
 
-1. Create `strategies/<name>/config.md` — scan URL, universe, trading style, entry filters, and a scoring system (copy from `momentum-pullback/config.md` and adapt)
+1. Create `strategies/<name>/config.md` — saved scanner name, universe, trading style, entry filters, and a scoring system (copy from `momentum-pullback/config.md` and adapt)
 2. Create `strategies/<name>/AGENT.md` — load the three skills, define the 8-step workflow (copy from `momentum-pullback/AGENT.md` and adapt)
 3. Create `strategies/<name>/trades-log.csv` — paste the header row from `.cursor/skills/log-trade-csv/SKILL.md`
 4. Create `strategies/<name>/report.md` — any placeholder text; overwritten on first run
@@ -192,7 +194,7 @@ The `report.md` Performance Summary section is built from these completed rows.
 ## Notes
 
 - **No data fabrication** — if the agent cannot find a data point, it notes the gap and does not award points for it
+- **Live scanner runs** — the repo uses `scripts/trendspider_scan.py` instead of TrendSpider scheduled-scan JSON URLs because the URL data can be stale
 - **Earnings filter** — any ticker with earnings within 3 weeks is penalised −20 pts or excluded
 - **One log per strategy** — each strategy writes only to its own `trades-log.csv`
 - **Append-only CSV** — existing rows are never modified except when filling in outcome columns
-
