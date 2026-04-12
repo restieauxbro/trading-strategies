@@ -56,19 +56,23 @@ For every ticker in `symbolsFound`, full `analyse-tickers` checklist: technicals
 
 > ⛔ **Complete this for every ticker before Step 5.** Unverified chart state → leave Category A timing/structure points at **0** for unverified items; do **not** guess.
 
-For **each** ticker, open (headed Chrome, profile **`Tim`**):
+> **Tooling:** Use `**browser-use --profile "Tim" --headed`** only — per `.cursor/skills/indicators/SKILL.md`. **Do not** use Puppeteer, headless default `browser-use`, or any browser without profile **Tim**; you will not be logged into TradingView and indicator reads would be invalid.
+
+For **each** ticker, open with `**browser-use`** (headed, profile `**Tim**`):
 
 `https://www.tradingview.com/chart/z25AhAlV/?symbol=TICKER`
 
 Use plain **TICKER** (e.g. `AMD`). Follow `.cursor/skills/indicators/SKILL.md` and record:
 
-- **Fair value bands:** green vs red structure; is price **extended** or **near fair value**?
+- **Fair value bands:** green vs red structure; vs **three lines** — **lower = fair value**, **middle = premium**, **upper = stress** (see `indicators` skill).
 - **Weekly BX row:** green vs red on latest bar
 - **Daily B-Xtrender:** histogram side of zero; **buy/sell** signals on latest bars
 
 **Watchlist rule:** If scan + research are attractive but visuals say **no immediate entry** (overextension, sell signal, etc.), flag for **Watchlist** (see `config.md`) — **no** CSV row for that symbol.
 
 Optional: clear stale screenshots first (`rm -f strategies/positive-bx-entry/assets/tradingview-*.png`), then save `strategies/positive-bx-entry/assets/tradingview-<TICKER>.png` for shortlisted names.
+
+**Reading charts:** After each screenshot, use the **multimodal handoff** in `.cursor/skills/indicators/SKILL.md` (vision model + **JSON schema**) so **latest-bar** B-Xtrender / weekly BX state is not inferred from lossy image descriptions alone.
 
 ---
 
@@ -170,3 +174,4 @@ _Recommendations from the last 14 days, outcome not yet recorded._
 ## Performance Summary
 [Same table/stats rules as archived momentum: read trades-log.csv rows with outcome_result set]
 ```
+

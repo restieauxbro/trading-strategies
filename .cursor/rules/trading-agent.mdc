@@ -39,7 +39,7 @@ trading-strategy/
 ## Rules for All Agents in This Repo
 
 - Every strategy agent MUST load the `analyse-tickers`, `log-trade-csv`, and `track-outcomes` skills before running
-- Agents that perform **TradingView** visual confirmation MUST also load **`indicators`** (`.cursor/skills/indicators/SKILL.md`)
+- Agents that perform **TradingView** visual confirmation MUST also load **`indicators`** (`.cursor/skills/indicators/SKILL.md`) and MUST use **`browser-use --profile "Tim" --headed`** — not Puppeteer or headless default Chromium (login + saved chart `z25AhAlV` require profile Tim)
 - Each strategy writes ONLY to its own `trades-log.csv` — never to another strategy's log
 - Never overwrite existing CSV rows — always append
 - Never fabricate financial data; if data is unavailable, note it and downrank the ticker

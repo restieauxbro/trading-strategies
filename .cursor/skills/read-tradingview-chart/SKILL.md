@@ -13,8 +13,8 @@ This file adds **browser-use** mechanics if you need extra detail. The layout is
 ## Prerequisites
 
 - `browser-use` installed (`browser-use doctor`). See `.cursor/skills/browser-use/SKILL.md` for CLI details.
-- A **Chrome profile named `Tim`** available to browser-use (`browser-use profile list` if connection fails).
-- **Headed** mode is required so you can visually confirm dots, colours, and histogram state.
+- **`browser-use --profile "Tim" --headed`** for all strategy chart work — your TradingView login and saved layout live in that profile.
+- **Do not use Puppeteer** (or headless `browser-use` without profile Tim) for pick confirmation; those sessions are not logged in and will misread indicators. Full rationale: `.cursor/skills/indicators/SKILL.md`.
 
 ## Base URL and symbol
 

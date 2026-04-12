@@ -19,7 +19,7 @@
 
 ## Strategy Thesis
 
-The scan surfaces S&P 500 names with **strong bullish momentum** and **positive weekly B-Xtrender histogram**, pre-filtered in TrendSpider. The agent adds **fundamental and news context**, then uses **TradingView** (Fair Value Bands + weekly BX + daily B-Xtrender) to judge **structure**, **extension vs fair value**, and **entry timing**. Prefer **entries toward fair value**; if the setup is valid but price is **too extended**, recommend a **watchlist** level instead of an immediate trade.
+The scan surfaces S&P 500 names with **strong bullish momentum** and **positive weekly B-Xtrender histogram**, pre-filtered in TrendSpider. The agent adds **fundamental and news context**, then uses **TradingView** (Fair Value Bands + weekly BX + daily B-Xtrender) to judge **structure**, **extension vs fair value**, and **entry timing**. On **THT Fair Value Bands**, the **lower** line is **fair value**; the **middle** line is **slight premium** (not core fair value); the **upper** line is **stress**. Prefer entries with price **near or returning toward the lower band**; if the setup is valid but price is **too extended** (e.g. into upper band without a pullback plan), recommend a **watchlist** instead of an immediate trade.
 
 ---
 
@@ -44,7 +44,7 @@ The list is already momentum- and weekly-BX-filtered. The agent **does not** re-
 
 ## Entry criteria
 
-- **TradingView:** Fair value bands show **bullish (green) structure** for a long-bias entry; prefer **pullback toward middle / fair value** rather than chasing vertical extension into the upper stress side of the band.
+- **TradingView:** Fair value bands show **bullish (green) structure** for a long-bias entry; prefer **pullback toward the lower band (fair value)**. The **middle** band = **premium** (already extended vs core value); the **upper** band = **stress** — avoid chasing longs there without a plan.
 - **Weekly BX row** green on the chart (should align with scan; if not, investigate or exclude).
 - **Daily B-Xtrender** timing must **not** strongly conflict with an immediate new long (e.g. fresh **sell** signal + extended price → **watchlist**, not CSV pick).
 - Volume and trend context consistent with continuation (scan already biased this way).
@@ -56,7 +56,7 @@ The list is already momentum- and weekly-BX-filtered. The agent **does not** re-
 
 If research + scan quality are **good** but TradingView shows **overextension** or **bad timing** (see `indicators` skill), add the symbol to the **Watchlist** section of `report.md` with:
 
-- **Trigger** (e.g. pullback to middle fair value band, reclaim after test of X)
+- **Trigger** (e.g. pullback toward **lower fair value** band, reclaim after test of X)
 - **What would change the view** (e.g. bands flip red → drop)
 
 **Do not** append `trades-log.csv` rows for watchlist-only names.
@@ -72,7 +72,7 @@ Scores out of **100** points. Minimum **55** to qualify as a tradable pick.
 | Check | Pts |
 | ----- | --- |
 | Fair value bands **green** (bullish structure) on daily | 12 |
-| Price **not overextended** vs bands — acceptable entry zone or already pulling toward fair value | 15 |
+| Price **not overextended** vs bands — near **lower (fair value)** band or constructive pullback toward it; **middle = premium** (partial credit only if rest of setup is strong) | 15 |
 | Weekly BX row **green** on chart (confirms higher-TF pressure) | 8 |
 | Daily B-Xtrender **compatible** with a new long (no hard conflict on latest bar) | 10 |
 | Daily price structure coherent with continuation (higher lows / trend intact) | 5 |
@@ -108,7 +108,7 @@ Scores out of **100** points. Minimum **55** to qualify as a tradable pick.
 | --------- | --- |
 | Earnings within 3 weeks | −20 |
 | Fair value bands **red** (bearish structure) | −15 |
-| **Chasing** — extended to upper band / clear overextension without pullback plan | −12 |
+| **Chasing** — at or pressing **upper** stress band, or extended above **middle premium** without pullback toward **lower** fair value | −12 |
 | Daily B-Xtrender **sell** or strong bearish histogram on latest bar **for immediate entry** | −10 |
 | Weekly BX row **red** on chart (conflicts scan) | −15 |
 | Stock below 200-day MA | −8 |

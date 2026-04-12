@@ -151,7 +151,7 @@ If fewer than 3 tickers reach the minimum threshold, only present those that do 
 
 After Step 6, **confirm each shortlist ticker** on your **saved TradingView layout** using the **`indicators`** skill (`.cursor/skills/indicators/SKILL.md`).
 
-**Chrome profile `Tim` is mandatory** for every `browser-use open` in this step. Do **not** use headless default Chromium without `--profile "Tim"`.
+**`browser-use --profile "Tim" --headed` is mandatory** for every chart open in this step. **Do not** use Puppeteer, Playwright without profile Tim, or `browser-use` without **`--profile "Tim"`** — you will not be logged into TradingView and saved indicators will not load (see `.cursor/skills/indicators/SKILL.md`).
 
 **Goal:** For bearish call spreads, **only** names with **full bearish alignment** on the **latest** bar (per `indicators` skill) may be **recommended and saved** to the CSV:
 
@@ -174,7 +174,8 @@ After Step 6, **confirm each shortlist ticker** on your **saved TradingView layo
    Use **plain** ticker (e.g. `ORCL`). Wait for indicators to load.
 
 3. Capture **screenshot** per confirmed symbol: `strategies/bearish-call-spread/assets/tradingview-<TICKER>.png`
-4. Record for each ticker: fair value band color (structural), weekly BX row state, daily B-Xtrender histogram side + buy/sell on latest bar; **chart confirm:** full / partial / none / unable.
+4. **Interpret screenshots** with the **multimodal handoff** + JSON schema in `.cursor/skills/indicators/SKILL.md` (vision-capable model on the PNG — not lossy file-read captions alone).
+5. Record for each ticker: fair value band color (structural), weekly BX row state, daily B-Xtrender histogram side + buy/sell on latest bar; **chart confirm:** full / partial / none / unable.
 
 **Substitution and abstention:**
 

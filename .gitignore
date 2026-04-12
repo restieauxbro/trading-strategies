@@ -1,3 +1,7 @@
 .venv/
 __pycache__/
 *.pyc
+
+# Per-strategy chart screenshots (TradingView / TrendSpider) — regenerated each run
+strategies/**/assets/**
+!strategies/**/assets/.gitkeep
