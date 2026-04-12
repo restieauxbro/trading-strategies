@@ -9,10 +9,10 @@ Before starting, load the following files:
 1. **Skill: `analyse-tickers`** — `.cursor/skills/analyse-tickers/SKILL.md`
 2. **Skill: `log-trade-csv`** — `.cursor/skills/log-trade-csv/SKILL.md`
 3. **Skill: `track-outcomes`** — `.cursor/skills/track-outcomes/SKILL.md`
-4. **Skill: `read-trendspider-chart`** — `.cursor/skills/read-trendspider-chart/SKILL.md`
-5. **Strategy config: momentum-pullback** — `strategies/momentum-pullback/config.md`
+4. **Skill: `indicators`** — `.cursor/skills/indicators/SKILL.md` (TradingView layout; loaded by strategy workflows as needed)
+5. **Strategy config: positive-bx-entry** — `strategies/positive-bx-entry/config.md`
 6. **Strategy config: bearish-call-spread** — `strategies/bearish-call-spread/config.md`
-7. **Strategy workflow: momentum-pullback** — `strategies/momentum-pullback/AGENT.md`
+7. **Strategy workflow: positive-bx-entry** — `strategies/positive-bx-entry/AGENT.md`
 8. **Strategy workflow: bearish-call-spread** — `strategies/bearish-call-spread/AGENT.md`
 
 ---
@@ -69,28 +69,28 @@ In most real market conditions the regime will be **Mixed** or **Sector-Divergen
 
 Based on the regime label and sector map, determine which strategies are active this run and what constraints apply:
 
-| Regime | Momentum-Pullback | Bearish Call Spread |
-|--------|------------------|---------------------|
+| Regime | Positive BX entry | Bearish Call Spread |
+|--------|-------------------|---------------------|
 | Risk-On | Full run, all sectors | Selective only — stocks in ↓ Bearish sectors only; apply stricter minimum score (+10 pts) |
 | Risk-Off | Restricted — ↑ Bullish sectors only; stricter minimum score (+10 pts) | Full run |
 | Mixed | ↑ Bullish sectors only | ↓ Bearish sectors only |
 | Sector-Divergent | ↑ Bullish sectors only | ↓ Bearish sectors only |
 
-Note the routing decision in the output. If a strategy is fully paused (e.g. momentum-pullback in a confirmed Risk-Off regime with no bullish sectors), skip that strategy entirely and explain why.
+Note the routing decision in the output. If a strategy is fully paused (e.g. positive-bx-entry in a confirmed Risk-Off regime with no bullish sectors), skip that strategy entirely and explain why.
 
 ---
 
-### Step 3 — Run Momentum-Pullback Strategy
+### Step 3 — Run Positive BX entry strategy
 
-> ⛔ **CSV append (Step 6 of that workflow) must not happen until Step 4b (B-Xtrender TrendSpider check) is complete for all candidates. Run the browser-use session before scoring.**
+> ⛔ **CSV append must not happen until Step 4b (TradingView visual check) is complete for all candidates.**
 
-Follow **all steps** in `strategies/momentum-pullback/AGENT.md` with the following additions from Step 1:
+Follow **all steps** in `strategies/positive-bx-entry/AGENT.md` with the following additions from Step 1:
 
 - **Sector filter**: when scoring tickers, apply an additional −10 pt deduction to any ticker in a → Neutral or ↓ Bearish sector (on top of the existing sector deduction in config.md). Award an additional +5 pts bonus to any ticker in a sector showing strong relative strength vs the S&P 500.
 - **Market context (Step 3 of that workflow)**: skip the broad market research — use the assessment from Step 1a of this orchestrator instead.
 - Complete all remaining steps of that workflow including CSV append and report generation.
 
-Capture the results: list of picks (or "none"), scores, and sectors.
+Capture the results: list of picks (or "none"), watchlist names, scores, and sectors.
 
 ---
 
@@ -100,7 +100,7 @@ Follow **all steps** in `strategies/bearish-call-spread/AGENT.md` with the follo
 
 - **Sector filter**: apply an additional −10 pt deduction to any ticker in a → Neutral or ↑ Bullish sector. Award an additional +5 pts bonus to any ticker in a sector showing accelerating institutional outflows or confirmed downside rotation.
 - **Market context (Step 3 of that workflow)**: use the assessment from Step 1a of this orchestrator.
-- Complete all remaining steps including TrendSpider confirmation, CSV append, and report generation.
+- Complete all remaining steps including TradingView confirmation, CSV append, and report generation.
 
 Capture the results: list of picks (or abstention), scores, and sectors.
 
@@ -114,7 +114,7 @@ Combine the picks from both strategies and assess the resulting position set as 
 
 | # | Strategy | Ticker | Direction | Sector | Score | Setup |
 |---|----------|--------|-----------|--------|-------|-------|
-| 1 | Momentum-Pullback | | Long | | | |
+| 1 | Positive BX entry | | Long | | | |
 | 2 | Bearish Call Spread | | Bear spread | | | |
 | … | | | | | | |
 
@@ -157,7 +157,7 @@ Write `strategies/overview/report.md` with the following structure:
 
 ## Strategy Activation
 
-- **Momentum-Pullback:** [Active / Restricted / Paused] — [one-line reason]
+- **Positive BX entry:** [Active / Restricted / Paused] — [one-line reason]
 - **Bearish Call Spread:** [Active / Restricted / Paused] — [one-line reason]
 
 ---
@@ -171,11 +171,11 @@ Write `strategies/overview/report.md` with the following structure:
 
 ---
 
-## Momentum-Pullback Picks
+## Positive BX entry picks
 
-[Copy the top picks block from the momentum-pullback report, or "None — [reason]"]
+[Copy the top picks block from the positive-bx-entry report, or "None — [reason]"]
 
-_Full report: `strategies/momentum-pullback/report.md`_
+_Full report: `strategies/positive-bx-entry/report.md`_
 
 ---
 
@@ -189,8 +189,8 @@ _Full report: `strategies/bearish-call-spread/report.md`_
 
 ## Open Trades (All Strategies)
 
-### Momentum-Pullback
-[Open trades table from momentum-pullback trades-log.csv]
+### Positive BX entry
+[Open trades table from positive-bx-entry trades-log.csv]
 
 ### Bearish Call Spread
 [Open trades table from bearish-call-spread trades-log.csv — exclude ABSTAIN rows]
@@ -208,7 +208,7 @@ Bullish sectors: [list]
 Bearish sectors: [list]
 
 STRATEGIES RUN:
-  Momentum-Pullback: [Active / Restricted / Paused]
+  Positive BX entry: [Active / Restricted / Paused]
   Bearish Call Spread: [Active / Restricted / Paused]
 
 POSITIONS:
@@ -219,7 +219,7 @@ POSITIONS:
 Portfolio flags: [concentration / skew warnings, or "none"]
 
 Individual reports written to:
-  strategies/momentum-pullback/report.md
+  strategies/positive-bx-entry/report.md
   strategies/bearish-call-spread/report.md
   strategies/overview/report.md
 ```

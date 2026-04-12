@@ -8,13 +8,13 @@ Prerequisites:
 
 Usage:
   # After: browser-use --profile "Tim" --headed open "<your chart URL>"
-  python .cursor/skills/read-trendspider-chart/maximize_chart.py
+  python .cursor/skills/archived/read-trendspider-chart/maximize_chart.py
 
   # Or pass JS-only to stdout for manual eval:
-  python .cursor/skills/read-trendspider-chart/maximize_chart.py --print-js
+  python .cursor/skills/archived/read-trendspider-chart/maximize_chart.py --print-js
 
   # Chain open + wait + eval (headed, profile Tim):
-  python .cursor/skills/read-trendspider-chart/maximize_chart.py --open-url "https://charts.trendspider.com/..." --headed
+  python .cursor/skills/archived/read-trendspider-chart/maximize_chart.py --open-url "https://charts.trendspider.com/..." --headed
 
 Profile:
   Default Chrome profile name is **Tim** (override with --profile).

@@ -1,4 +1,6 @@
-# Momentum After Pullback — Agent Instructions
+# Momentum After Pullback — Agent Instructions (**ARCHIVED**)
+
+> **Archived** at `strategies/archived/momentum-pullback/`. For live bullish runs use **Positive BX entry** — `strategies/positive-bx-entry/AGENT.md`.
 
 ## Setup
 
@@ -7,8 +9,8 @@ Before starting, load the following files:
 1. **Skill: `analyse-tickers`** — located at `.cursor/skills/analyse-tickers/SKILL.md` — research checklist, scoring criteria, market context check, and per-ticker output format
 2. **Skill: `log-trade-csv`** — located at `.cursor/skills/log-trade-csv/SKILL.md` — CSV schema and writing rules
 3. **Skill: `track-outcomes`** — located at `.cursor/skills/track-outcomes/SKILL.md` — 14-day outcome lookback and CSV update rules
-4. **Skill: `read-trendspider-chart`** — located at `.cursor/skills/read-trendspider-chart/SKILL.md` — how to open TrendSpider, read the B-Xtrender layers, and score the indicator state
-5. `strategies/momentum-pullback/config.md` — this strategy's saved scanner name, filters, and settings
+4. **Skill: `read-trendspider-chart` (archived)** — `.cursor/skills/archived/read-trendspider-chart/SKILL.md` — TrendSpider B-Xtrender / VTO workflow (historical)
+5. `strategies/archived/momentum-pullback/config.md` — this strategy's saved scanner name, filters, and settings
 
 All behaviour rules, scoring weights, output formats, and CSV conventions are defined in those files. This `AGENT.md` defines only the workflow steps specific to this strategy.
 
@@ -24,6 +26,8 @@ Run the saved TrendSpider scanner from `config.md` via the live UI:
 python3 scripts/trendspider_scan.py --scanner-name "Momentum after pullback"
 ```
 
+_(Scanner may no longer exist in your TrendSpider workspace if you migrated to **Strong upward momentum**.)_
+
 This uses `browser-use`, Chrome profile `Tim`, and `Default Workspace`, then runs the scan from the Market Scanner pane and returns fresh JSON.
 
 Extract `symbolsFound` (the ticker list) and `timestamp` (convert from Unix ms to a human-readable datetime) from the script output.
@@ -37,7 +41,7 @@ If `symbolsFound` is empty, write the empty-scan row per the `log-trade-csv` ski
 Before analysing new tickers, run the `track-outcomes` skill against:
 
 ```
-strategies/momentum-pullback/trades-log.csv
+strategies/archived/momentum-pullback/trades-log.csv
 ```
 
 This will find any rows recommended ~14 days ago that have not yet had their outcome recorded, look up current prices, and write the result back to the CSV. Note how many rows were updated (if any) — include this in the final summary.
@@ -76,14 +80,14 @@ Apply the strategy-specific entry criteria from `config.md` — in particular, t
 > ⛔ **This step is mandatory before scoring. Do not skip it and do not proceed to Step 5 until it is complete.**
 > Tickers where B-Xtrender state is unverified must have their B-Xtrender scoring categories left at zero — do not assume or estimate the indicator state.
 
-For each ticker researched in Step 4, open TrendSpider using the `read-trendspider-chart` skill and check the B-Xtrender indicator state. Record the following for each ticker:
+For each ticker researched in Step 4, open TrendSpider using the **archived** `read-trendspider-chart` skill (`.cursor/skills/archived/read-trendspider-chart/SKILL.md`) and check the B-Xtrender indicator state. Record the following for each ticker:
 
 - **Background bars**: green (bullish) or red (bearish) during the pullback period?
 - **Green dot**: has one printed on the signal line recently (last 1–3 bars)?
 - **Foreground histogram**: recovering toward zero / crossed back above zero, or still falling?
 - **Signal line**: rising (green) or falling (red)?
 
-Use `.cursor/skills/read-trendspider-chart/set_symbol.py` to switch between tickers in the same browser session — do not re-open the browser for each ticker.
+Use `.cursor/skills/archived/read-trendspider-chart/set_symbol.py` to switch between tickers in the same browser session — do not re-open the browser for each ticker.
 
 This data feeds directly into the Category A B-Xtrender scoring checks and deductions in `config.md`.
 
@@ -122,7 +126,7 @@ Different picks in the same run may use different instruments — this is expect
 Append one row per pick to:
 
 ```
-strategies/momentum-pullback/trades-log.csv
+strategies/archived/momentum-pullback/trades-log.csv
 ```
 
 Follow all rules in the `log-trade-csv` skill. Leave all four outcome columns empty.
@@ -131,7 +135,7 @@ Follow all rules in the `log-trade-csv` skill. Leave all four outcome columns em
 
 ### Step 7 — Generate Report
 
-Overwrite `strategies/momentum-pullback/report.md` with the full current report. See the **Report Format** section below.
+Overwrite `strategies/archived/momentum-pullback/report.md` with the full current report. See the **Report Format** section below.
 
 ---
 
@@ -152,8 +156,8 @@ TOP 3 PICKS:
 2. [SYMBOL] — [one-line summary]
 3. [SYMBOL] — [one-line summary]
 
-Full details above. Results saved to strategies/momentum-pullback/trades-log.csv.
-Report written to strategies/momentum-pullback/report.md.
+Full details above. Results saved to strategies/archived/momentum-pullback/trades-log.csv.
+Report written to strategies/archived/momentum-pullback/report.md.
 ```
 
 ---

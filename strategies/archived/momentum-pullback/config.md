@@ -12,7 +12,7 @@
 | Universe          | S&P 500 Index                                                                                 |
 | Trading style     | Position trading (weeks to months)                                                            |
 | Max picks per run | 3                                                                                             |
-| Log file          | `strategies/momentum-pullback/trades-log.csv`                                                 |
+| Log file          | `strategies/archived/momentum-pullback/trades-log.csv`                                        |
 | **Instrument**    | Agent's discretion per pick — `stock` · `bull_call_spread` · `put_credit_spread`             |
 
 

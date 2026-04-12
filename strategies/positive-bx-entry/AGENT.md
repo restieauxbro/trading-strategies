@@ -1,0 +1,172 @@
+# Positive BX entry — Agent Instructions
+
+## Setup
+
+Before starting, load the following files:
+
+1. **Skill: `analyse-tickers`** — `.cursor/skills/analyse-tickers/SKILL.md` — research checklist, scoring, market context, output format
+2. **Skill: `log-trade-csv`** — `.cursor/skills/log-trade-csv/SKILL.md` — CSV schema and writing rules
+3. **Skill: `track-outcomes`** — `.cursor/skills/track-outcomes/SKILL.md` — 14-day outcome lookback
+4. **Skill: `indicators`** — `.cursor/skills/indicators/SKILL.md` — TradingView layout, fair value bands, weekly BX, daily B-Xtrender
+5. `strategies/positive-bx-entry/config.md` — scanner name, scan logic, scoring, instruments
+
+This `AGENT.md` defines workflow steps only.
+
+---
+
+## Workflow
+
+### Step 1 — Fetch the scan
+
+Run the saved TrendSpider scanner from `config.md` via the live UI:
+
+```bash
+python3 scripts/trendspider_scan.py --scanner-name "Strong upward momentum"
+```
+
+Uses `browser-use`, Chrome profile `Tim`, `Default Workspace`. Extract `symbolsFound` and `timestamp` (ms → human-readable datetime).
+
+If `symbolsFound` is empty: still run **Steps 2–3** (outcomes + market context), append the **empty-scan** row per `log-trade-csv`, skip **Steps 4–6**, then run **Steps 7–8**.
+
+---
+
+### Step 2 — Track 14-day outcomes
+
+Run the `track-outcomes` skill against:
+
+`strategies/positive-bx-entry/trades-log.csv`
+
+**Spread rows** (`setup_summary` contains `Bull Call Spread` or `Put Credit Spread`): use spread-specific WIN/LOSS rules from `config.md` (see archived momentum config sections referenced there).
+
+---
+
+### Step 3 — Market context
+
+Use the quick check from `analyse-tickers` (S&P 500 vs 200 MA, VIX, trend). In a **confirmed downtrend**, apply stricter filters and warn.
+
+---
+
+### Step 4 — Research each ticker
+
+For every ticker in `symbolsFound`, full `analyse-tickers` checklist: technicals, fundamentals, news, risk (stop, targets, R:R). Apply **earnings** rule from `config.md`.
+
+---
+
+### Step 4b — TradingView visual check (**mandatory before scoring**)
+
+> ⛔ **Complete this for every ticker before Step 5.** Unverified chart state → leave Category A timing/structure points at **0** for unverified items; do **not** guess.
+
+For **each** ticker, open (headed Chrome, profile **`Tim`**):
+
+`https://www.tradingview.com/chart/z25AhAlV/?symbol=TICKER`
+
+Use plain **TICKER** (e.g. `AMD`). Follow `.cursor/skills/indicators/SKILL.md` and record:
+
+- **Fair value bands:** green vs red structure; is price **extended** or **near fair value**?
+- **Weekly BX row:** green vs red on latest bar
+- **Daily B-Xtrender:** histogram side of zero; **buy/sell** signals on latest bars
+
+**Watchlist rule:** If scan + research are attractive but visuals say **no immediate entry** (overextension, sell signal, etc.), flag for **Watchlist** (see `config.md`) — **no** CSV row for that symbol.
+
+Optional: clear stale screenshots first (`rm -f strategies/positive-bx-entry/assets/tradingview-*.png`), then save `strategies/positive-bx-entry/assets/tradingview-<TICKER>.png` for shortlisted names.
+
+---
+
+### Step 5 — Score and select top 3
+
+Score with `config.md`. Discard below **55**. Rank the rest.
+
+Select up to **3** tradable picks (must pass **Step 4b** for immediate entry — not watchlist-only).
+
+If fewer than 3 qualify, explain. List **watchlist** names separately (still in `report.md`, not CSV).
+
+Output format per `analyse-tickers`, including score breakdown.
+
+---
+
+### Step 5b — Instrument selection & spreads
+
+Per `config.md` / referenced spread sections: choose instrument per pick; if spread, build strikes, PoP, breakeven per rules.
+
+---
+
+### Step 6 — Save new picks to CSV
+
+Append **one row per tradable pick** (max 3) to `strategies/positive-bx-entry/trades-log.csv`. **Never** append watchlist-only names. Follow `log-trade-csv`; leave outcome columns empty.
+
+---
+
+### Step 7 — Generate report
+
+Overwrite `strategies/positive-bx-entry/report.md` (format below).
+
+---
+
+### Step 8 — Final summary
+
+```
+=== POSITIVE BX ENTRY — [DATE] ===
+Universe: S&P 500 | Style: Position Trade | Scan: Strong upward momentum
+
+Outcomes recorded today: [N or none]
+Tickers in scan ([count]): [list]
+Market context: [one line]
+
+TOP PICKS (immediate entry):
+1. [SYMBOL] — [summary]
+…
+
+WATCHLIST (no entry this run):
+- [SYMBOL] — [trigger / what we are waiting for]
+…
+
+Saved: strategies/positive-bx-entry/trades-log.csv
+Report: strategies/positive-bx-entry/report.md
+```
+
+---
+
+## Report format
+
+```markdown
+# Positive BX entry — Current Report
+_Last updated: [YYYY-MM-DD]_
+
+---
+
+## Market Context
+[Paragraph]
+
+---
+
+## Today's Top Picks
+
+### 1. [SYMBOL] — [summary]
+[Full trade plan from analyse-tickers + TradingView notes]
+
+### 2. …
+### 3. …
+
+---
+
+## Watchlist
+_Names with constructive scan/research but no immediate entry (timing / extension)._
+
+| Ticker | Why watching | Trigger to revisit |
+|--------|----------------|-------------------|
+| … | … | … |
+
+---
+
+## Open Trades
+_Recommendations from the last 14 days, outcome not yet recorded._
+
+| Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
+|------|--------|------------|------|----------|----------|-----|
+| … | … | … | … | … | … | … |
+
+---
+
+## Performance Summary
+[Same table/stats rules as archived momentum: read trades-log.csv rows with outcome_result set]
+```

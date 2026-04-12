@@ -1,0 +1,139 @@
+# Strategy Config — Positive BX entry
+
+## Identity
+
+| Field             | Value                                                                                         |
+| ----------------- | --------------------------------------------------------------------------------------------- |
+| Strategy name     | Positive BX entry (TrendSpider: **Strong upward momentum**)                                   |
+| Scan source       | TrendSpider Market Scanner via live UI                                                        |
+| Saved scanner     | `Strong upward momentum`                                                                      |
+| Scan runner       | `python3 scripts/trendspider_scan.py --scanner-name "Strong upward momentum"`                 |
+| Universe          | S&P 500 Index                                                                                 |
+| Trading style     | Position trading (weeks to months)                                                            |
+| Max picks per run | 3                                                                                             |
+| Log file          | `strategies/positive-bx-entry/trades-log.csv`                                                 |
+| **Instrument**    | Agent's discretion per pick — `stock` · `bull_call_spread` · `put_credit_spread`             |
+| **Chart layout**  | `https://www.tradingview.com/chart/z25AhAlV/?symbol=TICKER` (plain ticker; profile **Tim**)     |
+
+---
+
+## Strategy Thesis
+
+The scan surfaces S&P 500 names with **strong bullish momentum** and **positive weekly B-Xtrender histogram**, pre-filtered in TrendSpider. The agent adds **fundamental and news context**, then uses **TradingView** (Fair Value Bands + weekly BX + daily B-Xtrender) to judge **structure**, **extension vs fair value**, and **entry timing**. Prefer **entries toward fair value**; if the setup is valid but price is **too extended**, recommend a **watchlist** level instead of an immediate trade.
+
+---
+
+## Scan Logic (TrendSpider — all must be true)
+
+A symbol appears in `symbolsFound` only if **all** of the following hold (daily **D** / weekly **W**):
+
+1. **Price above short MA:** `D Price.Close` (last) **>** `D SMA(20, close)` (last)
+2. **RSI strong:** `D RSI(14, …, close)` (last) **>** constant `60`
+3. **5-day positive change:** `D Price.Close` (last) **>** `D Price.Close` **5 candles ago**
+4. **Volume above average:** `D Volume` (last) **>** `D Volume` **20-period SMA** (last)
+5. **Daily B-Xtrender turn:** `D B-Xtrender @Puppytherapy - Final Fix (5, 20, 5, 20, 5)`, **Turn Up** (last) **>** constant `-100`
+6. **Weekly B-Xtrender:** `W` same B-Xtrender, **Oscillator histogram** (last) **>** constant `0`
+
+---
+
+## What the scan guarantees
+
+The list is already momentum- and weekly-BX-filtered. The agent **does not** re-prove those math conditions tick-for-tick; it **confirms** weekly/daily BX and fair-value context on **TradingView** per `.cursor/skills/indicators/SKILL.md`, then scores quality and timing.
+
+---
+
+## Entry criteria
+
+- **TradingView:** Fair value bands show **bullish (green) structure** for a long-bias entry; prefer **pullback toward middle / fair value** rather than chasing vertical extension into the upper stress side of the band.
+- **Weekly BX row** green on the chart (should align with scan; if not, investigate or exclude).
+- **Daily B-Xtrender** timing must **not** strongly conflict with an immediate new long (e.g. fresh **sell** signal + extended price → **watchlist**, not CSV pick).
+- Volume and trend context consistent with continuation (scan already biased this way).
+- **Earnings:** no earnings within **3 weeks** of planned entry (hard filter — exclude or flag prominently).
+
+---
+
+## Watchlist (no immediate entry)
+
+If research + scan quality are **good** but TradingView shows **overextension** or **bad timing** (see `indicators` skill), add the symbol to the **Watchlist** section of `report.md` with:
+
+- **Trigger** (e.g. pullback to middle fair value band, reclaim after test of X)
+- **What would change the view** (e.g. bands flip red → drop)
+
+**Do not** append `trades-log.csv` rows for watchlist-only names.
+
+---
+
+## Scoring system
+
+Scores out of **100** points. Minimum **55** to qualify as a tradable pick.
+
+### Category A — Structure & timing (50 pts max)
+
+| Check | Pts |
+| ----- | --- |
+| Fair value bands **green** (bullish structure) on daily | 12 |
+| Price **not overextended** vs bands — acceptable entry zone or already pulling toward fair value | 15 |
+| Weekly BX row **green** on chart (confirms higher-TF pressure) | 8 |
+| Daily B-Xtrender **compatible** with a new long (no hard conflict on latest bar) | 10 |
+| Daily price structure coherent with continuation (higher lows / trend intact) | 5 |
+
+### Category B — Risk / reward (25 pts max)
+
+| R:R | Pts |
+| --- | --- |
+| ≥ 3:1 | 25 |
+| ≥ 2:1 | 18 |
+| ≥ 1.5:1 | 10 |
+| < 1.5:1 | 0 |
+
+### Category C — Fundamentals (15 pts max)
+
+| Check | Pts |
+| ----- | --- |
+| Beat earnings in most recent report | 5 |
+| Revenue YoY growth positive | 4 |
+| EPS YoY growth positive | 4 |
+| Analyst upgrade in last 30 days | 2 |
+
+### Category D — Catalyst & momentum (10 pts max)
+
+| Check | Pts |
+| ----- | --- |
+| Positive news / catalyst in last 2 weeks | 5 |
+| Sector tailwind or relative strength | 5 |
+
+### Deductions
+
+| Condition | Pts |
+| --------- | --- |
+| Earnings within 3 weeks | −20 |
+| Fair value bands **red** (bearish structure) | −15 |
+| **Chasing** — extended to upper band / clear overextension without pullback plan | −12 |
+| Daily B-Xtrender **sell** or strong bearish histogram on latest bar **for immediate entry** | −10 |
+| Weekly BX row **red** on chart (conflicts scan) | −15 |
+| Stock below 200-day MA | −8 |
+| Sector in confirmed downtrend | −10 |
+| Recent insider selling (30d) | −5 |
+
+### Scoring notes
+
+- Award Category B as **single highest** R:R band only.
+- If a fact cannot be verified, do **not** award those points — say so in output.
+- Show breakdown, e.g. `Score: 72/100 (A:35 B:18 C:11 D:5 Ded:3)`.
+
+---
+
+## Instrument & spread construction
+
+Same framework as archived momentum-pullback: after scoring, choose `stock`, `bull_call_spread`, or `put_credit_spread` per IV rank, conviction, and regime. Reuse the spread tables and output block from `strategies/archived/momentum-pullback/config.md` (sections **Instrument decision framework** through **Spread output block**) — they are unchanged.
+
+**CSV / outcome note:** spread rows use the same WIN/LOSS rules described there (`target_1` / `stop_loss` mapping per spread type).
+
+---
+
+## Output summary header
+
+```
+=== POSITIVE BX ENTRY — [DATE] ===
+Universe: S&P 500 | Style: Position Trade | Scan: Strong upward momentum
+```

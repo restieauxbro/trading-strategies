@@ -46,7 +46,7 @@ Edit each strategy `config.md` so the `Saved scanner` entry matches the scanner 
 The repo now uses:
 
 ```bash
-python3 scripts/trendspider_scan.py --scanner-name "Momentum after pullback"
+python3 scripts/trendspider_scan.py --scanner-name "Strong upward momentum"
 python3 scripts/trendspider_scan.py --scanner-name "Bearish Case Market Scanner"
 ```
 
@@ -57,7 +57,7 @@ This opens TrendSpider with `browser-use`, selects `Default Workspace`, runs the
 In Cursor, open the chat panel and type:
 
 ```
-Run the momentum-pullback strategy. Follow strategies/momentum-pullback/AGENT.md
+Run the positive-bx-entry strategy. Follow strategies/positive-bx-entry/AGENT.md
 ```
 
 The agent will work through all 8 steps autonomously — running the scanner, researching tickers, scoring, logging picks, and writing the report. Expect it to take 3–5 minutes.
@@ -69,7 +69,7 @@ The agent will work through all 8 steps autonomously — running the scanner, re
 1. Go to **Cursor Settings → Cloud Agents → New Agent**
 2. Set the prompt to:
   ```
-   Run the momentum-pullback strategy. Follow strategies/momentum-pullback/AGENT.md
+   Run the positive-bx-entry strategy. Follow strategies/positive-bx-entry/AGENT.md
   ```
 3. Set the schedule (e.g. every weekday at 08:00 ET after market open)
 4. Point it at this repository
@@ -79,19 +79,16 @@ The agent will work through all 8 steps autonomously — running the scanner, re
 
 ## How It Works
 
-Each agent run follows 8 steps defined in `strategies/momentum-pullback/AGENT.md`:
+Bullish (**positive-bx-entry**) and bearish (**bearish-call-spread**) workflows run the TrendSpider scan in the browser, research tickers, open **TradingView** (`chart/z25AhAlV` with plain ticker) for visuals per `.cursor/skills/indicators/SKILL.md`, score, then append picks to each strategy’s `trades-log.csv` and overwrite `report.md`. See each strategy’s `AGENT.md` for step order (including **watchlist** handling on the bullish side).
 
-
-| Step | What happens                                                                             |
+| Step (typical) | What happens |
 | ---- | ---------------------------------------------------------------------------------------- |
-| 1    | Run the live TrendSpider Market Scanner UI → extract ticker list and timestamp           |
-| 2    | Check `trades-log.csv` for picks ~14 days old → look up current prices → record outcomes |
-| 3    | Market context check (S&P 500 vs 200-day MA, VIX level, overall trend)                   |
-| 4    | Research each ticker: technicals, fundamentals, news, earnings dates                     |
-| 5    | Score every ticker (out of 100) and select the top 3 above the minimum threshold         |
-| 6    | Append one row per pick to `strategies/momentum-pullback/trades-log.csv`                 |
-| 7    | Overwrite `strategies/momentum-pullback/report.md` with the full current report          |
-| 8    | Print a clean session summary                                                            |
+| 1    | Run the live TrendSpider Market Scanner UI → ticker list + timestamp |
+| 2    | 14-day outcome pass on this strategy’s `trades-log.csv` |
+| 3    | Market context (S&P 500, VIX, trend) |
+| 4    | Research each ticker; **TradingView** visual check on a shortlist |
+| 5    | Score, select picks, optional spreads |
+| 6    | Append CSV rows; overwrite `report.md`; session summary |
 
 
 All research is done live via web search — the agent uses Yahoo Finance, Finviz, MarketWatch, and similar sources. No API keys required.
@@ -111,15 +108,17 @@ trading-strategy/
 │       │   └── SKILL.md                   ← research checklist, scoring, output format
 │       ├── log-trade-csv/
 │       │   └── SKILL.md                   ← CSV schema and writing rules
-│       └── track-outcomes/
-│           └── SKILL.md                   ← 14-day outcome lookback logic
+│       ├── track-outcomes/
+│       │   └── SKILL.md                   ← 14-day outcome lookback logic
+│       └── indicators/
+│           └── SKILL.md                   ← TradingView: fair value, weekly BX, daily B-Xtrender
 │
 ├── strategies/
-│   └── momentum-pullback/
-│       ├── AGENT.md                       ← agent workflow (load this in the prompt)
-│       ├── config.md                      ← scan URL, universe, scoring system
-│       ├── trades-log.csv                 ← persistent trade log for this strategy
-│       └── report.md                      ← current report, overwritten each run
+│   ├── positive-bx-entry/
+│   ├── bearish-call-spread/
+│   ├── overview/
+│   └── archived/
+│       └── momentum-pullback/
 │
 ├── scripts/
 │   ├── trendspider_scan.py              ← live TrendSpider scanner runner via browser-use + profile Tim
@@ -146,17 +145,20 @@ trading-strategy/
 ## Strategies
 
 
-| Strategy                                                         | Universe | Style                   | Scan source                |
-| ---------------------------------------------------------------- | -------- | ----------------------- | -------------------------- |
-| [Momentum After Pullback](strategies/momentum-pullback/AGENT.md) | S&P 500  | Position (weeks–months) | TrendSpider Market Scanner UI |
+| Strategy | Universe | Style | Scan source |
+| -------- | -------- | ----- | ----------- |
+| [Positive BX entry](strategies/positive-bx-entry/AGENT.md) | S&P 500 | Position (weeks–months) | TrendSpider: **Strong upward momentum** |
+| [Bearish call spread](strategies/bearish-call-spread/AGENT.md) | Large cap (see config) | Monthly bear call spreads | TrendSpider: **Bearish Case Market Scanner** |
+| [Market overview](strategies/overview/AGENT.md) | — | Combined book | Runs both strategies above |
+| [Momentum after pullback (archived)](strategies/archived/momentum-pullback/AGENT.md) | — | — | Historical only |
 
 
 ---
 
 ## Adding a New Strategy
 
-1. Create `strategies/<name>/config.md` — saved scanner name, universe, trading style, entry filters, and a scoring system (copy from `momentum-pullback/config.md` and adapt)
-2. Create `strategies/<name>/AGENT.md` — load the three skills, define the 8-step workflow (copy from `momentum-pullback/AGENT.md` and adapt)
+1. Create `strategies/<name>/config.md` — saved scanner name, universe, trading style, entry filters, and a scoring system (copy from `strategies/positive-bx-entry/config.md` and adapt)
+2. Create `strategies/<name>/AGENT.md` — load the core skills + `indicators` if using TradingView, define workflow (copy from an existing `AGENT.md` and adapt)
 3. Create `strategies/<name>/trades-log.csv` — paste the header row from `.cursor/skills/log-trade-csv/SKILL.md`
 4. Create `strategies/<name>/report.md` — any placeholder text; overwritten on first run
 5. Add a row to the Strategies table above
@@ -166,7 +168,7 @@ trading-strategy/
 
 ## Skills Reference
 
-Reusable logic shared across all strategies. Every agent loads all three.
+Reusable logic: every strategy loads **`analyse-tickers`**, **`log-trade-csv`**, and **`track-outcomes`**. TradingView chart steps also load **`indicators`**.
 
 
 | Skill             | Path                                      | What it defines                                                                              |
@@ -174,6 +176,7 @@ Reusable logic shared across all strategies. Every agent loads all three.
 | `analyse-tickers` | `.cursor/skills/analyse-tickers/SKILL.md` | Per-ticker research checklist, market context check, scoring instructions, output format     |
 | `log-trade-csv`   | `.cursor/skills/log-trade-csv/SKILL.md`   | CSV column schema, field formats, writing rules, example rows                                |
 | `track-outcomes`  | `.cursor/skills/track-outcomes/SKILL.md`  | How to find due rows, look up prices, classify HIT_T1/HIT_T2/STOPPED_OUT/EXPIRED, write back |
+| `indicators`      | `.cursor/skills/indicators/SKILL.md`      | TradingView layout `z25AhAlV`: fair value bands, weekly BX, daily B-Xtrender, screenshots   |
 
 
 ---

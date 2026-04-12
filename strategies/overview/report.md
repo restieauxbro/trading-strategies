@@ -78,5 +78,5 @@ That leaves the portfolio unchanged for now. The tape still supports selective l
 
 ## References
 
-- Momentum detail: [report.md](/Users/tim/Documents/code/trading-strategies/strategies/momentum-pullback/report.md)
+- Positive BX entry: [report.md](../positive-bx-entry/report.md)
 - Bearish detail: [report.md](/Users/tim/Documents/code/trading-strategies/strategies/bearish-call-spread/report.md)

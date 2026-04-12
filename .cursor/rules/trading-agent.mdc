@@ -21,12 +21,12 @@ trading-strategy/
 │       │   └── SKILL.md              ← 14-day outcome lookback and CSV update
 │       ├── browser-use/
 │       │   └── SKILL.md              ← browser-use CLI automation (optional)
-│       ├── read-trendspider-chart/
-│       │   ├── SKILL.md              ← TrendSpider chart + VTO / B-Xtrender (profile Tim)
-│       │   ├── maximize_chart.py     ← fullscreen toggle helper for screenshots
-│       │   └── set_symbol.py         ← top-left symbol search: focus, type ticker, Enter
-│       └── read-tradingview-chart/
-│           └── SKILL.md              ← legacy TradingView layout (optional; profile Tim)
+│       ├── indicators/
+│       │   └── SKILL.md              ← TradingView: Fair Value Bands, weekly BX, daily B-Xtrender
+│       ├── read-tradingview-chart/
+│       │   └── SKILL.md              ← optional extra TradingView notes (profile Tim)
+│       └── archived/
+│           └── read-trendspider-chart/  ← historical TrendSpider helpers + SKILL (not live workflows)
 ├── strategies/
 │   └── <strategy-name>/
 │       ├── AGENT.md                  ← workflow steps for this strategy's agent
@@ -39,6 +39,7 @@ trading-strategy/
 ## Rules for All Agents in This Repo
 
 - Every strategy agent MUST load the `analyse-tickers`, `log-trade-csv`, and `track-outcomes` skills before running
+- Agents that perform **TradingView** visual confirmation MUST also load **`indicators`** (`.cursor/skills/indicators/SKILL.md`)
 - Each strategy writes ONLY to its own `trades-log.csv` — never to another strategy's log
 - Never overwrite existing CSV rows — always append
 - Never fabricate financial data; if data is unavailable, note it and downrank the ticker

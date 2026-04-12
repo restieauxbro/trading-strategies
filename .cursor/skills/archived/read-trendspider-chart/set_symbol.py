@@ -13,8 +13,8 @@ Prerequisites:
 Usage:
   browser-use --profile "Tim" --headed open "<workspace URL>"
   # … open Default Workspace / chart …
-  python3 .cursor/skills/read-trendspider-chart/set_symbol.py ORCL
-  python3 .cursor/skills/read-trendspider-chart/set_symbol.py AMZN --settle-ms 4000
+  python3 .cursor/skills/archived/read-trendspider-chart/set_symbol.py ORCL
+  python3 .cursor/skills/archived/read-trendspider-chart/set_symbol.py AMZN --settle-ms 4000
 
 Ticker rules (TrendSpider):
   - Stocks/ETFs: plain symbol, e.g. ORCL, BRK.B (if your feed accepts it)

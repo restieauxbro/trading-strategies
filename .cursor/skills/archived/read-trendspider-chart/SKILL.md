@@ -1,10 +1,12 @@
 ---
 name: read-trendspider-chart
-description: Opens TrendSpider charts in headed Chrome (profile Tim) with VTO and B-Xtrender buy/sell signals, toggles chart fullscreen for screenshots, and documents bearish confirmation rules. Use for bearish call spread visual confirmation or when verifying B-Xtrender on TrendSpider instead of TradingView.
+description: ARCHIVED — TrendSpider chart workflow (profile Tim). Active strategies use TradingView + `.cursor/skills/indicators/SKILL.md` instead. Retained for historical runs and reference only; paths below point to this archived copy.
 allowed-tools: Bash(browser-use:*)
 ---
 
-# Read TrendSpider Chart (VTO + B-Xtrender)
+# Read TrendSpider Chart (VTO + B-Xtrender) — **ARCHIVED**
+
+> **Status:** Archived. Live workflows load **`.cursor/skills/indicators/SKILL.md`** and open **TradingView** (`chart/z25AhAlV`). Do not use this skill for current strategy runs unless you are deliberately reproducing an old process.
 
 Use **[TrendSpider](https://charts.trendspider.com/)** for visual confirmation when you need **B-Xtrender buy/sell signals** as shown on that platform. The agent does not rebuild the layout; it uses your **saved workspace** (login + chart) in Chrome.
 
@@ -19,7 +21,7 @@ Use **[TrendSpider](https://charts.trendspider.com/)** for visual confirmation w
 
 After the chart is visible, **maximize the chart** so indicators are easier to read in screenshots. The script clicks TrendSpider’s **“Toggle maximize this chart”** control (`button.chart-fullscreen-button`).
 
-**Path:** `.cursor/skills/read-trendspider-chart/maximize_chart.py`
+**Path:** `.cursor/skills/archived/read-trendspider-chart/maximize_chart.py`
 
 **Typical flow (profile Tim is default inside the script’s `--open-url` path):**
 
@@ -30,19 +32,19 @@ browser-use --profile "Tim" --headed open "https://charts.trendspider.com/YOUR_W
 # 2) Wait for chart + indicators to load, then toggle fullscreen
 browser-use wait selector "button.chart-fullscreen-button" --timeout 60000
 
-python3 .cursor/skills/read-trendspider-chart/maximize_chart.py
+python3 .cursor/skills/archived/read-trendspider-chart/maximize_chart.py
 ```
 
 **One-shot (open + sleep + click) — still uses profile `Tim` by default:**
 
 ```bash
-python3 .cursor/skills/read-trendspider-chart/maximize_chart.py --headed --open-url "https://charts.trendspider.com/YOUR_CHART_URL"
+python3 .cursor/skills/archived/read-trendspider-chart/maximize_chart.py --headed --open-url "https://charts.trendspider.com/YOUR_CHART_URL"
 ```
 
 Override profile only if needed:
 
 ```bash
-python3 .cursor/skills/read-trendspider-chart/maximize_chart.py --profile "Tim" --headed --open-url "https://charts.trendspider.com/..."
+python3 .cursor/skills/archived/read-trendspider-chart/maximize_chart.py --profile "Tim" --headed --open-url "https://charts.trendspider.com/..."
 ```
 
 **Equivalent raw eval** (same session as step 1 — must already be on the chart page):
@@ -57,25 +59,25 @@ If the result is `not_found`, you are **not on an active chart workspace** yet. 
 2. **Workspace hub** (“Open a workspace of yours”, list of Main View / Dashboard tiles) — the fullscreen button exists **only after** a workspace is open. Open **Default Workspace** or your chart from the hub (click the workspace card), **or** navigate directly to your **Chart workspace URL** from `config.md`. Wait for a chart title like `SYMBOL: … — TrendSpider […]`.
 3. **DOM changed** — use `browser-use state` or re-inspect `button.chart-fullscreen-button` in DevTools.
 
-**Verified flow:** `browser-use --profile "Tim" --headed open "https://charts.trendspider.com/"` → open a workspace → `python3 .cursor/skills/read-trendspider-chart/maximize_chart.py` → expect `result: {'ok': True, 'selector': 'button.chart-fullscreen-button'}`.
+**Verified flow:** `browser-use --profile "Tim" --headed open "https://charts.trendspider.com/"` → open a workspace → `python3 .cursor/skills/archived/read-trendspider-chart/maximize_chart.py` → expect `result: {'ok': True, 'selector': 'button.chart-fullscreen-button'}`.
 
 ## Symbol search helper (Python)
 
 Switch the active chart to another ticker using the **top-left symbol field** (see [Symbol search and lookup](https://help.trendspider.com/kb/charting/symbol-search-and-lookup)). The script focuses the MUI input that carries **`MuiInputBase-inputAdornedEnd`**, selects all, types the symbol, presses **Enter**, then waits briefly and prints `browser-use get title` so you can confirm the window title shows `TICKER: …`.
 
-**Path:** `.cursor/skills/read-trendspider-chart/set_symbol.py`
+**Path:** `.cursor/skills/archived/read-trendspider-chart/set_symbol.py`
 
 **Typical flow** (same headed session as above; must already be on a chart, not the workspace hub):
 
 ```bash
-python3 .cursor/skills/read-trendspider-chart/set_symbol.py ORCL
-python3 .cursor/skills/read-trendspider-chart/set_symbol.py AMZN --settle-ms 5000
+python3 .cursor/skills/archived/read-trendspider-chart/set_symbol.py ORCL
+python3 .cursor/skills/archived/read-trendspider-chart/set_symbol.py AMZN --settle-ms 5000
 ```
 
 If **select-all** does not clear the field on your Mac, try:
 
 ```bash
-python3 .cursor/skills/read-trendspider-chart/set_symbol.py ORCL --select-all "Meta+a"
+python3 .cursor/skills/archived/read-trendspider-chart/set_symbol.py ORCL --select-all "Meta+a"
 ```
 
 **Raw eval** (focus only — then `browser-use keys` / `type` yourself):

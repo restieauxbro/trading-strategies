@@ -12,7 +12,7 @@ scanner flow visible in the TrendSpider workspace:
 Examples:
   python3 scripts/trendspider_scan.py momentum
   python3 scripts/trendspider_scan.py bearish --headed
-  python3 scripts/trendspider_scan.py --scanner-name "Momentum after pullback"
+  python3 scripts/trendspider_scan.py --scanner-name "Strong upward momentum"
 """
 
 from __future__ import annotations
@@ -34,8 +34,11 @@ DEFAULT_LIBRARY_TIMEOUT_SECS = 30.0
 DEFAULT_STARTUP_TIMEOUT_SECS = 45.0
 
 ALIASES = {
-    "momentum": "Momentum after pullback",
-    "momentum-pullback": "Momentum after pullback",
+    "momentum": "Strong upward momentum",
+    "momentum-pullback": "Strong upward momentum",
+    "positive-bx": "Strong upward momentum",
+    "positive-bx-entry": "Strong upward momentum",
+    "bullish": "Strong upward momentum",
     "bearish": "Bearish Case Market Scanner",
     "bearish-call-spread": "Bearish Case Market Scanner",
 }

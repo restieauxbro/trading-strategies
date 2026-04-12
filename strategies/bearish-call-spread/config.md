@@ -13,7 +13,7 @@
 | Trading style     | Monthly options — bear call spreads (credit spreads)                                   |
 | Max picks per run | 3                                                                                      |
 | Log file          | `strategies/bearish-call-spread/trades-log.csv`                                        |
-| Chart workspace URL | _Set to your saved TrendSpider chart or workspace link (VTO + B-Xtrender with buy/sell signals). Used for Step 7 visual confirmation with browser-use profile **Tim**._ |
+| Chart layout (TradingView) | `https://www.tradingview.com/chart/z25AhAlV/?symbol=TICKER` — plain ticker; **Step 7** visual confirmation with browser-use profile **Tim** (see `.cursor/skills/indicators/SKILL.md`). |
 
 
 ---

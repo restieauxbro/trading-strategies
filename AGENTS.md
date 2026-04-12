@@ -15,7 +15,7 @@ Read strategies/overview/AGENT.md and run the market overview.
 **Individual strategies:**
 
 ```
-Read strategies/momentum-pullback/AGENT.md and run the strategy.
+Read strategies/positive-bx-entry/AGENT.md and run the strategy.
 Read strategies/bearish-call-spread/AGENT.md and run the strategy.
 ```
 
