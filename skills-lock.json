@@ -5,6 +5,11 @@
       "source": "browser-use/browser-use",
       "sourceType": "github",
       "computedHash": "f974fac2783f80ac2a1a2cb45d576b5cca55123015dc73db8adfd02277002461"
+    },
+    "tigeropen": {
+      "source": "tigerfintech/tigeropen-skill",
+      "sourceType": "github",
+      "computedHash": "777b4222404e013282d040adf3ce91a38b41864b7a3d6f10ab56b3a223a60638"
     }
   }
 }
