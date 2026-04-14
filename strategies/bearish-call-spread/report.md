@@ -1,31 +1,26 @@
 # Bearish Call Spread — Current Report
 
-*Last updated: 2026-04-14*
+_Last updated: 2026-04-14_
 
 ---
 
 ## Market Context
 
-**SPY** ~~$679 vs **200-day SMA ~$661** (~~+2.7%) — index back above long-term trend. **VIX** ~**19.9** (moderate). Tape has **rebounded** from early-April stress; bear call spreads need **hard resistance** and **chart-confirmed** bearish timing. **Orchestrator regime:** **Mixed** — for this strategy, routing limited new ideas to **↓ Bearish sectors (XLF, XLY)** only; today’s TrendSpider list did not contain names in that subset.
+**SPY** last **~$689.76** vs **200-day SMA ~$661.80** (**~+4.2%**) — index **above** long-term trend. **VIX ~18.26** is **low–moderate** (borderline vs a strict &lt;18 “complacent” read). Tape is **risk-on leaning** at the index level; **bear call spreads** still need **hard resistance** and **chart-confirmed** bearish timing. **Orchestrator regime:** **Mixed** — routing limits **new** bearish ideas to **↓ Bearish sectors** (**XLF** Financials, **XLY** Consumer Discretionary) only.
+
+_Unofficial: `scripts/yfinance_tools.py`; confirm in your broker._
 
 ---
 
 ## Outcomes Recorded Today
 
-**6 trades** at the ~14-day mark (rows dated **2026-03-31** and **2026-04-01**) — all **WIN** (spot still **below** short-call reference strike at check date **2026-04-14**; yfinance snapshot prices).
+**3 overdue rows** (dated **2026-03-27**, previously missing outcomes) were closed at **2026-04-14** using the strategy breach rule (spot vs numeric short reference **$330 / $175 / $700**). All **WIN** (price still **below** short strike at check).
 
-
-| Date       | Ticker | Entry   | Short ref | Price at check | % Move  | Result |
-| ---------- | ------ | ------- | --------- | -------------- | ------- | ------ |
-| 2026-03-31 | ORCL   | $137.78 | $170      | $150.35        | +9.11%  | WIN    |
-| 2026-03-31 | ADBE   | $240.04 | $285      | $234.71        | −2.22%  | WIN    |
-| 2026-03-31 | CRM    | $183.68 | $220      | $171.88        | −6.42%  | WIN    |
-| 2026-04-01 | UNH    | $274.22 | $330      | $307.01        | +11.96% | WIN    |
-| 2026-04-01 | ORCL   | $145.73 | $175      | $150.35        | +3.17%  | WIN    |
-| 2026-04-01 | META   | $580.59 | $700      | $626.86        | +7.97%  | WIN    |
-
-
-*Unofficial prices via yfinance; confirm in your broker.*
+| Date | Ticker | Entry | Short ref | Price at check | % Move | Result |
+|------|--------|-------|-----------|----------------|--------|--------|
+| 2026-03-27 | UNH | $268.05 | $330 | $317.61 | +18.49% | WIN |
+| 2026-03-27 | ORCL | $142.81 | $175 | $167.33 | +17.17% | WIN |
+| 2026-03-27 | META | $547.54 | $700 | $650.02 | +18.71% | WIN |
 
 ---
 
@@ -33,33 +28,28 @@
 
 ### Abstention — no new bear call spreads
 
-**TrendSpider** `Bearish Case Market Scanner` (`2026-04-13 15:37 UTC`) returned **CEG, ACN, VRTX, CRM**. Under **Mixed** regime routing for this orchestrator run, the bearish strategy was restricted to **Financials (XLF)** and **Consumer Discretionary (XLY)** only — **none** of the scan names fall in those sectors (CEG ≈ Utilities; ACN/CRM/VRTX = Tech / Healthcare). **No Step 7 TradingView confirmation** was performed on ineligible names.
+**TrendSpider** `Bearish Case Market Scanner` — **`2026-04-14 13:48 UTC`** — returned **ACN**, **VRTX** (2 symbols). Under **Mixed** orchestrator routing, only names in **↓ Bearish** sectors (**XLF**, **XLY**) are eligible: **ACN** maps to **Technology** (XLK **bullish** this run) and **VRTX** to **Healthcare** (XLV **neutral**). **No eligible universe** → **no Step 7 TradingView** on these tickers for a logged pick.
 
-One `**ABSTAIN`** audit row was appended to `trades-log.csv`.
+One **`ABSTAIN`** audit row appended to `trades-log.csv` for this session.
 
 ---
 
 ## Open Trades
 
-*Exclude `ABSTAIN` and `VOID` rows.*
+_Exclude `ABSTAIN` and `VOID` rows._
 
-
-| Date       | Ticker | Entry Price | Short Strike | Setup Summary                    |
-| ---------- | ------ | ----------- | ------------ | -------------------------------- |
-| 2026-03-27 | UNH    | $268.05     | $330 – …     | Short $330/$350 … May 15 ~49 DTE |
-| 2026-03-27 | ORCL   | $142.81     | $175 – …     | Short $175/$190 … May 15 ~49 DTE |
-| 2026-03-27 | META   | $547.54     | $700 – …     | Short $700/$730 … May 15 ~49 DTE |
-| 2026-04-03 | ORCL   | $146.03     | $170 – …     | Short $170/$185 … May 15 ~42 DTE |
-| 2026-04-03 | ADBE   | $242.14     | $275 – …     | Short $275/$290 … May 15 ~42 DTE |
-| 2026-04-03 | META   | $573.76     | $680 – …     | Short $680/$700 … May 15 ~42 DTE |
-
+| Date | Ticker | Entry Price | Short Strike | Setup Summary |
+|------|--------|-------------|--------------|---------------|
+| 2026-04-03 | ORCL | $146.03 | $170 – … | Short $170/$185 … May 15 ~42 DTE |
+| 2026-04-03 | ADBE | $242.14 | $275 – … | Short $275/$290 … May 15 ~42 DTE |
+| 2026-04-03 | META | $573.76 | $680 – … | Short $680/$700 … May 15 ~42 DTE |
 
 ---
 
 ## Performance Summary
 
-*Closed rows (`outcome_result` WIN/LOSS) — bear call breach rule at ~14 days.*
+_Closed rows (`outcome_result` **WIN** / **LOSS**) — bear call breach rule at check date._
 
-Aggregate from log: **30** closed checks recorded as **WIN**, **0** as **LOSS** (verify by re-reading CSV as new rows are appended).
+Aggregate from log: **33** closed checks recorded as **WIN**, **0** as **LOSS** (re-count after new closes; unofficial).
 
-*Full history: `strategies/bearish-call-spread/trades-log.csv`.*
+_Full history: `strategies/bearish-call-spread/trades-log.csv`._
