@@ -1,4 +1,4 @@
-# Bearish Call Spread — Agent Instructions
+# Bearish Selector — Agent Instructions
 
 ## Setup
 
@@ -28,7 +28,7 @@ This uses `browser-use`, Chrome profile `Tim`, and `Default Workspace`, then run
 
 Extract `symbolsFound` (the ticker list) and `timestamp` (convert from Unix ms to a human-readable datetime) from the script output.
 
-If `symbolsFound` is empty, write the empty-scan row per the `log-trade-csv` skill, complete Steps 2–3 (outcomes + market context), skip Steps 4–8, then continue at Step 9.
+If `symbolsFound` is empty, write the empty-scan row per the `log-trade-csv` skill, complete Steps 2–3 (outcomes + market context), skip Steps 4–9, then continue at Step 10.
 
 ---
 
@@ -199,22 +199,34 @@ If **no** ticker passes Step 7 **full** confirmation:
    - `score`, `current_price`, `sector`, `entry_zone`, `short_strike`, `key_risks`, `fundamental_note` → leave **empty**
    - `setup_summary` → short explicit reason, e.g. `ABSTAIN — no chart-confirmed bear call candidates (daily B-Xtrender buy/green or above zero on latest bar; weekly BX / fair value bands not aligned) — mean-reversion risk across scan`
    - Outcome columns → empty
-3. In `report.md`, replace **Today’s Top Picks** with an **## Abstention** section explaining what was seen on B-Xtrender/VTO across checked names (and optionally embed 1–2 screenshots if you captured any for documentation). Still include **Market Context**, **Open Trades**, and **Performance Summary**.
-4. Session summary (Step 10): state **TOP PICKS: none (abstained)** and that one `ABSTAIN` row was logged.
+3. In `report.md`, replace **Today’s Suggested Trades** with an **## Abstention** section explaining what was seen on B-Xtrender/VTO across checked names (and optionally embed 1–2 screenshots if you captured any for documentation). Still include **Market Context**, **Open Trades**, and **Performance Summary**.
+4. Session summary (Step 11): state **SUGGESTED TRADES: none (abstained)** and that one `ABSTAIN` row was logged.
 
 ---
 
-### Step 8 — Save New Picks to CSV
+### Step 8 — User confirmation gate
+
+Before writing any new trade rows, present the suggested trades and ask the user which ones they actually opened.
+
+- Default question: "Which of these suggested trades did you open?"
+- Only append rows for trades the user explicitly confirms they opened
+- If the user opened none, do **not** append any new trade rows
+- If Step 8a abstention applied, skip this confirmation step for trade rows; the audit `ABSTAIN` row is still appended
+- In unattended / scheduled runs where no user confirmation is possible, **do not append** new recommendation rows; generate the report with suggestions only
+
+---
+
+### Step 9 — Save Confirmed Trades to CSV
 
 **Skip this step if Step 8a (abstain) applied** — the abstention row is already the only append for that run.
 
-Otherwise append **one row per qualified pick** (max 3) to:
+Otherwise append **one row per user-confirmed trade** to:
 
 ```
 strategies/bearish-call-spread/trades-log.csv
 ```
 
-Follow all rules in the `log-trade-csv` skill. Leave all four outcome columns empty.
+Follow all rules in the `log-trade-csv` skill. Leave all four outcome columns empty. Do **not** append unconfirmed suggestions.
 
 **Field mapping for this strategy** (note: this CSV has a custom header — see `trades-log.csv`):
 - `entry_zone` → current price at time of analysis
@@ -225,25 +237,25 @@ Follow all rules in the `log-trade-csv` skill. Leave all four outcome columns em
 
 ---
 
-### Step 9 — Generate Report
+### Step 10 — Generate Report
 
-Overwrite `strategies/bearish-call-spread/report.md` with the full current report. See the **Report Format** section below.
+Overwrite `strategies/bearish-call-spread/report.md` with the full current report. See the **Report Format** section below. The **Suggested Trades** section may include ideas not opened; the **Open Trades** section must come only from `trades-log.csv`, which now contains user-confirmed trades only.
 
 ---
 
-### Step 10 — Final Summary
+### Step 11 — Final Summary
 
 Output a session summary:
 
 ```
-=== BEARISH CALL SPREAD SCAN — [DATE] ===
-Universe: Large Cap (S&P 500) | Style: Monthly Bear Call Spreads
+=== BEARISH SELECTOR SCAN — [DATE] ===
+Universe: Large Cap (S&P 500) | Style: Monthly Bearish Options Structures
 
 Outcomes recorded today: [N rows updated, or "none due"]
 Tickers in scan ([count]): [list]
 Market context: [one line]
 
-TOP 3 PICKS (after TradingView check — **full** bearish alignment only; browser profile **Tim**):
+SUGGESTED TRADES (after TradingView check — **full** bearish alignment only; browser profile **Tim**):
 [If picks:] 
 1. [SYMBOL] — Short $[strike]/$[strike] call spread, ~[X]% PoP, exp [Month] — Chart: confirmed
 2. …
@@ -251,6 +263,7 @@ TOP 3 PICKS (after TradingView check — **full** bearish alignment only; browse
 [If abstain:]
 **None — abstained.** (Daily B-Xtrender green buy / above zero and/or weekly BX + fair value bands not confirming bearish setup on all qualified candidates.) One `ABSTAIN` row appended to CSV for audit trail.
 
+Trades logged: [list of confirmed trades, or "none confirmed"]
 Full details above. Results saved to strategies/bearish-call-spread/trades-log.csv.
 Report written to strategies/bearish-call-spread/report.md.
 ```
@@ -264,7 +277,7 @@ Report written to strategies/bearish-call-spread/report.md.
 **TradingView images:** Step 7 deletes `assets/tradingview-*.png` at the start of a fresh scan; embed only `assets/tradingview-<TICKER>.png` from that Step 7. All chart opens use **`browser-use --profile "Tim" --headed`**.
 
 ```markdown
-# Bearish Call Spread — Current Report
+# Bearish Selector — Current Report
 _Last updated: [YYYY-MM-DD]_
 
 ---
@@ -274,7 +287,7 @@ _Last updated: [YYYY-MM-DD]_
 
 ---
 
-## Today's Top Picks
+## Today's Suggested Trades
 
 [If no qualified picks after Step 7, use this instead of numbered picks:]
 
@@ -295,7 +308,7 @@ _Reason (e.g. daily B-Xtrender green buy / above zero on latest bar; weekly BX g
 ---
 
 ## Open Trades
-_Recommendations from the last 14 days with no outcome recorded yet. **Exclude** rows where `ticker` is `ABSTAIN`._
+_User-confirmed trades from the last 14 days with no outcome recorded yet. **Exclude** rows where `ticker` is `ABSTAIN`._
 
 | Date | Ticker | Entry Price | Short Strike | Setup Summary |
 |---|---|---|---|---|

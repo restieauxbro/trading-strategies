@@ -79,7 +79,9 @@ The agent will work through all 8 steps autonomously — running the scanner, re
 
 ## How It Works
 
-Bullish (**positive-bx-entry**) and bearish (**bearish-call-spread**) workflows run the TrendSpider scan in the browser, research tickers, open **TradingView** (`chart/z25AhAlV` with plain ticker) for visuals per `.cursor/skills/indicators/SKILL.md`, score, then append picks to each strategy’s `trades-log.csv` and overwrite `report.md`. See each strategy’s `AGENT.md` for step order (including **watchlist** handling on the bullish side).
+Bullish (**positive-bx-entry**) and bearish (**Bearish Selector**, path: `bearish-call-spread`) workflows run the TrendSpider scan in the browser, research tickers, open **TradingView** (`chart/z25AhAlV` with plain ticker) for visuals per `.cursor/skills/indicators/SKILL.md`, score, present suggested trades, then append only **user-confirmed opened trades** to each strategy’s `trades-log.csv` before overwriting `report.md`. See each strategy’s `AGENT.md` for step order (including watchlist handling and the confirmation gate).
+
+The shared instrument catalog lives at [strategies/instruments.md](/Users/tim/Documents/code/trading-strategies/strategies/instruments.md). The current preferred structure is a **paired debit spread**: a tight ATM directional vertical plus a half-size opposite vertical as a wrong-way tail hedge.
 
 | Step (typical) | What happens |
 | ---- | ---------------------------------------------------------------------------------------- |
@@ -134,7 +136,7 @@ trading-strategy/
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `AGENT.md`          | Step-by-step workflow the agent follows for a strategy. Load this in your prompt.                                                                                          |
 | `config.md`         | Saved scanner name, universe, trading style, entry criteria, and the full scoring system (points table, deductions, minimum threshold). Customise this to change strategy behaviour. |
-| `trades-log.csv`    | Append-only trade log. The agent adds new rows and fills in outcome columns 14 days later. Never manually edit this file.                                                    |
+| `trades-log.csv`    | Append-only trade log of **user-confirmed opened trades**. The agent adds new rows only after user confirmation, then fills in outcome columns 14 days later. Never manually edit this file. |
 | `report.md`         | Full markdown report overwritten on every run. Human-readable summary of market context, top picks, open trades, and performance stats.                                    |
 | `SKILL.md` files    | Reusable logic loaded by every strategy agent. Defines how to research tickers, how to write to the CSV, and how to score outcomes.                                        |
 | `trading-agent.mdc` | Always-on Cursor rule enforcing repo-wide conventions (e.g. never overwrite CSV rows, never fabricate data).                                                               |
@@ -148,7 +150,7 @@ trading-strategy/
 | Strategy | Universe | Style | Scan source |
 | -------- | -------- | ----- | ----------- |
 | [Positive BX entry](strategies/positive-bx-entry/AGENT.md) | S&P 500 | Position (weeks–months) | TrendSpider: **Strong upward momentum** |
-| [Bearish call spread](strategies/bearish-call-spread/AGENT.md) | Large cap (see config) | Monthly bear call spreads | TrendSpider: **Bearish Case Market Scanner** |
+| [Bearish Selector](strategies/bearish-call-spread/AGENT.md) | Large cap (see config) | Monthly bearish options structures | TrendSpider: **Bearish Case Market Scanner** |
 | [Market overview](strategies/overview/AGENT.md) | — | Combined book | Runs both strategies above |
 | [Momentum after pullback (archived)](strategies/archived/momentum-pullback/AGENT.md) | — | — | Historical only |
 
@@ -200,4 +202,5 @@ The `report.md` Performance Summary section is built from these completed rows.
 - **Live scanner runs** — the repo uses `scripts/trendspider_scan.py` instead of TrendSpider scheduled-scan JSON URLs because the URL data can be stale
 - **Earnings filter** — any ticker with earnings within 3 weeks is penalised −20 pts or excluded
 - **One log per strategy** — each strategy writes only to its own `trades-log.csv`
+- **Confirmation gate** — suggested trades do not enter `trades-log.csv` until the user confirms they were actually opened
 - **Append-only CSV** — existing rows are never modified except when filling in outcome columns

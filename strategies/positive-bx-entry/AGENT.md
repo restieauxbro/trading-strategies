@@ -26,7 +26,7 @@ python3 scripts/trendspider_scan.py --scanner-name "Strong upward momentum"
 
 Uses `browser-use`, Chrome profile `Tim`, `Default Workspace`. Extract `symbolsFound` and `timestamp` (ms → human-readable datetime).
 
-If `symbolsFound` is empty: still run **Steps 2–3** (outcomes + market context), append the **empty-scan** row per `log-trade-csv`, skip **Steps 4–6**, then run **Steps 7–8**.
+If `symbolsFound` is empty: still run **Steps 2–3** (outcomes + market context), append the **empty-scan** row per `log-trade-csv`, skip **Steps 4–7**, then run **Steps 8–9**.
 
 ---
 
@@ -94,19 +94,31 @@ Per `config.md` / referenced spread sections: choose instrument per pick; if spr
 
 ---
 
-### Step 6 — Save new picks to CSV
+### Step 6 — User confirmation gate
 
-Append **one row per tradable pick** (max 3) to `strategies/positive-bx-entry/trades-log.csv`. **Never** append watchlist-only names. Follow `log-trade-csv`; leave outcome columns empty.
+Before writing any new trade rows, present the suggested trades and ask the user which ones they actually opened.
+
+- Default question: "Which of these suggested trades did you open?"
+- Only treat trades as confirmed if the user explicitly says they opened them
+- If the user opened none, do **not** append any new trade rows
+- Watchlist names are never eligible for CSV append
+- In unattended / scheduled runs where no user confirmation is possible, **do not append** new recommendation rows; generate the report with suggestions only
 
 ---
 
-### Step 7 — Generate report
+### Step 7 — Save confirmed trades to CSV
 
-Overwrite `strategies/positive-bx-entry/report.md` (format below).
+Append **one row per user-confirmed trade** to `strategies/positive-bx-entry/trades-log.csv`. **Never** append watchlist-only names or unconfirmed suggestions. Follow `log-trade-csv`; leave outcome columns empty.
 
 ---
 
-### Step 8 — Final summary
+### Step 8 — Generate report
+
+Overwrite `strategies/positive-bx-entry/report.md` (format below). The **Suggested Trades** section may include ideas not opened; the **Open Trades** section must come only from `trades-log.csv`, which now contains user-confirmed trades only.
+
+---
+
+### Step 9 — Final summary
 
 ```
 === POSITIVE BX ENTRY — [DATE] ===
@@ -116,7 +128,7 @@ Outcomes recorded today: [N or none]
 Tickers in scan ([count]): [list]
 Market context: [one line]
 
-TOP PICKS (immediate entry):
+SUGGESTED TRADES (immediate entry if opened):
 1. [SYMBOL] — [summary]
 …
 
@@ -124,6 +136,7 @@ WATCHLIST (no entry this run):
 - [SYMBOL] — [trigger / what we are waiting for]
 …
 
+Trades logged: [list of confirmed trades, or "none confirmed"]
 Saved: strategies/positive-bx-entry/trades-log.csv
 Report: strategies/positive-bx-entry/report.md
 ```
@@ -143,7 +156,7 @@ _Last updated: [YYYY-MM-DD]_
 
 ---
 
-## Today's Top Picks
+## Today's Suggested Trades
 
 ### 1. [SYMBOL] — [summary]
 [Full trade plan from analyse-tickers + TradingView notes]
@@ -163,7 +176,7 @@ _Names with constructive scan/research but no immediate entry (timing / extensio
 ---
 
 ## Open Trades
-_Recommendations from the last 14 days, outcome not yet recorded._
+_User-confirmed trades from the last 14 days, outcome not yet recorded._
 
 | Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
 |------|--------|------------|------|----------|----------|-----|
@@ -174,4 +187,3 @@ _Recommendations from the last 14 days, outcome not yet recorded._
 ## Performance Summary
 [Same table/stats rules as archived momentum: read trades-log.csv rows with outcome_result set]
 ```
-

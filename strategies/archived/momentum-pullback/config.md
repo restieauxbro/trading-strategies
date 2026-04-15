@@ -165,29 +165,67 @@ The stock-selection logic (scan, B-Xtrender check, scoring) is identical regardl
 
 ### Instrument decision framework
 
+**Preferred instrument:** `paired_debit_spread` per `strategies/instruments.md`.
+
 For each pick, work through these factors in order:
 
-**1. IV environment (primary driver)**
-- IV rank < 35%: favour `bull_call_spread` — premium is cheap, buying spreads is cost-effective
-- IV rank 35–55%: neutral — use setup conviction and R:R to decide
-- IV rank > 55%: favour `put_credit_spread` — premium is expensive, selling is advantageous
+**1. Move profile (primary driver)**
+- Expect a **clean directional move with risk of a sharp reversal the other way**: favour `paired_debit_spread`
+- Expect a **grinding move** or a simple hold-above-support outcome: `put_credit_spread` can still be better
+- Expect an unusually strong trend with room well beyond T1: consider `stock` only when conviction is exceptional
 
-**2. Setup conviction and R:R**
+**2. IV environment**
+- IV rank < 45%: favour `paired_debit_spread` or `bull_call_spread` — buying spreads is cost-effective
+- IV rank 45–60%: neutral — let move profile and conviction decide
+- IV rank > 60%: favour `put_credit_spread` unless realized-move expectations are unusually high
+
+**3. Setup conviction and R:R**
 - High conviction (score ≥ 80, B-Xtrender green dot, clean pattern, strong fundamentals) + R:R ≥ 3:1: consider `stock` — don't cap a high-quality setup
-- Moderate conviction (score 55–79) or R:R 2:1–2.9:1: `bull_call_spread` or `put_credit_spread` depending on IV
+- Moderate conviction (score 55–79) or R:R 2:1–2.9:1: `paired_debit_spread` is preferred when movement is the thesis; otherwise `bull_call_spread` or `put_credit_spread` depending on IV
 - Low R:R (< 2:1) but setup is otherwise clean: `put_credit_spread` is often better — the stock only needs to stay above support rather than advance to T1
 
-**3. Market regime (from orchestrator or Step 3 market context)**
-- Risk-On: `stock` or `bull_call_spread` — lean into the move
-- Mixed or Sector-Divergent: `bull_call_spread` or `put_credit_spread` preferred — defined risk in uncertain tape
+**4. Market regime (from orchestrator or Step 3 market context)**
+- Risk-On: `paired_debit_spread`, `stock`, or `bull_call_spread`
+- Mixed or Sector-Divergent: `paired_debit_spread` preferred — defined risk with a built-in wrong-way tail hedge
 - Risk-Off (restricted run): `put_credit_spread` preferred — theta decay and defined risk suit a cautious posture
 
-**4. Override rules**
-- If IV rank is very high (>70%) and setup is only moderate conviction: strongly prefer `put_credit_spread` over stock
-- If IV rank is very low (<25%) and the move to T1 is well-defined: `bull_call_spread` can outperform stock on a risk-adjusted basis
-- Never use `bull_call_spread` when IV rank > 60% — you are overpaying for the long leg
+**5. Override rules**
+- If IV rank is very high (>70%) and setup is only moderate conviction: strongly prefer `put_credit_spread` over any debit structure
+- If IV rank is very low (<25%) and the move to T1 is well-defined: `paired_debit_spread` is preferred if you want wrong-way crash protection; `bull_call_spread` is acceptable if the hedge side is too illiquid
+- Never force the paired structure when the opposite-side hedge cannot be built with reasonable liquidity or spread width
+- Never use `bull_call_spread` when IV rank > 60% unless there is a specific reason to own movement rather than sell premium
 
 State the chosen instrument and a one-line rationale for each pick before presenting the spread construction (or confirming stock entry).
+
+---
+
+### Paired Debit Spread Construction
+
+This is the preferred instrument when the thesis is: "direction likely, realized movement more likely than drift, and a violent wrong-way move should not be catastrophic."
+
+| Parameter | Rule |
+|---|---|
+| Primary structure | `bull_call_spread` at or near the money |
+| Hedge structure | `bear_put_spread` at **half-size** |
+| Primary long strike | ATM or 1 strike OTM (~0.45-0.55 delta) |
+| Primary short strike | Choose width so max profit is roughly equal to max loss |
+| Hedge long strike | Start near ATM or slightly OTM on the put side |
+| Hedge short strike | Choose width so the hedge makes about **2x its own risk** |
+| Size ratio | Primary `1.0x`, hedge `0.5x` |
+| Target DTE | 21-45 days |
+| Use case | Prefer when you expect movement and want to lose mainly on drift, not on a large wrong-way move |
+
+**CSV field mapping:**
+- `entry_zone` → current stock price at analysis time
+- `stop_loss` → primary spread max-loss anchor / note combined max-loss debit in `setup_summary`
+- `target_1` → primary short strike
+- `risk_reward` → primary expected payout ÷ total combined debit
+- `setup_summary` → both spreads, expiry, size ratio, combined debit, estimated payout if right vs violent wrong-way move
+
+**Outcome at 14 days:** Use the combined position.
+- `WIN` → price moved through or close to the primary spread max-profit zone
+- `PARTIAL` → price made a meaningful move but neither spread reached efficient payout
+- `LOSS` → price drifted / pinned such that both spreads decayed materially
 
 ---
 
@@ -247,8 +285,12 @@ State the chosen instrument and a one-line rationale for each pick before presen
 ### Spread output block (add after standard trade plan if instrument ≠ stock)
 
 ```
-Instrument: [Bull Call Spread / Put Credit Spread]
+Instrument: [Paired Debit Spread / Bull Call Spread / Put Credit Spread]
 IV Rank: ~[X]% ([low/moderate/elevated])
+
+Suggested Structure:
+  Preferred when applicable: Paired Debit Spread per `strategies/instruments.md`
+  If using a single spread, explain why the paired hedge was not used
 
 Suggested Spread:
   [Long / Short] Call/Put Strike: $[strike] (~[delta] delta)

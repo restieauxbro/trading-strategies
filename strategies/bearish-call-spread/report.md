@@ -1,4 +1,4 @@
-# Bearish Call Spread — Current Report
+# Bearish Selector — Current Report
 
 _Last updated: 2026-04-14_
 

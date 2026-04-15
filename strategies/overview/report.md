@@ -29,7 +29,7 @@ _Unofficial: `scripts/yfinance_tools.py technicals` / `summary`; verify in your 
 ## Strategy Activation
 
 - **Positive BX entry:** **Active** (Mixed routing: **↑ Bullish sectors only** — redundant when scan is empty). **TrendSpider** `Strong upward momentum` returned **0 symbols** at **2026-04-14 13:47 UTC** → empty-scan CSV append; **no** new longs.
-- **Bearish Call Spread:** **Restricted** (Mixed: **↓ Bearish sectors only** — **XLF**, **XLY**). Fresh scan (**2026-04-14 13:48 UTC**) returned **ACN**, **VRTX** — **not** in allowed sectors → **`ABSTAIN`** audit row only (**no** TradingView Step 7 on out-of-routing names).
+- **Bearish Selector:** **Restricted** (Mixed: **↓ Bearish sectors only** — **XLF**, **XLY**). Fresh scan (**2026-04-14 13:48 UTC**) returned **ACN**, **VRTX** — **not** in allowed sectors → **`ABSTAIN`** audit row only (**no** TradingView Step 7 on out-of-routing names).
 
 ---
 
@@ -57,7 +57,7 @@ _Full report: `strategies/positive-bx-entry/report.md`_
 
 ---
 
-## Bearish Call Spread Picks
+## Bearish Selector Picks
 
 **None — abstained.** Scan returned **ACN** (Technology) and **VRTX** (Healthcare); **Mixed** routing allows **only XLF / XLY** bearish-sector names → **no eligible tickers**. One **`ABSTAIN`** row appended.
 
@@ -75,7 +75,7 @@ _Full report: `strategies/bearish-call-spread/report.md`_
 | 2026-04-12 | ANET | $145–$149 | $134 – below 50d MA / swing cluster | $164 – prior highs | $175 – extension | 2.0:1 |
 | 2026-04-12 | STZ | $164–$168 | $152 – below breakout base / MA support | $178 – upper fair value / resistance | $190 – broader resistance | 1.9:1 |
 
-### Bearish Call Spread
+### Bearish Selector
 
 | Date | Ticker | Entry Price | Short Strike | Setup Summary |
 |------|--------|-------------|----------------|---------------|

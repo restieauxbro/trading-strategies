@@ -1,16 +1,16 @@
-# Strategy Config — Bearish Call Spread
+# Strategy Config — Bearish Selector
 
 ## Identity
 
 
 | Field             | Value                                                                                  |
 | ----------------- | -------------------------------------------------------------------------------------- |
-| Strategy name     | Bearish Call Spread                                                                    |
+| Strategy name     | Bearish Selector                                                                       |
 | Scan source       | TrendSpider Market Scanner via live UI                                                 |
 | Saved scanner     | `Bearish Case Market Scanner`                                                          |
 | Scan runner       | `python3 scripts/trendspider_scan.py --scanner-name "Bearish Case Market Scanner"`    |
 | Universe          | S&P 500 / Large Cap (Market Cap > $10B, Price > $50)                                   |
-| Trading style     | Monthly options — bear call spreads (credit spreads)                                   |
+| Trading style     | Monthly options — preferred: `paired_debit_spread` (bear put spread + half-size bull call hedge); legacy fallback: bear call spread |
 | Max picks per run | 3                                                                                      |
 | Log file          | `strategies/bearish-call-spread/trades-log.csv`                                        |
 | Chart layout (TradingView) | `https://www.tradingview.com/chart/z25AhAlV/?symbol=TICKER` — plain ticker; **Step 7** visual confirmation with browser-use profile **Tim** (see `.cursor/skills/indicators/SKILL.md`). |
@@ -20,14 +20,15 @@
 
 ## Strategy Thesis
 
-This scan identifies large-cap stocks in a confirmed downtrend with lower highs structure, where momentum is falling but not yet oversold. The goal is to sell a bear call spread (out-of-the-money call + higher-strike long call) with a breakeven probability below 20% based on implied volatility — collecting premium on stocks unlikely to recover to resistance within the trade window.
+This scan identifies large-cap stocks in a confirmed downtrend with lower highs structure, where momentum is falling but not yet oversold. The preferred expression is a **paired debit spread** from `strategies/instruments.md`: a near-ATM **bear put spread** as the main position, plus a **half-size bull call spread** as a wrong-way tail hedge. The legacy fallback is a **bear call spread** when IV is rich enough that selling premium is clearly superior to buying movement.
 
 Ideal setups have one or both of:
 
 - **Momentum falling with strong resistance above**: price is trending lower with no clean reversal signal
 - **Hard overhead resistance**: prior breakdown level, key moving average, or supply zone that acts as a ceiling
+- **Movement likely soon**: the setup should favour realized movement over slow drift, because drift is the main enemy of the paired debit structure
 
-The spread is typically structured so the short call strike sits at or above a strong resistance level. The breakeven (short strike + net premium received) should imply less than 20% probability of being breached according to IV-derived probabilities.
+For the preferred paired structure, the primary bear put spread should target roughly **1:1 reward:risk**, while the half-size opposite bull call hedge should target roughly **2:1 reward:risk** so a violent rally can offset much of the downside spread loss. For the fallback bear call spread, the short call strike should still sit at or above a strong resistance level with short-strike delta ideally **≤ 0.20**.
 
 ---
 
@@ -76,8 +77,11 @@ The agent's job is **not** to re-verify these scan conditions. The agent's job i
 ## Entry Criteria
 
 - Stock must show a clear downtrend with overhead resistance (moving averages, prior breakdown zone, supply area)
-- The short call strike should be placed **at or above the nearest hard resistance** level
-- Implied volatility should be sufficient to price a spread where **breakeven is ≤20% probability** (use IV-derived delta as a proxy — short strike delta ≤ 0.20 preferred)
+- Preferred instrument: use a **bear put spread + half-size bull call spread hedge** when options are liquid and the move thesis is about **movement**, not passive theta harvest
+- Primary bear put spread should be near ATM and structured for about **1:1 reward:risk**
+- Opposite bull call hedge should be about **half the size** and structured for about **2:1 reward:risk**
+- If using the legacy bear call spread fallback, the short call strike should be placed **at or above the nearest hard resistance** level
+- Implied volatility should be sufficient to support the chosen instrument; for the bear call fallback, use IV-derived delta as a proxy and prefer short strike delta **≤ 0.20**
 - Earnings within 17 days are pre-filtered by the scan — do not re-check for this
 - Prefer monthly expirations 30–45 DTE (standard cycle)
 
@@ -87,12 +91,16 @@ The agent's job is **not** to re-verify these scan conditions. The agent's job i
 
 For each pick, note:
 
-- **Short call strike**: at or above key resistance
-- **Long call strike**: typically 5–10% wide above the short strike (adjust based on liquidity)
-- **Net credit target**: aim for at least 20–25% of spread width
-- **Max risk**: spread width minus net credit
-- **Breakeven**: short strike + net credit
-- **Probability check**: short call delta should ideally be ≤ 0.20 (≤20% probability ITM at expiry)
+- **Preferred structure**: near-ATM **bear put spread** plus **half-size bull call spread** hedge; see `strategies/instruments.md`
+- **Primary spread**: size and width should target about **1:1 reward:risk**
+- **Opposite hedge**: half-size; width and debit should target about **2:1 reward:risk**
+- **Combined position goal**: make money if the bearish thesis plays out, approach breakeven if the move violently breaks the other way, lose mainly if price stalls or drifts
+- **Fallback bear call spread**: short call at or above key resistance, long call 5–10% higher, net credit target at least 20–25% of spread width, short-strike delta ideally ≤ 0.20
+
+When presenting the setup, state explicitly whether the instrument is:
+
+- `paired_debit_spread` (preferred)
+- `bear_call_spread` (fallback)
 
 These are guidance notes. Actual strike selection depends on the live options chain — the agent should look up approximate IV and typical delta levels for the short strike zone.
 
@@ -121,15 +129,15 @@ Scores are out of **100 points**. A ticker must reach the **minimum threshold** 
 ### Category B — Options Setup (25 pts max)
 
 
-| Check                                                         | Points |
-| ------------------------------------------------------------- | ------ |
-| Short call strike delta ≤ 0.20 (≤20% probability ITM)         | 15     |
-| Short call strike delta 0.21–0.30 (20–30% probability ITM)    | 8      |
-| Short call strike delta > 0.30                                | 0      |
-| IV rank or IV percentile ≥ 30% (elevated IV improves premium) | 10     |
+| Check                                                                              | Points |
+| ---------------------------------------------------------------------------------- | ------ |
+| Preferred paired debit spread can be built cleanly with liquid strikes and sane width | 15     |
+| Only fallback bear call spread looks clean                                         | 8      |
+| No clean options structure                                                         | 0      |
+| IV rank or IV percentile supports the chosen structure                             | 10     |
 
 
-*For Category B, award only the highest applicable delta band (not cumulative).*
+*For Category B, award only the highest applicable structure band (not cumulative).*
 
 ### Category C — Bearish Conviction (20 pts max)
 
@@ -173,7 +181,7 @@ Scores are out of **100 points**. A ticker must reach the **minimum threshold** 
 ### Scoring Notes
 
 - Award points for each check independently
-- For Category B, award only the highest applicable delta band
+- For Category B, award only the highest applicable structure band
 - If a data point cannot be verified, do not award the points for it — note this in the output
 - Show the score breakdown in the per-ticker output: e.g. `Score: 68/100 (A:28 B:25 C:10 D:8 Ded:-3)`
 
@@ -190,6 +198,6 @@ For **quotes, SMAs, expirations, and call-chain slices** (bid/ask, implied vol a
 Use this header in the final session output:
 
 ```
-=== BEARISH CALL SPREAD SCAN — [DATE] ===
-Universe: Large Cap (S&P 500) | Style: Monthly Bear Call Spreads
+=== BEARISH SELECTOR SCAN — [DATE] ===
+Universe: Large Cap (S&P 500) | Style: Monthly Bearish Options Structures
 ```

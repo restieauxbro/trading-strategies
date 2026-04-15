@@ -11,9 +11,9 @@ Before starting, load the following files:
 3. **Skill: `track-outcomes`** — `.cursor/skills/track-outcomes/SKILL.md`
 4. **Skill: `indicators`** — `.cursor/skills/indicators/SKILL.md` (TradingView layout; loaded by strategy workflows as needed)
 5. **Strategy config: positive-bx-entry** — `strategies/positive-bx-entry/config.md`
-6. **Strategy config: bearish-call-spread** — `strategies/bearish-call-spread/config.md`
+6. **Strategy config: Bearish Selector** — `strategies/bearish-call-spread/config.md`
 7. **Strategy workflow: positive-bx-entry** — `strategies/positive-bx-entry/AGENT.md`
-8. **Strategy workflow: bearish-call-spread** — `strategies/bearish-call-spread/AGENT.md`
+8. **Strategy workflow: Bearish Selector** — `strategies/bearish-call-spread/AGENT.md`
 
 ---
 
@@ -69,7 +69,7 @@ In most real market conditions the regime will be **Mixed** or **Sector-Divergen
 
 Based on the regime label and sector map, determine which strategies are active this run and what constraints apply:
 
-| Regime | Positive BX entry | Bearish Call Spread |
+| Regime | Positive BX entry | Bearish Selector |
 |--------|-------------------|---------------------|
 | Risk-On | Full run, all sectors | Selective only — stocks in ↓ Bearish sectors only; apply stricter minimum score (+10 pts) |
 | Risk-Off | Restricted — ↑ Bullish sectors only; stricter minimum score (+10 pts) | Full run |
@@ -82,25 +82,25 @@ Note the routing decision in the output. If a strategy is fully paused (e.g. pos
 
 ### Step 3 — Run Positive BX entry strategy
 
-> ⛔ **CSV append must not happen until Step 4b (TradingView visual check) is complete for all candidates.**
+> ⛔ **CSV append must not happen until TradingView visual checks are complete and the user has confirmed which suggested trades were actually opened.**
 
 Follow **all steps** in `strategies/positive-bx-entry/AGENT.md` with the following additions from Step 1:
 
 - **Sector filter**: when scoring tickers, apply an additional −10 pt deduction to any ticker in a → Neutral or ↓ Bearish sector (on top of the existing sector deduction in config.md). Award an additional +5 pts bonus to any ticker in a sector showing strong relative strength vs the S&P 500.
 - **Market context (Step 3 of that workflow)**: skip the broad market research — use the assessment from Step 1a of this orchestrator instead.
-- Complete all remaining steps of that workflow including CSV append and report generation.
+- Complete all remaining steps of that workflow, including the user confirmation gate, CSV append for confirmed trades only, and report generation.
 
 Capture the results: list of picks (or "none"), watchlist names, scores, and sectors.
 
 ---
 
-### Step 4 — Run Bearish Call Spread Strategy
+### Step 4 — Run Bearish Selector Strategy
 
 Follow **all steps** in `strategies/bearish-call-spread/AGENT.md` with the following additions:
 
 - **Sector filter**: apply an additional −10 pt deduction to any ticker in a → Neutral or ↑ Bullish sector. Award an additional +5 pts bonus to any ticker in a sector showing accelerating institutional outflows or confirmed downside rotation.
 - **Market context (Step 3 of that workflow)**: use the assessment from Step 1a of this orchestrator.
-- Complete all remaining steps including TradingView confirmation, CSV append, and report generation.
+- Complete all remaining steps including TradingView confirmation, the user confirmation gate, CSV append for confirmed trades only, and report generation.
 
 Capture the results: list of picks (or abstention), scores, and sectors.
 
@@ -108,14 +108,14 @@ Capture the results: list of picks (or abstention), scores, and sectors.
 
 ### Step 5 — Portfolio Synthesis
 
-Combine the picks from both strategies and assess the resulting position set as a whole.
+Combine the confirmed trades from both strategies and assess the resulting position set as a whole. Suggested but unconfirmed trades may still appear in the strategy reports, but they are not part of the live book.
 
 #### 5a — Unified position list
 
 | # | Strategy | Ticker | Direction | Sector | Score | Setup |
 |---|----------|--------|-----------|--------|-------|-------|
 | 1 | Positive BX entry | | Long | | | |
-| 2 | Bearish Call Spread | | Bear spread | | | |
+| 2 | Bearish Selector | | Bear spread | | | |
 | … | | | | | | |
 
 #### 5b — Concentration check
@@ -158,13 +158,13 @@ Write `strategies/overview/report.md` with the following structure:
 ## Strategy Activation
 
 - **Positive BX entry:** [Active / Restricted / Paused] — [one-line reason]
-- **Bearish Call Spread:** [Active / Restricted / Paused] — [one-line reason]
+- **Bearish Selector:** [Active / Restricted / Paused] — [one-line reason]
 
 ---
 
 ## All Positions
 
-[Unified position table from Step 5a]
+[Unified position table from Step 5a using confirmed trades only]
 
 ### Portfolio Balance
 [Concentration flags and net bias from Steps 5b–5c]
@@ -173,15 +173,15 @@ Write `strategies/overview/report.md` with the following structure:
 
 ## Positive BX entry picks
 
-[Copy the top picks block from the positive-bx-entry report, or "None — [reason]"]
+[Copy the suggested trades block from the positive-bx-entry report, or "None — [reason]"]
 
 _Full report: `strategies/positive-bx-entry/report.md`_
 
 ---
 
-## Bearish Call Spread Picks
+## Bearish Selector Picks
 
-[Copy the top picks block from the bearish-call-spread report, or "None — abstained"]
+[Copy the suggested trades block from the bearish-call-spread report, or "None — abstained"]
 
 _Full report: `strategies/bearish-call-spread/report.md`_
 
@@ -192,7 +192,7 @@ _Full report: `strategies/bearish-call-spread/report.md`_
 ### Positive BX entry
 [Open trades table from positive-bx-entry trades-log.csv]
 
-### Bearish Call Spread
+### Bearish Selector
 [Open trades table from bearish-call-spread trades-log.csv — exclude ABSTAIN rows]
 ```
 
@@ -209,7 +209,7 @@ Bearish sectors: [list]
 
 STRATEGIES RUN:
   Positive BX entry: [Active / Restricted / Paused]
-  Bearish Call Spread: [Active / Restricted / Paused]
+  Bearish Selector: [Active / Restricted / Paused]
 
 POSITIONS:
   Longs ([N]): [TICKER, TICKER, …]

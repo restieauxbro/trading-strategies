@@ -12,7 +12,7 @@
 | Trading style     | Position trading (weeks to months)                                                            |
 | Max picks per run | 3                                                                                             |
 | Log file          | `strategies/positive-bx-entry/trades-log.csv`                                                 |
-| **Instrument**    | Agent's discretion per pick — `stock` · `bull_call_spread` · `put_credit_spread`             |
+| **Instrument**    | Preferred: `paired_debit_spread`; secondary: `stock` · `bull_call_spread` · `put_credit_spread` |
 | **Chart layout**  | `https://www.tradingview.com/chart/z25AhAlV/?symbol=TICKER` (plain ticker; profile **Tim**)     |
 
 ---
@@ -125,7 +125,7 @@ Scores out of **100** points. Minimum **55** to qualify as a tradable pick.
 
 ## Instrument & spread construction
 
-Same framework as archived momentum-pullback: after scoring, choose `stock`, `bull_call_spread`, or `put_credit_spread` per IV rank, conviction, and regime. Reuse the spread tables and output block from `strategies/archived/momentum-pullback/config.md` (sections **Instrument decision framework** through **Spread output block**) — they are unchanged.
+Same framework as archived momentum-pullback: after scoring, choose instrument per IV, conviction, regime, and expected move profile. The preferred default is `paired_debit_spread` from `strategies/instruments.md`; use `stock`, `bull_call_spread`, or `put_credit_spread` only when the framework says the paired hedge is unnecessary or inefficient. Reuse the spread tables and output block from `strategies/archived/momentum-pullback/config.md` (sections **Instrument decision framework** through **Spread output block**).
 
 **CSV / outcome note:** spread rows use the same WIN/LOSS rules described there (`target_1` / `stop_loss` mapping per spread type).
 
