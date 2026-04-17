@@ -48,7 +48,7 @@ Use the quick check from `analyse-tickers` (S&P 500 vs 200 MA, VIX, trend). In a
 
 ### Step 4 — Research each ticker
 
-For every ticker in `symbolsFound`, full `analyse-tickers` checklist: technicals, fundamentals, news, risk (stop, targets, R:R). Apply **earnings** rule from `config.md`.
+For every ticker in `symbolsFound`, full `analyse-tickers` checklist: technicals, fundamentals, news, risk (stop, targets, R:R). Apply the **earnings handling** from `config.md`: always check and report the date, but do **not** auto-exclude names just because earnings are near if the selected instrument is the preferred move-benefiting structure.
 
 ---
 

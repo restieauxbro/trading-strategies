@@ -1,95 +1,95 @@
 # Positive BX entry — Current Report
 
-_Last updated: 2026-04-16_
+_Last updated: 2026-04-17_
 
 ---
 
 ## Market Context
 
-`SPY` closed at **699.70** on **2026-04-15**, about **3.96% above** its 50-day average and **5.65% above** its 200-day average. `^VIX` closed at **18.06** on **2026-04-15**, which is elevated versus a complacent tape but still below a true risk-off reading. TrendSpider's live **Strong upward momentum** scan returned **41** symbols with timestamp **`2026-04-15 19:47:26 UTC`**. For chart confirmation, fresh TradingView screenshots were captured in one headed `browser-use` session using profile `Tim`, then read with a vision pass against the saved layout.
+Using the latest available U.S. close from **2026-04-16**, `SPY` finished at **701.66**, about **5.88% above** its 200-day average, while `^VIX` closed at **17.94**. That keeps the broad tape in a **risk-on** posture. TrendSpider's live **Strong upward momentum** scan returned **18** symbols at **2026-04-16 23:29:00 UTC**. This run used fresh TradingView screenshots captured with headed `browser-use` on profile `Tim`; chart-dependent points were only awarded where the screenshot state was readable.
 
 ---
 
 ## Today's Suggested Trades
 
-_User decision for this run: no suggested trades were opened, so no new CSV rows were added._
+_No trades were logged in this run. The confirmation gate is still open._
 
 ### 1. NVDA — NVIDIA Corporation
 
-**Score: 78/100** (A:45 B:10 C:13 D:10 Ded:0)
+**Score: 87/100** (A:39 B:25 C:13 D:10 Ded:0)
 
-**Current price:** ~$198.21  
+**Current price:** ~$198.35  
 **Sector:** Technology
 
-**Setup summary:** The live scan still has NVDA in the momentum set, and the fresh TradingView read shows **green** fair-value structure, **green** weekly BX, and a **green-above-zero** daily B-Xtrender histogram with no fresh sell dot. Price is above the lower fair-value band but still below premium stress, which keeps the setup constructive without reading as a late-stage chase.
+**Setup summary:** TrendSpider still has NVIDIA in the momentum cohort, and the fresh TradingView read shows **green** fair-value structure with the last close still below the premium band and above the lower fair-value band. The daily B-Xtrender histogram is firmly **green above zero** with no fresh sell signal, which keeps the timing supportive for a continuation entry.
 
-**Entry zone:** $196–$199  
-**Stop loss:** $189 — below the recent higher-low / short-term support shelf  
-**Target 1:** $214 — retest toward recent highs  
-**Target 2:** $228 — measured continuation above the current range  
-**Risk/Reward:** ~1.9:1 to Target 1
+**Entry zone:** $196–$200  
+**Stop loss:** $189 — below the recent higher-low shelf and short-term support  
+**Target 1:** $214 — prior reaction zone / continuation objective  
+**Target 2:** $228 — measured extension if AI leadership persists  
+**Risk/Reward:** ~3.2:1 to Target 2
 
 **Key risks:**
-- Earnings expected **2026-05-21**
-- High-beta semiconductor leadership can reverse quickly if AI sentiment cools
-- Mega-cap positioning can create gap risk around macro headlines
+- High-beta semiconductor leadership can reverse quickly on macro or AI-spend headlines
+- Positioning is crowded across the AI complex
+- Weekly BX strip was not clearly readable in the screenshot, so that confirmation was not awarded
 
-**Fundamental note:** NVIDIA remains the clearest AI demand proxy in the scan and still has room before the next earnings event. The setup is momentum-led rather than value-led, so discipline around the stop matters.
+**Fundamental note:** NVIDIA's latest official results and March 2026 GTC messaging both reinforced AI infrastructure demand. Revenue and earnings growth remain strong, and the next earnings date currently sits outside the 3-week exclusion window.
 
-### 2. AMAT — Applied Materials
+### 2. CSCO — Cisco Systems
 
-**Score: 76/100** (A:40 B:18 C:13 D:5 Ded:0)
+**Score: 78/100** (A:37 B:18 C:13 D:10 Ded:0)
 
-**Current price:** ~$390.94  
+**Current price:** ~$84.50  
 **Sector:** Technology
 
-**Setup summary:** Fresh chart confirmation shows **green** structural bands, **green** weekly BX, and a **green** daily momentum histogram. Price is trading near the **middle premium band**, not at lower fair value, so timing is good enough for a continuation entry but not a maximum-quality pullback.
+**Setup summary:** Cisco's chart is cleaner than most of today's scan: the fair-value structure is **green**, price is just under the premium band rather than stretched into the upper stress band, and the daily B-Xtrender histogram is back **green above zero**. This is not a lower-band pullback, but it is still an orderly continuation setup in a strong sector.
 
-**Entry zone:** $386–$392  
-**Stop loss:** $377 — below the recent pullback pivot and rising support  
-**Target 1:** $414 — retest of the recent high area  
-**Target 2:** $430 — measured extension if semicap leadership persists  
-**Risk/Reward:** ~2.0:1 to Target 1
+**Entry zone:** $83.50–$85.00  
+**Stop loss:** $79.00 — below the current fair-value support cluster  
+**Target 1:** $90.00 — upper band / resistance retest  
+**Target 2:** $95.00 — measured continuation if networking stays in favor  
+**Risk/Reward:** ~2.1:1 to Target 2
 
 **Key risks:**
-- Earnings expected **2026-05-15**
-- Semi-cap equipment names can swing with capex sentiment and SOX volatility
-- Premium-band entries are less forgiving than lower-band pullbacks
+- Entry is near the premium band, so the setup is less forgiving than a lower-band pullback
+- Weekly BX strip was not clearly readable in the screenshot, so that confirmation was not awarded
+- A failed AI-infrastructure narrative could rotate money back out of legacy networking
 
-**Fundamental note:** Applied Materials still fits the AI and fab-capex leadership theme, and the most recent setup remains technically clean. This is the strongest semicap name in the current scan that is still outside the 3-week earnings exclusion window.
+**Fundamental note:** Cisco reported second-quarter fiscal 2026 results on February 11, 2026 and has continued to push AI-networking and security announcements in March 2026, including the expanded Secure AI Factory with NVIDIA. Revenue and earnings growth are positive, and the next earnings date is outside the 3-week exclusion window.
 
 ### 3. AVGO — Broadcom
 
-**Score: 74/100** (A:45 B:10 C:9 D:10 Ded:0)
+**Score: 76/100** (A:35 B:18 C:13 D:10 Ded:0)
 
-**Current price:** ~$394.46  
+**Current price:** ~$398.47  
 **Sector:** Technology
 
-**Setup summary:** The fresh chart read shows **green** fair-value structure, **green** weekly BX, and a **green-above-zero** daily histogram with no new sell signal. Price is sitting in a constructive zone above lower fair value and below the upper stress band, which supports continuation, although the name is no longer cheap versus its recent run.
+**Setup summary:** Broadcom's chart is still structurally bullish: fair-value bands are **green** and daily B-Xtrender has turned strongly positive again. The trade-off is timing. Price is already in the premium half of the range rather than near lower fair value, so it qualifies as a tradable continuation setup, but only with smaller size and less room for slippage.
 
-**Entry zone:** $390–$396  
+**Entry zone:** $394–$399  
 **Stop loss:** $379 — below the recent support pocket  
-**Target 1:** $418 — prior high / continuation objective  
-**Target 2:** $435 — extension target if semis remain leadership  
-**Risk/Reward:** ~1.8:1 to Target 1
+**Target 1:** $418 — retest toward the prior high area  
+**Target 2:** $435 — continuation extension if semis keep leading  
+**Risk/Reward:** ~1.9:1 to Target 2
 
 **Key risks:**
-- Earnings expected **2026-06-04**
-- Rich valuation and crowding raise reversal risk after sharp upside days
-- Semiconductor leadership concentration increases sector-correlation risk
+- Premium-band entries carry more pullback risk than lower-band entries
+- Weekly BX strip was not clearly readable in the screenshot, so that confirmation was not awarded
+- Semiconductor leadership is crowded and sector-correlated
 
-**Fundamental note:** Broadcom remains one of the strongest large-cap AI infrastructure names in the scan, and the chart still supports the thesis. The trade is valid, but position sizing should respect how extended the semiconductor complex already is.
+**Fundamental note:** Broadcom reported first-quarter fiscal 2026 results on March 4, 2026 with continued AI semiconductor strength. Revenue and earnings growth are positive, and the next earnings date remains comfortably outside the 3-week exclusion window.
 
 ---
 
 ## Watchlist
-_Names that scanned well but do not qualify as clean immediate entries for this run._
+_Names with constructive scan/research but no immediate entry (timing / earnings / structure)._
 
 | Ticker | Why watching | Trigger to revisit |
 |--------|--------------|-------------------|
-| ORCL | Fresh chart read is constructive, but the stock is still **below its 200-day average**, so the long thesis is recovery-style rather than clean trend continuation | Reclaim and hold above the 200-day average with green structure intact |
-| AMD | Still in the scan, but earnings are expected **2026-05-06**, inside the strategy's 3-week exclusion window | Re-run after earnings if the green structure survives |
-| MAR | Momentum remains strong, but earnings are expected **2026-05-06**, inside the 3-week exclusion window | Reassess after earnings and look for a fresh pullback |
+| ORCL | Fresh chart momentum improved, but the stock is still **well below its 200-day average**, so the setup is recovery-style rather than clean trend continuation | Reclaim and hold above the 200-day average with green structure intact |
+| AMD | Earnings are currently scheduled for **2026-05-06**, inside the strategy's 3-week hard filter | Re-run after earnings if the green structure survives |
+| TXN | Earnings are currently scheduled for **2026-04-23**, inside the strategy's 3-week hard filter | Reassess after earnings and a fresh pullback |
 
 ---
 
@@ -109,15 +109,4 @@ _User-confirmed trades from the last 14 days, outcome not yet recorded._
 
 ## Performance Summary
 
-The `track-outcomes` pass was **not** run in this session. This repo's skill file marks outcome tracking as heavyweight and says not to run it automatically during a normal strategy scan.
-
----
-
-## Chart Captures
-
-Fresh screenshots from this run:
-
-- `strategies/positive-bx-entry/assets/tradingview-AMAT.png`
-- `strategies/positive-bx-entry/assets/tradingview-NVDA.png`
-- `strategies/positive-bx-entry/assets/tradingview-AVGO.png`
-- `strategies/positive-bx-entry/assets/tradingview-ORCL.png`
+The `track-outcomes` pass was not run in this session. The repo's skill file marks outcome tracking as heavyweight and says not to run it automatically during a normal strategy scan.

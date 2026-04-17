@@ -32,7 +32,7 @@ Use any reliable financial website (Yahoo Finance, Finviz, StockAnalysis.com, Ma
 - Logical stop loss: swing low, key support, or ATR-adjusted level
 - 1–2 price targets: resistance levels or measured moves
 - Risk/reward ratio: `(Target 1 - Entry) / (Entry - Stop)`
-- Red flags: earnings within 3 weeks, extended valuation, weak sector, insider selling
+- Red flags: near-term earnings event risk, extended valuation, weak sector, insider selling
 
 ---
 
@@ -94,4 +94,4 @@ Fundamental Note:
 - The scan is a filter, not a signal — do not recommend a ticker purely because it appeared
 - If fewer tickers than required pass quality filters, only recommend those that do; explain exclusions
 - Do not fabricate data — if information cannot be found, note it and downrank the ticker
-- Always check upcoming earnings; exclude or prominently flag any ticker with earnings within 3 weeks
+- Always check upcoming earnings and report the date clearly. Treat earnings according to the active strategy's `config.md` and chosen instrument rather than applying a blanket exclusion.

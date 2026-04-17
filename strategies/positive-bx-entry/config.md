@@ -48,7 +48,7 @@ The list is already momentum- and weekly-BX-filtered. The agent **does not** re-
 - **Weekly BX row** green on the chart (should align with scan; if not, investigate or exclude).
 - **Daily B-Xtrender** timing must **not** strongly conflict with an immediate new long (e.g. fresh **sell** signal + extended price → **watchlist**, not CSV pick).
 - Volume and trend context consistent with continuation (scan already biased this way).
-- **Earnings:** no earnings within **3 weeks** of planned entry (hard filter — exclude or flag prominently).
+- **Earnings:** always check and report the next earnings date. For the preferred **`paired_debit_spread`**, earnings are **not** an automatic exclusion because the structure benefits from realized movement. For secondary **stock** or **premium-selling** choices (`put_credit_spread`), treat earnings as a major risk and either size down, switch back to the preferred move-benefiting structure, or exclude the trade if the setup depends on avoiding event volatility.
 
 ---
 
@@ -106,7 +106,7 @@ Scores out of **100** points. Minimum **55** to qualify as a tradable pick.
 
 | Condition | Pts |
 | --------- | --- |
-| Earnings within 3 weeks | −20 |
+| Earnings within 3 weeks **when using an earnings-sensitive secondary instrument** (e.g. stock / put credit spread) | −20 |
 | Fair value bands **red** (bearish structure) | −15 |
 | **Chasing** — at or pressing **upper** stress band, or extended above **middle premium** without pullback toward **lower** fair value | −12 |
 | Daily B-Xtrender **sell** or strong bearish histogram on latest bar **for immediate entry** | −10 |
@@ -118,6 +118,7 @@ Scores out of **100** points. Minimum **55** to qualify as a tradable pick.
 ### Scoring notes
 
 - Award Category B as **single highest** R:R band only.
+- Upcoming earnings should always be shown in the output, but they are **not** an automatic penalty when the selected instrument is the preferred **`paired_debit_spread`**.
 - If a fact cannot be verified, do **not** award those points — say so in output.
 - Show breakdown, e.g. `Score: 72/100 (A:35 B:18 C:11 D:5 Ded:3)`.
 
