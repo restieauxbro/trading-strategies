@@ -19,7 +19,7 @@
 
 ## Strategy Thesis
 
-The scan surfaces S&P 500 names with **strong bullish momentum** and **positive weekly B-Xtrender histogram**, pre-filtered in TrendSpider. The agent adds **fundamental and news context**, then uses **TradingView** (Fair Value Bands + weekly BX + daily B-Xtrender) to judge **structure**, **extension vs fair value**, and **entry timing**. On **THT Fair Value Bands**, the **lower** line is **fair value**; the **middle** line is **slight premium** (not core fair value); the **upper** line is **stress**. Prefer entries with price **near or returning toward the lower band**; if the setup is valid but price is **too extended** (e.g. into upper band without a pullback plan), recommend a **watchlist** instead of an immediate trade.
+The scan surfaces S&P 500 names with **strong bullish momentum** and **positive weekly B-Xtrender histogram**, pre-filtered in TrendSpider. The agent adds **fundamental and news context**, then uses **TradingView** (Fair Value Bands + weekly BX + daily B-Xtrender + monthly BX backdrop) to judge **structure**, **extension vs fair value**, and **entry timing**. On **THT Fair Value Bands**, the **lower** line is **fair value**; the **middle** line is **slight premium** (not core fair value); the **upper** line is **stress**. Prefer entries with price **near or returning toward the lower band**; if the setup is valid but price is **too extended** (e.g. into upper band without a pullback plan), recommend a **watchlist** instead of an immediate trade.
 
 ---
 
@@ -38,7 +38,7 @@ A symbol appears in `symbolsFound` only if **all** of the following hold (daily 
 
 ## What the scan guarantees
 
-The list is already momentum- and weekly-BX-filtered. The agent **does not** re-prove those math conditions tick-for-tick; it **confirms** weekly/daily BX and fair-value context on **TradingView** per `.cursor/skills/indicators/SKILL.md`, then scores quality and timing.
+The list is already momentum- and weekly-BX-filtered. The agent **does not** re-prove those math conditions tick-for-tick; it **confirms** weekly/daily/monthly BX and fair-value context on **TradingView** per `.cursor/skills/indicators/SKILL.md`, then scores quality and timing.
 
 ---
 
@@ -46,7 +46,8 @@ The list is already momentum- and weekly-BX-filtered. The agent **does not** re-
 
 - **TradingView:** Fair value bands show **bullish (green) structure** for a long-bias entry; prefer **pullback toward the lower band (fair value)**. The **middle** band = **premium** (already extended vs core value); the **upper** band = **stress** — avoid chasing longs there without a plan.
 - **Weekly BX row** green on the chart (should align with scan; if not, investigate or exclude).
-- **Daily B-Xtrender** timing must **not** strongly conflict with an immediate new long (e.g. fresh **sell** signal + extended price → **watchlist**, not CSV pick).
+- **Monthly BX backdrop** must be supportive for a new bullish entry: **green** is best, and **light pink while shrinking toward zero** is still acceptable. **Light pink growing** or **dark red / deteriorating** monthly BX is **not** an immediate long entry.
+- **Daily B-Xtrender** remains the timing layer and must **not** strongly conflict with an immediate new long (e.g. fresh **sell** signal + extended price → **watchlist**, not CSV pick).
 - Volume and trend context consistent with continuation (scan already biased this way).
 - **Earnings:** always check and report the next earnings date. For the preferred **`paired_debit_spread`**, earnings are **not** an automatic exclusion because the structure benefits from realized movement. For secondary **stock** or **premium-selling** choices (`put_credit_spread`), treat earnings as a major risk and either size down, switch back to the preferred move-benefiting structure, or exclude the trade if the setup depends on avoiding event volatility.
 
@@ -72,10 +73,11 @@ Scores out of **100** points. Minimum **55** to qualify as a tradable pick.
 | Check | Pts |
 | ----- | --- |
 | Fair value bands **green** (bullish structure) on daily | 12 |
-| Price **not overextended** vs bands — near **lower (fair value)** band or constructive pullback toward it; **middle = premium** (partial credit only if rest of setup is strong) | 15 |
+| Price **not overextended** vs bands — near **lower (fair value)** band or constructive pullback toward it; **middle = premium** (partial credit only if rest of setup is strong) | 13 |
 | Weekly BX row **green** on chart (confirms higher-TF pressure) | 8 |
-| Daily B-Xtrender **compatible** with a new long (no hard conflict on latest bar) | 10 |
-| Daily price structure coherent with continuation (higher lows / trend intact) | 5 |
+| Monthly BX backdrop supportive: **green**, or **light pink but shrinking toward zero** | 7 |
+| Daily B-Xtrender **compatible** with a new long (no hard conflict on latest bar) | 7 |
+| Daily price structure coherent with continuation (higher lows / trend intact) | 3 |
 
 ### Category B — Risk / reward (25 pts max)
 
@@ -109,6 +111,7 @@ Scores out of **100** points. Minimum **55** to qualify as a tradable pick.
 | Earnings within 3 weeks **when using an earnings-sensitive secondary instrument** (e.g. stock / put credit spread) | −20 |
 | Fair value bands **red** (bearish structure) | −15 |
 | **Chasing** — at or pressing **upper** stress band, or extended above **middle premium** without pullback toward **lower** fair value | −12 |
+| Monthly BX **light pink and growing**, or **dark red / deteriorating** | −10 |
 | Daily B-Xtrender **sell** or strong bearish histogram on latest bar **for immediate entry** | −10 |
 | Weekly BX row **red** on chart (conflicts scan) | −15 |
 | Stock below 200-day MA | −8 |

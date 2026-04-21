@@ -1,13 +1,13 @@
 ---
 name: indicators
-description: Tim's TradingView layout (chart/z25AhAlV) — Fair Value Bands, weekly BX, daily B-Xtrender. Capture with browser-use profile Tim (headed). Prefer a multimodal vision handoff + JSON schema to read screenshots; do not rely on lossy image-to-text summaries alone.
+description: Tim's TradingView layout (chart/z25AhAlV) — Fair Value Bands, weekly BX, daily B-Xtrender, monthly BX backdrop. Capture with browser-use profile Tim (headed). Prefer a multimodal vision handoff + JSON schema to read screenshots; do not rely on lossy image-to-text summaries alone.
 ---
 
 # Tim's TradingView indicators (`chart/z25AhAlV`)
 
 ## Mandatory: `browser-use` + Chrome profile **`Tim`** (headed)
 
-Your **TradingView session**, **saved chart** `z25AhAlV`, and **custom indicators** (Fair Value Bands, THT Multi Timeframe BX, B-Xtrender) live under your **real Chrome user data**. Agents **must** drive that session — otherwise the page is logged out, the wrong layout loads, or paid/scripts do not appear.
+Your **TradingView session**, **saved chart** `z25AhAlV`, and **custom indicators** (Fair Value Bands, THT Multi Timeframe BX, daily B-Xtrender, monthly BX backdrop) live under your **real Chrome user data**. Agents **must** drive that session — otherwise the page is logged out, the wrong layout loads, or paid/scripts do not appear.
 
 | Required | Details |
 | -------- | ------- |
@@ -72,13 +72,15 @@ Ask the vision model to output **only** valid JSON:
   "price_vs_upper_band_stress": "below|near|above|unclear",
   "weekly_bx_row_latest": "green|red|unclear",
   "weekly_bx_numeric_if_visible": null,
+  "monthly_bx_color_latest_bar": "green|light_pink|dark_red|unclear",
+  "monthly_bx_momentum": "shrinking|growing|flat|unclear",
   "daily_bxtrender_histogram_latest_bar": "green_above_zero|red_below_zero|unclear",
   "daily_bxtrender_buy_sell_latest_bar": "buy_dot|sell_dot|none_visible|unclear",
   "notes": "one short sentence if something blocks reading (scale, UI, glare)"
 }
 ```
 
-**Instructions to give the vision model:** “**THT Fair Value Bands:** the **lowest** band line is **fair value**; the **middle** line is **slight extension / premium** (not core fair value); the **upper** line is **stress / strong extension**. Compare the last candle to each. Look at the **rightmost** daily candle and the **rightmost** segment of each indicator pane. If you cannot see the last bar clearly, set fields to `unclear`.”
+**Instructions to give the vision model:** “**THT Fair Value Bands:** the **lowest** band line is **fair value**; the **middle** line is **slight extension / premium** (not core fair value); the **upper** line is **stress / strong extension**. Compare the last candle to each. Look at the **rightmost** daily candle and the **rightmost** segment of each indicator pane. For the bottom monthly BX panel, identify whether the latest bars are **green**, **light pink**, or **dark red**, and whether they are **shrinking toward zero** or **growing away from zero**. If you cannot see the last bar clearly, set fields to `unclear`.”
 
 ### Optional: local automation
 
@@ -116,7 +118,22 @@ The **Strong upward momentum** TrendSpider scan already requires **weekly B-Xtre
 
 For **bearish** trades, you want **weekly pressure red** or at least **not** a strong green tailwind; **green weekly + bullish fair value** is a major caution flag for new bear call spreads.
 
-## 3. Daily B-Xtrender (@Puppytherapy)
+## 3. Monthly B-X backdrop
+
+**Role:** Slow regime / backdrop filter for bullish entries.
+
+- Treat the **bottom panel** as the **monthly B-X backdrop**.
+- **Green** monthly bars = higher-timeframe bullish support.
+- **Light pink** monthly bars can still be acceptable for new bullish entries **if they are shrinking toward zero**. This is an improving bearish phase rather than expanding downside pressure.
+- **Light pink growing** or **dark red** monthly bars = backdrop is still deteriorating; do **not** treat that as a clean new long entry.
+
+**Bullish discipline (Positive BX entry):**
+
+- Minimum acceptable backdrop: **weekly BX green** plus **monthly BX either green, or light pink and shrinking**.
+- If the monthly panel is **light pink and shrinking**, the daily panel still matters for timing, but the higher-timeframe backdrop is acceptable.
+- If the monthly panel is **light pink and growing** or **dark red**, downgrade to **watchlist / no immediate entry** even if the daily oscillator looks constructive.
+
+## 4. Daily B-Xtrender (@Puppytherapy)
 
 **Role:** **Timing** — momentum histogram plus **buy / sell** signal dots.
 
@@ -146,9 +163,9 @@ Save screenshots as `strategies/<strategy-name>/assets/tradingview-<TICKER>.png`
 
 ## One-line checklist
 
-| Context | Fair value bands | Weekly BX row | Daily B-Xtrender |
+| Context | Fair value bands | Weekly / monthly BX | Daily B-Xtrender |
 |--------|------------------|---------------|------------------|
-| **Bullish entry** | Green structure; prefer pullback toward **lower band (fair value)**; middle = premium, upper = stress | Green / supportive | Align with long timing; beware sell signal + extension |
+| **Bullish entry** | Green structure; prefer pullback toward **lower band (fair value)**; middle = premium, upper = stress | Weekly green; monthly must be **green** or **light pink + shrinking** | Align with long timing; beware sell signal + extension |
 | **Bearish spread** | Red structure helpful | Red or weak green | Red / below zero; no fresh buy on latest bar |
 
 ---
