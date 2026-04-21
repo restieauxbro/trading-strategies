@@ -48,6 +48,7 @@ The repo now uses:
 ```bash
 python3 scripts/trendspider_scan.py --scanner-name "Strong upward momentum"
 python3 scripts/trendspider_scan.py --scanner-name "Bearish Case Market Scanner"
+python3 scripts/trendspider_scan.py --scanner-name "Negative but strengthening BX"
 ```
 
 This opens TrendSpider with `browser-use`, selects `Default Workspace`, runs the saved scanner from the UI, and returns fresh JSON with `timestamp` and `symbolsFound`.
@@ -80,6 +81,8 @@ The agent will work through all 8 steps autonomously — running the scanner, re
 ## How It Works
 
 Bullish (**positive-bx-entry**) and bearish (**Bearish Selector**, path: `bearish-call-spread`) workflows run the TrendSpider scan in the browser, research tickers, open **TradingView** (`chart/z25AhAlV` with plain ticker) for visuals per `.cursor/skills/indicators/SKILL.md`, score, present suggested trades, then append only **user-confirmed opened trades** to each strategy’s `trades-log.csv` before overwriting `report.md`. See each strategy’s `AGENT.md` for step order (including watchlist handling and the confirmation gate).
+
+The repo also includes a narrative-first watchlist workflow: **Negative but Strengthening BX Watchlist** (`negative-but-strengthening-bx-watchlist`). It runs the TrendSpider scan, then ranks names by sector backdrop, company narrative, and what would need to strengthen next before entry. It does **not** require TradingView chart confirmation unless you explicitly want to add it later.
 
 The shared instrument catalog lives at [strategies/instruments.md](/Users/tim/Documents/code/trading-strategies/strategies/instruments.md). The current preferred structure is a **paired debit spread**: a tight ATM directional vertical plus a half-size opposite vertical as a wrong-way tail hedge.
 
@@ -151,6 +154,7 @@ trading-strategy/
 | -------- | -------- | ----- | ----------- |
 | [Positive BX entry](strategies/positive-bx-entry/AGENT.md) | S&P 500 | Position (weeks–months) | TrendSpider: **Strong upward momentum** |
 | [Bearish Selector](strategies/bearish-call-spread/AGENT.md) | Large cap (see config) | Monthly bearish options structures | TrendSpider: **Bearish Case Market Scanner** |
+| [Negative but Strengthening BX Watchlist](strategies/negative-but-strengthening-bx-watchlist/AGENT.md) | TrendSpider saved scan universe | Watchlist / early bullish stalking | TrendSpider: **Negative but strengthening BX** |
 | [Market overview](strategies/overview/AGENT.md) | — | Combined book | Runs both strategies above |
 | [Momentum after pullback (archived)](strategies/archived/momentum-pullback/AGENT.md) | — | — | Historical only |
 
