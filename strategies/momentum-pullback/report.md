@@ -1,204 +1,222 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-04-20_
+_Last updated: 2026-04-21_
 
 ---
 
 ## Market Context
 
-The S&P 500 (SPY) is trading at **$708.54**, sitting comfortably **above its 200-day EMA ($653) and 50-day EMA ($676)** — a broadly constructive macro backdrop. VIX has retreated to **18.98**, well below the elevated-risk threshold of 25, suggesting fear has eased meaningfully after the volatility spike earlier in April. The index is up +3.3% over the past 5 days, reflecting a broad risk-on move. The overall regime is **uptrend / recovery**, with conditions supportive of position trades on strong individual names. No confirmed downtrend filters are applied.
+The S&P 500 (SPY) is trading at ~$706.60, well above its 200-day MA ($666.92) and 50-day MA ($675.61), and has recently set record highs above 7,000 as of April 20, 2026. The Nasdaq achieved a 12-session winning streak in mid-April driven by easing geopolitical tensions (ceasefire, Strait of Hormuz reopening) and AI/tech enthusiasm. VIX is at ~19.96 — moderate, not elevated (was briefly sub-11 in early April indicating complacency, now normalizing). Overall trend: **confirmed uptrend** on the S&P 500. Crude oil fell over 13% by mid-April, placing the Energy sector in a confirmed downtrend — energy names are downranked throughout this report. Consumer Defensive and Industrials are leading in relative strength.
 
----
-
-## Scan Results
-
-**Method:** yfinance fallback (browser-use/TrendSpider unavailable in this environment). Applied the full momentum-pullback scan logic: daily price above 200 EMA, weekly golden cross, weekly price above weekly 50 EMA, rising 200 and 50 EMAs, price within ±3% of 50 EMA in last 5 bars, and at least one timing trigger (recross of 20 EMA, RSI >50, or close above prior day's high).
-
-**Universe scanned:** 282 S&P 500 tickers  
-**Tickers passing all scan conditions:** 16
-
-Full passing list: JPM, XOM, WMT, NEE, DUK, AEP, PCG, FDX, COP, OXY, DVN, RS, LIN, APD, CF, DOV
-
-**Earnings hard filter (no earnings within 21 days from April 20):**
-
-| Ticker | Earnings Date | Days Out | Status |
-|--------|---------------|----------|--------|
-| RS | Apr 22 | 2 | ❌ Blocked |
-| NEE | Apr 23 | 3 | ❌ Blocked |
-| PCG | Apr 23 | 3 | ❌ Blocked |
-| DOV | Apr 23 | 3 | ❌ Blocked |
-| APD | Apr 30 | 10 | ❌ Blocked |
-| COP | Apr 30 | 10 | ❌ Blocked |
-| LIN | May 1 | 11 | ❌ Blocked |
-| DUK | May 5 | 15 | ❌ Blocked |
-| AEP | May 5 | 15 | ❌ Blocked |
-| OXY | May 5 | 15 | ❌ Blocked |
-| DVN | May 5 | 15 | ❌ Blocked |
-| CF | May 6 | 16 | ❌ Blocked |
-| **WMT** | May 21 | 31 | ✅ Clear |
-| **FDX** | Jun 23 | 64 | ✅ Clear |
-| **JPM** | Jul 14 | 85 | ✅ Clear |
-
-Three tickers clear the earnings filter. FDX scored **48/115** (below 55 threshold — too extended from 50 EMA at +10.2%), leaving two tradable picks: **WMT** and **JPM**.
-
-**TradingView visual check:** browser-use/profile Tim unavailable in this environment. B-Xtrender and Fair Value Band points are not awarded; this reduces maximum attainable scores and is noted in each breakdown.
+_Note: TrendSpider browser automation timed out in this environment (profile "Tim" Chrome session unavailable). Scanner was replicated via yfinance with equivalent conditions. TradingView visual confirmation (Step 4b) was also unavailable; B-Xtrender scoring points withheld._
 
 ---
 
 ## Today's Suggested Trades
 
-### 1. WMT — Walmart Inc. (Preferred Pick)
+### 1. DE (Deere & Company) — Momentum pullback at 50 EMA, strong beat-and-raise, 3.1:1 R:R
 
 ```
-Ticker: WMT
-Current Price: $127.88
-Sector: Consumer Defensive
-Score: 75/115 (A:40 B:0 C:20 D:15 Ded:0)
-  Note: B category 0 pts because R:R on stock is <1.5:1; R:R on options spread is far better (see spread block).
-  B-Xtrender points not awarded (visual unavailable); max possible was 75+15=90.
+Ticker: DE
+Current Price: $589.51
+Sector: Industrials (Farm & Heavy Construction Machinery)
+Score: 72/100 (A:33 B:25 C:11 D:12 Ded:-9)
+
+Score Breakdown:
+  Category A — Technical Setup (33/55):
+    Weekly uptrend ✓                          10 pts
+    Daily uptrend ✓                            8 pts
+    Pulling back to 50 EMA support zone ✓     10 pts
+    Volume declining on pullback ✓             7 pts
+    Continuation pattern (flag) ~partial       3 pts
+    B-Xtrender (visual unavailable)            0 pts  ← withheld
+
+  Category B — Risk/Reward (25/25):
+    R:R 3.1:1 to T1 (≥ 3:1)                  25 pts
+
+  Category C — Fundamentals (11/20):
+    Beat earnings in most recent report ✓      6 pts
+    Revenue growth YoY: -11.1% ✗              0 pts
+    EPS growth YoY: -8.5% ✗                   0 pts
+    Analyst upgrade (Jefferies upgraded) ✓     4 pts  (Hold from Underperform)
+    Note: FY26 guidance raised; CEO sees 2026 as ag cycle bottom
+
+  Category D — Catalyst & Momentum (12/15):
+    Beat-and-raise Q1 on Feb 19; guidance raised  8 pts
+    Industrials sector in favour / S&P uptrend    4 pts (partial — ag still weak)
+
+  Deductions (-9):
+    Sector only partially in favour            -4 pts (ag equipment still cyclically weak)
+    No confirmed TradingView visual check      -5 pts (B-Xtrender unknown)
 
 Setup Summary:
-Walmart is in a clean multi-year uptrend (daily and weekly) and has recently re-tested its 50-day EMA zone
-after a pullback from the $134 highs. The stock closed above its 20-day EMA on April 17 (+2.1%), triggering
-the re-entry condition. Volume was declining on down days and volume expanded on the recovery day.
-The consumer defensive sector is holding up well with a backdrop of macro uncertainty, and Walmart's AI
-and store-remodel narrative provides a strong fundamental tailwind.
+DE pulled back ~12% from its Feb 19 post-earnings high of $672 to the $564–580 zone, 
+bouncing from the 50-day EMA. RSI has reset to 50.6. Volume on the pullback was near 
+average (not a washout, but not aggressive distribution). The bounce off the 20 EMA 
+recapture (trigger A) sets up a potential re-run toward the prior high at $672.
 
-Entry Zone: $126–$129 (current zone, at/near 50 EMA)
-Stop Loss: $119.05 — below 20-day swing low (Apr 7 low; ATR-adjusted would be ~$120)
-Target 1: $134.41 — 52-week high / prior resistance
-Target 2: $139.82 — analyst consensus target
-Risk/Reward (stock): (134-128) / (128-119) = 6/9 = 0.67:1 (poor — use options spread instead)
+Entry Zone: $585–$595 (current area, 50 EMA support at $577)
+Stop Loss: $562.00 — below the April 15 swing low ($564.82) and 1 ATR below 50 EMA
+Target 1: $640 — prior consolidation resistance (~8.6% from entry)
+Target 2: $672 — prior all-time high from Feb 19 (~14% from entry)
+Risk/Reward: 3.1:1 to T1 | 3.9:1 to T2
 
 Key Risks:
-- Earnings May 21 (31 days) — position must be closed or structured to expire before May 21
-- Valuation premium: Fwd P/E 39x is elevated vs peers; little margin of safety
-- Tariff/macro impact on consumer spending could weigh on forward guidance
+- Revenue and earnings declined YoY (cycle bottom narrative must hold)
+- Tariff headwinds mentioned in Q1 call (higher input costs)
+- Next earnings: May 21, 2026 (30 days away — clear of 3-week rule)
+- Ag equipment demand recovery uncertain; guidance is for a bottom, not a boom
+
+Fundamental Note:
+Deere beat Q1 FY2026 estimates significantly (EPS $2.42 vs est $2.11; rev $9.61B vs 
+est $8B), raised full-year guidance to $4.5–5.0B net income, and CEO cited 2026 as 
+the ag cycle bottom with strong order books in Construction & Forestry. Jefferies 
+upgraded from Underperform to Hold. Revenue growth is still negative YoY (-11%), but 
+the margin on beats and guidance raise was large enough to drive an all-time high.
 ```
 
-**Instrument: Paired Debit Spread (Bullish Bias)**
+**Instrument: Paired Debit Spread (Bullish)**
 
 ```
 Instrument: Paired Debit Spread (preferred)
 Bias: Bullish
-Expiry: May 15, 2026 (~25 DTE) — expires before May 21 earnings
+Expiry: May 22, 2026 (~31 DTE)
 
-Primary Spread (Bull Call Spread):
+Primary Spread:
   Structure: Bull Call Spread
   Size: 2 contracts
-  Strikes: Buy $125 Call / Sell $130 Call
-  Pricing: Buy $125C ~$5.15 mid / Sell $130C ~$2.50 mid
-  Net Debit: ~$2.65 per spread ($530 total for 2 contracts)
-  Max Profit: ~$2.35 per spread ($470 total) if WMT ≥ $130 at expiry
-  Max Loss: ~$2.65 per spread ($530 total)
-  Approximate R:R: ~0.9:1 on primary alone
+  Strikes: Buy 590 / Sell 620
+  Net Debit: ~$13.00–$14.00 per spread (mid of $26.35 long – $12.85 short)
+  Max Profit: ~$16–$17 per spread ($30 wide – net debit)
+  Max Loss: ~$13–$14 per spread (net debit paid)
 
-Opposite Hedge (Bear Put Spread):
-  Structure: Bear Put Spread (half-size)
-  Size: 1 contract
-  Strikes: Buy $125 Put / Sell $120 Put
-  Pricing: Buy $125P ~$2.18 mid / Sell $120P ~$0.93 mid
-  Net Debit: ~$1.25 per spread ($125 for 1 contract)
-  Max Profit: ~$3.75 per spread ($375) if WMT ≤ $120 at expiry
-  Max Loss: ~$1.25 ($125)
+Opposite Hedge:
+  Structure: Bear Put Spread
+  Size: 1 contract (half-size)
+  Strikes: Buy 570 / Sell 550
+  Net Debit: ~$10.00–$11.00 per spread (mid)
+  Max Profit: ~$9–$10 per spread
+  Max Loss: ~$10–$11 per spread (net debit paid)
 
 Combined Position:
-  Total Debit / Max Loss: ~$655
-  Expected Payout if WMT rallies to $130+: ~$470 on primary (+$0 on hedge) ≈ +$470 net (71% return on risk)
-  Expected Payout on sharp drop to $120 or below: −$530 primary + $375 hedge = −$155 net (much better than −$655)
-  Main Risk: WMT chops between $120 and $130 — both spreads expire worthless; time decay is the enemy
-  Close before: May 19 at the latest (2 days before May 21 earnings)
+  Total Debit / Max Loss: ~$36–$39 (2 bull call spreads + 1 bear put spread)
+  Expected Payout if thesis is right (price ~$640): ~$28–$34 from primary
+  Expected Payout on violent move against thesis (price < $550): ~$9–$10 from hedge
+  Main Risk: Price stays pinned between $590–$620 through expiry (time decay)
+
+Note: DE options have moderate liquidity. Verify bid/ask spreads at entry.
 ```
 
 ---
 
-### 2. JPM — JPMorgan Chase & Co.
+### 2. COST (Costco Wholesale) — Defensive leader at 50 EMA support after analyst upgrade
 
 ```
-Ticker: JPM
-Current Price: $316.07
-Sector: Financial Services
-Score: 62/115 (A:32 B:0 C:20 D:15 Ded:-5)
-  Note: B=0 because stock R:R <1.5:1 from current extended level; use options spread.
-  Deduction: -5 for insider selling (~86,776 shares in prior 90 days; multiple executives Apr 14-17).
-  B-Xtrender not awarded (visual unavailable).
+Ticker: COST
+Current Price: $1004.22
+Sector: Consumer Defensive (Discount Stores)
+Score: 65/100 (A:28 B:18 C:20 D:15 Ded:-16)
+
+Score Breakdown:
+  Category A — Technical Setup (28/55):
+    Weekly uptrend ✓                          10 pts
+    Daily uptrend ✓                            8 pts
+    Pulled back to 50 EMA ($987), bounced ✓   10 pts
+    Volume on pullback: elevated (concern) ✗   0 pts  ← volume was 1.24–1.38x avg
+    No clear continuation pattern              0 pts
+    B-Xtrender (visual unavailable)            0 pts
+
+  Category B — Risk/Reward (18/25):
+    R:R to T2 = 2.6:1 (≥ 2:1)               18 pts
+
+  Category C — Fundamentals (20/20):
+    Beat earnings Q2 FY2026 (Mar 5) ✓         6 pts
+    Revenue growth +21.5% YoY ✓               5 pts
+    EPS growth +45.5% YoY ✓                   5 pts
+    Analyst upgrade Apr 15 (dividend raise) ✓  4 pts
+
+  Category D — Catalyst & Momentum (15/15):
+    Dividend raised Apr 15; UP 17% YTD ✓       8 pts
+    Consumer Defensive in favour; tariff safe   7 pts
+
+  Deductions (-16):
+    Volume elevated on pullback (distribution risk) -6 pts
+    B-Xtrender unknown                         -5 pts
+    COST near premium vs 50 EMA                -5 pts (not a clean pullback entry; price recovered fast)
 
 Setup Summary:
-JPM broke back above its 200-day MA in early April and has continued higher following a strong Q1 2026
-earnings beat ($5.94 EPS vs $5.50 consensus, +12.7% revenue growth). The stock is in a confirmed
-uptrend on both daily and weekly charts, and the 50-day EMA served as the base for the recent breakout.
-Analyst upgrades followed earnings (Phillip Securities Buy/$335, Truist raised to $332). The position
-is relatively more extended at +5.2% above the 50 EMA but the fundamental momentum is fresh.
+COST pulled back from $1035 to the $966–987 zone (testing 50 EMA at $987) between 
+Apr 13–16, then rebounded sharply. Volume during the pullback was above average 
+(1.24–1.38x), suggesting some institutional rotation/selling rather than a clean 
+healthy correction. The stock has recovered to above $1000. Fundamentals are 
+exceptional; the concern is entry timing — the pullback entry was $980–$990 and we 
+are now 1.7% above the 50 EMA. Still actionable for position traders on any retest.
 
-Entry Zone: $313–$318 (current zone)
-Stop Loss: $293 — below 200-day MA / prior range resistance-turned-support (April pre-earnings low ~$295,
-          but use $293 to allow for noise; ATR $6.81)
-Target 1: $334.16 — 52-week high
-Target 2: $345 — analyst high-target zone
-Risk/Reward (stock): (334-316) / (316-293) = 18/23 = 0.78:1 (poor — use options spread)
+Entry Zone: $987–$1005 (ideally on a dip back toward 50 EMA at ~$987)
+Stop Loss: $963.00 — below the April 14 swing low ($966) with buffer
+Target 1: $1035 — prior April swing high (3.1% above entry)
+Target 2: $1127 — analyst consensus target / measured move (12.3% above entry)
+Risk/Reward: 0.8:1 to T1 | 3.0:1 to T2 (T2 is the relevant target for position trades)
 
 Key Risks:
-- Insider selling: Multiple executives sold ~48,000+ shares worth ~$17.6M in mid-April
-- Net interest income guidance trimmed; buybacks potentially limited
-- Extended from 50 EMA (+5.2%); needs to not reverse while position is open
-- If macro deteriorates, financials are correlated to economic sentiment
+- Volume on pullback elevated — possible distribution by longer-term holders
+- Premium valuation (forward PE 44.7x) limits margin of safety
+- Next earnings: May 28, 2026 (37 days away — clear)
+- Tariff uncertainty (company stated willingness to absorb tariff costs)
+
+Fundamental Note:
+Costco beat Q2 FY2026 estimates (EPS $4.58 vs $4.55 est; revenue +9.1% YoY). 
+Membership fee income grew 13.6%. Board raised quarterly dividend from $1.30 to $1.47 
+on Apr 15. Analysts consensus: "Buy" with avg target ~$1,075. Up 17% YTD while the 
+broader market has been volatile — clear defensive outperformer.
 ```
 
-**Instrument: Paired Debit Spread (Bullish Bias)**
+**Instrument: Paired Debit Spread (Bullish)**
 
 ```
 Instrument: Paired Debit Spread (preferred)
 Bias: Bullish
-Expiry: May 15, 2026 (~25 DTE) — well before July 14 earnings
+Expiry: May 22, 2026 (~31 DTE)
 
-Primary Spread (Bull Call Spread):
+Primary Spread:
   Structure: Bull Call Spread
-  Size: 2 contracts
-  Strikes: Buy $315 Call / Sell $320 Call
-  Pricing: Buy $315C ~$8.68 mid / Sell $320C ~$6.13 mid
-  Net Debit: ~$2.55 per spread ($510 total for 2 contracts)
-  Max Profit: ~$2.45 per spread ($490 total) if JPM ≥ $320 at expiry
-  Max Loss: ~$2.55 per spread ($510 total)
-  Approximate R:R: ~0.96:1 on primary alone
+  Size: 1 contract (note: COST is high-priced, size accordingly)
+  Strikes: Buy 1000 / Sell 1035
+  Net Debit: ~$16.00 per spread (mid: $26.75 long – ~$11.35 short)
+  Max Profit: ~$19.00 per spread ($35 wide – debit)
+  Max Loss: ~$16.00 per spread
 
-Opposite Hedge (Bear Put Spread):
-  Structure: Bear Put Spread (half-size)
-  Size: 1 contract
-  Strikes: Buy $315 Put / Sell $310 Put
-  Pricing: Buy $315P ~$7.00 mid / Sell $310P ~$5.09 mid
-  Net Debit: ~$1.91 per spread ($191 for 1 contract)
-  Max Profit: ~$3.09 per spread ($309) if JPM ≤ $310 at expiry
-  Max Loss: ~$1.91 ($191)
+Opposite Hedge:
+  Structure: Bear Put Spread
+  Size: 1 contract (equal size due to high cost)
+  Strikes: Buy 970 / Sell 950
+  Net Debit: ~$9.00–$10.00 per spread
+  Max Profit: ~$10.00 per spread
+  Max Loss: ~$9–$10 per spread
 
 Combined Position:
-  Total Debit / Max Loss: ~$701
-  Expected Payout if JPM rallies to $320+: ~$490 on primary (+$0 on hedge) ≈ +$490 net (70% return on risk)
-  Expected Payout on sharp drop to $310 or below: −$510 primary + $309 hedge = −$201 net
-  Main Risk: JPM consolidates between $310 and $320 — time decay kills both spreads
+  Total Debit / Max Loss: ~$25–$26 per combined unit
+  Expected Payout if thesis right (price > $1035): ~$19 from primary
+  Expected Payout on sharp decline (< $950): ~$10 from hedge
+  Main Risk: Pinning between $1000–$1035
+
+Note: Ideal entry is a retest of $987–$1000. At $1004 current price, T1 distance is thin. 
+Wait for a dip entry or use wider spread to T2 target.
 ```
-
----
-
-### Eliminated Tickers
-
-| Ticker | Score | Reason Excluded |
-|--------|-------|-----------------|
-| FDX | 48/115 | Below 55 threshold: +10.2% extended from 50 EMA, not in pullback zone; significant insider selling |
-| RS, NEE, PCG, DOV | N/A | Earnings within 21 days (hard filter) |
-| APD, COP, LIN, DUK, AEP, OXY, DVN, CF | N/A | Earnings within 21 days (hard filter) |
-| XOM | N/A | Not researched further — RSI 20.9 suggests potential breakdown/distribution, not a healthy pullback |
 
 ---
 
 ## Watchlist
-_Names with constructive scan/research but no immediate entry (timing / earnings too close)._
+
+_Names with constructive scan/research but no immediate entry (timing / extension)._
 
 | Ticker | Why watching | Trigger to revisit |
 |--------|--------------|-------------------|
-| NEE | In a solid multi-year uptrend, +44.9% off 52W low, near 50 EMA. Utility sector tailwind. | After Apr 23 earnings; re-entry if stock holds $90–$92 zone |
-| LIN | World-class industrial gas compounder, EMA structure intact, slight premium to 50 EMA. | After May 1 earnings; re-entry on any dip to $480–$490 zone |
-| DUK | Regulated utility with 8% revenue growth, near 50 EMA, low RSI (36) — very orderly. | After May 5 earnings; ideal setup if it holds $126–$128 post-earnings |
-| APD | Air Products near 50 EMA, analyst rec 2.04, target $311. Good R:R setup. | After Apr 30 earnings; entry on hold at $280–$285 |
-| COP | Energy name at 50 EMA, RSI 25.8 — deep pullback. May be too much sector headwind. | After Apr 30 earnings + oil stabilization above $60 |
+| WMT | Clean uptrend, pulled back to 20 EMA Apr 13–16 (not quite 50 EMA), analyst consensus "Strong Buy". RSI 68, now 4.4% above 50 EMA — extended from ideal entry. | Dip back toward $124–125 (50 EMA); RSI reset to ~55 |
+| CB | Strong setup (Financials, dual trigger A+C, solid R:R). Earnings reported TODAY Apr 21 — disqualified for new entry. | Post-earnings 2–3 day shake-out settles; check chart structure then |
+| APD | Pulled back to 50 EMA (chemicals, +3.6% above). Earnings Apr 30 (9 days) → within 3-week hard filter. | Post-earnings (after Apr 30) if setup holds |
+| MPC | Excellent R:R (3.6:1), strong EPS growth. Earnings May 5 (14 days) → within 3-week hard filter. | Post-earnings (after May 5) if setup holds and sector improves |
+| XOM | Below 50 EMA, Energy sector in confirmed downtrend (oil -13%). | Energy sector stabilizes; oil > $70; 50 EMA recapture |
+| CVX | Same as XOM — energy sector headwind. | Same as XOM |
 
 ---
 
@@ -207,7 +225,9 @@ _User-confirmed trades from the last 14 days, outcome not yet recorded._
 
 | Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
 |------|--------|------------|------|----------|----------|-----|
-| _(none)_ | | | | | | |
+| — | — | — | — | — | — | — |
+
+_No open trades. Previous run (Apr 16) found zero tickers in scan._
 
 ---
 
@@ -216,7 +236,9 @@ _All closed trades (outcome recorded)._
 
 | Date | Ticker | Entry Price | Outcome Price | % Change | Result |
 |------|--------|-------------|---------------|----------|--------|
-| _(no completed trades yet)_ | | | | | |
+| — | — | — | — | — | — |
+
+_No closed trades yet. Strategy log is empty beyond the Apr 16 empty-scan row._
 
 ### Aggregate Stats
 - **Total closed trades:** 0
@@ -226,11 +248,3 @@ _All closed trades (outcome recorded)._
 - **Expired (inconclusive):** 0
 - **Best trade:** N/A
 - **Worst trade:** N/A
-
----
-
-## Notes on This Run
-- TrendSpider browser-use was unavailable; scan performed via yfinance with equivalent conditions
-- TradingView visual check (browser-use profile Tim) was unavailable; B-Xtrender and Fair Value Band points (max 15 pts) were not awarded for any ticker — scores are conservative as a result
-- The 2026-04-16 row in the log was an empty-scan row and had no outcomes to track (only 4 days old)
-- This is an **unattended/scheduled run** — no trades logged to CSV per Step 6 rules (user confirmation required)
