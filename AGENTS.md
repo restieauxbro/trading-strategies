@@ -17,6 +17,7 @@ Read strategies/overview/AGENT.md and run the market overview.
 ```
 Read strategies/positive-bx-entry/AGENT.md and run the strategy.
 Read strategies/bearish-call-spread/AGENT.md and run the strategy.
+Read strategies/negative-but-strengthening-bx-watchlist/AGENT.md and run the strategy.
 ```
 
 ## Optional: yfinance Tools

@@ -7,7 +7,7 @@ Before starting, load the following files:
 1. **Skill: `analyse-tickers`** — `.cursor/skills/analyse-tickers/SKILL.md` — research checklist, scoring, market context, output format
 2. **Skill: `log-trade-csv`** — `.cursor/skills/log-trade-csv/SKILL.md` — CSV schema and writing rules
 3. **Skill: `track-outcomes`** — `.cursor/skills/track-outcomes/SKILL.md` — 14-day outcome lookback
-4. **Skill: `indicators`** — `.cursor/skills/indicators/SKILL.md` — TradingView layout, fair value bands, weekly BX, daily B-Xtrender
+4. **Skill: `indicators`** — `.cursor/skills/indicators/SKILL.md` — TradingView layout, fair value bands, weekly BX, daily B-Xtrender, monthly BX backdrop
 5. `strategies/positive-bx-entry/config.md` — scanner name, scan logic, scoring, instruments
 
 This `AGENT.md` defines workflow steps only.
@@ -66,13 +66,14 @@ Use plain **TICKER** (e.g. `AMD`). Follow `.cursor/skills/indicators/SKILL.md` a
 
 - **Fair value bands:** green vs red structure; vs **three lines** — **lower = fair value**, **middle = premium**, **upper = stress** (see `indicators` skill).
 - **Weekly BX row:** green vs red on latest bar
+- **Monthly BX backdrop:** green vs light pink / dark red, and whether the latest monthly bars are **shrinking** or **growing**
 - **Daily B-Xtrender:** histogram side of zero; **buy/sell** signals on latest bars
 
-**Watchlist rule:** If scan + research are attractive but visuals say **no immediate entry** (overextension, sell signal, etc.), flag for **Watchlist** (see `config.md`) — **no** CSV row for that symbol.
+**Immediate-entry rule:** A bullish entry is valid only when **weekly BX is green** and **monthly BX is either green or light pink and shrinking**. If scan + research are attractive but visuals say **no immediate entry** (overextension, daily sell signal, monthly pink growing / dark red, etc.), flag for **Watchlist** (see `config.md`) — **no** CSV row for that symbol.
 
 Optional: clear stale screenshots first (`rm -f strategies/positive-bx-entry/assets/tradingview-*.png`), then save `strategies/positive-bx-entry/assets/tradingview-<TICKER>.png` for shortlisted names.
 
-**Reading charts:** After each screenshot, use the **multimodal handoff** in `.cursor/skills/indicators/SKILL.md` (vision model + **JSON schema**) so **latest-bar** B-Xtrender / weekly BX state is not inferred from lossy image descriptions alone.
+**Reading charts:** After each screenshot, use the **multimodal handoff** in `.cursor/skills/indicators/SKILL.md` (vision model + **JSON schema**) so **latest-bar** daily / weekly / monthly BX state is not inferred from lossy image descriptions alone.
 
 ---
 
