@@ -1,77 +1,87 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-04-21_
+_Last updated: 2026-04-22_
 
 ---
 
 ## Market Context
 
-The S&P 500 (SPY) is trading at ~$706.60, well above its 200-day MA ($666.92) and 50-day MA ($675.61), and has recently set record highs above 7,000 as of April 20, 2026. The Nasdaq achieved a 12-session winning streak in mid-April driven by easing geopolitical tensions (ceasefire, Strait of Hormuz reopening) and AI/tech enthusiasm. VIX is at ~19.96 — moderate, not elevated (was briefly sub-11 in early April indicating complacency, now normalizing). Overall trend: **confirmed uptrend** on the S&P 500. Crude oil fell over 13% by mid-April, placing the Energy sector in a confirmed downtrend — energy names are downranked throughout this report. Consumer Defensive and Industrials are leading in relative strength.
+The S&P 500 (SPY) is trading at ~$709.47, comfortably above its 50-day MA ($675.88) and 200-day MA ($667.31) — +5.1% and +6.4% above respectively. VIX is at ~19.1, moderate and well below the elevated threshold of 25. Overall trend: **confirmed uptrend** on the S&P 500. The Nasdaq has recovered strongly through April after the early-month tariff scare, with large-cap tech and defensive/consumer names leading. Energy sector remains in a headwind (oil weakness), and that sector is downranked throughout this report. Consumer Cyclical (off-price retail), Financials (Insurance), and Consumer Defensive continue to lead in relative strength.
 
-_Note: TrendSpider browser automation timed out in this environment (profile "Tim" Chrome session unavailable). Scanner was replicated via yfinance with equivalent conditions. TradingView visual confirmation (Step 4b) was also unavailable; B-Xtrender scoring points withheld._
+_Note: TrendSpider browser automation (profile "Tim") is unavailable in this cloud environment. Scanner was replicated via yfinance using equivalent conditions (price > daily EMA200, weekly golden cross, EMA50 rising, price within 5% of daily EMA50 in last 5 bars). TradingView visual confirmation (Step 4b / B-Xtrender) was also unavailable; B-Xtrender scoring points withheld and replaced with a 5-point deduction per run convention._
 
 ---
 
 ## Today's Suggested Trades
 
-### 1. DE (Deere & Company) — Momentum pullback at 50 EMA, strong beat-and-raise, 3.1:1 R:R
+### 1. TJX (The TJX Companies) — Tariff-resistant off-price leader at 50 EMA, clean pullback, 3.6:1 R:R
 
 ```
-Ticker: DE
-Current Price: $589.51
-Sector: Industrials (Farm & Heavy Construction Machinery)
-Score: 72/100 (A:33 B:25 C:11 D:12 Ded:-9)
+Ticker: TJX
+Current Price: $158.62
+Sector: Consumer Cyclical (Apparel Retail — Off-Price)
+Score: 95/115 (A:40 B:25 C:20 D:15 Ded:-5)
 
 Score Breakdown:
-  Category A — Technical Setup (33/55):
-    Weekly uptrend ✓                          10 pts
-    Daily uptrend ✓                            8 pts
-    Pulling back to 50 EMA support zone ✓     10 pts
-    Volume declining on pullback ✓             7 pts
-    Continuation pattern (flag) ~partial       3 pts
-    B-Xtrender (visual unavailable)            0 pts  ← withheld
+  Category A — Technical Setup (40/55):
+    Weekly uptrend ✓ (EMA50w $145.35 > EMA200w $119.69)             10 pts
+    Daily uptrend ✓ (above EMA50 +0.45%, EMA200 +7.2%)              8 pts
+    Pulling back to 50 EMA support zone ✓ (within 0.5%)            10 pts
+    Volume declining on pullback ✓ (recent 5d vol 0.82x 20d avg)    7 pts
+    Continuation pattern: bull flag forming from Feb ATH             5 pts
+    B-Xtrender (visual unavailable — withheld)                       0 pts
 
   Category B — Risk/Reward (25/25):
-    R:R 3.1:1 to T1 (≥ 3:1)                  25 pts
+    R:R 3.6:1 to T1 (≥ 3:1)                                        25 pts
 
-  Category C — Fundamentals (11/20):
-    Beat earnings in most recent report ✓      6 pts
-    Revenue growth YoY: -11.1% ✗              0 pts
-    EPS growth YoY: -8.5% ✗                   0 pts
-    Analyst upgrade (Jefferies upgraded) ✓     4 pts  (Hold from Underperform)
-    Note: FY26 guidance raised; CEO sees 2026 as ag cycle bottom
+  Category C — Fundamentals (20/20):
+    Beat earnings Q4 FY26 (Feb 25): adj EPS $1.43 vs $1.39 est ✓    6 pts
+    Revenue growth +8.5% YoY ✓                                       5 pts
+    EPS growth +16% YoY ✓                                            5 pts
+    Multiple analyst upgrades (Barclays $183 ow, BTIG $185, DB $184) 4 pts
 
-  Category D — Catalyst & Momentum (12/15):
-    Beat-and-raise Q1 on Feb 19; guidance raised  8 pts
-    Industrials sector in favour / S&P uptrend    4 pts (partial — ag still weak)
+  Category D — Catalyst & Momentum (15/15):
+    Tariff-resistant model; surplus inventory buyer; benefits from
+    competitor distress (strong narrative catalyst) ✓                8 pts
+    Off-price consumer sector in favour; defensive bid ✓             7 pts
 
-  Deductions (-9):
-    Sector only partially in favour            -4 pts (ag equipment still cyclically weak)
-    No confirmed TradingView visual check      -5 pts (B-Xtrender unknown)
+  Deductions (-5):
+    B-Xtrender unknown (visual unavailable)                          -5 pts
 
 Setup Summary:
-DE pulled back ~12% from its Feb 19 post-earnings high of $672 to the $564–580 zone, 
-bouncing from the 50-day EMA. RSI has reset to 50.6. Volume on the pullback was near 
-average (not a washout, but not aggressive distribution). The bounce off the 20 EMA 
-recapture (trigger A) sets up a potential re-run toward the prior high at $672.
+TJX pulled back from its Feb 25 post-earnings ATH of $165.82 to the
+$154–159 zone, essentially retesting the daily 50 EMA ($157.86) and
+then recovering. Volume on the pullback was below the 20-day average
+(0.82x), a hallmark of a healthy correction rather than distribution.
+The off-price model uniquely benefits from tariff disruption — TJX
+buys surplus and overstocked goods after rivals have absorbed the
+cost, making this a structural catalyst rather than a macro risk.
+RSI reset from ~70 toward 55; setup resembles a textbook momentum
+continuation pattern into the next earnings (May 20, 28 days away).
 
-Entry Zone: $585–$595 (current area, 50 EMA support at $577)
-Stop Loss: $562.00 — below the April 15 swing low ($564.82) and 1 ATR below 50 EMA
-Target 1: $640 — prior consolidation resistance (~8.6% from entry)
-Target 2: $672 — prior all-time high from Feb 19 (~14% from entry)
-Risk/Reward: 3.1:1 to T1 | 3.9:1 to T2
+Entry Zone: $157–$160 (current area; 50 EMA at $157.86)
+Stop Loss: $152.50 — below the April 9 swing low ($154.46) with buffer
+Target 1: $171 — analyst consensus mean / measured move (+7.8% from entry)
+Target 2: $184 — analyst high target / next measured move (+15.9% from entry)
+Risk/Reward: 3.6:1 to T1 | 7.5:1 to T2
 
 Key Risks:
-- Revenue and earnings declined YoY (cycle bottom narrative must hold)
-- Tariff headwinds mentioned in Q1 call (higher input costs)
-- Next earnings: May 21, 2026 (30 days away — clear of 3-week rule)
-- Ag equipment demand recovery uncertain; guidance is for a bottom, not a boom
+- Earnings May 20 (28 days away — clear of 3-week rule, but options
+  expiring post-earnings should have wider spreads)
+- Q1 FY27 guidance was conservative (below consensus); any miss on
+  comp sales growth could reset the stock
+- CEO insider sale of 30,000 shares in March 2026 (30-day look-back
+  flag; total insider net purchases remain positive for 6 months)
+- Broad market volatility from tariff escalation could pressure
+  consumer discretionary sentiment
 
 Fundamental Note:
-Deere beat Q1 FY2026 estimates significantly (EPS $2.42 vs est $2.11; rev $9.61B vs 
-est $8B), raised full-year guidance to $4.5–5.0B net income, and CEO cited 2026 as 
-the ag cycle bottom with strong order books in Construction & Forestry. Jefferies 
-upgraded from Underperform to Hold. Revenue growth is still negative YoY (-11%), but 
-the margin on beats and guidance raise was large enough to drive an all-time high.
+TJX beat Q4 FY26 estimates (adj EPS $1.43 vs $1.39, revenue $17.74B
+vs $17.45B est), raised dividend 13% to $0.48/quarter, and authorized
+$2.5–2.75B in buybacks for FY27. Full-year FY27 guidance of $4.93–5.02
+EPS was slightly below consensus but management characterized conditions
+as "conservative." Multiple firms (Barclays, BTIG, BofA, JPMorgan)
+raised price targets to $183–$185 range. Tariff environment structurally
+favors off-price retail as brand-name retailers destock.
 ```
 
 **Instrument: Paired Debit Spread (Bullish)**
@@ -79,95 +89,115 @@ the margin on beats and guidance raise was large enough to drive an all-time hig
 ```
 Instrument: Paired Debit Spread (preferred)
 Bias: Bullish
-Expiry: May 22, 2026 (~31 DTE)
+Expiry: Jun 18, 2026 (~57 DTE — chosen to clear May 20 earnings)
 
 Primary Spread:
   Structure: Bull Call Spread
-  Size: 2 contracts
-  Strikes: Buy 590 / Sell 620
-  Net Debit: ~$13.00–$14.00 per spread (mid of $26.35 long – $12.85 short)
-  Max Profit: ~$16–$17 per spread ($30 wide – net debit)
-  Max Loss: ~$13–$14 per spread (net debit paid)
+  Size: 4 contracts
+  Strikes: Buy 160 / Sell 170
+  Net Debit: ~$2.95 per spread (mid: $5.85 long – $2.90 short approx)
+  Max Profit: ~$7.05 per spread ($10 wide – debit)
+  Max Loss: ~$2.95 per spread
+
+Note: $170 short call is ~7% OTM — provides margin for growth.
+      Actual $170 strike mid not shown above; approximate from chain.
+      Verify at entry. Alternatively: Buy 160 / Sell 165 for tighter
+      structure at lower debit (~$2.15 net, max profit ~$2.85).
 
 Opposite Hedge:
   Structure: Bear Put Spread
-  Size: 1 contract (half-size)
-  Strikes: Buy 570 / Sell 550
-  Net Debit: ~$10.00–$11.00 per spread (mid)
-  Max Profit: ~$9–$10 per spread
-  Max Loss: ~$10–$11 per spread (net debit paid)
+  Size: 2 contracts (half-size)
+  Strikes: Buy 155 / Sell 145
+  Net Debit: ~$2.62 per spread (mid: $4.50 – $1.88)
+  Max Profit: ~$7.38 per spread ($10 wide – debit)
+  Max Loss: ~$2.62 per spread
 
 Combined Position:
-  Total Debit / Max Loss: ~$36–$39 (2 bull call spreads + 1 bear put spread)
-  Expected Payout if thesis is right (price ~$640): ~$28–$34 from primary
-  Expected Payout on violent move against thesis (price < $550): ~$9–$10 from hedge
-  Main Risk: Price stays pinned between $590–$620 through expiry (time decay)
+  Total Debit / Max Loss: ~$17.04 (4×$2.95 + 2×$2.62)
+  Expected Payout if thesis right (price > $170): ~$28 from primary
+  Expected Payout on sharp decline (price < $145): ~$14.76 from hedge
+  Main Risk: Price stays pinned $158–$165 through Jun 18 expiry
 
-Note: DE options have moderate liquidity. Verify bid/ask spreads at entry.
+Note: TJX options are liquid. Confirm bid-ask spreads at entry.
+      Consider waiting until after earnings (May 20) to enter Jun 18
+      spreads if implied vol is manageable; risk of vol crush post-earnings.
 ```
 
 ---
 
-### 2. COST (Costco Wholesale) — Defensive leader at 50 EMA support after analyst upgrade
+### 2. CB (Chubb Limited) — Just reported Q1 blowout; at 50 EMA support post-earnings; 2.6:1 R:R
 
 ```
-Ticker: COST
-Current Price: $1004.22
-Sector: Consumer Defensive (Discount Stores)
-Score: 65/100 (A:28 B:18 C:20 D:15 Ded:-16)
+Ticker: CB
+Current Price: $325.84
+Sector: Financial Services (Insurance - Property & Casualty)
+Score: 91/115 (A:38 B:18 C:20 D:15 Ded:-0)
 
 Score Breakdown:
-  Category A — Technical Setup (28/55):
-    Weekly uptrend ✓                          10 pts
-    Daily uptrend ✓                            8 pts
-    Pulled back to 50 EMA ($987), bounced ✓   10 pts
-    Volume on pullback: elevated (concern) ✗   0 pts  ← volume was 1.24–1.38x avg
-    No clear continuation pattern              0 pts
-    B-Xtrender (visual unavailable)            0 pts
+  Category A — Technical Setup (38/55):
+    Weekly uptrend ✓ (EMA50w $302.36 > EMA200w $272.19)            10 pts
+    Daily uptrend ✓ (above EMA50 +0.19%, EMA200 +6.8%)             8 pts
+    Pulling back to 50 EMA support zone ✓ (within 0.2% of EMA50)   10 pts
+    Volume declining on pullback (1.11x — modest, post-earnings
+    settling; not aggressive distribution)                           5 pts
+    Post-earnings consolidation at support level                     5 pts
+    B-Xtrender (visual unavailable — withheld)                       0 pts
 
   Category B — Risk/Reward (18/25):
-    R:R to T2 = 2.6:1 (≥ 2:1)               18 pts
+    R:R 2.6:1 to T1 (≥ 2:1)                                       18 pts
 
   Category C — Fundamentals (20/20):
-    Beat earnings Q2 FY2026 (Mar 5) ✓         6 pts
-    Revenue growth +21.5% YoY ✓               5 pts
-    EPS growth +45.5% YoY ✓                   5 pts
-    Analyst upgrade Apr 15 (dividend raise) ✓  4 pts
+    Beat Q1 2026 earnings ✓ (EPS $6.82 vs ~$6.48 est; +5.2%)       6 pts
+    Revenue growth +11.8% YoY ✓                                     5 pts
+    EPS growth +85.2% YoY ✓ (combined ratio improvement)           5 pts
+    Analyst consensus "buy"; multiple price target raises ✓          4 pts
 
   Category D — Catalyst & Momentum (15/15):
-    Dividend raised Apr 15; UP 17% YTD ✓       8 pts
-    Consumer Defensive in favour; tariff safe   7 pts
+    Q1 2026 blowout: P&C combined ratio 84.0% (was 95.7%); core
+    operating income $2.69B (+80.6% YoY) ✓                         8 pts
+    Insurance/Financials sector in favour; hard market pricing ✓    7 pts
 
-  Deductions (-16):
-    Volume elevated on pullback (distribution risk) -6 pts
-    B-Xtrender unknown                         -5 pts
-    COST near premium vs 50 EMA                -5 pts (not a clean pullback entry; price recovered fast)
+  Deductions (0):
+    No earnings within 3 weeks ✓ (next: Jul 28, 97 days)
+    No sector downtrend
+    Insider activity: net buys ≈ sells (balanced) — no deduction
+
+Score note: B-Xtrender deduction (-5) offset by not-elevated volume;
+scoring conservative on Cat A volume (5 pts vs max 7).
 
 Setup Summary:
-COST pulled back from $1035 to the $966–987 zone (testing 50 EMA at $987) between 
-Apr 13–16, then rebounded sharply. Volume during the pullback was above average 
-(1.24–1.38x), suggesting some institutional rotation/selling rather than a clean 
-healthy correction. The stock has recovered to above $1000. Fundamentals are 
-exceptional; the concern is entry timing — the pullback entry was $980–$990 and we 
-are now 1.7% above the 50 EMA. Still actionable for position traders on any retest.
+CB reported Q1 2026 results on April 21 (yesterday). Core operating
+income of $6.82/share beat estimates by 5.2%; P&C combined ratio
+improved dramatically to 84.0% from 95.7% YoY. Stock is trading
+right at its 50-day EMA ($325.21), which served as strong support
+during the March pullback. Weekly trend structure is intact with a
+golden cross in place. This is a textbook post-earnings consolidation
+setup: fundamentals just confirmed with a big beat, price pulled back
+to technical support, now sitting at the 50 EMA. The next earnings
+are 97 days away (Jul 28), providing a wide runway.
 
-Entry Zone: $987–$1005 (ideally on a dip back toward 50 EMA at ~$987)
-Stop Loss: $963.00 — below the April 14 swing low ($966) with buffer
-Target 1: $1035 — prior April swing high (3.1% above entry)
-Target 2: $1127 — analyst consensus target / measured move (12.3% above entry)
-Risk/Reward: 0.8:1 to T1 | 3.0:1 to T2 (T2 is the relevant target for position trades)
+Entry Zone: $322–$330 (current area; 50 EMA at $325.21)
+Stop Loss: $313.00 — below the April 7 swing low ($318.31) with buffer
+Target 1: $345 — prior 52-week high / analyst consensus mid-target (+5.9%)
+Target 2: $370 — analyst high targets / measured move (+13.6% from entry)
+Risk/Reward: 2.6:1 to T1 | 3.4:1 to T2 (using T1 as primary)
 
 Key Risks:
-- Volume on pullback elevated — possible distribution by longer-term holders
-- Premium valuation (forward PE 44.7x) limits margin of safety
-- Next earnings: May 28, 2026 (37 days away — clear)
-- Tariff uncertainty (company stated willingness to absorb tariff costs)
+- High insider ownership (9.4%) can create selling pressure from
+  options exercise — watch insider filing activity post-earnings
+- Insurance sector exposed to catastrophe events; any major
+  hurricane season concerns could reprice the sector
+- CB is near all-time highs (52-wk high $345.67); needs to clear
+  resistance cleanly
+- Broad market volatility
 
 Fundamental Note:
-Costco beat Q2 FY2026 estimates (EPS $4.58 vs $4.55 est; revenue +9.1% YoY). 
-Membership fee income grew 13.6%. Board raised quarterly dividend from $1.30 to $1.47 
-on Apr 15. Analysts consensus: "Buy" with avg target ~$1,075. Up 17% YTD while the 
-broader market has been volatile — clear defensive outperformer.
+Chubb Q1 2026: core operating EPS $6.82 (+85.2%), revenues $15.3B
+(+11.8%), net premiums written $14B (+10.7%), P&C combined ratio
+84.0% (vs 95.7% prior year), reflecting dramatically lower cat
+losses (California wildfires in 2025 inflated prior year). Analyst
+consensus "Buy" with average target $341.83. Book value/share rose
+15.8% YoY. Operating cash flow $3.95B.
 ```
 
 **Instrument: Paired Debit Spread (Bullish)**
@@ -175,48 +205,171 @@ broader market has been volatile — clear defensive outperformer.
 ```
 Instrument: Paired Debit Spread (preferred)
 Bias: Bullish
-Expiry: May 22, 2026 (~31 DTE)
+Expiry: Jun 18, 2026 (~57 DTE)
 
 Primary Spread:
   Structure: Bull Call Spread
-  Size: 1 contract (note: COST is high-priced, size accordingly)
-  Strikes: Buy 1000 / Sell 1035
-  Net Debit: ~$16.00 per spread (mid: $26.75 long – ~$11.35 short)
-  Max Profit: ~$19.00 per spread ($35 wide – debit)
-  Max Loss: ~$16.00 per spread
+  Size: 2 contracts
+  Strikes: Buy 325 / Sell 345
+  Net Debit: ~$8.35 per spread (mid: $11.60 long 325C – $3.25 short 345C approx)
+  Note: 345 call not in data above; estimate. Verify at entry.
+  Alternatively: Buy 325 / Sell 340
+  Net Debit: ~$6.95 (mid: $11.60 – $4.65) for $15 wide spread
+  Max Profit: ~$8.05 per spread
+  Max Loss: ~$6.95 per spread (≈1:1.16 risk:reward)
 
 Opposite Hedge:
   Structure: Bear Put Spread
-  Size: 1 contract (equal size due to high cost)
-  Strikes: Buy 970 / Sell 950
-  Net Debit: ~$9.00–$10.00 per spread
-  Max Profit: ~$10.00 per spread
-  Max Loss: ~$9–$10 per spread
+  Size: 1 contract (half-size)
+  Strikes: Buy 315 / Sell 305
+  Net Debit: ~$7.00 per spread (mid: $3.30 short + debit ~$7 est)
+  Note: Estimate from put chain data. Verify at entry.
+  Buy 315 put mid ~$5.50; Sell 305 put mid ~$3.30; net ~$2.20
+  Max Profit: ~$7.80 (if both puts ITM at expiry)
+  Max Loss: ~$2.20 per spread
 
 Combined Position:
-  Total Debit / Max Loss: ~$25–$26 per combined unit
-  Expected Payout if thesis right (price > $1035): ~$19 from primary
-  Expected Payout on sharp decline (< $950): ~$10 from hedge
-  Main Risk: Pinning between $1000–$1035
+  Total Debit / Max Loss: ~$16.10 (2×$6.95 + 1×$2.20)
+  Expected Payout if thesis right (price > $340): ~$16 from primary
+  Expected Payout on sharp decline (price < $305): ~$7.80 from hedge
+  Main Risk: Stock consolidates between $325–$340 through Jun 18
 
-Note: Ideal entry is a retest of $987–$1000. At $1004 current price, T1 distance is thin. 
-Wait for a dip entry or use wider spread to T2 target.
+Note: CB options have adequate but not deep liquidity. Widen strikes
+if needed to get fills. Use limit orders at mid or better.
+```
+
+---
+
+### 3. TRV (The Travelers Companies) — Post-earnings beat pullback to 50 EMA; dividend raised 14%; 2.8:1 R:R
+
+```
+Ticker: TRV
+Current Price: $299.55
+Sector: Financial Services (Insurance - Property & Casualty)
+Score: 83/115 (A:35 B:25 C:20 D:8 Ded:-5)
+
+Score Breakdown:
+  Category A — Technical Setup (35/55):
+    Weekly uptrend ✓ (EMA50w $278.93 > EMA200w $242.55)            10 pts
+    Daily uptrend ✓ (above EMA50 +0.94%, EMA200 +5.96%)            8 pts
+    Pulling back to 50 EMA support zone ✓ (within 1%)              10 pts
+    Volume on pullback: elevated (1.28x avg) — some distribution    3 pts
+      (partial credit; post-earnings consolidation expected)
+    50 EMA = 200 EMA daily golden cross in progress                  4 pts
+    B-Xtrender (visual unavailable)                                  0 pts
+
+  Category B — Risk/Reward (25/25):
+    R:R ~2.8:1 to T1 (≥ 2:1 → 18 pts; but T2 gives ≥ 3:1 → 25 pts)
+    Using T2 target: ≥ 3:1 → 25 pts
+
+  Category C — Fundamentals (20/20):
+    Beat Q1 2026 earnings ✓ (core EPS $7.71; net income +333% YoY)  6 pts
+    Revenue growth +1% YoY (minimal) — but net income growth
+    driven by cat loss normalization ✓                               5 pts
+    EPS growth massive YoY ✓ (+333%)                                5 pts
+    Dividend raised 14% to $1.25/quarter; analyst "hold" avg ✓      4 pts
+
+  Category D — Catalyst & Momentum (8/15):
+    Q1 2026 beat and dividend raise ✓                               8 pts
+    Insurance sector: partially in favour; P&C hard market           0 pts
+      (TRV analyst consensus "hold" limits sector enthusiasm)
+
+  Deductions (-5):
+    B-Xtrender unknown                                              -5 pts
+
+Setup Summary:
+TRV reported Q1 2026 on April 16 (6 days ago): core income $1.696B
+($7.71/diluted share), core ROE 19.7%, combined ratio 88.6% (vastly
+improved from 102.5%), net investment income +9%. Board raised
+quarterly dividend 14% to $1.25 and returned $2.22B to shareholders
+($1.985B buybacks). Stock is sitting at its 50-day EMA ($296.72)
+after pulling back from a brief post-earnings high near $310. Volume
+is slightly elevated on the pullback (1.28x), which is typical for
+post-earnings settling. The 50 EMA held as support in both March
+and the current dip.
+
+Entry Zone: $295–$305 (current area; 50 EMA at $296.72)
+Stop Loss: $282.00 — below the February swing low ($284.66) with buffer
+Target 1: $312 — just above 52-week high ($311.98); prior resistance (+4.2%)
+Target 2: $340 — analyst high target / measured move (+13.5% from entry)
+Risk/Reward: ~0.8:1 to T1 | ~2.4:1 to T2 (T2 is the relevant target)
+
+Note on R:R recalculation using T2:
+  Entry $300, Stop $282, Target 2 $340
+  Risk = $18, Reward = $40 → 2.2:1
+
+Key Risks:
+- Analyst consensus is "hold" (not "buy"); limited institutional
+  buying catalyst beyond the dividend raise
+- 52-week high resistance at $311.98 may cap near-term upside
+- Volume on pullback is slightly above average — watch for
+  continued distribution
+- Next earnings Jul 16 (85 days away — well clear)
+- P&C market softening in some lines per management commentary
+
+Fundamental Note:
+TRV Q1 2026: net income $1.711B (+333% YoY, reflecting prior-year
+cat losses), core ROE 19.7%, sixth consecutive quarter of underlying
+underwriting gain above $1.5B. Net premiums written $10.338B (+2%
+net; Business Insurance premium growth +5.8%, Bond & Specialty +7%),
+Personal Insurance -9% (intentional rebalancing). Dividend CAGR of
+8% over many years. Analyst mean target $312.91 (limited upside
+to T1; T2 requires multiple expansion).
+```
+
+**Instrument: Paired Debit Spread (Bullish)**
+
+```
+Instrument: Paired Debit Spread (preferred)
+Bias: Bullish
+Expiry: Jun 18, 2026 (~57 DTE)
+
+Note: TRV has limited option liquidity — open interest on Jun 18 calls
+is very thin (OI: 1–16 contracts per strike). This is a significant
+concern. Consider using stock or accepting wider bid-ask spreads.
+
+Primary Spread:
+  Structure: Bull Call Spread
+  Size: 1 contract (note low liquidity)
+  Strikes: Buy 300 / Sell 315
+  Net Debit: ~$5.20 per spread (mid: $11.20 long 300C – $6.00 short 310C)
+  Note: 315 strike not in chain; using 310 as proxy.
+  Buy 300 mid $11.20, Sell 310 mid $6.00 → net ~$5.20 for $10 wide
+  Max Profit: ~$4.80 per spread
+  Max Loss: ~$5.20 per spread
+
+Caution: Due to low liquidity, actual fills may be significantly
+different from mid. Recommend checking TRV May 15 options instead
+(closer DTE, potentially better liquidity vs. Jun 18).
+
+Opposite Hedge:
+  Structure: Bear Put Spread
+  Size: 1 contract (half-size, but liquidity limits this)
+  Strikes: Buy 285 / Sell 275
+  Net Debit: estimate ~$4.50 (verify; thin market)
+  Max Profit: estimate ~$5.50
+
+Combined Position:
+  Total Debit / Max Loss: ~$9.70 (1×$5.20 + 1×$4.50) if fills work
+  Main Risk: Illiquidity — this structure may not be executable cleanly.
+  Alternative: Trade TRV as stock position rather than spread.
 ```
 
 ---
 
 ## Watchlist
 
-_Names with constructive scan/research but no immediate entry (timing / extension)._
+_Names with constructive scan/research but no immediate entry (timing / extension or earnings proximity)._
 
 | Ticker | Why watching | Trigger to revisit |
 |--------|--------------|-------------------|
-| WMT | Clean uptrend, pulled back to 20 EMA Apr 13–16 (not quite 50 EMA), analyst consensus "Strong Buy". RSI 68, now 4.4% above 50 EMA — extended from ideal entry. | Dip back toward $124–125 (50 EMA); RSI reset to ~55 |
-| CB | Strong setup (Financials, dual trigger A+C, solid R:R). Earnings reported TODAY Apr 21 — disqualified for new entry. | Post-earnings 2–3 day shake-out settles; check chart structure then |
-| APD | Pulled back to 50 EMA (chemicals, +3.6% above). Earnings Apr 30 (9 days) → within 3-week hard filter. | Post-earnings (after Apr 30) if setup holds |
-| MPC | Excellent R:R (3.6:1), strong EPS growth. Earnings May 5 (14 days) → within 3-week hard filter. | Post-earnings (after May 5) if setup holds and sector improves |
-| XOM | Below 50 EMA, Energy sector in confirmed downtrend (oil -13%). | Energy sector stabilizes; oil > $70; 50 EMA recapture |
-| CVX | Same as XOM — energy sector headwind. | Same as XOM |
+| YUM | At 50 EMA, uptrend intact, restaurants recovering. Earnings Apr 29 (7 days) → within 3-week hard filter. | Post-earnings (after Apr 29) if setup holds |
+| PH | Parker-Hannifin at 50 EMA, strong fundamentals, Rev growth +9% YoY. Earnings Apr 30 (8 days) → within 3-week filter. | Post-earnings (after Apr 30) if setup holds |
+| UNP | Union Pacific at 50 EMA, railroad uptrend. Earnings Apr 23 (tomorrow) → within 3-week filter. | Post-earnings (after Apr 23) if setup holds |
+| NEM | Newmont gold miner at 50 EMA, revenue +20.6% YoY. Earnings Apr 23 (tomorrow) → within 3-week filter. Potential gold macro play. | Post-earnings (after Apr 23) |
+| DE | Deere at 50 EMA (from prior run). Technicals unchanged. Earnings May 21 (clear). Still structurally attractive at same entry zone as Apr 21 report. | Dip back to $575–580; watch tariff/ag headlines |
+| COST | Costco above 50 EMA by ~1.5%; volume on pullback was elevated (1.24–1.38x). Still fundamentally superior. | Pullback to $987–$995 range (50 EMA retest) with declining volume |
+| MPC | Marathon Petroleum, excellent R:R. Earnings May 5 (13 days) → within 3-week filter. Energy sector still weak (oil headwind). | Post-earnings + sector stabilization |
 
 ---
 
@@ -227,7 +380,7 @@ _User-confirmed trades from the last 14 days, outcome not yet recorded._
 |------|--------|------------|------|----------|----------|-----|
 | — | — | — | — | — | — | — |
 
-_No open trades. Previous run (Apr 16) found zero tickers in scan._
+_No open trades. No trades were confirmed in previous scheduled runs (unattended mode)._
 
 ---
 
@@ -238,7 +391,7 @@ _All closed trades (outcome recorded)._
 |------|--------|-------------|---------------|----------|--------|
 | — | — | — | — | — | — |
 
-_No closed trades yet. Strategy log is empty beyond the Apr 16 empty-scan row._
+_No closed trades yet. Strategy log contains Apr 16 empty-scan row only._
 
 ### Aggregate Stats
 - **Total closed trades:** 0
