@@ -148,7 +148,6 @@ Useful secondary watchlist name if you want something less crowded than semis an
 
 ---
 
-## Open Trades
-_User-confirmed trades only._
+## Watchlist Tracking
 
-No open trades logged for this strategy.
+The active file for this strategy is `strategies/negative-but-strengthening-bx-watchlist/watchlist.csv`.

@@ -10,8 +10,8 @@
 | Scan runner | `python3 scripts/trendspider_scan.py --scanner-name "Negative but strengthening BX"` |
 | Universe | TrendSpider scanner universe as configured in the saved scan |
 | Trading style | Watchlist / early-bullish stalking list |
-| Max watchlist names per run | 5 |
-| Log file | `strategies/negative-but-strengthening-bx-watchlist/trades-log.csv` |
+| Track all scan names | Yes — active names plus too-early names stay in the CSV |
+| Watchlist file | `strategies/negative-but-strengthening-bx-watchlist/watchlist.csv` |
 | Report file | `strategies/negative-but-strengthening-bx-watchlist/report.md` |
 
 ---
@@ -132,3 +132,34 @@ Entry Bias If Confirmed:
 === NEGATIVE BUT STRENGTHENING BX WATCHLIST — [DATE] ===
 Universe: TrendSpider saved scan | Style: Watchlist / early bullish stalking
 ```
+
+---
+
+## Watchlist CSV Schema
+
+Append one row per scanned ticker to:
+
+```text
+strategies/negative-but-strengthening-bx-watchlist/watchlist.csv
+```
+
+Header:
+
+```csv
+date,scan_label,ticker,current_price,day_change_pct,score,priority,status,sector,notes,next_trigger,key_risks
+```
+
+Column meanings:
+
+- `date` — run date in `YYYY-MM-DD`
+- `scan_label` — short label for the saved scan run
+- `ticker` — stock symbol
+- `current_price` — price captured from the scan
+- `day_change_pct` — daily % move from the scan snapshot
+- `score` — watchlist score out of 100
+- `priority` — `high`, `medium`, or `low`
+- `status` — e.g. `active`, `secondary`, `wait_for_earnings`, `avoid_for_now`
+- `sector` — broad sector or sector / industry
+- `notes` — concise reason the name belongs in the file
+- `next_trigger` — what would upgrade the setup
+- `key_risks` — concise invalidation or event risk note

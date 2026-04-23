@@ -38,9 +38,9 @@ trading-strategy/
 
 ## Rules for All Agents in This Repo
 
-- Every strategy agent MUST load the `analyse-tickers`, `log-trade-csv`, and `track-outcomes` skills before running
+- Every strategy agent MUST load `analyse-tickers` before running. Trade-entry strategies should also load `log-trade-csv` and `track-outcomes`; watchlist-only strategies may define and maintain their own `watchlist.csv` workflow in strategy-local docs.
 - Agents that perform **TradingView** visual confirmation MUST also load **`indicators`** (`.cursor/skills/indicators/SKILL.md`) and MUST use **`browser-use --profile "Tim" --headed`** — not Puppeteer or headless default Chromium (login + saved chart `z25AhAlV` require profile Tim)
-- Each strategy writes ONLY to its own `trades-log.csv` — never to another strategy's log
+- Each strategy writes ONLY to its own strategy-local CSV file (`trades-log.csv` or `watchlist.csv`) — never to another strategy's log
 - Never overwrite existing CSV rows — always append
 - Never fabricate financial data; if data is unavailable, note it and downrank the ticker
 - Always check for upcoming earnings dates before recommending an entry
@@ -48,6 +48,6 @@ trading-strategy/
 ## Adding a New Strategy
 
 1. Create `strategies/<name>/config.md` — scan URL, universe, trading style, and custom entry filters
-2. Create `strategies/<name>/AGENT.md` — load the three skills, then define the workflow steps (use existing strategy as template)
-3. Create `strategies/<name>/trades-log.csv` — use the header row from the `log-trade-csv` skill
+2. Create `strategies/<name>/AGENT.md` — load the required skills, then define the workflow steps (use an existing strategy as template)
+3. Create the strategy CSV file — use `trades-log.csv` for trade-entry strategies or a strategy-local `watchlist.csv` schema for watchlist-only workflows
 4. Create `strategies/<name>/report.md` — placeholder; will be overwritten on first run

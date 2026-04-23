@@ -5,9 +5,7 @@
 Before starting, load the following files:
 
 1. **Skill: `analyse-tickers`** — `.cursor/skills/analyse-tickers/SKILL.md`
-2. **Skill: `log-trade-csv`** — `.cursor/skills/log-trade-csv/SKILL.md`
-3. **Skill: `track-outcomes`** — `.cursor/skills/track-outcomes/SKILL.md`
-4. `strategies/negative-but-strengthening-bx-watchlist/config.md`
+2. `strategies/negative-but-strengthening-bx-watchlist/config.md`
 
 This workflow is for **watchlist generation**, not automatic trade entry.
 
@@ -25,19 +23,11 @@ python3 scripts/trendspider_scan.py --scanner-name "Negative but strengthening B
 
 Uses `browser-use`, Chrome profile `Tim`, `Default Workspace`. Extract `symbolsFound` and `timestamp`.
 
-If `symbolsFound` is empty, write the empty-scan row per `log-trade-csv`, skip research, generate the report, and finish.
+If `symbolsFound` is empty, keep `watchlist.csv` header-only or append no rows, skip research, generate the report, and finish.
 
 ---
 
-### Step 2 — Outcome tracking status
-
-Check whether any rows in `strategies/negative-but-strengthening-bx-watchlist/trades-log.csv` are due for 14-day review.
-
-Do **not** run the heavyweight `track-outcomes` workflow automatically unless the user explicitly asks for outcome tracking in the same session. If rows are due, mention the count in the summary.
-
----
-
-### Step 3 — Market context
+### Step 2 — Market context
 
 Use the quick market check from `analyse-tickers`:
 
@@ -49,7 +39,7 @@ This strategy can still produce good watchlist names in a mixed tape, but a host
 
 ---
 
-### Step 4 — Research each ticker
+### Step 3 — Research each ticker
 
 For every ticker in `symbolsFound`, perform **deep research** with emphasis on:
 
@@ -64,15 +54,15 @@ Do **not** spend time on detailed TradingView chart reading. Basic price context
 
 ---
 
-### Step 5 — Score and rank
+### Step 4 — Score and rank
 
-Score each ticker using `config.md`. Discard names below **60** unless the narrative is unusually strong and the risk is clearly disclosed.
+Score each ticker using `config.md`.
 
-Rank the survivors and select up to **5** watchlist names.
+Rank the names, but keep **all scanned tickers** in `watchlist.csv` with an appropriate `priority` and `status`.
 
 ---
 
-### Step 6 — Suggested actionability
+### Step 5 — Suggested actionability
 
 For each surviving name, state:
 
@@ -84,21 +74,21 @@ These are **watchlist** ideas, not logged trade recommendations.
 
 ---
 
-### Step 7 — User confirmation gate for actual entries
+### Step 6 — Write the watchlist CSV
 
-If the user says they actually opened a trade based on one of these names, ask which one and then append only the confirmed entry to the CSV.
+Write one row per scanned ticker to `strategies/negative-but-strengthening-bx-watchlist/watchlist.csv` using the schema from `config.md`.
 
-If no trade was opened, do **not** append any ticker recommendation row.
+Include concise notes, a score, a `priority`, a `status`, the next confirmation trigger, and the main risk.
 
 ---
 
-### Step 8 — Generate report
+### Step 7 — Generate report
 
 Overwrite `strategies/negative-but-strengthening-bx-watchlist/report.md` using the format below.
 
 ---
 
-### Step 9 — Final summary
+### Step 8 — Final summary
 
 ```text
 === NEGATIVE BUT STRENGTHENING BX WATCHLIST — [DATE] ===
@@ -114,7 +104,7 @@ TOP WATCHLIST NAMES:
 Names to avoid for now:
 - [SYMBOL] — [one-line reason]
 
-Trades logged: none unless user explicitly confirmed an opened trade
+Watchlist CSV: strategies/negative-but-strengthening-bx-watchlist/watchlist.csv
 Report: strategies/negative-but-strengthening-bx-watchlist/report.md
 ```
 
@@ -150,10 +140,7 @@ _Last updated: [YYYY-MM-DD]_
 
 ---
 
-## Open Trades
-_User-confirmed trades only._
+## Watchlist Tracking
 
-| Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
-| --- | --- | --- | --- | --- | --- | --- |
-| … | … | … | … | … | … | … |
+Active rows are tracked in `watchlist.csv`.
 ```

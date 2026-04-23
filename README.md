@@ -164,8 +164,8 @@ trading-strategy/
 ## Adding a New Strategy
 
 1. Create `strategies/<name>/config.md` — saved scanner name, universe, trading style, entry filters, and a scoring system (copy from `strategies/positive-bx-entry/config.md` and adapt)
-2. Create `strategies/<name>/AGENT.md` — load the core skills + `indicators` if using TradingView, define workflow (copy from an existing `AGENT.md` and adapt)
-3. Create `strategies/<name>/trades-log.csv` — paste the header row from `.cursor/skills/log-trade-csv/SKILL.md`
+2. Create `strategies/<name>/AGENT.md` — load the required skills + `indicators` if using TradingView, define workflow (copy from an existing `AGENT.md` and adapt)
+3. Create the strategy CSV file — use `trades-log.csv` for trade-entry strategies or define a strategy-local `watchlist.csv` schema for watchlist-only workflows
 4. Create `strategies/<name>/report.md` — any placeholder text; overwritten on first run
 5. Add a row to the Strategies table above
 6. Run it with: `Run the <name> strategy. Follow strategies/<name>/AGENT.md`
@@ -174,7 +174,7 @@ trading-strategy/
 
 ## Skills Reference
 
-Reusable logic: every strategy loads **`analyse-tickers`**, **`log-trade-csv`**, and **`track-outcomes`**. TradingView chart steps also load **`indicators`**.
+Reusable logic: every strategy loads **`analyse-tickers`**. Trade-entry strategies also load **`log-trade-csv`** and **`track-outcomes`**. TradingView chart steps also load **`indicators`**.
 
 
 | Skill             | Path                                      | What it defines                                                                              |
