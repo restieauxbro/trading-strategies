@@ -83,15 +83,23 @@ Score with `config.md`. Discard below **55**. Rank the rest.
 
 Select up to **3** tradable picks (must pass **Step 4b** for immediate entry — not watchlist-only).
 
-If fewer than 3 qualify, explain. List **watchlist** names separately (still in `report.md`, not CSV).
+If fewer than 3 qualify, explain. List **watchlist** names separately in `report.md` and persist them to `strategies/positive-bx-entry/watchlist.csv`.
 
 Output format per `analyse-tickers`, including score breakdown.
-
----
 
 ### Step 5b — Instrument selection & spreads
 
 Per `config.md` / referenced spread sections: choose instrument per pick; if spread, build strikes, PoP, breakeven per rules.
+
+---
+
+### Step 5c — Write watchlist CSV
+
+Append **one row per watchlist-only symbol** to `strategies/positive-bx-entry/watchlist.csv` using the schema from `config.md`.
+
+Include concise notes, score, `priority`, `status`, the next confirmation trigger, and the main risk. Do **not** overwrite existing rows. Do **not** write immediate-entry suggestions or user-confirmed trades to this file unless they are being explicitly held back as watchlist-only names.
+
+If there are no watchlist-only names in the run, append no rows.
 
 ---
 
@@ -102,7 +110,7 @@ Before writing any new trade rows, present the suggested trades and ask the user
 - Default question: "Which of these suggested trades did you open?"
 - Only treat trades as confirmed if the user explicitly says they opened them
 - If the user opened none, do **not** append any new trade rows
-- Watchlist names are never eligible for CSV append
+- Watchlist names are never eligible for `trades-log.csv` append
 - In unattended / scheduled runs where no user confirmation is possible, **do not append** new recommendation rows; generate the report with suggestions only
 
 ---
@@ -115,7 +123,7 @@ Append **one row per user-confirmed trade** to `strategies/positive-bx-entry/tra
 
 ### Step 8 — Generate report
 
-Overwrite `strategies/positive-bx-entry/report.md` (format below). The **Suggested Trades** section may include ideas not opened; the **Open Trades** section must come only from `trades-log.csv`, which now contains user-confirmed trades only.
+Overwrite `strategies/positive-bx-entry/report.md` (format below). The **Suggested Trades** section may include ideas not opened; the **Watchlist** section should reflect the names appended to `watchlist.csv` during the run; the **Open Trades** section must come only from `trades-log.csv`, which now contains user-confirmed trades only.
 
 ---
 
@@ -139,6 +147,7 @@ WATCHLIST (no entry this run):
 
 Trades logged: [list of confirmed trades, or "none confirmed"]
 Saved: strategies/positive-bx-entry/trades-log.csv
+Watchlist CSV: strategies/positive-bx-entry/watchlist.csv
 Report: strategies/positive-bx-entry/report.md
 ```
 

@@ -12,6 +12,7 @@
 | Trading style     | Position trading (weeks to months)                                                            |
 | Max picks per run | 3                                                                                             |
 | Log file          | `strategies/positive-bx-entry/trades-log.csv`                                                 |
+| Watchlist file    | `strategies/positive-bx-entry/watchlist.csv`                                                  |
 | **Instrument**    | Preferred: `paired_debit_spread`; secondary: `stock` · `bull_call_spread` · `put_credit_spread` |
 | **Chart layout**  | `https://www.tradingview.com/chart/z25AhAlV/?symbol=TICKER` (plain ticker; profile **Tim**)     |
 
@@ -55,7 +56,7 @@ The list is already momentum- and weekly-BX-filtered. The agent **does not** re-
 
 ## Watchlist (no immediate entry)
 
-If research + scan quality are **good** but TradingView shows **overextension** or **bad timing** (see `indicators` skill), add the symbol to the **Watchlist** section of `report.md` with:
+If research + scan quality are **good** but TradingView shows **overextension** or **bad timing** (see `indicators` skill), append the symbol to `strategies/positive-bx-entry/watchlist.csv` and add it to the **Watchlist** section of `report.md` with:
 
 - **Trigger** (e.g. pullback toward **lower fair value** band, reclaim after test of X)
 - **What would change the view** (e.g. bands flip red → drop)
@@ -141,3 +142,34 @@ Same framework as archived momentum-pullback: after scoring, choose instrument p
 === POSITIVE BX ENTRY — [DATE] ===
 Universe: S&P 500 | Style: Position Trade | Scan: Strong upward momentum
 ```
+
+---
+
+## Watchlist CSV Schema
+
+Append one row per watchlist-only symbol to:
+
+```text
+strategies/positive-bx-entry/watchlist.csv
+```
+
+Header:
+
+```csv
+date,scan_label,ticker,current_price,day_change_pct,score,priority,status,sector,notes,next_trigger,key_risks
+```
+
+Column meanings:
+
+- `date` — run date in `YYYY-MM-DD`
+- `scan_label` — `Strong upward momentum`
+- `ticker` — stock symbol
+- `current_price` — price captured from the scan or research snapshot
+- `day_change_pct` — daily % move from the scan snapshot if available; leave blank if unavailable
+- `score` — positive-BX score out of 100
+- `priority` — `high`, `medium`, or `low`
+- `status` — e.g. `watch_for_pullback`, `extended`, `needs_chart_recheck`, `wait_for_earnings`, `avoid_for_now`
+- `sector` — broad sector or sector / industry
+- `notes` — concise reason the setup is constructive but not an entry
+- `next_trigger` — what would upgrade the setup to an immediate-entry candidate
+- `key_risks` — concise invalidation or event risk note, including earnings where relevant
