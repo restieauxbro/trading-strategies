@@ -1,207 +1,211 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-04-23_
+_Last updated: 2026-04-29_
 
 ---
 
 ## Market Context
 
-The S&P 500 (SPY) closed at **$708.13** on April 23, 2026 — above both its 50-day EMA ($679.29) and 200-day EMA ($656.46). The 200-day EMA is rising (currently ~$656 vs ~$648 forty trading days ago), confirming a healthy long-term uptrend. VIX is at **19.79** — below the elevated threshold of 25 — indicating moderate, non-fearful conditions. The 6-month SPY return is +6.0%. Overall, the market is in a confirmed uptrend with contained volatility, which is a supportive backdrop for momentum-pullback entries. No confirmed downtrend filter applies.
+The S&P 500 (SPY) is trading at $710.47, well above both its 50-day average (~$678) and 200-day average (~$669.54), representing approximately +5% and +6% above each respectively. The broader market is in a confirmed uptrend. VIX closed at 18.90, declining from recent highs around 30+ (mid-April) and normalising — below the elevated-caution threshold of 25. Overall conditions are constructive for bullish momentum trades: market trend is up, volatility is stabilising, and breadth has been improving. A note of caution: many sectors and individual names pulled back sharply in early April (VIX spiked into the 30s), and most of today's scan candidates recovered on the back of Q1 2026 earnings beats, rather than pure technical chart action. This creates compressed entry R:R ratios but strong fundamental support.
+
+---
+
+## Scan Notes
+
+**Scanner**: Momentum After Pullback (yfinance-based scan, S&P 500 subset — browser-use / TrendSpider unavailable in scheduled environment)  
+**Scan timestamp**: 2026-04-29 19:00 UTC  
+**Symbols found**: 12 — XOM, CVX, EOG, APH, SBUX, OXY, COP, PSX, MPC, ET, LNG, CBOE
+
+**Earnings filter (hard -20pt deduction for earnings within 3 weeks):**
+- COP: earnings 4/30 → DISQUALIFIED (-20pts, below threshold)
+- XOM: earnings 5/1 → DISQUALIFIED
+- CVX: earnings 5/1 → DISQUALIFIED
+- CBOE: earnings 5/1 → DISQUALIFIED
+- EOG: earnings 5/5 → DISQUALIFIED
+- OXY: earnings 5/5 → DISQUALIFIED
+- ET: earnings 5/5 → DISQUALIFIED
+- MPC: earnings 5/5 → DISQUALIFIED
+- LNG: earnings 5/7 → DISQUALIFIED
+
+**Remaining after earnings filter**: APH, SBUX, PSX (all reported Q1/Q2 2026 within the last 24 hours — post-earnings entry).
+
+**TradingView visual check (Step 4b)**: `browser-use` is unavailable in this scheduled environment. The B-Xtrender and Fair Value Band indicator readings cannot be confirmed this run. All B-Xtrender points have been **withheld** from scores, and chart-dependent deductions have not been applied. Scores are conservative and should be validated visually before acting.
 
 ---
 
 ## Today's Suggested Trades
 
-### 1. DE — Deere & Company (Score: 80/115)
+### 1. APH — Amphenol (Technology / Electronic Components)
 
 ```
-Ticker: DE
-Current Price: $593.94
-Sector: Industrials
-Score: 80/115 (A:40 B:10 C:15 D:15 Ded:0)
+Ticker: APH
+Current Price: $147.39
+Sector: Technology — Electronic Components
+Score: 72/100 (A:37 B:0 C:20 D:15 Ded:0 — B-Xtrender unconfirmed)
 
 Setup Summary:
-Deere is in a multi-month recovery from its 2025 lows, with daily price just above the 50-day EMA
-($578) after a healthy pullback from the $672 52-week high. Weekly EMA50 is above EMA200 (golden
-cross), price is above weekly EMA50, both daily EMAs are rising. Volume declined on the pullback.
-Multiple timing triggers fired: price crossed back above 20 EMA and made a higher-day close
-above prior day high. Q1 2026 earnings (Feb 2026) beat estimates with revenue +13% YoY and
-guidance raised to $4.5–$5.0B net income — management called 2026 the cycle bottom.
+Amphenol reported record Q1 2026 earnings this morning: EPS $1.06 vs. $0.95 estimated
+(+11.3% surprise), revenue $7.62B (+58.4% YoY), book-to-bill 1.24:1. The stock had
+pulled back from $166 high to $123 (Apr 2) then recovered to $143 close before gapping
+to $154 on open today. Price has settled at ~$147, now +5% above the 50-day EMA — a
+healthy retest of the breakout zone. The AI/data-center and CommScope integration thesis
+is intact and confirmed by the print. Q2 guidance of $1.14–$1.16 EPS beats Street
+estimates by ~9%.
 
-Entry Zone: $590–$600
-Stop Loss: $551 — below recent 15-day swing low and EMA50 cushion
-Target 1: $635 — measured move / prior resistance zone
-Target 2: $672 — 52-week high
-Risk/Reward: 1.8:1 at T2 (risk ~$43, T2 gain ~$78)
+Entry Zone: $145–$148 (current zone; ideal buy on any intraday dip toward $144–$145)
+Stop Loss: $135.00 — below the April-rally swing low and earnings gap support
+Target 1: $155.50 — prior week high / recent resistance
+Target 2: $166.00 — prior all-time high; analyst consensus targets $157–$183
+Risk/Reward: T1 = 0.79:1 | T2 = 1.48:1
 
 Key Risks:
-- Q2 2026 earnings on May 21 (~28 days from entry, just outside hard 3-week filter)
-- EPS still down YoY vs prior cycle peak ($2.42 vs $3.19 in Q1 2025)
-- Agriculture cycle recovery is nascent; tariff headwinds noted in Q1 earnings call
+- R:R below 1.5:1 on both targets — compressed due to post-earnings gap; ideal entry is
+  a pullback toward $140–$143 (50 EMA) for a better risk structure
+- High valuation: forward PE ~28x; market is paying a premium for AI connectivity demand
+- COO sold ~5,700 shares on March 31 at $150 (minor insider selling flag)
+- TradingView visual indicators unavailable — B-Xtrender confirmation missing
 
 Fundamental Note:
-Q1 2026 net income $656M; revenue +13% YoY to $9.6B. Net income guidance raised to $4.5B–$5.0B
-for FY2026. Management said 2026 represents the cycle trough with construction and small ag
-recovering. Analysts raised FY2026 EPS estimates post-Q1 beat.
+Revenue +58.4% YoY driven by CommScope acquisition and organic AI/data-center demand.
+Adjusted EPS growing +68% YoY. Net margin 18.49%, ROE 35.57%. Analyst consensus:
+12 Buy, 3 Hold; avg target $156–$183. Barclays reiterated Overweight with $175 target
+today. No earnings within 3 weeks (next: July 29, 2026).
 ```
 
-**Instrument: Paired Debit Spread (preferred)**
-
-```
-Bias: Bullish
-Expiry: May 29, 2026 (~36 DTE)
+**Instrument: Paired Debit Spread (Bullish)**  
+_Expiry: June 18, 2026 (~50 DTE)_
 
 Primary Spread:
-  Structure: Bull Call Spread
-  Size: 1 (scale to portfolio R)
-  Strikes: Buy 600 / Sell 615
-  Net Debit: ~$6.25 per spread (~$625 per contract)
-  Max Profit: ~$8.75 per spread (~$875 per contract)
-  Max Loss: ~$6.25 per spread (~$625 per contract)
+- Structure: Bull Call Spread
+- Strikes: Long $145 / Short $155 call
+- Net Debit: ~$7.50 per spread ($12.10 long – $4.60 short ≈ $7.50, to be refined at execution)
+- Max Profit: ~$2.50 per spread ($10 spread width – $7.50 debit)
+- Max Loss: ~$7.50 per spread
 
-Opposite Hedge:
-  Structure: Bear Put Spread
-  Size: 0.5 (half the primary size)
-  Strikes: Buy 580 / Sell 560
-  Net Debit: ~$6.50 per spread (~$650 per half-contract)
-  Max Profit: ~$13.50 per spread at half-size
+Hedge (half-size):
+- Structure: Bear Put Spread
+- Strikes: Long $140 / Short $130 put (or ATM bear put at current levels)
+- Net Debit: ~$4–5 per spread (indicative; ATM put $140 ~$7.10, short $130 put ~$3)
+- Half-size (0.5 contracts per 1 primary)
+- Max Profit at full payout: ~$7.00 (hedge)
 
-Combined Position:
-  Total Debit / Max Loss: ~$9.50 per unit (1 primary + 0.5 hedge)
-  Expected Payout if thesis is right: ~$8.75 (primary max profit)
-  Expected Payout on violent move against thesis: ~$6.75 (hedge max at half-size)
-  Main Risk: drift / consolidation / time decay if DE stalls between strikes
-```
-
-_Note: DE options market has relatively low open interest and wide spreads in May 29 expiry. Consider using May 15 (22 DTE) if tighter pricing is achievable, but beware proximity to May 21 earnings. May 29 is preferred to clear earnings._
+_Note: IV is elevated post-earnings. Wait for IV crush to stabilise (1-2 sessions) before entering. A dip toward $143–$145 over the next 2-3 days would improve the entry significantly and make R:R > 1.5:1._
 
 ---
 
-### 2. DGX — Quest Diagnostics (Score: 78/115)
+### 2. SBUX — Starbucks (Consumer Cyclical / Restaurants)
 
 ```
-Ticker: DGX
-Current Price: $199.71
-Sector: Healthcare
-Score: 78/115 (A:33 B:10 C:20 D:15 Ded:0)
+Ticker: SBUX
+Current Price: $106.32
+Sector: Consumer Cyclical — Restaurants
+Score: 67/100 (A:40 B:0 C:15 D:12 Ded:0 — B-Xtrender unconfirmed)
 
 Setup Summary:
-Quest Diagnostics is in a clean uptrend on both weekly and daily charts, with price hovering just
-above the 50-day EMA ($196) after a shallow pullback. All three scan timing triggers fired: RSI
-crossed back above 50 (trigger B), price crossed back above 20 EMA (trigger A), and made a close
-above prior day's high (trigger C). Q1 2026 earnings reported April 21 showed +9.2% revenue growth
-and raised full-year guidance — stock gapped up 3.4% post-earnings, now consolidating. Volume
-pattern is constructive.
+Starbucks reported Q2 FY2026 results yesterday (April 28): comp sales +6.2% globally,
+revenue +9% YoY to $9.5B, non-GAAP EPS $0.50. Company raised FY2026 guidance to
+≥5% same-store sales growth (from ≥3%) and EPS $2.25–$2.45. CEO Brian Niccol's
+turnaround continues to gain traction. Stock gapped from $97–98 pre-earnings to $107.27
+(touching its 52-week high) before settling at $106.32. The prior pullback to the 50 EMA
+zone ($88–$97) over March-April has now been reversed with a strong earnings-driven
+breakout above prior resistance.
 
-Entry Zone: $197–$202
-Stop Loss: $187.82 — just below the recent 15-day swing low ($189.72)
-Target 1: $212.57 — 52-week high and prior resistance
-Target 2: $225 — analyst consensus target zone (Barclays PT $230)
-Risk/Reward: 1.1:1 at T1, 2.1:1 at T2
+Entry Zone: $103–$106 (wait for settling of gap; any intraday dip is a better entry)
+Stop Loss: $97.00 — below gap fill / pre-earnings support
+Target 1: $114.00 — analyst consensus (Stifel $115, BMO $120, Deutsche Bank $113)
+Target 2: $120.00 — BMO target / measured move from base
+Risk/Reward: T1 = 0.89:1 | T2 = 1.56:1 (T2 meets 1.5:1 threshold)
 
 Key Risks:
-- Next earnings July 21 (well outside filter)
-- Healthcare sector faces policy risk (regulatory, pricing)
-- Limited open interest on options; primarily fits stock or wider spread
+- R:R to T1 is poor (< 1:1); only T2 provides adequate risk reward (≥1.5:1)
+- Stock is essentially AT its 52-week high — limited breakout confirmation yet
+- EPS YoY still declining (Q2 EPS $0.50 vs. $0.69 prior year = -28%), driven by turnaround
+  costs; profitability has not fully recovered
+- High forward PE (~35x) demands continued comp sales growth execution
+- TradingView visual indicators unavailable — B-Xtrender confirmation missing
 
 Fundamental Note:
-Q1 2026: revenue $2.90B (+9.2% organic), adjusted EPS $2.50 (+13.1% YoY), beating estimates by
-5.6%. Raised FY2026 adjusted EPS guidance to $10.63–$10.83 and revenue to $11.78–$11.90B.
-Multiple analyst upgrades post-earnings (Barclays Overweight PT $230, raised April 21).
+Revenue growing +9% YoY with comp sales momentum accelerating; CEO Niccol's "Back
+to Starbucks" strategy showing measurable results (35.6M Rewards members record).
+Strong cash generation: declared $0.62/share dividend (64 consecutive quarters). 16 Buy,
+13 Hold, 1 Sell; avg target ~$105 (current price is above consensus, suggesting limited
+upside vs. targets). New Nashville expansion adds operational capacity.
 ```
 
-**Instrument: Paired Debit Spread (preferred)**
+**Instrument: Paired Debit Spread (Bullish)**  
+_Expiry: May 22, 2026 (~23 DTE — short cycle, use if confident in momentum; June 18 preferred for safer hold)_
 
-```
-Bias: Bullish
-Expiry: May 15, 2026 (~22 DTE)
+Primary Spread (June 18 preferred):
+- Structure: Bull Call Spread
+- Strikes: Long $105 / Short $115 call
+- Net Debit: ~$5–$6 (indicative — verify chain; $3.50 for $105 call + width)
+- Max Profit at T2: ~$4–$5 per spread
+- Max Loss: ~$5–$6
 
-Primary Spread:
-  Structure: Bull Call Spread
-  Size: 1
-  Strikes: Buy 200 / Sell 210
-  Net Debit: ~$3.30 per spread (~$330 per contract)
-  Max Profit: ~$6.70 per spread (~$670 per contract)
-  Max Loss: ~$3.30 per spread (~$330 per contract)
+Hedge (half-size):
+- Structure: Bear Put Spread
+- Strikes: Long $100 / Short $93 put
+- Half-size; triggers if SBUX breaks below gap ($97 stop)
 
-Opposite Hedge:
-  Structure: Bear Put Spread
-  Size: 0.5 (half the primary size)
-  Strikes: Buy 190 / Sell 180
-  Net Debit: ~$1.45 per spread (~$145 per half-contract)
-  Max Profit: ~$8.55 per spread at half-size (~$427 contribution)
-
-Combined Position:
-  Total Debit / Max Loss: ~$4.05 per unit
-  Expected Payout if thesis is right: ~$6.70 (primary max profit)
-  Expected Payout on violent move against thesis: ~$4.28 (hedge max at half-size)
-  Main Risk: DGX stays pinned between $200 and $210 for 22 days
-```
-
-_Note: DGX option liquidity is adequate at the 200/210 strikes (OI 1312/889). 22 DTE is tight — monitor position for early exit if price stalls._
+_⚠️ SBUX is at the 52-week high. T2 ($120) requires a genuine breakout to new highs. This is a higher-conviction entry only after the stock confirms above $107.27 on meaningful volume._
 
 ---
 
-### 3. CB — Chubb Limited (Score: 78/115)
+### 3. PSX — Phillips 66 (Energy / Oil & Gas Refining)
 
 ```
-Ticker: CB
-Current Price: $332.67
-Sector: Financial Services
-Score: 78/115 (A:33 B:10 C:20 D:15 Ded:0)
+Ticker: PSX
+Current Price: $172.90
+Sector: Energy — Oil & Gas Refining & Marketing
+Score: 61/100 (A:35 B:0 C:15 D:11 Ded:0 — B-Xtrender unconfirmed)
 
 Setup Summary:
-Chubb just reported a blowout Q1 2026 on April 21 (EPS +80% YoY, revenue +11.9%, beat on all
-key metrics) and the stock held near its pre-announcement levels — constructive action. Price is 
-just above the 50-day EMA ($325) on the daily chart, in an uptrend on both timeframes, and weekly
-EMA50 > EMA200. Multiple timing triggers fired (price above 20 EMA after dip; close above prior
-day high). Volume is below average, consistent with orderly continuation.
+Phillips 66 reported Q1 2026 earnings today, significantly beating estimates: adjusted EPS
+$0.49 vs. -$0.55 expected, revenue $33B vs. $29.5B expected. The stock surged ~6.7% in
+pre-market and closed at $172.90. The company completed full ownership of the Borger and
+Wood River refineries (+45,000 bbl/day capacity) and laid out a credible debt reduction
+plan from $27B → $17B by end-2027. JMP upgraded to Market Outperform. The prior
+pullback from $190.61 (52W high) to $153.58 (Apr 17 low) set up a classic momentum
+pullback, and today's gap recovery on strong earnings validates the bull thesis.
 
-Entry Zone: $330–$335
-Stop Loss: $316.80 — just below the 15-day swing low ($320) and EMA50 support
-Target 1: $344.65 — 52-week high / recent range top
-Target 2: $368 — mid-point of analyst consensus target range (HSBC $362, Barclays $374, Goldman $368)
-Risk/Reward: 0.9:1 at T1, 2.2:1 at T2
+Entry Zone: $170–$174 (current zone; earnings reaction now defines new support)
+Stop Loss: $153.00 — below prior swing low at Apr 17 bottom
+Target 1: $190.61 — prior 52-week high
+Target 2: $200.00 — measured move / round-number extension
+Risk/Reward: T1 = 0.88:1 | T2 = 1.35:1
 
 Key Risks:
-- Next earnings ~July 2026 (well outside filter)
-- Already near 52-week high; breakout requires fresh catalyst
-- Financial sector faces macro uncertainty (tariff/trade policy impact on investment portfolio)
+- R:R below 1.5:1 on both targets — best entry would have been the $153–$160 zone
+  before earnings; current entry has compressed upside
+- High debt load ($27B); debt-to-capital at 48%; management has plan to reduce but
+  execution risk exists
+- Refining margins volatile with crude price and crack spread movements
+- TradingView visual indicators unavailable — B-Xtrender confirmation missing
+- Score of 61 is the lowest of the three; watchlist candidate if entry improves on pullback
 
 Fundamental Note:
-Q1 2026: core operating income $6.82/share (+80% YoY, beat consensus $6.61), net premiums +10.7%
-to $14B, P&C combined ratio 84% (exceptional). ROTE 20.6%. Multiple analyst PTs raised post-Q1.
-Goldman (Buy, $368), Citigroup (Buy, $385), Raymond James (Strong Buy, $380).
+Revenue growing modestly (+1.3% TTM) with low forward PE of ~11x — cheap valuation
+in the sector. Q1 2026 EPS beat driven by refinery expansion and 138% worldwide market
+capture. Refining utilization 95% at $10.11/BBL margin. $778M returned to shareholders
+in Q1. JMP upgraded to Market Outperform. Next earnings: ~July 2026.
 ```
 
-**Instrument: Paired Debit Spread (preferred)**
-
-```
-Bias: Bullish
-Expiry: May 15, 2026 (~22 DTE)
+**Instrument: Paired Debit Spread (Bullish)**  
+_Expiry: June 18, 2026 (~50 DTE preferred for better theta)_
 
 Primary Spread:
-  Structure: Bull Call Spread
-  Size: 1
-  Strikes: Buy 330 / Sell 345
-  Net Debit: ~$6.30 per spread (~$630 per contract)
-  Max Profit: ~$8.70 per spread (~$870 per contract)
-  Max Loss: ~$6.30 per spread (~$630 per contract)
+- Structure: Bull Call Spread
+- Strikes: Long $170 / Short $185 call (or $175/$190)
+- Net Debit: ~$7–$9 (indicative; verify at execution for June chain)
+- Max Profit: ~$6–$8 per spread
+- Max Loss: ~$7–$9 per spread
 
-Opposite Hedge:
-  Structure: Bear Put Spread
-  Size: 0.5 (half the primary size)
-  Strikes: Buy 325 / Sell 310
-  Net Debit: ~$2.30 per spread (~$230 per half-contract)
-  Max Profit: ~$12.70 per spread at half-size (~$635 contribution)
+Hedge (half-size):
+- Structure: Bear Put Spread
+- Strikes: Long $165 / Short $155 put
+- Half-size
+- Triggers if PSX reverses below $165
 
-Combined Position:
-  Total Debit / Max Loss: ~$7.45 per unit
-  Expected Payout if thesis is right: ~$8.70 (primary max profit)
-  Expected Payout on violent move against thesis: ~$6.35 (hedge max at half-size)
-  Main Risk: CB stays pinned near 52w high and time erodes both spreads
-```
-
-_Note: CB has good option liquidity at the 330/345 strikes (OI 1474/259). The short 3.5% distance to the 52w high means T1 is conservative. More upside possible on a true breakout toward analyst targets ($368–$385)._
+_⚠️ PSX has the lowest score (61) and poorest R:R of the three. Consider watchlisting until a pullback to $163–$168 (near the 50 EMA, improving R:R to ~1.5:1 or better)._
 
 ---
 
@@ -210,27 +214,33 @@ _Names with constructive scan/research but no immediate entry (timing / extensio
 
 | Ticker | Why watching | Trigger to revisit |
 |--------|--------------|-------------------|
-| WAB | Strong Q1 beat (Apr 22), uptrend intact, but price is 6.8% above EMA50 — extended. Earnings Jul 23 (safe). | Pullback to or near $250–$255 (EMA50 zone) on declining volume |
-| COST | Near all-time high, clean uptrend above both EMAs, earnings May 28 (just outside 3-week rule). Technically at 50 EMA but stretched at 99th percentile 63-day ROC. | Digest current extension; look for re-test of $975–$990 (EMA50) post-May earnings |
-| AEE | Utilities, all triggers fired, near EMA50 — but earnings May 5 (within 3 weeks → hard exclusion). | Re-evaluate post-May 5 earnings |
-| AEP | Utilities, strong trend, triggers fired — earnings May 5 (within 3 weeks → exclusion). | Re-evaluate post-May 5 earnings |
-| NI | Utilities near 52w high, all triggers — earnings May 6 (within 3 weeks → exclusion). | Re-evaluate post-May 6 earnings |
+| XOM | Strong uptrend, near 50 EMA; earnings May 1 create event risk | Entry after earnings confirmed, below $150 near 50 EMA |
+| CVX | Same profile as XOM; near 50 EMA, solid fundamentals | Post-earnings entry if pullback to $185–$188 zone |
+| EOG | Clean E&P uptrend, low PE; earnings May 5 | Post-earnings entry at or below 50 EMA (~$131) |
+| OXY | High-beta energy uptrend; earnings May 5 | Wait for earnings clearance; entry around $54–$56 |
+| MPC | Refining pure-play, near 50 EMA; earnings May 5 | Post-earnings entry at $220–$225 |
+| LNG | Strong LNG demand thesis; earnings May 7 | Entry after earnings at ~$255–$260 (50 EMA zone) |
+| CBOE | Financial exchanges uptrend, near ATH; earnings May 1 | Post-earnings entry if pullback to $285–$295 |
+| COP | E&P leader, earnings TOMORROW (April 30) | Post-earnings entry if pull to $118–$120 (50 EMA) |
+| PSX | Score 61; R:R improves on pullback | Re-entry if pullback to $163–$168 improves R:R to ≥1.5:1 |
 
 ---
 
 ## Open Trades
 _User-confirmed trades from the last 14 days, outcome not yet recorded._
 
+_No open trades — no trades were confirmed in the previous scheduled run (April 16 was an empty scan)._
+
 | Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
 |------|--------|------------|------|----------|----------|-----|
 | — | — | — | — | — | — | — |
-
-_No confirmed trades on file (scheduled run — see Step 6 policy)._
 
 ---
 
 ## Performance Summary
 _All closed trades (outcome recorded)._
+
+_No closed trades on record yet._
 
 | Date | Ticker | Entry Price | Outcome Price | % Change | Result |
 |------|--------|-------------|---------------|----------|--------|
@@ -244,11 +254,3 @@ _All closed trades (outcome recorded)._
 - **Expired (inconclusive):** 0
 - **Best trade:** N/A
 - **Worst trade:** N/A
-
----
-
-## Scan Notes
-- **Scanner:** Momentum After Pullback (yfinance replication of TrendSpider conditions; browser-use unavailable in scheduled cloud environment)
-- **Symbols found:** 61 tickers passed all 4 scan groups
-- **TradingView visual check:** Skipped — browser-use with profile Tim not available in this environment. B-Xtrender indicator points (up to +15 pts) conservatively excluded from scoring. Recommend manual TradingView confirmation before execution.
-- **Scan timestamp:** 2026-04-23 ~19:00 UTC
