@@ -1,6 +1,12 @@
-# Trading Strategy — Codex Instructions
+# Trading Strategy
 
 @.cursor/rules/trading-agent.mdc
+
+Skills are maintained in `.agents/skills`. `.cursor/skills` and `.claude/skills` are compatibility symlinks to the same canonical skill folders.
+
+## Adding Skills
+
+Write new skills in `.agents/skills/<skill-name>/`. Do not create independent skill copies under `.cursor/skills` or `.claude/skills`; add compatibility symlinks only when needed.
 
 ## Running a Strategy
 

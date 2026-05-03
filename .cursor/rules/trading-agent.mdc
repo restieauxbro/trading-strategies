@@ -9,24 +9,23 @@ alwaysApply: true
 
 ```
 trading-strategy/
+├── .agents/
+│   └── skills/                       ← canonical skill source
+│       ├── analyse-tickers/          ← research, scoring, output format
+│       ├── log-trade-csv/            ← CSV schema and writing rules
+│       ├── track-outcomes/           ← 14-day outcome lookback and CSV update
+│       ├── browser-use/              ← browser-use CLI automation (optional)
+│       ├── indicators/               ← TradingView indicators and chart rules
+│       ├── tiger-brokers/            ← Tiger Brokers paper trading helpers
+│       ├── tigeropen/                ← Tiger OpenAPI SDK reference
+│       └── archived/
+│           └── read-trendspider-chart/  ← historical TrendSpider helpers
 ├── .cursor/
 │   ├── rules/
 │   │   └── trading-agent.mdc         ← this file — always-on conventions
-│   └── skills/
-│       ├── analyse-tickers/
-│       │   └── SKILL.md              ← research, scoring, output format
-│       ├── log-trade-csv/
-│       │   └── SKILL.md              ← CSV schema and writing rules
-│       ├── track-outcomes/
-│       │   └── SKILL.md              ← 14-day outcome lookback and CSV update
-│       ├── browser-use/
-│       │   └── SKILL.md              ← browser-use CLI automation (optional)
-│       ├── indicators/
-│       │   └── SKILL.md              ← TradingView: Fair Value Bands, weekly BX, daily B-Xtrender
-│       ├── read-tradingview-chart/
-│       │   └── SKILL.md              ← optional extra TradingView notes (profile Tim)
-│       └── archived/
-│           └── read-trendspider-chart/  ← historical TrendSpider helpers + SKILL (not live workflows)
+│   └── skills/                       ← symlinks to .agents/skills for Cursor compatibility
+├── .claude/
+│   └── skills/                       ← symlinks to .agents/skills for Claude compatibility
 ├── strategies/
 │   └── <strategy-name>/
 │       ├── AGENT.md                  ← workflow steps for this strategy's agent
@@ -39,7 +38,8 @@ trading-strategy/
 ## Rules for All Agents in This Repo
 
 - Every strategy agent MUST load `analyse-tickers` before running. Trade-entry strategies should also load `log-trade-csv` and `track-outcomes`; watchlist-only strategies may define and maintain their own `watchlist.csv` workflow in strategy-local docs.
-- Agents that perform **TradingView** visual confirmation MUST also load **`indicators`** (`.cursor/skills/indicators/SKILL.md`) and MUST use **`browser-use --profile "Tim" --headed`** — not Puppeteer or headless default Chromium (login + saved chart `z25AhAlV` require profile Tim)
+- Skills are maintained in `.agents/skills`; `.cursor/skills` and `.claude/skills` are compatibility symlinks and should not contain independent skill copies.
+- Agents that perform **TradingView** visual confirmation MUST also load **`indicators`** (`.agents/skills/indicators/SKILL.md`) and MUST use **`browser-use --profile "Tim" --headed`** — not Puppeteer or headless default Chromium (login + saved chart `z25AhAlV` require profile Tim)
 - Each strategy writes ONLY to its own strategy-local CSV file (`trades-log.csv` or `watchlist.csv`) — never to another strategy's log
 - Never overwrite existing CSV rows — always append
 - Never fabricate financial data; if data is unavailable, note it and downrank the ticker
