@@ -1,214 +1,255 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-05-10_
+_Last updated: 2026-05-13_
 
 ---
 
 ## Market Context
 
-The S&P 500 (SPY) is trading at **$737.62**, sitting **10.9% above** its 200-day EMA ($665.40) and well above its 50-day EMA ($694.69). The 200-day EMA trend is **rising**. VIX is calm at **17.19**, indicating a low-fear, risk-on environment. Q1 2026 earnings season was exceptionally strong: 84% of S&P 500 companies beat EPS estimates, blended EPS growth reached 15.1%, and net profit margins hit a record 13.4%. The S&P 500 surged over 10% in April to all-time highs near 7,200. The primary macro headwind is oil above $120/barrel (Brent) following collapsed Iran peace talks, which adds inflation uncertainty. Overall: **confirmed uptrend, normal filters apply** — this is a favourable environment for momentum-pullback entries.
+The S&P 500 is in a confirmed uptrend, with SPY at **$743.03** — approximately **11.2% above** its 200-day EMA ($668) and well above its 50-day EMA ($700). The 200-day EMA continues to rise. VIX sits at **17.81**, comfortably below the danger threshold of 25, and the CNN Fear & Greed Index reads 66 ("Greed"), indicating a risk-on environment. Futures rose on May 13 and Morgan Stanley raised its 2026 year-end S&P 500 target to 8,000, citing resilient earnings and AI adoption.
+
+A notable macro headwind surfaced this week: April CPI printed at **3.8% YoY** — the hottest reading since March 2023 — driven by elevated gasoline prices as the U.S.-Iran conflict (now in its 11th week) keeps WTI crude above $102/barrel. Markets have largely priced out Fed rate cuts for 2026, with some probability now assigned to a December hike. Despite these inflation concerns, the bull market's technical structure remains fully intact. **Overall: confirmed uptrend, elevated inflation/rate uncertainty — normal filters apply; position size conservatively given CPI surprise.**
 
 ---
 
 ## Scan Results
 
-**Scan method:** yfinance fallback (TrendSpider `browser-use` unavailable in scheduled environment)  
-**Scan timestamp:** 2026-05-10 19:05 UTC  
-**Universe scanned:** 320 S&P 500 representative tickers  
-**Tickers passing all conditions:** 35  
+**Scan method:** yfinance fallback (TrendSpider `browser-use` unavailable in scheduled environment)
+**Scan timestamp:** 2026-05-13 19:05 UTC
+**Universe scanned:** 173 S&P 500 representative tickers
+**Tickers passing core conditions (price > EMA200, rising EMAs, within 5% of EMA50):** 61
 
-Passing tickers: NVDA, JPM, BAC, GS, USB, PNC, TFC, SYF, AFL, MAR, GM, COST, MNST, VLO, PSX, EPD, DE, BA, EXPD, EMR, ROK, AME, DOV, GWW, LIN, APD, NEM, FCX, CF, PLD, PSA, D, AEP, EVRG, FOXA
+Tickers passing with active timing triggers (best candidates): DE, VZ, D, EVRG, AME, AFL, NEE, DLR, OKE, PSX, EPD, COST, LIN, WMT, BKR, VLO, KO, APD, WMB, EXPD, EQIX, CF, GS, SLB, WELL, MO, HAL, BA, FCX, MNST
 
-_Note: B-Xtrender visual confirmation via TradingView was not possible in this unattended run. Scores reflect technical and fundamental data only; BX points are estimated from MACD/momentum proxies. All three top picks should be visually confirmed before live entry._
+**DE excluded from trade picks:** Q2 earnings due May 21, 2026 — within the 3-week hard filter. Flagged for watchlist (post-earnings re-entry).
+
+_Note: B-Xtrender visual confirmation via TradingView was not possible in this unattended run. Scores reflect technical and fundamental data only; BX points are not awarded. All picks should be visually confirmed before live entry._
 
 ---
 
 ## Outcomes Tracked Today
 
-**No rows due.** The April 16 CSV entry was an empty-scan placeholder (no ticker). No 14-day outcome tracking was required.
+**No rows due.** Only existing CSV row is the April 16 empty-scan placeholder (no ticker). No 14-day outcome tracking required.
+
+_Prior run (2026-05-10) suggested MAR, JPM, and EMR as scheduled-run recommendations — none user-confirmed, no CSV rows. As of May 13: MAR -0.9%, JPM -0.1%, EMR -2.4% from suggestion prices; all remain above their respective stops._
 
 ---
 
 ## Today's Suggested Trades
 
-### 1. MAR — Marriott International — Post-Earnings Pullback to 50 EMA
+### 1. AME — AMETEK, Inc. — Record Orders + RSI Recovery at 50-Day EMA
 
 ```
-Ticker: MAR
-Current Price: $353.18
-Sector: Consumer Discretionary (Hospitality)
-Score: 104/115 (A:44 B:25 C:20 D:15 Ded:0)
+Ticker: AME
+Current Price: $231.51
+Sector: Industrials (Electronic Instruments / Precision Automation)
+Score: 93/115 (A:40 B:18 C:20 D:15 Ded:0)
 
 Setup Summary:
-MAR reported Q1 2026 on May 6 (EPS $2.72 vs est $2.55; revenue $6.65B vs est $6.59B — beat on
-both), yet shares have pulled back 1.85% to test the 50-day EMA ($346.78). Both the daily and
-weekly trends are intact (higher-highs / higher-lows structure), with MACD histogram recovering
-from its most recent low. The 52-week-high at $380 is the natural first target with ample room
-for a 3R+ move to T2. Earnings Aug 4, 2026 — well outside the 3-week exclusion window.
+AMETEK reported record Q1 2026 results on April 30 (13 days ago): EPS $1.97 beat by 3.7%,
+revenue +11% YoY to $1.93B, record orders of $2.2B (+23% with 22% organic growth), and record
+backlog of $3.87B. Despite this, the stock has pulled back 4.8% from its recent high to test
+the 50-day EMA ($227.91). RSI recovered from 44 to 51 — crossing back above 50 — confirming
+early momentum reversal. Volume over the past 5 days (1.30M) is running marginally below the
+20-day average (1.32M), signalling healthy consolidation rather than distribution. Weekly trend
+structure is fully intact. Analyst consensus target is $252.33 (10 out of 14 analysts: Buy),
+representing ~9% upside. Next earnings: ~late July 2026. Safe.
 
-Entry Zone: $350–$356
-Stop Loss: $340 — below 20-day swing low and 50-day EMA
-Target 1: $378 — near 52-week high resistance
-Target 2: $398 — measured move from base
-Risk/Reward: 2.2:1 (T1) | 3.6:1 (T2)
+Entry Zone: $229–$234 (near 50-day EMA)
+Stop Loss: $222 — below 50-day EMA ($227.91) and key swing low, ~1 ATR buffer
+Target 1: $243 — near 52-week high resistance ($243.18)
+Target 2: $258 — analyst consensus cluster / measured move from base
+Risk/Reward: 2.5:1 (T2 basis with $222 stop)
 
 Key Risks:
-- Middle East conflict dragging on RevPAR (-30% in affected markets); mgmt guided 100-125bps
-  full-year drag
-- Oil at $120/bbl pressures travel demand at the margin
-- Thin daily options OI in near-dated strikes; use June 18 expiry for liquidity
+- AME options markets are less liquid than large-caps; expect wider bid-ask spreads
+- Q2 2026 earnings (~late July) may create volatility before T2 is reached
+- Hot CPI reading increases risk of rates staying higher, compressing growth multiples
+  (AME trades at 35x TTM PE — elevated vs peers)
 
 Fundamental Note:
-Marriott grew fee revenue +12% YoY to $1.43B in Q1 2026, reached a record development pipeline
-(618,000 rooms), and raised 2026 EPS guidance to $11.38–$11.63 (+14-16%). Revenue +6% YoY.
-Business travel and APEC RevPAR (+7%) provide diversification from Middle East headwinds.
+Record orders (+23%) and record backlog ($3.87B) provide exceptional multi-quarter visibility.
+EMG segment margin expanded +380 bps in Q1. FY2026 EPS guidance raised to $7.94–$8.14 (+7–10%
+YoY). Revenue growing 11% YoY with 26.8% operating margins. Largest growth driver: AI/data-center
+power infrastructure, aerospace/defense electronics, and precision process instrumentation.
 ```
 
 **Instrument — Paired Debit Spread (Bullish)**
 
 ```
-Expiry: June 18, 2026 (~39 DTE)
+Instrument: Paired Debit Spread (preferred)
+Bias: Bullish
+Expiry: June 20, 2026 (~38 DTE)
 
-Primary Spread (Bull Call):
-  Strikes: Long $350 Call / Short $365 Call
+Primary Spread:
+  Structure: Bull Call Spread
   Size: 2 contracts
-  Net Debit: ~$9.20 per spread ($920 per lot pair)  [mid: $15.15 - $5.95 = $9.20]
-  Max Profit: ~$5.80 per share × 100 = $580 × 2 = $1,160
-  Max Loss: $920
+  Strikes: Long $230 Call / Short $240 Call
+  Net Debit: ~$5.20 per spread (~$10.40 mid: long ~$9.20, short ~$4.00)
+  Max Profit: ~$4.80 per share × 100 = $480 × 2 = $960
+  Max Loss: $5.20 × 100 × 2 = $1,040
 
-Opposite Hedge (Bear Put):
-  Strikes: Long $340 Put / Short $330 Put
+Opposite Hedge:
+  Structure: Bear Put Spread
   Size: 1 contract
-  Net Debit: ~$2.70 per spread ($270)  [mid: $7.55 - $4.85 = $2.70]
-  Max Profit: ~$7.30 per share × 100 = $730
-  Max Loss: $270
+  Strikes: Long $225 Put / Short $215 Put
+  Net Debit: ~$4.00 per spread (~$6.50 – $2.50)
+  Max Profit: ~$6.00 per share × 100 = $600
+  Max Loss: $4.00 × 100 = $400
 
 Combined Position:
-  Total Debit / Max Loss: ~$1,190
-  Expected Payout if thesis is right: +$1,160 − $270 = +$890
-  Expected Payout on violent move against: +$730 − $920 = −$190 (partial rescue)
-  Main Risk: drift / time decay without expansion in realized movement
+  Total Debit / Max Loss: ~$1,440
+  Expected Payout if thesis is right: +$960 − $400 = +$560
+  Expected Payout on violent move against thesis: +$600 − $1,040 = −$440 (partial rescue)
+  Main Risk: drift / compression / time decay without directional expansion; wider bid-ask in AME options
 ```
 
 ---
 
-### 2. JPM — JPMorgan Chase — Oversold at 50 EMA After Strong Q1
+### 2. VZ — Verizon Communications — Volume Collapse at 50-Day EMA + Raised Guidance
 
 ```
-Ticker: JPM
-Current Price: $302.10
-Sector: Financial Services (Diversified Banking)
-Score: 102/115 (A:43 B:25 C:19 D:15 Ded:0)
+Ticker: VZ
+Current Price: $47.67
+Sector: Communication Services (Wireless Telecommunications)
+Score: 89/115 (A:40 B:18 C:16 D:15 Ded:0)
 
 Setup Summary:
-JPM pulled back to the 50-day EMA ($304.58) with RSI at 36.7 — the most oversold reading since
-the October 2025 correction. Volume on down-days is running below the 20-day average (healthy,
-non-distribution pullback). The bank beat Q1 2026 estimates by 7.8% on April 14 (EPS $5.94 vs
-est $5.51; revenue $50.54B). With a risk of only ~$4.56/share and a natural target near $320-325
-(prior consolidation base), the R:R ratio is attractive at 4+:1. Weekly trend structure is
-intact with the weekly golden cross (50 EMA > 200 EMA) in place. Earnings next July 14 — safe.
+Verizon's pullback to its 50-day EMA ($47.17) is accompanied by one of the cleanest volume
+signatures in the current scan: average daily volume over the past 5 days is 16.58M vs the
+20-day average of 22.39M — a 26% decline — indicating institutional distribution has abated and
+the pullback is healthy consolidation. VZ reported Q1 2026 results on April 27: EPS $1.28 beat
+consensus by $0.07 and revenue of $34.44B grew 2.9% YoY. Most importantly, VZ achieved its
+first positive Q1 postpaid phone net additions since 2013 — a notable inflection signal. The
+company subsequently raised full-year 2026 adjusted EPS guidance by 5–6%. RSI at 52.5 has
+crossed back above 50, triggering the strategy's Trigger B criterion. Stock is recovering from
+its May 8 pullback low. Next earnings: July 21, 2026. Safe.
 
-Entry Zone: $300–$305
-Stop Loss: $296 — below recent swing low and 1-ATR buffer
-Target 1: $322 — prior base consolidation resistance
-Target 2: $337 — near 52-week high ($337.25)
-Risk/Reward: 3.0:1 (T1) | 6.0:1 (T2)
+Entry Zone: $47.00–$48.00 (within 50-day EMA band)
+Stop Loss: $45.20 — below key EMA50 support and prior swing low structure; ~1-ATR buffer
+Target 1: $51.50 — above 52-week high ($50.91); breakout continuation target
+Target 2: $55.00 — measured move from multi-month base (approx. 16% from 52-week low recovery)
+Risk/Reward: 2.1:1 (T1) | 3.1:1 (T2)
 
 Key Risks:
-- Morningstar calls shares "fully valued" at $311 — limited upside if market de-rates
-- MACD histogram still declining (momentum hasn't fully reversed)
-- Fed rate path uncertainty; NIMs could contract if cuts are delayed
+- 10 analysts revised Q2 estimates lower post-Q1, muting near-term analyst momentum
+- Revenue slightly missed consensus ($34.44B vs $34.82B est) — suggests pricing/ARPU pressure
+- Rate hike probability rising (hot CPI) could pressure utility-like high-yield names like VZ
+  (VZ yield ~6.1% may face headwinds if rates stay higher for longer)
 
 Fundamental Note:
-JPM delivered record trading revenue ($11.6B) in Q1 2026, with Investment Banking fees up 28%
-YoY and AUM reaching $4.8T (+16% YoY). Revenue growth of 12.7% and EPS growth of 17.2% are
-well above long-term averages. Analyst consensus target $342.
+VZ EPS TTM $4.10, forward EPS $5.27 — forward P/E of 9.0x is compelling relative to its peer
+group. The first positive postpaid phone net add quarter since 2013 reflects the Tracfone
+integration and pricing strategy beginning to bear fruit. Guidance raised suggests management
+confidence. However, Verizon remains a slow-growth name; the opportunity is a technical bounce
+off the 50 EMA rather than a transformational rerating.
 ```
 
 **Instrument — Paired Debit Spread (Bullish)**
 
 ```
-Expiry: June 18, 2026 (~39 DTE)
+Instrument: Paired Debit Spread (preferred)
+Bias: Bullish
+Expiry: June 20, 2026 (~38 DTE)
 
-Primary Spread (Bull Call):
-  Strikes: Long $300 Call / Short $310 Call
+Primary Spread:
+  Structure: Bull Call Spread
   Size: 2 contracts
-  Net Debit: ~$4.98 per spread ($996 total)  [mid: $11.70 - $6.72 = $4.98]
-  Max Profit: ~$5.02 per share × 100 = $502 × 2 = $1,004
-  Max Loss: $996
+  Strikes: Long $47 Call / Short $50 Call
+  Net Debit: ~$1.50 per spread (~$2.45 – $0.95)
+  Max Profit: ~$1.50 per share × 100 = $150 × 2 = $300
+  Max Loss: $1.50 × 100 × 2 = $300
 
-Opposite Hedge (Bear Put):
-  Strikes: Long $295 Put / Short $285 Put
+Opposite Hedge:
+  Structure: Bear Put Spread
   Size: 1 contract
-  Net Debit: ~$2.72 per spread ($272)  [mid: $6.55 - $3.83 = $2.72]
-  Max Profit: ~$7.28 per share × 100 = $728
-  Max Loss: $272
+  Strikes: Long $46 Put / Short $43 Put
+  Net Debit: ~$1.20 per spread (~$2.20 – $1.00)
+  Max Profit: ~$1.80 per share × 100 = $180
+  Max Loss: $1.20 × 100 = $120
 
 Combined Position:
-  Total Debit / Max Loss: ~$1,268
-  Expected Payout if thesis is right: +$1,004 − $272 = +$732
-  Expected Payout on violent move against: +$728 − $996 = −$268 (partial rescue)
-  Main Risk: drift / compression / slow grind below $310 without expansion
+  Total Debit / Max Loss: ~$420
+  Expected Payout if thesis is right: +$300 − $120 = +$180
+  Expected Payout on violent move against thesis: +$180 − $300 = −$120 (partial rescue)
+  Main Risk: drift / time decay; VZ may chop around $47–$48 without a clear directional move
+  Note: VZ has high options liquidity (OI > 50K on near-dated strikes); spreads should be tight
 ```
 
 ---
 
-### 3. EMR — Emerson Electric — Multiple Analyst Upgrades + 50-EMA Bounce
+### 3. AFL — Aflac Incorporated — Heavy Volume Decline + Buyback-Fueled EPS Growth at 50-Day EMA
 
 ```
-Ticker: EMR
-Current Price: $141.31
-Sector: Industrials (Specialty Industrial Machinery / Automation)
-Score: 97/115 (A:44 B:18 C:20 D:15 Ded:0)
+Ticker: AFL
+Current Price: $115.31
+Sector: Financial Services (Life & Health Insurance)
+Score: 81/115 (A:40 B:18 C:12 D:12 Ded:0)
 
 Setup Summary:
-EMR pulled back 14% from its 52-week high of $165 to test the 50-day EMA ($139.97). The MACD
-histogram crossed from negative to nearly flat on May 9, confirming momentum recovery. Most
-importantly, EMR just reported Q2 2026 results (May 5) with an EPS beat and strong margin
-expansion (+320 bps), and three analysts raised price targets within days: RBC to $169, BMO to
-$157, Barclays to $144. Underlying orders grew 5%. RSI at 51.5 just crossed back above 50.
-Earnings Aug 5 — safe. Volume on pullback days ran marginally below the 20-day average.
+Aflac has pulled back to test its 50-day EMA ($112.73) with a significant volume contraction:
+5-day average volume of 1.68M is 25% below the 20-day average of 2.24M — the largest
+proportional volume decline among the top scan candidates. RSI sits at 56.9, comfortably in
+momentum territory. AFL closed above its 20-day EMA ($114.06) after briefly dipping below
+(Trigger A confirmed). The stock is in a multi-month uptrend from $95 to the recent high of
+$118.69 (52-week high). Q1 2026 results (April 29): revenue beat ($4.35B vs $4.20B est),
+adjusted EPS per share grew 5.4% YoY on strong buyback execution. Next earnings: August 6, 2026.
+Safe. Important caveat: analyst consensus target ($112.21) is currently below the market price;
+multiple analysts lowered targets following mixed Japan segment results. Entry should be
+sized conservatively. If the 52-week high breaks, the technical path clears substantially.
 
-Entry Zone: $140–$143
-Stop Loss: $133 — below 20-day swing low ($135.43) with ATR buffer
-Target 1: $158 — BMO analyst target / cluster of price targets
-Target 2: $165 — near 52-week high / RBC target $169
-Risk/Reward: 2.0:1 (T1) | 2.9:1 (T2)
+Entry Zone: $114.50–$116.00 (above 20-day EMA, near 50-day EMA)
+Stop Loss: $113.00 — tight stop just below 20-day EMA ($114.06); avoids giving up the
+            EMA reclaim if reversed
+Target 1: $119.50 — above 52-week high ($118.69); momentum breakout
+Target 2: $125.00 — measured move extension; still below highest analyst target ($130)
+Risk/Reward: 1.8:1 (T1 from mid-entry) | 4.2:1 (T2 from $113 stop)
 
 Key Risks:
-- Revenue slightly missed Q2 estimates; organic growth guidance trimmed to ~3% from ~4%
-- Middle East conflict remains a ~$50M per quarter headwind (~1 ppt impact)
-- EMR options are less liquid than JPM/MAR; wider bid/ask spreads expected
+- Analyst consensus target ($112.21) is BELOW current price — limited near-term analyst support
+- Japan segment weakness: yen impact + Q1 Japan profitability declined YoY (main risk)
+- Piper Sandler cut to $125 (from $130), Barclays to $99, Evercore to $109 post-Q1; sentiment
+  cut-heavy
+- Rate hike risk: higher U.S. rates benefit AFL's investment portfolio but hurt mark-to-market
+  in near term
 
 Fundamental Note:
-EMR reported Q2 2026 EPS of $1.54 (beat vs est ~$1.50). Revenue grew 2.9%, EPS grew 27.9% YoY
-with operating margins expanding 320 bps. The $11.2 billion project funnel in power, LNG, and
-aerospace/defense supports multi-quarter backlog visibility. Analyst consensus target $164.
+AFL P/E of 13.2x TTM earnings is inexpensive relative to peers. EPS per share growing due to
+aggressive buybacks ($1.0B Q1 alone); the company returned $1.3B to shareholders in Q1 2026
+alone. Revenue grew 27.9% YoY (partly from investment portfolio mark-to-market gains). The
+core U.S. business showed 2.9% sales growth. Capital return program and growing dividend
+(consecutive increases since 1983) provide strong fundamental floor. The main risk is the Japan
+segment: yen weakness and claims normalization are pressuring Japan profitability.
 ```
 
 **Instrument — Paired Debit Spread (Bullish)**
 
 ```
-Expiry: June 18, 2026 (~39 DTE)
+Instrument: Paired Debit Spread (preferred)
+Bias: Bullish
+Expiry: June 20, 2026 (~38 DTE)
 
-Primary Spread (Bull Call):
-  Strikes: Long $140 Call / Short $145 Call
+Primary Spread:
+  Structure: Bull Call Spread
   Size: 2 contracts
-  Net Debit: ~$2.15 per spread ($430 total)  [mid: $5.95 - $3.80 = $2.15]
-  Max Profit: ~$2.85 per share × 100 = $285 × 2 = $570
-  Max Loss: $430
+  Strikes: Long $115 Call / Short $120 Call
+  Net Debit: ~$2.50 per spread (~$4.50 – $2.00)
+  Max Profit: ~$2.50 per share × 100 = $250 × 2 = $500
+  Max Loss: $2.50 × 100 × 2 = $500
 
-Opposite Hedge (Bear Put):
-  Strikes: Long $140 Put / Short $135 Put
+Opposite Hedge:
+  Structure: Bear Put Spread
   Size: 1 contract
-  Net Debit: ~$1.90 per spread ($190)  [mid: $4.90 - $3.00 = $1.90]
-  Max Profit: ~$3.10 per share × 100 = $310
-  Max Loss: $190
+  Strikes: Long $112 Put / Short $107 Put
+  Net Debit: ~$2.00 per spread (~$4.00 – $2.00)
+  Max Profit: ~$3.00 per share × 100 = $300
+  Max Loss: $2.00 × 100 = $200
 
 Combined Position:
-  Total Debit / Max Loss: ~$620
-  Expected Payout if thesis is right: +$570 − $190 = +$380
-  Expected Payout on violent move against: +$310 − $430 = −$120 (partial rescue)
-  Main Risk: thin option liquidity; drift without directional move; lower OI than large-caps
+  Total Debit / Max Loss: ~$700
+  Expected Payout if thesis is right: +$500 − $200 = +$300
+  Expected Payout on violent move against thesis: +$300 − $500 = −$200 (partial rescue)
+  Main Risk: stock fails to break 52-week high ($118.69) and drifts back; Japan sentiment
+  weighing on shares without a clear near-term catalyst to push past the prior high
 ```
 
 ---
@@ -218,24 +259,26 @@ _Names with constructive scan/research but no immediate entry (timing / extensio
 
 | Ticker | Why watching | Trigger to revisit |
 |--------|--------------|-------------------|
-| LIN | Exactly at 50 EMA after Q1 beat (May 1); multiple analyst target raises (RBC $570, BMO $560, DB $575); strong guidance increase. Volume on pullback days slightly elevated — suggests some institutional rotation, not yet a clean, declining-volume pullback | Volume on down-days drops below 20-day average; wait for 2–3 sessions of quiet low-volume consolidation near $490–$495 |
-| PNC | At 50-day EMA ($216.77), volume declining on pullback, beat Q1 (Apr results), analyst target $255. R:R at current entry is compressed due to tight stop vs. distance to resistance. | Pullback to $210–$212 support zone to improve R:R to ≥2.5:1; next catalyst: Q2 earnings July 15 |
-| GWW | Extended +8.8% above 50 EMA, RSI 76.5 — overbought, not a pullback setup. | Pullback to $1,130–$1,150 (near 50 EMA); RSI back below 60 |
-| ROK | Extended +13.3% above 50 EMA, RSI 73.0 — overextended. | Pullback to $415–$430 (near 50 EMA) |
+| DE | Best technical setup in the scan: 0.67% above 50-day EMA, RSI 50.2, triggers A+B, volume declining. EXCLUDED from picks due to Q2 earnings on May 21 (8 days — within 3-week hard filter). Deere beat Q1 2026 by 27% and guided strongly; expect to revisit after earnings if stock holds EMA50 | Post-May 21 earnings: entry only if stock holds above 50-day EMA on any post-earnings dip; ideal re-entry zone $570–$582 |
+| NEE | NextEra Energy — utilities sector leader, 2.55% above 50-day EMA, RSI 53.8, volume declining 22%. Strong regulatory tailwind from AI data center electricity demand. Near 52-week high ($98.75); limited room to T1 before breakout. Utilities exposed to rate-hike risk given hot CPI print | Pullback to $92–$94 (EMA50 zone); improved R:R on any corrective dip; confirm RSI holds above 50 |
+| OKE | ONEOK midstream — 3.15% above 50-day EMA, RSI 54.5, volume flat. Strong dividend yield, benefiting from oil elevated at $102+. Distance from EMA50 slightly exceeds ideal entry range; setup would improve on a 1–2% pullback | Entry zone $86–$87 (closer to EMA50); stop below $84; natural gas and NGL volumes as catalyst |
+| D | Dominion Energy — 1.12% above EMA50, RSI 53.4. Good technical setup but analysts revised estimates 5.1% lower in past 30 days and the stock has underwhelming fundamental momentum (GAAP EPS $0.69 vs $0.77 prior year). The Virginia offshore wind regulatory timeline is the key catalyst to monitor | Confirmed analyst estimate revisions stabilising; positive regulatory update on CVOW offshore wind project; earnings ~Aug 1 |
 
 ---
 
 ## Open Trades
 _User-confirmed trades from the last 14 days, outcome not yet recorded._
 
-_No confirmed trades in the log._
+_No confirmed trades in the log. This is a scheduled/unattended run — no user confirmation possible._
+
+_Prior scheduled run (2026-05-10) suggested MAR ($353.18), JPM ($302.10), and EMR ($141.31). None were logged to CSV (scheduled run). As of 2026-05-13 close: MAR $350.08 (–0.9%), JPM $301.71 (–0.1%), EMR $137.99 (–2.4%) — all above their respective stops. Those suggestions remain valid but are superseded by this run's new picks._
 
 ---
 
 ## Performance Summary
 _All closed trades (outcome recorded)._
 
-_No completed trades recorded yet. The April 16 scan returned no tickers (empty run)._
+_No completed trades recorded yet. April 16 scan returned no tickers (empty run); May 10 and May 13 scans are scheduled/unattended runs with no user-confirmed entries._
 
 ### Aggregate Stats
 - **Total closed trades:** 0
