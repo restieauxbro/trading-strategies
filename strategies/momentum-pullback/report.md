@@ -1,225 +1,255 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-05-14_
+_Last updated: 2026-05-17_
 
 ---
 
 ## Market Context
 
-The S&P 500 is at 7,507 — well above its 200-day EMA (6,746) by +11.3% and at a new 52-week high. The index has returned +6.9% in the past month and +8.1% over three months, indicating a strong, broad-based recovery rally. VIX is at 17.26 (calm; peaked at 31 in the past 3 months but has since compressed sharply), confirming the fear environment has normalised. Overall market regime: **confirmed uptrend** — bullish conditions are favourable for momentum pullback setups. No downtrend filters apply.
+The S&P 500 (SPY) closed at $739.17 on Friday May 15, 2026 — +10.1% above its 200-day EMA ($671.44) and +5.1% above its 50-day EMA ($703.18). The index has returned +5.3% over the past month and +8.5% over three months, confirming a strong, sustained recovery rally from the February–April 2026 tariff-driven selloff. VIX sits at 18.43 (calm, normalising from a 3-month high of 35.30 reached during the April volatility spike). Overall regime: **confirmed uptrend** — bullish conditions are favourable for momentum pullback setups. No downtrend filters apply. Insurance and Industrials sectors are in strong favour.
 
 ---
 
 ## Scan Notes
 
-TrendSpider browser-use unavailable in this environment (scheduled cloud run). Scan was replicated using yfinance against the full S&P 500 (503 tickers), applying all five groups from `config.md`: daily 200 EMA trend alignment, weekly golden cross structure, rising EMAs, price within ±3% of daily 50 EMA in last 5 bars, and at least one timing trigger (20 EMA recross, RSI cross above 50, or close above prior day's high). **39 of 503 S&P 500 stocks passed all criteria today.** TradingView visual confirmation (B-Xtrender, Fair Value Bands) was unavailable; B-Xtrender scoring categories are excluded from totals below.
+TrendSpider browser-use unavailable in this environment (scheduled cloud run). Scan replicated via yfinance against 465 S&P 500 constituents, applying all five filter groups from `config.md`:
+1. Daily price above 200-day EMA
+2. Weekly golden cross (50 EMA > 200 EMA) and weekly price above 50 EMA
+3. Rising 200-day EMA (vs 40 bars ago) and rising 50-day EMA (vs 20 bars ago)
+4. Price within ±3% of daily 50 EMA in last 5 bars
+5. At least one timing trigger: 20 EMA recross, RSI cross above 50, or close above prior day's high
+
+**18 of 465 S&P 500 stocks passed all criteria today:** ALL, APA, CINF, COP, COST, DVN, EOG, HAS, JBHT, JCI, KMI, MO, NSC, ODFL, OKE, PSX, TRV, WMT
+
+TradingView visual confirmation (B-Xtrender, Fair Value Bands) was unavailable in this environment. B-Xtrender scoring categories are excluded from totals below; maximum achievable score is 100/115.
 
 ---
 
 ## Today's Suggested Trades
 
-### 1. HLT — Hilton Worldwide Holdings (Hospitality)
+### 1. TRV — The Travelers Companies (Property & Casualty Insurance)
 
 ```
-Ticker: HLT
-Current Price: $315.88
-Sector: Consumer Cyclical — Lodging / Hospitality
-Score: 93/115 (A:40 B:18 C:20 D:15 Ded:0) [B-Xtrender categories excluded — unavailable]
+Ticker: TRV
+Current Price: $299.76 (as of May 15, 2026)
+Sector: Financial Services — Property & Casualty Insurance
+Score: 92/115 (A:37 B:25 C:20 D:15 Ded:-5) [B-Xtrender categories excluded — unavailable]
 
 Setup Summary:
-HLT pulled back precisely to its 50-day EMA ($315.37) over the past week and is now
-recovering, with declining volume on the down days (healthy consolidation, not distribution).
-The weekly golden cross structure is intact, the 200-day EMA is rising, and RSI has
-re-crossed above 50. Multiple analysts raised price targets to $347–$390 in the two weeks
-following Q1 earnings, adding a fresh catalyst layer to an already clean technical setup.
+TRV has pulled back precisely to its 50-day EMA ($298.91) after rallying to a 52-week
+high of $311.98 in early May. The pullback is orderly — volume is essentially flat at
+1.03x the 20-day average (not distribution). RSI dipped to 35 at the April lows and
+has now crossed back above 50 (Trigger B firing), while price sits just above both the
+50-day EMA ($298.91) and 20-day EMA ($299.89). Q1 2026 EPS of $7.71 crushed the $7.08
+consensus (+8.9%); six firms raised price targets in April–May (KBW $340, Evercore
+$321, Roth, BMO, Cantor, UBS). Deduction: one insider sale (Vice Chairman $484K on
+Apr 28); noted but not considered a material negative signal for a $35B company.
 
-Entry Zone: $314–$318 (near daily 50 EMA)
-Stop Loss: $304 — below recent swing low and ~3.5% below entry
-Target 1: $342 — 52-week high resistance zone
-Target 2: $370 — UBS analyst target / measured move extension
-Risk/Reward: 2.4:1 (to T1)
+Entry Zone: $297–$303 (50 EMA / 20 EMA confluence zone)
+Stop Loss: $288 — below May 13 swing low ($291.83) with ~$3 buffer
+Target 1: $312 — prior 52-week high resistance zone
+Target 2: $335 — KBW analyst target $340 / measured move
+Risk/Reward: 3.3:1 (to T2, stop at $288)
 
 Key Risks:
-- Q2 2026 earnings scheduled July 22 (well beyond the 3-week filter)
-- HLT missed Q1 revenue estimates slightly (beat EPS but not top line)
-- High-beta consumer cyclical — could underperform in any macro risk-off move
+- Q2 2026 earnings July 16 (well beyond the 3-week filter, Jun 18 expiry exits before)
+- Vice Chairman insider sale Apr 28 (routine-sized: $484K; deducted -5 pts)
+- Combined ratio improvement may mean difficult comps; BofA trimmed target by $2
+- Reserve adequacy debate ongoing per KBW analyst note
 
 Fundamental Note:
-Q1 2026 adjusted EPS of $2.01 beat consensus (~$1.97); revenue +9% YoY to $2.94B;
-full-year 2026 EPS guidance raised to $8.79–$8.91. Five analysts (Morgan Stanley,
-UBS, Bank of America, HSBC, TD Cowen) raised price targets in April–May 2026,
-with targets ranging $319–$390.
+Q1 2026 core income surged 283% to $1.70B; combined ratio improved 13.9 pts to 88.6%.
+Company repurchased 6M shares for $1.8B and raised quarterly dividend 14%. Revenue
++1% YoY to $11.92B, beating estimates of $10.63B. Six analysts raised price targets
+post earnings.
 ```
 
 **Instrument: Paired Debit Spread (Bullish)**
 ```
 Bias: Bullish
-Expiry: Jun 18 2026 (~35 DTE)
+Expiry: Jun 18 2026 (32 DTE; expires before Jul 16 earnings)
 
 Primary Spread:
   Structure: Bull Call Spread
   Size: 2 contracts
-  Strikes: Long 310 / Short 320
-  Net Debit: ~$5.50 per spread (~$11.00 mid: $14.80 – $9.30)
-  Max Profit: ~$4.50 per spread ($900 total on 2 contracts)
-  Max Loss: ~$5.50 per spread ($1,100 total on 2 contracts)
+  Strikes: Long 300 / Short 310
+  Net Debit: ~$4.45 per spread (Mid: $7.80 – $3.35)
+  Max Profit: ~$5.55 per spread ($11.10 total on 2 contracts)
+  Max Loss: ~$4.45 per spread ($8.90 total on 2 contracts)
 
 Opposite Hedge:
   Structure: Bear Put Spread
   Size: 1 contract
-  Strikes: Long 300 / Short 290
-  Net Debit: ~$1.82 per spread ($182 on 1 contract)
-  Max Profit: ~$8.18 per spread ($818 on 1 contract)
-  Max Loss: ~$1.82 per spread ($182 on 1 contract)
+  Strikes: Long 290 / Short 280
+  Net Debit: ~$2.85 per spread (Long 290P mid $4.15 – Short 280P est. $1.30)
+  Max Profit: ~$7.15 per spread ($7.15 on 1 contract)
+  Max Loss: ~$2.85 per spread ($2.85 on 1 contract)
 
 Combined Position:
-  Total Debit / Max Loss: ~$1,282
-  Expected Payout if thesis is right (HLT above 320 at expiry): ~$718
-  Expected Payout on violent drop (HLT below 290 at expiry): ~−$282
-  Main Risk: drift / chop / HLT pinned between 310 and 320 into expiry
+  Total Debit / Max Loss: ~$11.75
+  Expected Payout if thesis right (TRV above 310 at expiry): ~+$8.25
+  Expected Payout on violent drop (TRV below 280 at expiry): ~-$1.75 (near breakeven)
+  Main Risk: drift / chop / TRV pinned between 300–310 into Jun 18 expiry
+  Note: Short 280P pricing is estimated; verify at order entry.
 ```
 
 ---
 
-### 2. EOG — EOG Resources (Energy E&P)
+### 2. JCI — Johnson Controls International (HVAC / Building Systems / Data Center)
 
 ```
-Ticker: EOG
-Current Price: $136.22
-Sector: Energy — Oil & Gas E&P
-Score: 86/115 (A:33 B:18 C:20 D:15 Ded:0) [B-Xtrender excluded — unavailable]
+Ticker: JCI
+Current Price: $143.08 (as of May 15, 2026)
+Sector: Industrials — HVAC & Building Management Systems
+Score: 91/115 (A:36 B:25 C:20 D:15 Ded:-5) [B-Xtrender categories excluded — unavailable]
 
 Setup Summary:
-EOG pulled back to its 50-day EMA ($132.94) — touching within 0.49% at the low —
-and has since recovered with all three timing triggers firing (RSI crossed above 50,
-closed above 20 EMA, closed above prior day's high). The weekly golden cross and
-rising 50/200 EMAs confirm an intact long-term uptrend. The company just posted
-a blowout Q1 2026 report (revenue +22% YoY, EPS beat by $0.20) and raised
-production guidance, with four analysts upgrading or lifting price targets in the
-week following results.
+JCI hit a 52-week high of $147.32 on May 5 (the day before its Q2 2026 earnings), then
+pulled back 7% to $137.40 intraday on May 7-11 — precisely testing the 50-day EMA
+($138.66). The stock has since recovered above the 20-day EMA ($141.89) with RSI
+recovering to 53. Q2 2026 EPS of $1.19 beat consensus of $1.12 (+6.3%); orders surged
+30% organically to a record backlog of $20B, driven by data-center and AI-infrastructure
+demand. Management raised full-year EPS guidance to $4.85 (~30% growth). Volume is
+slightly elevated at 1.09x the 20-day average on the pullback, suggesting some profit-
+taking after the earnings catalyst, but the price has stabilised above the 50 EMA.
+Deduction: 7 insiders sold $20.7M in last 12 months (-5 pts); monitored but common for
+corporate-transformation stories.
 
-Entry Zone: $134–$137 (near 50-day EMA retest zone)
-Stop Loss: $129 — below the 50-day EMA with a buffer ($3 cushion)
-Target 1: $149 — 52-week high / analyst target cluster (Mizuho $149, Truist $149)
-Target 2: $162 — measured move extension / Morgan Stanley target $155 area
-Risk/Reward: 2.1:1 (to T1, with stop at $129)
+Entry Zone: $141–$145 (between 20 EMA and 2% above 50 EMA)
+Stop Loss: $135 — below May 7-11 swing low ($137.40) with ~$2.40 buffer
+Target 1: $150 — breakout above 52-week high ($147.32)
+Target 2: $168 — measured move / analyst consensus target cluster
+Risk/Reward: 3.1:1 (to T2, stop at $135)
 
 Key Risks:
-- Q2 2026 earnings August 6 (well beyond the 3-week filter)
-- Oil price volatility remains a macro risk for E&P names
-- Volume elevated on pullback down-days (less orderly than HLT's pullback)
+- Q3 FY2026 earnings expected late July/August 2026 (well beyond Jun 18 expiry)
+- Elevated valuation: P/E ~44x on trailing earnings (justified by 30% guidance growth)
+- Volume elevated on pullback (less orderly than ideal; 1.09x vs 20d avg)
+- Significant insider selling in last 12 months ($20.7M across 7 insiders)
+- Geopolitical risk: EMEA and APAC segments (~40% of revenue)
 
 Fundamental Note:
-Q1 2026 adjusted EPS $3.41 vs $3.21 consensus (beat +6.2%); total revenue $6.92B
-vs $6.18B expected (beat by 12%); oil production up 9% YoY. EOG returned $950M
-to shareholders via dividends + buybacks and raised full-year production guidance.
-Energy sector broadly bullish (COP, FANG, DVN, EOG all passing the scan today).
+Q2 FY2026 adjusted EPS $1.19 vs $1.12 consensus; organic sales +6% to $6.1B; EBIT
+margin expanded 310 bps to 15.5%. Record backlog $20B (+26% organic), Americas
+segment orders +40% YoY. Raised FY2026 EPS guidance to ~$4.85 (+30% growth YoY).
+AI data-center HVAC demand is a sustained multi-year tailwind.
 ```
 
 **Instrument: Paired Debit Spread (Bullish)**
 ```
 Bias: Bullish
-Expiry: Jun 18 2026 (~35 DTE)
+Expiry: Jun 18 2026 (32 DTE; exits well before Q3 FY2026 earnings)
 
 Primary Spread:
   Structure: Bull Call Spread
   Size: 2 contracts
-  Strikes: Long 135 / Short 140
-  Net Debit: ~$2.40 per spread (~$4.80 mid: $6.35 – $3.95)
-  Max Profit: ~$2.60 per spread ($520 total on 2 contracts)
-  Max Loss: ~$2.40 per spread ($480 total on 2 contracts)
+  Strikes: Long 140 / Short 150
+  Net Debit: ~$4.75 per spread (Mid: $7.05 – $2.30)
+  Max Profit: ~$5.25 per spread ($10.50 total on 2 contracts)
+  Max Loss: ~$4.75 per spread ($9.50 total on 2 contracts)
 
 Opposite Hedge:
   Structure: Bear Put Spread
   Size: 1 contract
-  Strikes: Long 130 / Short 125
-  Net Debit: ~$1.17 per spread ($117 on 1 contract; $2.45 – $1.28)
-  Max Profit: ~$3.83 per spread ($383 on 1 contract)
-  Max Loss: ~$1.17 per spread ($117 on 1 contract)
+  Strikes: Long 135 / Short 125
+  Net Debit: ~$1.20 per spread (Long 135P est. $1.75 – Short 125P est. $0.55)
+  Max Profit: ~$8.80 per spread ($8.80 on 1 contract)
+  Max Loss: ~$1.20 per spread ($1.20 on 1 contract)
 
 Combined Position:
-  Total Debit / Max Loss: ~$597
-  Expected Payout if thesis is right (EOG above 140 at expiry): ~$403
-  Expected Payout on violent drop (EOG below 125 at expiry): ~−$97 (near breakeven)
-  Main Risk: drift or stagnation near entry price over 35 days
+  Total Debit / Max Loss: ~$10.70
+  Expected Payout if thesis right (JCI above 150 at expiry): ~+$9.30
+  Expected Payout on violent drop (JCI below 125 at expiry): ~-$0.70 (near breakeven)
+  Main Risk: JCI stays range-bound between 140–150 into Jun 18 expiry
+  Note: Hedge spread pricing is estimated; verify at order entry. Higher IV (~35%)
+  makes option premium more expensive than insurance names.
 ```
 
 ---
 
-### 3. FDX — FedEx Corporation (Freight & Logistics)
+### 3. ALL — The Allstate Corporation (Property & Casualty Insurance)
 
 ```
-Ticker: FDX
-Current Price: $378.20
-Sector: Industrials — Integrated Freight & Logistics
-Score: 78/115 (A:33 B:10 C:20 D:15 Ded:0) [B-Xtrender excluded — unavailable]
+Ticker: ALL
+Current Price: $217.37 (as of May 15, 2026)
+Sector: Financial Services — Property & Casualty Insurance
+Score: 92/115 (A:37 B:25 C:20 D:15 Ded:-5) [B-Xtrender categories excluded — unavailable]
 
 Setup Summary:
-FDX touched its 50-day EMA ($369.92) within 0.03% at the low — the cleanest 50 EMA
-retest in the scan — and has recovered with triggers A and B both firing. The company
-posted a massive Q3 FY2026 earnings beat (EPS $5.25 vs $4.09 expected, +27%) and
-raised full-year guidance significantly. Analyst consensus has moved materially higher
-with targets in the $412–$450 range. Note: Q4 FY2026 earnings are June 23; the
-Jun 18 expiry on the proposed spread exits before that catalyst.
+ALL set a 52-week high of $222.23 on May 5 following a blockbuster Q1 2026 earnings
+beat (EPS $10.65 vs $7.43 consensus — a 43% upside surprise). The stock pulled back
+sharply to $209.51 intraday (briefly below the 50-day EMA at $212.53) before recovering
+above the 20-day EMA ($215.21). RSI sits at 58.6 — healthy and not overbought. Volume is
+neutral at 1.00x the 20-day average. The pullback is a classic post-52wk-high digestion;
+the uptrend structure is fully intact. Piper Sandler raised target to $268 post earnings.
+Deduction: COO sold 18,578 shares on May 1 via exercise-and-sell of options originally
+granted in 2018 at $92.80 (exercise price); overall insider flows are net-positive (43
+purchases vs 17 sales YTD per Yahoo Finance).
 
-Entry Zone: $374–$380 (50 EMA bounce zone)
-Stop Loss: $362 — below 50 EMA with a 2% buffer
-Target 1: $403 — 52-week high resistance
-Target 2: $435 — analyst consensus / measured move (Stifel $442, Wells $450)
-Risk/Reward: 1.6:1 (to T1, stop at $362); 3.6:1 (to T2)
+Entry Zone: $214–$219 (20 EMA support area; recovering from pullback)
+Stop Loss: $207 — below May 7 swing low ($209.51) with ~$2.50 buffer
+Target 1: $235 — 52-week-high breakout measured move target
+Target 2: $265 — Piper Sandler analyst target ($268); conservative measure
+Risk/Reward: 4.6:1 (to T2, stop at $207)
 
 Key Risks:
-- Q4 FY2026 earnings June 23 (6 weeks out; within stated expiry window — spreads
-  should expire Jun 18 to avoid earnings risk)
-- Macro sensitivity: FedEx is a global macro barometer; any trade-flow concerns
-  (tariffs, global slowdown) could pressure the stock
-- Volume elevated on recent pullback days
+- Q2 2026 earnings August 6 (tentative; well beyond Jun 18 expiry)
+- Revenue slightly missed Q1 consensus ($16.9B vs $17.29B est.) despite massive EPS beat
+- Sector concentration risk: combined TRV + ALL = two P&C insurance names in same run
+- COO exercise-and-sell May 1 (routine option exercise; overall insider buying is net positive)
+- Market-to-market losses on investment portfolio if credit markets weaken
 
 Fundamental Note:
-Q3 FY2026 adjusted EPS $5.25 vs $4.09 estimated (beat 27%); revenue $24.0B vs
-$23.4B estimated; YoY EPS growth +16.4%, revenue +8.3%. Full-year guidance raised
-to $19.30–$20.10 adjusted EPS. Network 2.0 restructuring targeting $1B+ in cost
-savings driving margin expansion narrative.
+Q1 2026 adjusted EPS $10.65 beat $7.43 consensus by 43%; property-liability combined
+ratio improved 15.4 pts to 82.0; investment income +9.8% YoY; 212M policies in force
+(+2.5% YoY). Piper Sandler raised to $268 (Overweight); Citi raised to $226 (Neutral).
+Net income $2.4B. Business fundamentally re-rated after years of underperformance.
 ```
 
 **Instrument: Paired Debit Spread (Bullish)**
 ```
 Bias: Bullish
-Expiry: Jun 18 2026 (~35 DTE, expires before Jun 23 earnings)
+Expiry: Jun 18 2026 (32 DTE; exits before Aug 6 earnings)
 
 Primary Spread:
   Structure: Bull Call Spread
   Size: 2 contracts
-  Strikes: Long 370 / Short 380
-  Net Debit: ~$5.87 per spread (~$11.74 mid: $19.80 – $13.93)
-  Max Profit: ~$4.13 per spread ($826 total on 2 contracts)
-  Max Loss: ~$5.87 per spread ($1,174 total on 2 contracts)
+  Strikes: Long 220 / Short 230
+  Net Debit: ~$2.80 per spread (Long 220C mid $4.55 – Short 230C est. $1.75)
+  Max Profit: ~$7.20 per spread ($14.40 total on 2 contracts)
+  Max Loss: ~$2.80 per spread ($5.60 total on 2 contracts)
 
 Opposite Hedge:
   Structure: Bear Put Spread
   Size: 1 contract
-  Strikes: Long 360 / Short 350
-  Net Debit: ~$2.83 per spread ($283 on 1 contract; $7.23 – $4.40)
-  Max Profit: ~$7.17 per spread ($717 on 1 contract)
-  Max Loss: ~$2.83 per spread ($283 on 1 contract)
+  Strikes: Long 210 / Short 200
+  Net Debit: ~$2.40 per spread (Long 210P mid $3.60 – Short 200P est. $1.20)
+  Max Profit: ~$7.60 per spread ($7.60 on 1 contract)
+  Max Loss: ~$2.40 per spread ($2.40 on 1 contract)
 
 Combined Position:
-  Total Debit / Max Loss: ~$1,457
-  Expected Payout if thesis is right (FDX above 380 at expiry): ~$543
-  Expected Payout on violent drop (FDX below 350 at expiry): ~−$457
-  Main Risk: FDX stays between 370 and 380 into Jun 18 expiry (spread pinning)
+  Total Debit / Max Loss: ~$8.00
+  Expected Payout if thesis right (ALL above 230 at expiry): ~+$12.00
+  Expected Payout on violent drop (ALL below 200 at expiry): ~+$2.00 (profitable)
+  Main Risk: ALL stays between 220–230 at Jun 18 expiry (spread pinning)
+  Note: Short 230C and Short 200P pricing estimated; verify at order entry.
+  Sector overlap with TRV — consider sizing one position smaller if running both.
 ```
 
 ---
 
 ## Watchlist
-_Names with constructive scan/research but no immediate entry (timing / extension)._
+_Names with constructive scan/research but no immediate entry (timing / extension / fundamentals)._
 
 | Ticker | Why watching | Trigger to revisit |
 |--------|--------------|-------------------|
-| ETN | Record Q1 2026 (+17% revenue, data center orders +240%); strong uptrend. Price has already bounced 4% from 50 EMA — missed the ideal pullback entry. | Next pullback to 50 EMA (~$392); watch for trigger A or B to re-fire |
-| LIN | Q1 2026 beat (EPS +10% YoY, revenue +8%); excellent business. Currently at 52-week high ($513) — very limited R:R to any near-term resistance. | Pullback to $490–$500 zone (50 EMA); R:R improves materially from there |
-| ALL | Massive Q1 EPS beat ($10.65 vs $7.43 expected); fundamentally strong. Price at $216 vs 52-week high $219 — minimal upside room without a breakout. | Clean break above $220 on volume + hold; or pullback to 50 EMA ($212) for better R:R |
-| NDAQ | Clean multi-trigger setup, near 52-week high area; financial sector in favor. | Confirmed hold above $91 on volume; or pullback to $88 50 EMA |
+| ODFL | Textbook 50 EMA test with declining volume (ratio 0.83x) — cleanest technical setup in the scan. Revenue -2.9% and EPS -4.2% YoY exclude from trade picks. Multiple analyst upgrades (MS $235, BMO $230, Stifel $228). | Next pullback to 50 EMA (~$200); or confirmed revenue/EPS inflection in Q2 2026 earnings (Jul 29) |
+| COST | Excellent fundamentals (rev +21.5%, EPS +45.5%). At all-time highs with RSI=73 — overbought. | RSI cooling to ≤65; next 50 EMA pullback (~$1,000) with declining volume |
+| NSC | Q1 2026 EPS beat ($2.65 vs $2.51 est.); multiple analyst target raises (RBC $360, Barclays $360, TD Cowen $337). Near 52wk high (-2.3%). EPS declining YoY due to prior-year items, limiting conviction. | Confirmed close above 52wk high $323 on volume; or next 50 EMA test |
+| JBHT | Already +12.6% above 50 EMA — missed the pullback entry. Strong freight recovery theme. | Pullback to 50 EMA (~$235) with declining volume; RSI reset to 45–50 zone |
+| CINF | Insurance sector in favour; tight pullback to 50 EMA (+2.2%); good revenue growth (+11.6%). RSI=68.4 slightly elevated. | RSI dip to 55–60 on any consolidation; then re-entry near 50 EMA |
+
+_Excluded this run (earnings within 3 weeks):_
+- **HAS**: Q1 2026 earnings May 20 (3 days away) — hard filter −20 pts; revisit post-earnings
 
 ---
 
@@ -230,7 +260,7 @@ _User-confirmed trades from the last 14 days, outcome not yet recorded._
 |------|--------|------------|------|----------|----------|-----|
 | — | — | — | — | — | — | — |
 
-_No confirmed trades on record (prior run on 2026-04-16 was an empty scan)._
+_No confirmed trades on record (this is a scheduled unattended run; trade confirmation requires user action)._
 
 ---
 
@@ -252,9 +282,19 @@ _All closed trades (outcome recorded)._
 
 ---
 
-## Scan Details (2026-05-14)
+## Outcomes Review (2026-05-17)
+
+No rows were due for the 14-day outcome review today. The only prior entry in the log was the 2026-04-16 empty-scan row (no ticker). The 2026-05-14 run suggested trades (HLT, EOG, FDX) but no user-confirmed trades were logged to the CSV (scheduled run). Those suggestions are now stale (new prices and setups have changed materially).
+
+---
+
+## Scan Details (2026-05-17)
 _Scan run via yfinance (browser-use unavailable in scheduled cloud environment)_
 
-- **Universe:** S&P 500 (503 tickers)
-- **Tickers passing all scan criteria:** 39
-- **Full list:** AFL, LNT, ALL, MO, ANET, CF, CINF, C, COP, CTVA, COST, DVN, FANG, D, DTE, ETN, EOG, EVRG, FDX, FCX, GM, HAS, HLT, JBHT, JCI, KMI, LIN, NDAQ, NEE, NI, NSC, ODFL, OKE, PSX, SLB, SPG, TT, WMT, WMB
+- **Timestamp:** 2026-05-17 19:06 UTC
+- **Universe:** 465 S&P 500 tickers (19 stale/delisted removed)
+- **Tickers passing all scan criteria (18):** ALL, APA, CINF, COP, COST, DVN, EOG, HAS, JBHT, JCI, KMI, MO, NSC, ODFL, OKE, PSX, TRV, WMT
+- **Tickers researched in detail:** ALL, CINF, COST, HAS, JBHT, JCI, NSC, ODFL, TRV, WMT (+ market context for APA, COP, DVN, EOG, KMI, MO, OKE, PSX)
+- **Top 3 selected:** TRV (92/115), ALL (92/115), JCI (91/115)
+- **HAS excluded:** Earnings within 3 weeks (May 20) — hard filter
+- **ODFL, COST, NSC, JBHT, CINF:** Watchlist only (see above)
