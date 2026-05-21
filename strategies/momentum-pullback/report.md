@@ -1,230 +1,245 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-05-20_
+_Last updated: 2026-05-21_
 
 ---
 
 ## Market Context
 
-The S&P 500 (SPY) closed at $740.32 on May 20, 2026, sitting **+9.7% above its 200-day MA** ($675.05) and well above its 50-day MA ($693.48). The index gained +5.1% over the past month, reflecting a strong recovery. VIX stands at **17.5** — moderate, not elevated. The overall market regime is a **confirmed uptrend**; standard (not stricter) filters apply. The **Utilities sector** was the third-best S&P 500 performer in Q1 2026 (+8.3%), benefiting from rising data center electricity demand and steady rate-base expansion. Financials (particularly insurance) have outperformed on the back of low catastrophe losses and robust underwriting income. No downtrend warning applies.
+The S&P 500 (SPY) is trading at **$741.64**, decisively above both its 50-day MA ($694.84, +6.7%) and 200-day MA ($675.65, +9.8%), confirming a strong uptrend. VIX is at **17.0** — well below the danger threshold of 25, indicating subdued volatility and a risk-on environment. The overall trend is **confirmed uptrend**; no downtrend filters apply. Financials, Industrials (particularly power/AI infrastructure), and Consumer Cyclical (travel/hospitality) subsectors are leading. Energy is mixed. This is a favourable backdrop for momentum continuation setups.
+
+_Note: browser-use / TradingView visual confirmation is unavailable in this environment. B-Xtrender points (15 pts) are withheld from Category A scores and a -5 deduction applied to each ticker. Actual entry should include a visual TradingView check before order placement._
 
 ---
 
-## Scan Notes
+## Scan Results
 
-- **Scan method:** yfinance (browser-use unavailable in cloud environment — TrendSpider live UI could not be accessed)
-- **Scan timestamp:** 2026-05-20 19:00 UTC
-- **Candidates found:** 33 tickers passed all yfinance scan conditions (trend alignment, rising EMAs, proximity to daily 50 EMA ± 3%, timing trigger)
-- **B-Xtrender visual confirmation:** Not available — browser-use profile Tim required; no BX bonus/deduction points applied to any ticker
-- **Earnings filter:** No upcoming earnings within 3 weeks for any recommended pick (next earnings: TRV Jul 16, XEL late July, CNP Jul 23)
+**Scan method:** yfinance replication of TrendSpider "Momentum after pullback" conditions  
+**Universe:** ~139-stock S&P 500 sample  
+**Tickers passing all 4 scan groups:** 11 (PNC, CVX, ETN, HLT, NSC, TRV, PLD, EQIX, MAR, GS, KLAC)
+
+**Earnings filter (≤ 21 days):** None triggered — all 11 tickers next report in July/August 2026.
+
+**Outcome tracking:** Only one prior row in `trades-log.csv` (2026-04-16 empty scan). No outcomes due.
 
 ---
 
 ## Today's Suggested Trades
 
-### 1. TRV — Travelers Companies (Score: 90/115)
+### 1. PNC Financial Services — 50-Day EMA Retest in Confirmed Uptrend
 
 ```
-Ticker: TRV
-Current Price: $305.90
-Sector: Financials — Property & Casualty Insurance
-Score: 90/115 (A:37 B:18 C:20 D:15 Ded:0)
+Ticker: PNC
+Current Price: $217.87
+Sector: Financial Services
+Score: 88/115 (A:40 B:18 C:20 D:15 Ded:-5)
 
 Setup Summary:
-TRV pulled back from its 52-week high of $310.90 to and through its 50-day EMA,
-then recovered above it this week with a clean RSI crossover above 50 (Trigger B)
-and an EMA-20 re-cross (Trigger A). The recovery follows an exceptional Q1 2026
-beat: EPS $7.71 vs est. $6.95 (+10.9% surprise), core income +283% YoY, and a
-14% quarterly dividend increase. The pattern is a textbook momentum-pullback
-re-entry: uptrend intact on daily and weekly, pullback orderly, now resuming.
+PNC is testing its 50-day EMA ($216.02) following a tidy consolidation — the
+classic momentum-pullback re-entry pattern. Volume has been essentially flat
+to declining on the pullback (vol ratio 0.99), showing no distribution. The
+stock is 10.1% below its 52-week high ($242.08), leaving substantial room to
+run. The Citigroup price-target raise to $255 (May 9) provides a near-term
+catalyst confirming institutional interest.
 
-Entry Zone: $298–$306 (near EMA50 $299.63; current price $305.90)
-Stop Loss: $284.00 — below EMA200 ($285.84) and recent consolidation low
-Target 1: $315.00 — decisively above 52-week high ($310.90)
-Target 2: $335.00 — measured move extension (prior leg ~$62 range from lows)
-Risk/Reward: 1.83:1 (using T2, entry $302 mid-range)
+Entry Zone: $215–$220
+Stop Loss: $209.50 — below recent swing low and 50d EMA band
+Target 1: $235 — prior resistance / next consolidation zone
+Target 2: $242 — 52-week high / analyst mean consensus ($243)
+Risk/Reward: 2.1:1 (to T1), 2.8:1 (to T2)
 
 Key Risks:
-- Near 52-week high; potential resistance at $310–$312 before T1 clears
-- Q2 2026 earnings: July 16, 2026 — WITHIN the 21–45 DTE options window;
-  avoid holding options through that date or exit before July 11
-- Insurance sector volatility from unexpected catastrophe events
+- Office real estate loan book: 30.1% "high criticism" — a credit risk if CRE
+  conditions deteriorate
+- Potential macro headwinds if rate expectations shift hawkishly
+- Next earnings: July 15, 2026 (55 days away — well clear of 3-week filter)
 
 Fundamental Note:
-Q1 2026 core income was $1.70B (+283% YoY) on lower catastrophe losses ($761M
-vs $2.27B prior year) and strong underwriting income — sixth consecutive quarter
-above $1.5B. Trailing 12-month core ROE of 22.7%. Board raised quarterly dividend
-14% to $1.25/share. Financials sector in uptrend.
+PNC reported strong Q1 2026 results (Apr 15): EPS $4.13 GAAP / $4.32 adjusted,
+NII up 6%, average loans +7% driven by FirstBank acquisition. Revenue growth
+13.8% YoY; earnings growth 17.7% YoY. Analyst consensus: Moderate Buy,
+mean PT $243; Citigroup PT $255.
 ```
 
-**Instrument: Paired Debit Spread — Jul 17, 2026 (~28 DTE)**
+**Instrument — Paired Debit Spread (Bullish)**
 
 ```
-Instrument: Paired Debit Spread (preferred)
+Instrument: Paired Debit Spread
 Bias: Bullish
-Expiry: July 17, 2026 (~28 DTE)
-NOTE: Exit or roll before Jul 11 to avoid Q2 earnings Jul 16
+Expiry: June 26, 2026 (~36 DTE)
 
 Primary Spread:
   Structure: Bull Call Spread
-  Size: 1x
-  Strikes: Buy $305C / Sell $320C  (15-point spread)
-  Net Debit: ~$7.88 per spread (~$788 per contract)
-  Max Profit: ~$7.12 per contract ($712)
-  Max Loss: ~$7.88 per contract ($788)
+  Size: 1 contract
+  Strikes: Long $215C / Short $225C
+  Net Debit: ~$5.10 per spread (~$510 total)
+  Max Profit: ~$4.90 per spread (~$490 total)
+  Max Loss: ~$510
 
 Opposite Hedge:
   Structure: Bear Put Spread
-  Size: 0.5x (half the primary)
-  Strikes: Buy $300P / Sell $280P  (20-point spread)
-  Net Debit: ~$4.80 per spread (~$480 per contract)
-  Max Profit: ~$15.20 per contract ($1,520 at 0.5x = $760 contribution)
-  Max Loss: ~$4.80 per contract ($240 at 0.5x)
+  Size: 2 contracts (half the dollar risk of primary)
+  Strikes: Long $210P / Short $205P
+  Net Debit: ~$1.23 per spread (~$246 total for 2)
+  Max Profit: ~$3.77 per spread (~$754 total for 2)
+  Max Loss: ~$246
 
-Combined Position (1x primary + 0.5x hedge):
-  Total Debit / Max Loss: ~$1,028 per unit
-  Expected Payout if thesis right (above $320): ~+$472 net (+46%)
-  Expected Payout on violent reversal (below $280): ~−$28 (near breakeven)
-  Main Risk: drift / chop / time decay without directional expansion
+Combined Position:
+  Total Debit / Max Loss: ~$756 (if both expire at-the-money / worthless)
+  Expected Payout if thesis is right (PNC > $225): ~$244 net (+$490 primary − $246 hedge)
+  Expected Payout on violent move against thesis (PNC < $205): ~$508 net (+$754 hedge − $510 primary loss × partial)
+  Main Risk: stock drifts sideways through June expiry — both spreads decay
 ```
 
 ---
 
-### 2. XEL — Xcel Energy (Score: 86/115)
+### 2. Eaton Corporation (ETN) — Oversold Test of 50-Day EMA in AI Infrastructure Leader
 
 ```
-Ticker: XEL
-Current Price: $80.22
-Sector: Utilities — Electric Utilities
-Score: 86/115 (A:33 B:18 C:20 D:15 Ded:0)
+Ticker: ETN
+Current Price: $383.37
+Sector: Industrials (Electrical Power Management)
+Score: 76/115 (A:40 B:10 C:16 D:15 Ded:-5)
 
 Setup Summary:
-XEL triggered all three scan timing triggers (EMA-20 cross, RSI>50, close above
-prior high) while sitting just +0.5% above its 50-day EMA ($79.78) after an
-orderly pullback from the $83 range. The stock received dual analyst upgrades in
-2026: UBS upgraded to Buy with $89 target (Feb) and Goldman Sachs to Buy (Apr).
-Data center demand is doubling XEL's contracted capacity target to 6 GW by 2027,
-driving 11% annual rate-base growth through 2030. The technical setup is clean
-with all trend conditions aligned; the pullback volume was slightly elevated
-vs. up-days (minor negative), but the breadth of triggers and catalyst quality
-outweigh this.
+ETN has pulled back 11.7% from its 52-week high ($434.23) and is currently
+trading -1.8% below its 50-day EMA ($390.55) with RSI at a oversold 35.4.
+Volume on the pullback has declined (vol ratio 0.88), suggesting orderly
+consolidation rather than distribution. With record Q1 2026 results just
+reported (17% revenue growth, guidance raised, data center orders +240%),
+the fundamental thesis remains intact. Trigger C fired: close above prior
+day's high after pullback.
 
-Entry Zone: $79.00–$81.00 (at/just above EMA50 $79.78)
-Stop Loss: $75.50 — below EMA200 ($76.54) and prior support zone
-Target 1: $83.30 — 52-week high breakout
-Target 2: $89.00 — UBS analyst price target / measured-move extension
-Risk/Reward: 2.25:1 (using T2, entry $80 vs stop $75.50)
+Entry Zone: $380–$392 (around 50d EMA; enter on recovery signal above $385)
+Stop Loss: $364 — below 200-day EMA ($363.83) and key structural support
+Target 1: $415 — prior swing high / resistance zone
+Target 2: $450 — analyst consensus mean price target
+Risk/Reward: 1.5:1 (to T1, entry $385), 2.8:1 (to T2)
 
 Key Risks:
-- Down-day volume exceeded up-day volume in recent 10-day window (minor flag)
-- Q2 2026 earnings: estimated late July / August (outside 45-DTE window)
-- Regulatory risk in Colorado rate proceedings for data center load tariffs
-- Options market is thin — put side especially illiquid
+- Elevated IV (39%) makes options spreads wider; verify spreads at entry
+- AI/data center spending could slow if macro conditions tighten
+- Next earnings: August 4, 2026 (75 days away — clear)
 
 Fundamental Note:
-Q1 2026 ongoing EPS $0.91 vs $0.84 (+8.3% YoY). 2026 full-year guidance
-reaffirmed at $4.04–$4.16. Google data center agreement signed in Upper Midwest
-Q1 2026. UBS and Goldman both upgraded on data center demand and rate-base
-growth. Utilities sector third-best S&P 500 performer Q1 2026 (+8.3%).
+Eaton reported record Q1 2026 (May 6): revenue $7.5B (+17% YoY), adjusted EPS
+$2.81 (beat), raised FY2026 organic growth guidance to 10% midpoint. Data
+center backlog 228 GW (12 years at 2025 build rates); Boyd Thermal acquisition
+adds liquid-cooling capability. Analyst mean target: $450, high target $514.
+Revenue growth 16.8% YoY; free cash flow +245% YoY.
 ```
 
-**Instrument: Stock Entry (primary recommendation) or Jun18 Bull Call Spread**
-
-_XEL put options are very illiquid (OI=1 at Jun18 nearest strike), preventing a clean paired debit spread. Stock entry recommended as primary; a single-leg bull call spread is viable as a defined-risk alternative._
+**Instrument — Paired Debit Spread (Bullish)**
 
 ```
-Instrument: Stock (primary) or Bull Call Spread (secondary)
+Instrument: Paired Debit Spread
 Bias: Bullish
-Entry: $79.00–$81.00
+Expiry: June 26, 2026 (~36 DTE)
 
-Option Alternative — Jun 18, 2026 (~29 DTE):
-  Structure: Bull Call Spread only (no viable put hedge due to illiquidity)
-  Strikes: Buy $80C / Sell $85C  (5-point spread)
-  Net Debit: ~$1.50 per spread (~$150 per contract)
-  Max Profit: ~$3.50 per contract ($350)  [2.3:1 reward]
-  Max Loss: ~$1.50 per contract ($150)
-  NOTE: Cannot build bear-put hedge leg — OI < 5 on all Jun18 put strikes near ATM
+Note: ETN IV is elevated (~38-39%). Spreads are wide — verify mid-prices
+before placing orders.
+
+Primary Spread:
+  Structure: Bull Call Spread
+  Size: 1 contract
+  Strikes: Long $385C (est.) / Short $400C
+  Net Debit: ~$6.00 per spread (~$600 total, indicative)
+  Max Profit: ~$9.00 per spread (~$900 total)
+  Max Loss: ~$600
+
+Opposite Hedge:
+  Structure: Bear Put Spread
+  Size: 1 contract (approx. half the dollar risk)
+  Strikes: Long $380P / Short $365P
+  Net Debit: ~$5.60 per spread (mid of $14.95 long − $9.20 short)
+  Max Profit: ~$9.40 per spread (~$940 total)
+  Max Loss: ~$560
+
+  [Note: $380P mid ≈ $14.95, $365P mid ≈ $9.70 — verify at execution]
+
+Combined Position:
+  Total Debit / Max Loss: ~$1,160 (both spreads expire worthless)
+  Expected Payout if thesis is right (ETN > $400): ~$340 net (+$900 primary − $560 hedge)
+  Expected Payout on violent move against (ETN < $365): ~$380 net (+$940 hedge − $600 primary)
+  Main Risk: drift / chop at $383–$400 through June — both spreads decay
 ```
 
 ---
 
-### 3. CNP — CenterPoint Energy (Score: 80/115)
+### 3. Hilton Worldwide (HLT) — Post-Earnings Pullback to 50-Day Support in Travel Uptrend
 
 ```
-Ticker: CNP
-Current Price: $42.54
-Sector: Utilities — Multi-Utilities
-Score: 80/115 (A:40 B:10 C:15 D:15 Ded:0)
+Ticker: HLT
+Current Price: $322.67
+Sector: Consumer Cyclical (Hotels & Lodging)
+Score: 72/115 (A:40 B:10 C:16 D:11 Ded:-5)
 
 Setup Summary:
-CNP is almost exactly at its 50-day EMA ($42.46, within 0.2%) after a healthy
-pullback from the $44 area. Down-day volume during the pullback was LOWER than
-up-day volume — the cleanest pullback volume profile of any candidate today.
-EMA triggers A (EMA-20 re-cross) and C (close above prior day high) both fired.
-The fundamental catalyst is significant: on April 23, 2026, CenterPoint announced
-12.2 GW of firmly committed industrial load at Houston Electric and 8 GW of data
-center load expected online by 2029 (3.5 GW already under construction), two full
-years ahead of prior forecasts. R:R is limited by the proximity of the 52-week
-high ($44.14), but a measured-move extension to $47+ is reasonable.
+Hilton pulled back after its April 28 Q1 2026 earnings release (stock fell
+1.2% to $328.55 despite a beat), and has since settled near its 50-day EMA
+($316.12). Volume has declined sharply (vol ratio 0.71) — a classic healthy
+pullback signature. Trigger A fired: close back above the 20-day EMA. The
+pipeline hit a record 527,000 rooms and full-year 2026 guidance was raised,
+supporting renewed upside momentum.
 
-Entry Zone: $41.50–$43.00 (at EMA50 $42.46)
-Stop Loss: $39.50 — below EMA200 ($40.07) and recent swing lows
-Target 1: $44.50 — above 52-week high ($44.14)
-Target 2: $47.00 — measured move extension (prior leg from $35 low)
-Risk/Reward: 1.5:1 (using T2, entry $42.50 vs stop $39.50)
+Entry Zone: $319–$325 (current 50d EMA zone; enter at or below current price)
+Stop Loss: $309.50 — below recent post-earnings swing low
+Target 1: $345 — 52-week high area ($344.75)
+Target 2: $360 — measured move / extension above 52wk high
+Risk/Reward: 1.7:1 (to T1), 2.9:1 (to T2)
 
 Key Risks:
-- R:R is marginal (1.5:1 to T2); requires conviction on utility uptrend extension
-- Q2 2026 earnings: July 23, 2026 — manage expiry accordingly
-- Q1 EPS slightly missed estimates ($0.56 vs $0.57–0.58 expected)
-- Utility sector rotation risk if rates rise unexpectedly
+- Near 52-week high: significant supply zone at $344–$345
+- Travel demand slowdown if consumer confidence weakens
+- Next earnings: July 29, 2026 (69 days away — clear)
 
 Fundamental Note:
-Q1 2026 non-GAAP EPS $0.56 (missed by $0.01), revenue $2.98B (beat est. $2.97B).
-Full-year 2026 guidance reiterated at $1.89–$1.91 (+8% YoY). Zacks #2 Buy rating.
-Major near-term catalyst: 12.2 GW committed industrial load at Houston Electric
-with 8 GW data center load energized by 2029 (3.5 GW already under construction).
-"One of the most tangible and executable growth plans in the industry" — CEO Wells.
+HLT Q1 2026 (Apr 28): adj. EPS $2.01 vs. $1.94 consensus (beat), revenue
++9% YoY, EBITDA +13%, guidance raised. RevPAR +3.6% currency-neutral,
+record development pipeline of 527K rooms. EPS growth 35% YoY, revenue
+growth 11% YoY.
 ```
 
-**Instrument: Paired Debit Spread — Jul 17, 2026 (~28 DTE)**
+**Instrument — Paired Debit Spread (Bullish)**
 
 ```
-Instrument: Paired Debit Spread (preferred)
+Instrument: Paired Debit Spread
 Bias: Bullish
-Expiry: July 17, 2026 (~28 DTE)
-NOTE: Exit before Jul 18 to avoid Q2 earnings Jul 23
+Expiry: June 26, 2026 (~36 DTE)
 
 Primary Spread:
   Structure: Bull Call Spread
-  Size: 1x
-  Strikes: Buy $42C / Sell $44C  (2-point spread)
-  Net Debit: ~$0.80 per spread (~$80 per contract)
-  Max Profit: ~$1.20 per contract ($120)
-  Max Loss: ~$0.80 per contract ($80)
+  Size: 1 contract
+  Strikes: Long $320C / Short $330C
+  Net Debit: ~$5.00 per spread (mid: $14.00 long − $8.85 short ≈ $5.15)
+  Max Profit: ~$4.85 per spread (~$485 total)
+  Max Loss: ~$515
 
 Opposite Hedge:
   Structure: Bear Put Spread
-  Size: 0.5x (half the primary)
-  Strikes: Buy $42P / Sell $40P  (2-point spread)
-  Net Debit: ~$0.68 per spread (~$68 per contract; ~$34 at 0.5x)
-  Max Profit: ~$1.32 per contract ($132; ~$66 at 0.5x)
-  Max Loss: ~$0.68 per contract ($34 at 0.5x)
+  Size: 1 contract
+  Strikes: Long $315P (est. ~$10.50) / Short $305P (est. ~$6.50)
+  Net Debit: ~$4.00 per spread (~$400 total, indicative)
+  Max Profit: ~$6.00 per spread (~$600 total)
+  Max Loss: ~$400
 
-Combined Position (1x primary + 0.5x hedge):
-  Total Debit / Max Loss: ~$114 per unit
-  Expected Payout if thesis right (above $44): ~+$86 net (+75%)
-  Expected Payout on violent reversal (below $40): ~−$14 (near breakeven)
-  Main Risk: drift / compression / stock staying pinned between $40–$44
+  [Note: $315P and $305P not in today's chain snapshot — verify bid-ask at entry]
+
+Combined Position:
+  Total Debit / Max Loss: ~$915 (both spreads expire worthless)
+  Expected Payout if thesis is right (HLT > $330): ~$85 net (+$485 primary − $400 hedge)
+  Expected Payout on violent move against (HLT < $305): ~$85 net (+$600 hedge − $515 primary)
+  Main Risk: drift / pinning at $320–$330 through June — decay with no payout
 ```
 
 ---
 
 ## Watchlist
-_Names with constructive scan/research but no immediate entry this run._
+_Names with constructive scan/research but no immediate entry (timing / extension)._
 
-| Ticker | Score | Why watching | Trigger to revisit |
-|--------|-------|--------------|-------------------|
-| NI | 82/115 | NiSource: strong fundamentals (9–10% EPS CAGR, Alphabet energy contract, raised guidance), near EMA50 at $46.82, healthy pullback volume. RSI>50 and EMA-20 cross both triggered. Narrowly edged out of top 3 due to Q1 revenue miss and limited option strikes ($45/$50 only). | Pullback to $46.00–$46.50 for improved R:R; or use stock entry if options illiquidity is a concern; earnings Aug 4, 2026 |
+| Ticker | Score | Why Watching | Trigger to Revisit |
+|--------|-------|--------------|--------------------|
+| PLD | 74/115 | Industrial REIT near 52-wk high ($145 vs $145.44 52wk H). Strong data center expansion (5.6 GW pipeline), Q1 beat. BUT: current price is at resistance, not yet a clean pullback entry. | Confirmed breakout above $145.50 on volume, or next pullback to $138–140 (50d EMA retest) |
+| TRV | 54/115 | Travelers had extraordinary Q1 (EPS growth 357% YoY vs low prior-year base). Financial Services uptrend. BUT: price at $307 vs 52wk high $312 — only $5 of near-term upside, R:R < 1.5:1 to any meaningful target. | Pull back to $292–$296 (50d EMA $299 zone after a deeper correction) to reset R:R above 2:1 |
 
 ---
 
@@ -235,7 +250,7 @@ _User-confirmed trades from the last 14 days, outcome not yet recorded._
 |------|--------|------------|------|----------|----------|-----|
 | — | — | — | — | — | — | — |
 
-_No open trades. Previous scan (2026-04-16) returned no tickers._
+_No open trades (all prior runs were scheduled/unattended; no trades confirmed)._
 
 ---
 
@@ -245,6 +260,8 @@ _All closed trades (outcome recorded)._
 | Date | Ticker | Entry Price | Outcome Price | % Change | Result |
 |------|--------|-------------|---------------|----------|--------|
 | — | — | — | — | — | — |
+
+_No closed trades yet. Only prior logged row is the 2026-04-16 empty scan._
 
 ### Aggregate Stats
 - **Total closed trades:** 0
@@ -257,9 +274,13 @@ _All closed trades (outcome recorded)._
 
 ---
 
-## Run Notes
+## Discarded Tickers (Below 55-point Threshold)
 
-- **Scan method:** yfinance (browser-use with Chrome profile Tim unavailable in cloud/cron environment). TrendSpider live UI scanner was not accessible. The yfinance scan applied all Group 1–4 conditions from `config.md` programmatically across ~260 S&P 500 representative tickers.
-- **TradingView / B-Xtrender:** Not accessible (requires browser-use + profile Tim). BX bonus/deduction points (±8–15 pts) were not applied to any ticker. Scores may shift materially once visual confirmation is run manually.
-- **Scheduled run:** No trade rows appended per Step 6 protocol. Suggested trades require manual confirmation before logging.
-- **Outcomes tracked:** 0 (no prior trades due; April 16 entry was an empty-scan row, not a ticker trade)
+| Ticker | Score | Reason |
+|--------|-------|--------|
+| CVX | ~36 | Energy sector earnings down 44.5% YoY; volume not declining on pullback; poor R:R to T1 |
+| NSC | ~30 | Only 3% below 52-week high → tiny upside; revenue growth 0.2%; earnings down 26.6% |
+| MAR | ~50 | $370 current vs $380 52wk high — only $10 upside; earnings growth barely positive |
+| GS | ~40 | 7.8% above 50d EMA (too extended); trading within $15 of 52wk high $999; R:R < 0.5:1 to T1 |
+| KLAC | ~25 | 8.4% above 50d EMA; $1,846 vs 52wk high $1,937 → $91 upside vs $143 risk; R:R 0.64:1 |
+| TRV | 54 | Just below threshold; near 52wk high limits immediate R:R; added to watchlist |
