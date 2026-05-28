@@ -1,231 +1,270 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-05-26_
+_Last updated: 2026-05-28_
+
+---
+
+## Scan Metadata
+
+| Field | Value |
+|---|---|
+| Scanner | `Momentum after pullback` (yfinance fallback — TrendSpider browser-use unavailable) |
+| Scan timestamp | 2026-05-28 19:00 UTC |
+| Tickers found | 4 — GD, BA, VLO, PSX |
+| Tickers researched | All 4 |
+| B-Xtrender visual confirmation | ⚠️ **Not performed** — `browser-use` not available in environment. All B-Xtrender scoring items are 0 (maximum 15 additional points unverifiable). Verify in TradingView before execution. |
 
 ---
 
 ## Market Context
 
-The S&P 500 (SPY) closed at $749.35 on May 26, hitting a new 52-week high and extending its longest winning streak since December 2023 (eight consecutive weekly gains). Price sits 11.3% above its 200-day EMA ($673.50) and well above the 50-day EMA ($711.50) — the primary trend is unambiguously bullish. VIX is at 17.1, below the 20 danger threshold, indicating low fear. However, market breadth is narrow — only ~55% of S&P 500 stocks trade above their 200-day MAs, and the rally is heavily concentrated in AI/mega-cap tech. The key macro risk is shifting Fed policy: rate-hike probability for year-end has climbed to ~82%, with the Fed on hold at 3.50–3.75%. For the momentum-pullback strategy, the higher-for-longer rate environment is actually a direct tailwind for the Financial sector stocks that dominate today's scan. The regime is confirmed uptrend; standard filters apply.
+The S&P 500 (SPY) closed at **$754.35**, sitting **+11.5% above its 200-day EMA** ($676.59) — a firmly established bull market. The 50-day EMA ($714.69) is trending well above the 200-day. VIX printed **15.68**, comfortably below 20, indicating a low-fear risk environment. The index gained +1.57% over the past week. **Regime: BULLISH.** Favorable conditions for long momentum setups; no regime penalty applied to any pick.
 
-> **Scanner note:** `browser-use` is unavailable in this environment. The TrendSpider scanner was replaced with a yfinance-based implementation of the same scan conditions (5-year daily data; Groups 1–4 replicated in Python). TradingView visual confirmation (B-Xtrender / BX indicators) could not be performed; BX-dependent scoring components (15 pts in Category A + BX deduction flags) are marked UNVERIFIED and excluded from scores. Reported scores are conservative floor estimates.
+A notable macro driver this cycle is the Iran crisis, which has elevated oil prices and refining margins significantly — acting as a tailwind for energy sector names VLO and PSX.
 
 ---
 
 ## Today's Suggested Trades
 
-### 1. TFC — Truist Financial Corporation
-**Score: 100/115** _(A:40 B:25 C:20 D:15 Ded:0 — BX unverified, conservatively excluded)_
+### 1. PSX — Phillips 66 (Downstream Energy)
 
 ```
-Ticker: TFC
-Current Price: $48.44
-Sector: Financial Services — Banks (Regional)
+Ticker: PSX
+Current Price: $176.90
+Sector: Energy — Oil & Gas Refining & Marketing
 Score: 100/115 (A:40 B:25 C:20 D:15 Ded:0)
+  Note: B-Xtrender unverified; 0/15 BX pts included; potential max 115/115 if BX confirms green.
 
 Setup Summary:
-TFC pulled back sharply from its early-May high of $50.48 to a low of $46.24 on
-May 15, forming a clean 8.4% correction to test the EMA50 zone ($48.32). The
-recovery since May 20 has been orderly — higher lows each session — with price
-crossing back above EMA20, RSI recovering above 50, and today's close ($48.44)
-clearing the prior day high. Volume has declined throughout the pullback (0.85×
-20-day average), consistent with a healthy consolidation rather than distribution.
-The stop is tight at $47.00, offering an excellent R:R.
+PSX pulled back to test its 50-day EMA (~$169) in a clean uptrend (daily and weekly both
+bullish with golden-cross structure). The RSI reset below 50 and has now crossed back above
+(trigger B), a classic momentum re-entry signal. Volume is sharply below average (-56%
+over last 5 days vs prior 15), confirming orderly consolidation rather than distribution.
+A fresh Mizuho upgrade to Outperform with a $212 target (May 27) and multiple other
+upgrades throughout May provide a strong fundamental catalyst aligned with the technical
+entry timing.
 
-Entry Zone: $47.80–$48.80
-Stop Loss: $47.00 — below the May 20–22 consolidation base and near EMA200 ($46.51)
-Target 1: $52.00 — prior May resistance zone; R:R 2.5:1
-Target 2: $55.50 — 52-week high area ($56.20); R:R 4.9:1
-Risk/Reward: 4.9:1 (to T2)
-
-Instrument — Paired Debit Spread (Preferred):
-  Bias: Bullish
-  Expiry: June 18 2026 (~23 DTE) — use June 18 for liquid options; OR stock for
-  position traders willing to hold longer
-
-  Primary Spread:
-    Structure: Bull Call Spread
-    Size: 1×
-    Strikes: Long $48 / Short $52
-    Net Debit: ~$1.80 per spread (~$180/contract)
-    Max Profit: ~$220/contract
-    Max Loss: ~$180/contract
-
-  Opposite Hedge:
-    Structure: Bear Put Spread
-    Size: 0.5×
-    Strikes: Long $48 / Short $45
-    Net Debit: ~$0.58 per spread (~$29 for 0.5 contract)
-    Max Profit: ~$121 (0.5×)
-    Max Loss: ~$29 (0.5×)
-
-  Combined Position:
-    Total Debit / Max Loss: ~$209
-    Expected Payout if thesis right (TFC > $52): ~+$191
-    Expected Payout on violent move against thesis (TFC < $45): ~–$59
-    Main Risk: Time decay / chop between $48–$52 in 23 days
+Entry Zone: $174–$178 (near 20-day EMA consolidation, confirmed RSI > 50 crossover)
+Stop Loss: $167.50 — below 50-day EMA ($169.46); breach here invalidates the setup
+Target 1: $189.25 — 52-week high / prior resistance
+Target 2: $212.00 — Mizuho upgrade price target (May 27)
+Risk/Reward: 1.6:1 to T1 | 4.4:1 to T2 (position trade target)
 
 Key Risks:
-- Full-year NII guidance trimmed to 2–3% growth (vs prior 3–4%); rate cuts delayed further
-- Regional banks more credit-sensitive than money-center banks; any NII miss would hurt
-- 23-DTE expiry demands a prompt move; stock alternative gives more time
+- Earnings: July 24, 2026 (~57 days out — safely outside 3-week hard filter)
+- Oil price reversal / Iran conflict resolution could compress refining margins
+- Revenue growth uncertain (Q1 2026 slightly below analyst forecast; EPS massively beat)
+- Low options open interest on near-term expiries; use July 17 for better liquidity
 
 Fundamental Note:
-Q1 2026 net income $1.4B (+25% YoY), EPS $1.09 beating estimates, operating leverage
-+250 bps. Management raised 2026 share buyback target to $5B ($1.2B in Q2 alone). ROTCE
-trajectory targeting 14% in 2026 → 16–18% over 3–5 years. Analyst consensus: Moderate Buy,
-avg. price target $55.59.
+Q1 2026 EPS of $0.49 crushed the consensus estimate of -$0.58 — an exceptional beat.
+Company raised dividend for 14 consecutive years (3.08% yield). Mizuho (May 27),
+Jefferies (May 26), Goldman Sachs (May 19), BMO (May 13), and Argus (May 14) all raised
+price targets in May, with Mizuho also upgrading to Outperform. Multiple upgrades in a
+single month is a very strong signal.
+```
+
+**Instrument: Paired Debit Spread (Preferred)**
+
+- IV ~38–40% (moderate) → debit spreads are cost-effective
+- High conviction (score 100) + RSI trigger + fresh analyst upgrade
+- Bullish bias with upside to $212; paired hedge protects against pullback to 52W low
+
+```
+Instrument: Paired Debit Spread
+Bias: Bullish
+Expiry: July 17, 2026 (~50 DTE)
+
+Primary Spread (Bull Call Spread):
+  Size: 2 contracts
+  Strikes: Long 175 call / Short 185 call
+  Net Debit: ~$4.50/share (~$450/contract)
+  Max Profit: ~$5.50/share (~$550/contract)
+  Max Loss: ~$4.50/share (~$450/contract)
+  Breakeven: ~$179.50
+
+Opposite Hedge (Bear Put Spread):
+  Size: 1 contract (half-size)
+  Strikes: Long 175 put / Short 160 put
+  Net Debit: ~$4.78/share (~$478/contract)
+  Max Profit: ~$10.22/share (~$1,022/contract)  [~2.1× its own risk ✓]
+  Max Loss: ~$4.78/share (~$478/contract)
+
+Combined Position:
+  Total Debit / Max Loss: ~$1,378
+  Payout if bullish thesis right (PSX > $185): ~+$622 net (~+45%)
+  Payout on violent move down (PSX < $160): ~+$122 net (roughly breakeven)
+  Main Risk: PSX stays in $160–$185 range at expiry; both spreads decay
+  ⚠️ Liquidity note: PSX options have low OI on most strikes. Confirm fills are
+     achievable before legging in; consider using a limit order at the mid.
 ```
 
 ---
 
-### 2. JPM — JPMorgan Chase & Co.
-**Score: 95/115** _(A:40 B:25 C:20 D:15 Ded:−5 — insider selling reported)_
+### 2. VLO — Valero Energy (Refining)
 
 ```
-Ticker: JPM
-Current Price: $305.62
-Sector: Financial Services — Banks (Diversified)
+Ticker: VLO
+Current Price: $244.10
+Sector: Energy — Oil & Gas Refining & Marketing
 Score: 95/115 (A:40 B:25 C:20 D:15 Ded:-5)
+  Deduction: -5 insider selling ($3.9M in last 3 months)
 
 Setup Summary:
-JPM pulled back from a May 6 intraday high of $316.26 to a low of $293.67 on
-May 20 — a clean 7.2% correction that tested the EMA50/200 confluence zone
-($296–$304). Price has recovered sharply over four sessions, reclaiming both
-EMA20 and EMA50, with RSI rising from below 50 back to 52. Volume on the
-pullback was 10% below its 20-day average — a health sign. All three scan
-triggers fired (EMA20 recross, RSI above 50, close > prior day high). Stop is
-placed at the EMA200 ($296), below which trend structure is invalidated.
+VLO is in a powerful 52-week uptrend (+80.9% YTD vs S&P +8.1%), having recently pulled
+back to its 50-day EMA (~$237.67) before snapping back with trigger C (close above prior
+day's high). Volume is dramatically below average on the consolidation (-52%), confirming
+healthy absorption with no distribution. The Iran crisis has materially improved US
+refining margins — analysts across the board have lifted price targets, with Mizuho raising
+to $289 (May 27) and JPMorgan maintaining Buy with $299 target. VLO's Q1 2026 EPS of
+$4.22 smashed the $3.07 consensus by 37%.
 
-Entry Zone: $303–$308
-Stop Loss: $296.00 — EMA200 level; trend invalidation
-Target 1: $320 — first resistance zone; R:R 1.5:1
-Target 2: $337 — 52-week high retest (analyst consensus ~$338–$342); R:R 3.3:1
-Risk/Reward: 3.3:1 (to T2)
-
-Instrument — Paired Debit Spread (Preferred):
-  Bias: Bullish
-  Expiry: June 26 2026 (~31 DTE)
-
-  Primary Spread:
-    Structure: Bull Call Spread
-    Size: 1×
-    Strikes: Long $305 / Short $315
-    Net Debit: ~$4.80 per spread (~$480/contract)
-    Max Profit: ~$520/contract
-    Max Loss: ~$480/contract
-
-  Opposite Hedge:
-    Structure: Bear Put Spread
-    Size: 0.5×
-    Strikes: Long $305 / Short $295
-    Net Debit: ~$3.60 per spread (~$180 for 0.5 contract)
-    Max Profit: ~$320 (0.5×)
-    Max Loss: ~$180 (0.5×)
-
-  Combined Position:
-    Total Debit / Max Loss: ~$660
-    Expected Payout if thesis right (JPM > $315): ~+$340
-    Expected Payout on violent move against thesis (JPM < $295): ~–$160
-    Main Risk: Drift / chop without follow-through above $315 in 31 days
+Entry Zone: $240–$248 (around recent 50 EMA test zone)
+Stop Loss: $230.00 — below 50-day EMA ($237.67); a close below this level invalidates
+Target 1: $262.50 — 52-week high / all-time high area
+Target 2: $289.00 — Mizuho price target (May 27); Raymond James $290 target
+Risk/Reward: 1.3:1 to T1 | 3.2:1 to T2 (position trade target)
 
 Key Risks:
-- Insiders recently reduced positions — worth monitoring for magnitude
-- FY26 NII guidance trimmed to $103B from $104.5B; higher rate hike odds complicate NII outlook
-- Heavy-volume reversal in tech/AI could cause rapid rotation away from financials
+- Earnings: July 23, 2026 (~56 days out — safely outside 3-week hard filter)
+- Insider selling noted ($3.9M over 3 months) — minor concern; deducted -5 pts
+- Approaching 52-week high: breakout to new all-time highs required for full thesis
+- Iran crisis de-escalation could reduce refining margin tailwind
+- Sector concentration risk if combined with PSX (both oil & gas refining)
 
 Fundamental Note:
-Q1 2026 EPS $5.94 (+8% vs consensus $5.50), revenue $50.54B (+10% YoY), net income $16.49B
-(+13% YoY). ROE 17.5%. Evercore raised PT to $340 (Outperform, Apr 17); Phillip Securities
-upgraded to Accumulate, PT $335 (Apr 28). Consensus: Moderate Buy, avg. PT $338–$342.
+VLO posted Q1 2026 EPS of $4.22 vs $3.07 consensus (37% beat). Full-year EPS expected
+to grow 164% YoY to $28.02. Revenue up 7% YoY to $32.4B. 11 Buy / 2 Strong Buy / 7 Hold
+from 20 analysts; consensus target $258.33. The Iran crisis driving global refining
+cracks higher is a direct margin tailwind for US refiners.
+```
+
+**Instrument: Paired Debit Spread (Preferred)**
+
+- IV ~42% (moderate-elevated from energy volatility) → still favor debit spreads
+- High conviction + sector tailwind; paired hedge appropriate given Iran geopolitical risk
+
+```
+Instrument: Paired Debit Spread
+Bias: Bullish
+Expiry: July 17, 2026 (~50 DTE)
+
+Primary Spread (Bull Call Spread):
+  Size: 2 contracts
+  Strikes: Long 240 call / Short 260 call
+  Net Debit: ~$8.45/share (~$845/contract)
+  Max Profit: ~$11.55/share (~$1,155/contract)
+  Max Loss: ~$8.45/share (~$845/contract)
+  Breakeven: ~$248.45
+
+Opposite Hedge (Bear Put Spread):
+  Size: 1 contract (half-size)
+  Strikes: Long 230 put / Short 210 put
+  Net Debit: ~$5.12/share (~$512/contract)
+  Max Profit: ~$14.88/share (~$1,488/contract)  [~2.9× its own risk ✓]
+  Max Loss: ~$5.12/share (~$512/contract)
+
+Combined Position:
+  Total Debit / Max Loss: ~$2,202
+  Payout if bullish thesis right (VLO > $260): ~+$1,798 net (~+82%)
+  Payout on violent move down (VLO < $210): ~-$202 net (roughly breakeven)
+  Main Risk: VLO stays in $210–$240 range at expiry; both spreads decay
 ```
 
 ---
 
-### 3. BLK — BlackRock, Inc.
-**Score: 86/115** _(A:33 B:18 C:20 D:15 Ded:0 — volume not declining on pullback)_
+### 3. BA — Boeing (Aerospace & Defense)
 
 ```
-Ticker: BLK
-Current Price: $1,077.34
-Sector: Financial Services — Asset Management
-Score: 86/115 (A:33 B:18 C:20 D:15 Ded:0)
+Ticker: BA
+Current Price: $228.69
+Sector: Industrials — Aerospace & Defense
+Score: 95/115 (A:40 B:25 C:15 D:15 Ded:0)
+  Cat C reduced: EPS still negative (no EPS growth pts); all other checks met
 
 Setup Summary:
-BLK broke sharply from $1,104 (May 14) to $1,030 (May 19–20) — a 6.7%
-correction — before recovering above the EMA50 ($1,048) over the last four
-sessions. The pullback was accompanied by slightly elevated volume (1.14×
-20-day average), which is a mild concern (volume should ideally decline on
-pullback). However, the recovery is also on decent volume, and all three
-triggers fired on the bounce. BLK remains in a strong uptrend with the EMA50
-well above EMA200 on weekly and daily timeframes. The AI / Aladdin platform
-story and $28B pivot to private markets provide a durable fundamental
-backdrop. Stop is placed below the swing low.
+Boeing is in a recovery uptrend — the stock has rebuilt from $176.77 (52W low) to $228.69,
+with the daily and weekly EMAs in bullish alignment. The recent pullback to the 50-day EMA
+zone (~$223) was orderly (volume -31% below average) and the stock has snapped back through
+the 20-day EMA with trigger C (close above prior day's high). Citi raised its price target to
+$260 (May 18) calling the aerospace selloff a "gift," and JPMorgan raised to $270 (Overweight).
+The 737 MAX 7/10 certification is approaching its final stages per CEO Kelly Ortberg (May 2026
+conference), and the backlog hit a record $695B in Q1 2026. This is a recovery story with
+improving operational metrics and a specific near-term catalyst.
 
-Entry Zone: $1,065–$1,085
-Stop Loss: $1,025 — below May 19–20 swing low ($1,030)
-Target 1: $1,150 — first resistance zone (~7% above entry); R:R ~1.4:1
-Target 2: $1,207 — 52-week high retest; R:R 2.5:1
-Risk/Reward: 2.5:1 (to T2)
-
-Instrument — Paired Debit Spread (Preferred):
-  Bias: Bullish
-  Expiry: June 26 2026 (~31 DTE)
-
-  Primary Spread:
-    Structure: Bull Call Spread
-    Size: 1×
-    Strikes: Long $1,070 / Short $1,110
-    Net Debit: ~$18.05 per spread (~$1,805/contract)
-    Max Profit: ~$2,195/contract
-    Max Loss: ~$1,805/contract
-
-  Opposite Hedge:
-    Structure: Bear Put Spread
-    Size: 0.5×
-    Strikes: Long $1,050 / Short $1,030
-    Net Debit: ~$6.15 per spread (~$308 for 0.5 contract)
-    Max Profit: ~$693 (0.5×)
-    Max Loss: ~$308 (0.5×)
-
-  Combined Position:
-    Total Debit / Max Loss: ~$2,113
-    Expected Payout if thesis right (BLK > $1,110): ~+$1,887
-    Expected Payout on violent move against thesis (BLK < $1,030): ~–$1,112
-    Main Risk: Drift / time decay without sustained follow-through above $1,110
+Entry Zone: $224–$232 (above 50-day EMA $223.38, confirmed volume contraction on pullback)
+Stop Loss: $218.00 — below 50-day EMA ($223.38); a sustained close below here breaks setup
+Target 1: $244.00 — recent 60-day high resistance zone
+Target 2: $260.00 — Citi price target; consensus analyst target $259.80
+Risk/Reward: 1.5:1 to T1 | 2.9:1 to T2 (position trade target, using $229 entry)
 
 Key Risks:
-- Volume was not declining on the pullback (1.14× avg) — slightly less clean setup
-- High absolute cost per contract (~$2,100 total debit) — size accordingly
-- BLK has underperformed the S&P 500 YTD (+10.6% vs S&P +26%); catch-up trade is the thesis
+- Earnings: July 28, 2026 (~61 days out — safely outside 3-week hard filter)
+- Still reporting adjusted losses; execution risk on 737/787 ramp-up
+- Recovery thesis depends on certification timeline; delays would disappoint
+- Forward P/E 54.7, trailing P/E 90.4 — premium valuation requiring ongoing improvement
+- Broad market selloff could interrupt the recovery narrative
 
 Fundamental Note:
-Q1 2026 revenue $6.7B (beat), EPS $12.53 (beat). AUM at record highs. $28B in GIP/HPS/Preqin
-acquisitions pivoting the firm to high-margin private markets (10–20× fee revenue vs index ETFs).
-UBS raised PT to $1,270 (Buy, Apr 15). Consensus: Moderate-to-Strong Buy, avg. PT $1,262–$1,269.
+Q1 2026: Revenue $22.22B (+14% YoY), 143 deliveries with a 70% beat vs consensus.
+Record backlog $695B; consolidated debt reduced to $47.2B from $54.1B. The 737 program
+runs at 42/month, 787 stabilizing at 8/month. EPS remains negative but trajectory is
+improving. 15 Buy + 2 Strong Buy, 5 Hold, 2 Sell from 23 analysts; consensus PT $259.80.
+Wells Fargo initiated Overweight ($250) in April; multiple firms raised targets in May.
+```
+
+**Instrument: Paired Debit Spread (Preferred)**
+
+- IV ~35–36% (moderate-low, highly liquid options) → ideal for debit spreads
+- BA has the most liquid options of the three; excellent for paired structure execution
+- Recovery thesis = directional move; paired hedge protects against execution disappointment
+
+```
+Instrument: Paired Debit Spread
+Bias: Bullish
+Expiry: July 17, 2026 (~50 DTE)
+
+Primary Spread (Bull Call Spread):
+  Size: 1 contract
+  Strikes: Long 230 call / Short 250 call
+  Net Debit: ~$6.83/share (~$683/contract)
+  Max Profit: ~$13.17/share (~$1,317/contract)
+  Max Loss: ~$6.83/share (~$683/contract)
+  Breakeven: ~$236.83
+
+Opposite Hedge (Bear Put Spread):
+  Size: 1 contract (note: sized 0.73R due to chain structure; monitor combined risk)
+  Strikes: Long 220 put / Short 200 put
+  Net Debit: ~$5.00/share (~$500/contract)
+  Max Profit: ~$15.00/share (~$1,500/contract)  [3.0× its own risk ✓]
+  Max Loss: ~$5.00/share (~$500/contract)
+
+Combined Position:
+  Total Debit / Max Loss: ~$1,183
+  Payout if bullish thesis right (BA > $250): ~+$817 net (~+69%)
+  Payout on violent move down (BA < $200): ~+$817 net (~+69%, symmetric!)
+  Main Risk: BA stays in $200–$230 range at expiry; both spreads decay
+  ✅ Best liquidity of the three: OI 4,375 at 230 call, 3,211 at 250 call, 1,596 at 200 put
 ```
 
 ---
 
 ## Watchlist
-_Passed scan and some research criteria but no immediate entry recommended._
+_Names with constructive scan/research but no immediate entry (timing / extension)._
 
-| Ticker | Why Watching | Trigger to Revisit |
+| Ticker | Why watching | Trigger to revisit |
 |--------|--------------|-------------------|
-| BAC | Same financial sector tailwind as JPM; 1.18% from EMA50, all triggers firing. R:R to near-term targets is limited ($57 52-wk high from $52.03 entry = 1.6:1 with stop at $49). Volume flat (1.01×). | Wait for consolidation above $52.50 or pullback to $50.50–$51.00 for better entry and R:R ≥ 2:1 |
-| ETN | Strong industrials uptrend; all scan conditions pass. Currently 3.36% above EMA50 — slightly extended. R:R to T1 too compressed at current price. | Watch for a 2–3% pullback toward EMA50 ($391); re-run scoring if RSI tests 50 again |
-| PNC | Regional bank in confirmed uptrend (EMA50 at $216, 1.94% below current $220.54). Volume declining. R:R to 52-wk high ($243) = 1.1:1 from current entry — too thin. | Entry improves if PNC pulls back to $215–$217 zone; target remains $242–$243 |
-| GD | Defense/aerospace sector; 0.87% from EMA50, very tight setup. R:R to 52-wk high ($370) = 1.3:1 with stop at $326 — marginal. | Watch for earnings catch-up trade post Q2 results (next earnings ~July 2026); or entry below $341 to widen R:R |
+| GD | Score 83/115 (A:39 B:18 C:20 D:11 Ded:-5). Setup is technically valid — weekly golden cross, 50 EMA rising, orderly pullback. Earnings beat Q1 2026 ($4.10 vs $3.67) with $131B backlog. However: Citigroup lowered PT to $364 (Neutral), Deutsche Bank downgraded to Hold — mixed analyst signals. **Significant insider selling: ~$43M over last 3 months.** Morgan Stanley raised PT to $435 (April 30, Overweight). | Wait for insider selling to subside and/or price to retrace closer to the 50 EMA ($341.95) for a better R:R entry. Monitor analyst actions — a re-rating toward Buy from a major firm would improve conviction. |
 
 ---
 
 ## Open Trades
-_User-confirmed trades from the last 14 days (outcome not yet recorded)._
+_User-confirmed trades from the last 14 days, outcome not yet recorded._
 
 | Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
 |------|--------|------------|------|----------|----------|-----|
 | — | — | — | — | — | — | — |
 
-_No open trades — previous run (2026-04-16) returned empty scan._
+_No confirmed trades on file. Previous run (2026-04-16) was an empty scan; this is a scheduled/unattended run — no trade rows appended per Step 6 (unattended mode)._
 
 ---
 
@@ -247,17 +286,23 @@ _All closed trades (outcome recorded)._
 
 ---
 
-## Scan Details
-_Scan run: 2026-05-26 19:06 UTC | Scanner: Momentum after pullback (yfinance implementation) | Universe: S&P 500 (150-ticker fallback subset; Wikipedia scrape unavailable)_
+## Scoring Detail
 
-**All 21 tickers passing scan conditions:**
-JPM, BAC, LIN, BLK, GS, PLD, ADI, C, UNP, KLAC, NSC, GD, ETN, USB, PNC, FDX, TFC, CARR, ODFL, HLT, AEP
+| Ticker | Cat A | Cat B | Cat C | Cat D | Deductions | **Total** |
+|--------|-------|-------|-------|-------|------------|-----------|
+| PSX    | 40    | 25    | 20    | 15    | 0          | **100/115** |
+| VLO    | 40    | 25    | 20    | 15    | -5         | **95/115**  |
+| BA     | 40    | 25    | 15    | 15    | 0          | **95/115**  |
+| GD     | 39    | 18    | 20    | 11    | -5         | **83/115**  |
 
-**Tickers eliminated during scoring (below 55-point threshold or structural issues):**
-- LIN, GS, PLD, ADI, C, UNP, KLAC, NSC, FDX, CARR, ODFL, HLT, AEP, USB — disqualified primarily on R:R grounds (extended above EMA50, limited upside to near-term resistance, or negative EPS growth)
-- BAC, ETN, PNC, GD — marginal R:R; added to watchlist
+_Cat B uses T2 (position trade target) for R:R scoring, consistent with the strategy's weeks-to-months holding period._
+_All B-Xtrender items (max 15 pts in Cat A) are 0 — unverifiable without browser-use/TradingView. Actual scores may be higher if visual check confirms green signals._
 
-**Selected (top 3 by score):**
-1. TFC: 100/115
-2. JPM: 95/115
-3. BLK: 86/115
+---
+
+## Notes — Scheduled Run Limitations
+
+1. **TrendSpider browser-use unavailable**: Scan was executed using a yfinance-based equivalent applying the same 4-group condition logic from `config.md`. All 4 tickers pass the same pre-filters as the TrendSpider scanner.
+2. **B-Xtrender not verified**: Requires `browser-use --profile "Tim" --headed` to open TradingView chart `z25AhAlV`. Scores could be higher by up to 15 pts per ticker. **Verify before execution.**
+3. **No trade rows appended**: Scheduled/unattended run — per AGENT.md Step 6, rows are only added when a user confirms trades were opened.
+4. **Sector concentration**: PSX and VLO are both in "Oil & Gas Refining & Marketing." Combined allocation would concentrate in a single sub-industry. Consider sizing accordingly or choosing one of the two.
