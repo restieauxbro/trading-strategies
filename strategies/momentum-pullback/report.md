@@ -1,240 +1,307 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-05-26_
+_Last updated: 2026-06-01_
 
 ---
 
 ## Market Context
 
-The S&P 500 (SPY) closed at $749.35 on May 26, hitting a new 52-week high and extending its longest winning streak since December 2023 (eight consecutive weekly gains). Price sits 11.3% above its 200-day EMA ($673.50) and well above the 50-day EMA ($711.50) — the primary trend is unambiguously bullish. VIX is at 17.1, below the 20 danger threshold, indicating low fear. However, market breadth is narrow — only ~55% of S&P 500 stocks trade above their 200-day MAs, and the rally is heavily concentrated in AI/mega-cap tech. The key macro risk is shifting Fed policy: rate-hike probability for year-end has climbed to ~82%, with the Fed on hold at 3.50–3.75%. For the momentum-pullback strategy, the higher-for-longer rate environment is actually a direct tailwind for the Financial sector stocks that dominate today's scan. The regime is confirmed uptrend; standard filters apply.
+The S&P 500 (SPY) closed at **$759.59**, comfortably above its 200-day MA of $681.17 and its 50-day MA of $703.65 — a strong bullish structure. The index is near its 52-week high of $758.08, up approximately +27.6% over the past year. VIX is at **15.74**, below the caution threshold of 25, indicating low fear and a calm options market. The environment is firmly in **bull market / uptrend** territory. No downtrend filter applies. Conditions are favorable for long-bias pullback re-entries.
 
-> **Scanner note:** `browser-use` is unavailable in this environment. The TrendSpider scanner was replaced with a yfinance-based implementation of the same scan conditions (5-year daily data; Groups 1–4 replicated in Python). TradingView visual confirmation (B-Xtrender / BX indicators) could not be performed; BX-dependent scoring components (15 pts in Category A + BX deduction flags) are marked UNVERIFIED and excluded from scores. Reported scores are conservative floor estimates.
+---
+
+## Scan Results
+
+**Scanner:** Momentum after pullback (yfinance implementation — browser-use unavailable in this environment)
+**Timestamp:** 2026-06-01 19:02 UTC
+**Universe:** S&P 500 (150 tickers screened)
+**Symbols found (13):** TSLA, XOM, KO, C, UNP, EOG, CL, NSC, GD, SNPS, CARR, HLT, FANG
+
+---
+
+## 14-Day Outcome Tracking
+
+No rows due for the 13–16 day lookback window (May 16–19, 2026). The only prior entry in `trades-log.csv` is from 2026-04-16 (empty scan row). Nothing to update.
+
+---
+
+## Step 4b — TradingView Visual Check
+
+> ⚠️ **browser-use is unavailable in this cloud environment.** TradingView chart screenshots (Fair Value Bands, Weekly BX, Daily B-Xtrender) could not be captured for this run.
+
+**Impact on scoring:** B-Xtrender-dependent points (15 pts max: background bars +5, signal dot +7, histogram +3) are scored **0/15** for all tickers. Deductions for red B-Xtrender are not applied either. All picks below are **conditioned on visual confirmation before live entry.** Verify `https://www.tradingview.com/chart/z25AhAlV/?symbol=TICKER` before executing any trade. If B-Xtrender shows red bars or a sell dot on the latest daily candle, treat as **Watchlist** only.
+
+---
+
+## Ticker Scoring Summary
+
+Scoring out of **115 pts** (minimum threshold: **55 pts**). B-Xtrender points (15 pts) not awarded — TradingView visual unavailable.
+
+| Ticker | A (Tech) | B (R:R) | C (Fund) | D (Cat) | Deductions | **Total** |
+|--------|----------|---------|---------|---------|------------|-----------|
+| TSLA | 37 | 25 | 20 | 15 | 0 | **97** |
+| GD | 38 | 25 | 20 | 15 | −5 | **93** |
+| C | 36 | 25 | 20 | 15 | −5 | **91** |
+| EOG | 30 | 25 | 20 | 15 | 0 | **90** |
+| UNP | 30 | 25 | 16 | 9 | 0 | **80** |
+| XOM | 37 | 25 | 7 | 11 | 0 | **80** |
+| HLT | 24 | 18 | 18 | 15 | 0 | **75** |
+| FANG | 38 | 18 | 8 | 11 | 0 | **75** |
+| KO | 30 | 10 | 18 | 13 | 0 | **71** |
+| CL | 37 | 10 | 7 | 11 | 0 | **65** |
+| CARR | 27 | 18 | 5 | 8 | 0 | **58** |
+| NSC | 26 | 18 | 5 | 8 | 0 | **57** |
+| SNPS | 28 | 18 | 10 | 9 | 0 | **65** |
+
+All 13 tickers cleared the 55-point minimum. **Top 3 selected: TSLA, GD, C.** EOG scores 90 and is a near-miss; it goes to **Watchlist** because volume is not declining on its pullback.
 
 ---
 
 ## Today's Suggested Trades
 
-### 1. TFC — Truist Financial Corporation
-**Score: 100/115** _(A:40 B:25 C:20 D:15 Ded:0 — BX unverified, conservatively excluded)_
+### 1. TSLA — Tesla, Inc.
+_Momentum pullback bounce at EMA50 zone; Optimus Annual Meeting catalyst_
 
 ```
-Ticker: TFC
-Current Price: $48.44
-Sector: Financial Services — Banks (Regional)
-Score: 100/115 (A:40 B:25 C:20 D:15 Ded:0)
+Ticker: TSLA
+Current Price: $418.17
+Sector: Consumer Cyclical / Robotics & AI
+Score: 97/115 (A:37 B:25 C:20 D:15 Ded:0)
 
 Setup Summary:
-TFC pulled back sharply from its early-May high of $50.48 to a low of $46.24 on
-May 15, forming a clean 8.4% correction to test the EMA50 zone ($48.32). The
-recovery since May 20 has been orderly — higher lows each session — with price
-crossing back above EMA20, RSI recovering above 50, and today's close ($48.44)
-clearing the prior day high. Volume has declined throughout the pullback (0.85×
-20-day average), consistent with a healthy consolidation rather than distribution.
-The stop is tight at $47.00, offering an excellent R:R.
+TSLA pulled back from its YTD highs to within 3% of the daily EMA50 ($407)
+over the past 5 sessions and has now bounced above it — confirmed by "Close above
+prior day's high" trigger and RSI recovering to 51.6. Volume has been declining on
+the pullback (last 5d avg below 20d avg), suggesting healthy consolidation rather
+than distribution. Both the 50-day and 200-day daily EMAs are rising, and the weekly
+golden cross (weekly EMA50 > EMA200) is in place. Price is above both. The annual
+shareholder meeting (est. June 2026) is expected to include a full Optimus Gen 3
+reveal and live demonstration — a near-term binary catalyst. First steel is already
+in the ground at the dedicated Optimus factory at Giga Texas (May 31, 2026).
 
-Entry Zone: $47.80–$48.80
-Stop Loss: $47.00 — below the May 20–22 consolidation base and near EMA200 ($46.51)
-Target 1: $52.00 — prior May resistance zone; R:R 2.5:1
-Target 2: $55.50 — 52-week high area ($56.20); R:R 4.9:1
-Risk/Reward: 4.9:1 (to T2)
-
-Instrument — Paired Debit Spread (Preferred):
-  Bias: Bullish
-  Expiry: June 18 2026 (~23 DTE) — use June 18 for liquid options; OR stock for
-  position traders willing to hold longer
-
-  Primary Spread:
-    Structure: Bull Call Spread
-    Size: 1×
-    Strikes: Long $48 / Short $52
-    Net Debit: ~$1.80 per spread (~$180/contract)
-    Max Profit: ~$220/contract
-    Max Loss: ~$180/contract
-
-  Opposite Hedge:
-    Structure: Bear Put Spread
-    Size: 0.5×
-    Strikes: Long $48 / Short $45
-    Net Debit: ~$0.58 per spread (~$29 for 0.5 contract)
-    Max Profit: ~$121 (0.5×)
-    Max Loss: ~$29 (0.5×)
-
-  Combined Position:
-    Total Debit / Max Loss: ~$209
-    Expected Payout if thesis right (TFC > $52): ~+$191
-    Expected Payout on violent move against thesis (TFC < $45): ~–$59
-    Main Risk: Time decay / chop between $48–$52 in 23 days
+Entry Zone: $414–$422 (at and just above daily EMA50 of $407; current close $418)
+Stop Loss: $393 — below the 200-day EMA ($395.84 per scan) + buffer
+Target 1: $460 — prior resistance / measured move
+Target 2: $498 — near 52-week high ($498.83)
+Risk/Reward: 3.2:1 (to Target 2)
 
 Key Risks:
-- Full-year NII guidance trimmed to 2–3% growth (vs prior 3–4%); rate cuts delayed further
-- Regional banks more credit-sensitive than money-center banks; any NII miss would hurt
-- 23-DTE expiry demands a prompt move; stock alternative gives more time
+- Extremely elevated PE ratio (384x trailing). Valuation fully priced for Optimus success.
+- If Gen 3 shareholder meeting reveal disappoints, significant gap-down risk.
+- Stop at $393 leaves $25 of risk below current price; requires wide tolerance.
+- ⚠️ TradingView visual check not completed — verify B-Xtrender before entry.
 
 Fundamental Note:
-Q1 2026 net income $1.4B (+25% YoY), EPS $1.09 beating estimates, operating leverage
-+250 bps. Management raised 2026 share buyback target to $5B ($1.2B in Q2 alone). ROTCE
-trajectory targeting 14% in 2026 → 16–18% over 3–5 years. Analyst consensus: Moderate Buy,
-avg. price target $55.59.
+Q1 2026: EPS growth +8.3% YoY, revenue growth +15.8% YoY. Cortex 2.0 AI training
+cluster online April 2026. Wedbush maintains $2T market cap thesis conditional on
+first commercial Optimus customer (expected Q3 2026). No earnings within 3 weeks
+(next: ~July 22, 2026).
+```
+
+**Instrument — Paired Debit Spread (Bullish):**
+```
+Bias: Bullish
+Expiry: July 17, 2026 (~46 DTE)
+30d IV: ~41.9% | 46-DTE IV: ~43%
+
+Primary Spread (Bull Call Spread):
+  Long:  TSLA Jul 17 $415 Call
+  Short: TSLA Jul 17 $430 Call
+  Width: $15
+  Est. Net Debit: ~$7.00 per spread
+  Max Profit:     ~$8.00 per spread (if TSLA ≥ $430 at expiry)
+  Max Loss:       ~$7.00 per spread
+
+Opposite Hedge (Bear Put Spread, half size):
+  Long:  TSLA Jul 17 $415 Put
+  Short: TSLA Jul 17 $405 Put
+  Width: $10
+  Est. Net Debit: ~$3.50 per spread (half-size position)
+  Max Profit:     ~$6.50 per spread if TSLA ≤ $405
+
+Combined Position (2 bull call spreads + 1 bear put spread):
+  Total Debit / Max Risk:          ~$1,750
+  Expected Payout if thesis right: ~$1,600 (2× primary profit)
+  Expected Payout on sharp drop:   ~$650  (bear put hedge contribution)
+  Main Risk: TSLA pins between $415–$430 at expiry; time decay erodes both legs.
+
+⚠️ Verify actual mid-prices on your broker before entry. TSLA has elevated IV;
+   spreads may be wider than estimates. Confirm B-Xtrender green on TradingView
+   chart before executing.
 ```
 
 ---
 
-### 2. JPM — JPMorgan Chase & Co.
-**Score: 95/115** _(A:40 B:25 C:20 D:15 Ded:−5 — insider selling reported)_
+### 2. GD — General Dynamics Corporation
+_Defense sector pullback to EMA50; Q1 beat, guidance raise, Morgan Stanley $435 target_
 
 ```
-Ticker: JPM
-Current Price: $305.62
+Ticker: GD
+Current Price: $340.69
+Sector: Industrials — Aerospace & Defense
+Score: 93/115 (A:38 B:25 C:20 D:15 Ded:−5)
+
+Setup Summary:
+GD has pulled back from post-Q1 highs to test its daily EMA50 ($342.08); price is
+−0.41% below that level, effectively at the 50-day MA. This is a classic momentum
+pullback to logical support after the stock surged +8% on April 29 Q1 results. Volume
+has been declining on the pullback (last 5d avg below 20d avg). The weekly golden cross
+is intact (weekly EMA50 $272 > weekly EMA200 ~$261). Daily EMA200 ($333.60) acts as
+a lower backstop. The trigger is "Close above prior day's high," indicating first signs
+of resuming the uptrend. The broader defense sector is in structural uptrend with
+increased global defense budgets.
+
+Entry Zone: $338–$344 (at/near EMA50 zone)
+Stop Loss: $327 — below recent pullback swing low / below EMA50 buffer zone
+Target 1: $369 — near 52-week high ($369.70)
+Target 2: $390 — measured move target / Morgan Stanley target zone
+Risk/Reward: 3.5:1 (to Target 2, entry $341, stop $327)
+
+Key Risks:
+- Insider selling: On May 13, 2026 an insider sold $25M of GD shares (SEC filing).
+  Applied −5 pt deduction. Monitor for continuation.
+- Goldman Sachs maintains Sell rating with $313 target (9.3% below current price).
+- Defense spending remains strong but any geopolitical de-escalation could weigh.
+- ⚠️ TradingView visual check not completed — verify B-Xtrender before entry.
+
+Fundamental Note:
+Q1 2026 beat: revenue +10.3% YoY ($13.5B), adjusted EPS $4.10 vs $3.90 estimate.
+Raised FY26 EPS guidance. Analyst consensus Moderate Buy; avg target $393.55.
+Morgan Stanley: Overweight, target $435. JPMorgan: Overweight, target $400.
+No earnings within 3 weeks (next: ~July 22, 2026).
+```
+
+**Instrument — Paired Debit Spread (Bullish):**
+```
+Bias: Bullish
+Expiry: July 17, 2026 (~46 DTE)
+IV: ~22–25% (typical defense-sector name)
+
+Primary Spread (Bull Call Spread):
+  Long:  GD Jul 17 $340 Call
+  Short: GD Jul 17 $360 Call
+  Width: $20
+  Est. Net Debit: ~$9.00 per spread
+  Max Profit:     ~$11.00 per spread (if GD ≥ $360 at expiry)
+  Max Loss:       ~$9.00 per spread
+
+Opposite Hedge (Bear Put Spread, half size):
+  Long:  GD Jul 17 $340 Put
+  Short: GD Jul 17 $320 Put
+  Width: $20
+  Est. Net Debit: ~$8.00 per spread (half-size position)
+  Max Profit:     ~$12.00 per spread if GD ≤ $320
+
+Combined Position (2 bull call spreads + 1 bear put spread):
+  Total Debit / Max Risk:          ~$2,600
+  Expected Payout if thesis right: ~$2,200 (2× primary profit)
+  Expected Payout on sharp drop:   ~$1,200 (bear put hedge contribution)
+  Main Risk: GD stays flat near $340–$360; time decay on both legs.
+
+⚠️ Verify actual mid-prices on your broker before entry. Confirm B-Xtrender green
+   on TradingView chart before executing.
+```
+
+---
+
+### 3. C — Citigroup Inc.
+_All three momentum triggers fired; EPS +56%, $30B buyback, Jefferies target $160_
+
+```
+Ticker: C
+Current Price: $128.39
 Sector: Financial Services — Banks (Diversified)
-Score: 95/115 (A:40 B:25 C:20 D:15 Ded:-5)
+Score: 91/115 (A:36 B:25 C:20 D:15 Ded:−5)
 
 Setup Summary:
-JPM pulled back from a May 6 intraday high of $316.26 to a low of $293.67 on
-May 20 — a clean 7.2% correction that tested the EMA50/200 confluence zone
-($296–$304). Price has recovered sharply over four sessions, reclaiming both
-EMA20 and EMA50, with RSI rising from below 50 back to 52. Volume on the
-pullback was 10% below its 20-day average — a health sign. All three scan
-triggers fired (EMA20 recross, RSI above 50, close > prior day high). Stop is
-placed at the EMA200 ($296), below which trend structure is invalidated.
+Citigroup is the strongest trigger ticker in the scan — all three momentum triggers
+fired simultaneously: recrossed above the 20 EMA, RSI crossed back above 50 (now
+at 58.3), and closed above the prior day's high. The stock had been consolidating
+near its 20/50-day EMAs after a massive +70.9% run over the past year (from ~$74
+lows). Volume is declining on the near-term pullback. The weekly golden cross is
+intact, and price is well above the 200-day EMA ($109.58). This is a textbook
+momentum continuation setup with the catalyst-rich backdrop of an Investor Day
+$30B buyback and OpenAI IPO role. Analyst targets cluster at $147–$160.
 
-Entry Zone: $303–$308
-Stop Loss: $296.00 — EMA200 level; trend invalidation
-Target 1: $320 — first resistance zone; R:R 1.5:1
-Target 2: $337 — 52-week high retest (analyst consensus ~$338–$342); R:R 3.3:1
-Risk/Reward: 3.3:1 (to T2)
-
-Instrument — Paired Debit Spread (Preferred):
-  Bias: Bullish
-  Expiry: June 26 2026 (~31 DTE)
-
-  Primary Spread:
-    Structure: Bull Call Spread
-    Size: 1×
-    Strikes: Long $305 / Short $315
-    Net Debit: ~$4.80 per spread (~$480/contract)
-    Max Profit: ~$520/contract
-    Max Loss: ~$480/contract
-
-  Opposite Hedge:
-    Structure: Bear Put Spread
-    Size: 0.5×
-    Strikes: Long $305 / Short $295
-    Net Debit: ~$3.60 per spread (~$180 for 0.5 contract)
-    Max Profit: ~$320 (0.5×)
-    Max Loss: ~$180 (0.5×)
-
-  Combined Position:
-    Total Debit / Max Loss: ~$660
-    Expected Payout if thesis right (JPM > $315): ~+$340
-    Expected Payout on violent move against thesis (JPM < $295): ~–$160
-    Main Risk: Drift / chop without follow-through above $315 in 31 days
+Entry Zone: $126–$130 (at and just above 20 EMA/50 EMA recross zone)
+Stop Loss: $118 — below recent swing low and below prior support zone
+Target 1: $135 — 52-week high ($135.29); resistance
+Target 2: $160 — Jefferies 12-month price target / breakout measured move
+Risk/Reward: 3.2:1 (to Target 2, entry $128, stop $118)
 
 Key Risks:
-- Insiders recently reduced positions — worth monitoring for magnitude
-- FY26 NII guidance trimmed to $103B from $104.5B; higher rate hike odds complicate NII outlook
-- Heavy-volume reversal in tech/AI could cause rapid rotation away from financials
+- Insider selling reported as "significant" in the past 3 months (Simply Wall St).
+  Applied −5 pt deduction. Monitor for specific SEC filings.
+- Price is 4.37% above 52-day EMA — moderate extension above immediate support.
+- Approaching 52-week high ($135.29) which may act as near-term resistance for T1.
+- ISS flagged executive pay concerns at the May 2026 shareholder meeting.
+- ⚠️ TradingView visual check not completed — verify B-Xtrender before entry.
 
 Fundamental Note:
-Q1 2026 EPS $5.94 (+8% vs consensus $5.50), revenue $50.54B (+10% YoY), net income $16.49B
-(+13% YoY). ROE 17.5%. Evercore raised PT to $340 (Outperform, Apr 17); Phillip Securities
-upgraded to Accumulate, PT $335 (Apr 28). Consensus: Moderate Buy, avg. PT $338–$342.
+Q1 2026: EPS growth +56.1% YoY (FY25→FY26 trajectory), revenue growth +15.9% YoY.
+PE 15.8x (cheap for diversified banks). Forward PE ~10.2x. Announced $30B share buyback
+at May 2026 Investor Day. Reported role in OpenAI IPO. Living will cleared by
+regulators. Jefferies raised target to $160 on May 8; Goldman Sachs Buy at $149;
+Barclays Overweight at $154. Consensus average target ~$147. No earnings within 3
+weeks (next: ~July 14, 2026).
 ```
 
----
-
-### 3. BLK — BlackRock, Inc.
-**Score: 86/115** _(A:33 B:18 C:20 D:15 Ded:0 — volume not declining on pullback)_
-
+**Instrument — Paired Debit Spread (Bullish):**
 ```
-Ticker: BLK
-Current Price: $1,077.34
-Sector: Financial Services — Asset Management
-Score: 86/115 (A:33 B:18 C:20 D:15 Ded:0)
+Bias: Bullish
+Expiry: July 17, 2026 (~46 DTE)
+IV: ~25–30% (typical bank sector)
 
-Setup Summary:
-BLK broke sharply from $1,104 (May 14) to $1,030 (May 19–20) — a 6.7%
-correction — before recovering above the EMA50 ($1,048) over the last four
-sessions. The pullback was accompanied by slightly elevated volume (1.14×
-20-day average), which is a mild concern (volume should ideally decline on
-pullback). However, the recovery is also on decent volume, and all three
-triggers fired on the bounce. BLK remains in a strong uptrend with the EMA50
-well above EMA200 on weekly and daily timeframes. The AI / Aladdin platform
-story and $28B pivot to private markets provide a durable fundamental
-backdrop. Stop is placed below the swing low.
+Primary Spread (Bull Call Spread):
+  Long:  C Jul 17 $128 Call
+  Short: C Jul 17 $140 Call
+  Width: $12
+  Est. Net Debit: ~$5.50 per spread
+  Max Profit:     ~$6.50 per spread (if C ≥ $140 at expiry)
+  Max Loss:       ~$5.50 per spread
 
-Entry Zone: $1,065–$1,085
-Stop Loss: $1,025 — below May 19–20 swing low ($1,030)
-Target 1: $1,150 — first resistance zone (~7% above entry); R:R ~1.4:1
-Target 2: $1,207 — 52-week high retest; R:R 2.5:1
-Risk/Reward: 2.5:1 (to T2)
+Opposite Hedge (Bear Put Spread, half size):
+  Long:  C Jul 17 $128 Put
+  Short: C Jul 17 $116 Put
+  Width: $12
+  Est. Net Debit: ~$4.50 per spread (half-size position)
+  Max Profit:     ~$7.50 per spread if C ≤ $116
 
-Instrument — Paired Debit Spread (Preferred):
-  Bias: Bullish
-  Expiry: June 26 2026 (~31 DTE)
+Combined Position (2 bull call spreads + 1 bear put spread):
+  Total Debit / Max Risk:          ~$1,550
+  Expected Payout if thesis right: ~$1,300 (2× primary profit)
+  Expected Payout on sharp drop:   ~$750  (bear put hedge contribution)
+  Main Risk: C stays pinned between $128–$140 at expiry; theta decay on both legs.
 
-  Primary Spread:
-    Structure: Bull Call Spread
-    Size: 1×
-    Strikes: Long $1,070 / Short $1,110
-    Net Debit: ~$18.05 per spread (~$1,805/contract)
-    Max Profit: ~$2,195/contract
-    Max Loss: ~$1,805/contract
-
-  Opposite Hedge:
-    Structure: Bear Put Spread
-    Size: 0.5×
-    Strikes: Long $1,050 / Short $1,030
-    Net Debit: ~$6.15 per spread (~$308 for 0.5 contract)
-    Max Profit: ~$693 (0.5×)
-    Max Loss: ~$308 (0.5×)
-
-  Combined Position:
-    Total Debit / Max Loss: ~$2,113
-    Expected Payout if thesis right (BLK > $1,110): ~+$1,887
-    Expected Payout on violent move against thesis (BLK < $1,030): ~–$1,112
-    Main Risk: Drift / time decay without sustained follow-through above $1,110
-
-Key Risks:
-- Volume was not declining on the pullback (1.14× avg) — slightly less clean setup
-- High absolute cost per contract (~$2,100 total debit) — size accordingly
-- BLK has underperformed the S&P 500 YTD (+10.6% vs S&P +26%); catch-up trade is the thesis
-
-Fundamental Note:
-Q1 2026 revenue $6.7B (beat), EPS $12.53 (beat). AUM at record highs. $28B in GIP/HPS/Preqin
-acquisitions pivoting the firm to high-margin private markets (10–20× fee revenue vs index ETFs).
-UBS raised PT to $1,270 (Buy, Apr 15). Consensus: Moderate-to-Strong Buy, avg. PT $1,262–$1,269.
+⚠️ Verify actual mid-prices on your broker before entry. Confirm B-Xtrender green
+   on TradingView chart before executing.
 ```
 
 ---
 
 ## Watchlist
-_Passed scan and some research criteria but no immediate entry recommended._
+_Names with constructive scan/research but no immediate entry this run (timing / extension / volume concern)._
 
-| Ticker | Why Watching | Trigger to Revisit |
-|--------|--------------|-------------------|
-| BAC | Same financial sector tailwind as JPM; 1.18% from EMA50, all triggers firing. R:R to near-term targets is limited ($57 52-wk high from $52.03 entry = 1.6:1 with stop at $49). Volume flat (1.01×). | Wait for consolidation above $52.50 or pullback to $50.50–$51.00 for better entry and R:R ≥ 2:1 |
-| ETN | Strong industrials uptrend; all scan conditions pass. Currently 3.36% above EMA50 — slightly extended. R:R to T1 too compressed at current price. | Watch for a 2–3% pullback toward EMA50 ($391); re-run scoring if RSI tests 50 again |
-| PNC | Regional bank in confirmed uptrend (EMA50 at $216, 1.94% below current $220.54). Volume declining. R:R to 52-wk high ($243) = 1.1:1 from current entry — too thin. | Entry improves if PNC pulls back to $215–$217 zone; target remains $242–$243 |
-| GD | Defense/aerospace sector; 0.87% from EMA50, very tight setup. R:R to 52-wk high ($370) = 1.3:1 with stop at $326 — marginal. | Watch for earnings catch-up trade post Q2 results (next earnings ~July 2026); or entry below $341 to widen R:R |
+| Ticker | Score | Why watching | Trigger to revisit |
+|--------|-------|--------------|-------------------|
+| EOG | 90/115 | Strong at EMA50 (+1.01%), Q1 beat, EPS +39.6%, $20B buyback, Wells Fargo $196 target. Excellent fundamentals. | Volume NOT declining on pullback — wait for volume to dry up on next consolidation day; revisit if RSI holds above 50 with declining volume. |
+| UNP | 80/115 | At EMA50 (+1.07%), good R:R to T2, clean weekly uptrend. | Volume NOT declining. Wait for 2–3 lower-volume consolidation days near EMA50 before entry. |
+| XOM | 80/115 | −1.57% below EMA50 (clean pullback zone), declining volume, energy sector uptrend, good R:R. | EPS growth −43.4% YoY (oil price headwinds in prior year). Wait for Q2 2026 report catalyst or confirmed energy sector acceleration before upgrading to trade. |
+| HLT | 75/115 | Strong EPS/Rev growth, sector tailwind. | Price extended +3.89% above EMA50, volume not declining, approaching 52-week high. Wait for pullback to EMA50 (~$319) zone. |
+| FANG | 75/115 | All 3 triggers fired, declining volume, cheap fwd PE 11.4x. | R:R to T1 only 1.07:1. Wait for price to reset to $190–$195 (nearer EMA50 at $192) for better entry. |
 
 ---
 
 ## Open Trades
-_User-confirmed trades from the last 14 days (outcome not yet recorded)._
+_User-confirmed trades from the last 14 days, outcome not yet recorded._
 
-| Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
-|------|--------|------------|------|----------|----------|-----|
-| — | — | — | — | — | — | — |
-
-_No open trades — previous run (2026-04-16) returned empty scan._
+_None confirmed (scheduled run — no new CSV rows written per Step 6 unattended policy)._
 
 ---
 
 ## Performance Summary
 _All closed trades (outcome recorded)._
 
-| Date | Ticker | Entry Price | Outcome Price | % Change | Result |
-|------|--------|-------------|---------------|----------|--------|
-| — | — | — | — | — | — |
+_No closed trade rows in trades-log.csv yet. Only prior entry is 2026-04-16 empty scan row._
 
 ### Aggregate Stats
 - **Total closed trades:** 0
@@ -247,17 +314,9 @@ _All closed trades (outcome recorded)._
 
 ---
 
-## Scan Details
-_Scan run: 2026-05-26 19:06 UTC | Scanner: Momentum after pullback (yfinance implementation) | Universe: S&P 500 (150-ticker fallback subset; Wikipedia scrape unavailable)_
+## Notes for Next Run
 
-**All 21 tickers passing scan conditions:**
-JPM, BAC, LIN, BLK, GS, PLD, ADI, C, UNP, KLAC, NSC, GD, ETN, USB, PNC, FDX, TFC, CARR, ODFL, HLT, AEP
-
-**Tickers eliminated during scoring (below 55-point threshold or structural issues):**
-- LIN, GS, PLD, ADI, C, UNP, KLAC, NSC, FDX, CARR, ODFL, HLT, AEP, USB — disqualified primarily on R:R grounds (extended above EMA50, limited upside to near-term resistance, or negative EPS growth)
-- BAC, ETN, PNC, GD — marginal R:R; added to watchlist
-
-**Selected (top 3 by score):**
-1. TFC: 100/115
-2. JPM: 95/115
-3. BLK: 86/115
+1. **TradingView visual check** is mandatory before any live trade execution. Load `https://www.tradingview.com/chart/z25AhAlV/?symbol=TICKER` for each pick with Chrome profile Tim (headed). Verify fair value band structure is green, weekly BX is green, and daily B-Xtrender histogram is not showing a fresh sell signal.
+2. **User confirmation gate**: This is a scheduled/unattended run. Trades above are **suggestions only** — no CSV rows were appended. If any of these trades were manually opened, add rows to `strategies/momentum-pullback/trades-log.csv` before the next run.
+3. **EOG** is the strongest watchlist name. If it pulls back slightly with declining volume in the next 1–3 sessions, it could upgrade to an immediate entry pick.
+4. **TSLA Annual Shareholder Meeting** is expected in June 2026 — the Optimus Gen 3 reveal is a near-term binary event. Size appropriately given the event risk embedded in the options pricing.
