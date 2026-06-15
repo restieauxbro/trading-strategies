@@ -1,290 +1,229 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-06-08_
-
----
-
-## Scan Source
-
-**Fallback scan used:** TrendSpider browser scan unavailable (Chrome profile "Tim" not authenticated in this cloud environment). Scan executed via `scripts/momentum_pullback_scan.py` (yfinance-based implementation of the same Group 1–4 conditions from `config.md`).
-
-**Scan timestamp:** 2026-06-08 19:05 UTC  
-**Tickers found (24):** NVDA, GOOGL, XOM, COST, BAC, MRK, CVX, KO, LIN, PM, PLD, UNP, EOG, MO, CI, CL, NSC, GD, ETN, PNC, WELL, AFL, FANG, OKE
-
-> **TradingView visual check (Step 4b):** Mandatory per workflow but unavailable in this cloud run — `browser-use --profile "Tim"` requires the user's Chrome session. **B-Xtrender scoring items are not awarded in this report.** User should verify `chart/z25AhAlV/?symbol=GD`, `?symbol=XOM`, `?symbol=ETN` before entering positions. Confirmed-green B-Xtrender would add up to +15 pts per ticker; confirmed-red would deduct up to −14 pts.
+_Last updated: 2026-06-15_
 
 ---
 
 ## Market Context
 
-The S&P 500 (SPY) closed at $740.88, firmly above its 50-day MA ($713.51) and 200-day MA ($683.93), representing a +8.4% premium to the 200-day — a clear bullish regime. The index is up approximately +23% over the past year. VIX printed at 18.47 (down 14% from yesterday's close of 21.51), with the sharp VIX compression on June 8 signalling a risk-on pivot — possibly triggered by diplomatic progress in the Middle East or easing of Strait of Hormuz concerns. The 52-week VIX range is 13.38–35.30; at ~18.47 we are in the lower-middle band, consistent with a constructive environment for long equity setups. VIX below 20 is broadly supportive of new position entries.
+The S&P 500 (SPY) closed at $754.94 on June 15, 2026, sitting 4.2% above its 50-day SMA ($724.78) and 10.3% above its 200-day SMA ($684.64) — the broad uptrend is firmly intact and strengthening. VIX is at 16.16, declining below its 50-day average of 18.25 and well off its year high of 35.3 from earlier in 2026. The low-fear, risk-on backdrop is favourable for momentum continuation setups. No downtrend or elevated volatility warnings apply.
 
-The dominant macro theme is the U.S.–Iran conflict driving oil supply disruptions (Strait of Hormuz). This has been a strong tailwind for Energy stocks (XOM, CVX) and Defense names (GD, RTX). Separately, AI infrastructure spending continues at record pace, benefiting industrial power-management companies (ETN). Conditions are favourable for momentum continuation trades in these sectors.
+The yfinance-based scan (`momentum_pullback_scan.py`) ran successfully and identified **34 tickers** from the S&P 500 fallback universe passing all scan conditions (Groups 1–4). This run used the yfinance scanner fallback — `browser-use` / TrendSpider live UI was unavailable in this environment. **TradingView visual confirmation (Step 4b) could not be performed** — B-Xtrender and Fair Value Band readings are therefore unconfirmed, and the 15 BX-related points are not awarded in any score. Scores are expressed against the 115-point maximum; the effective ceiling without BX confirmation is 100 points.
 
 ---
 
 ## Today's Suggested Trades
 
-_Unattended/scheduled run — no trades logged to CSV. User confirmation required before entry. See Step 6 in AGENT.md._
+> ⚠️ **Scheduled/unattended run — no CSV rows appended.** Trades are suggestions only. Confirm entry and log manually if opened.
 
 ---
 
-### 1. GD — General Dynamics (Score: 99/115)
+### 1. NVDA — AI momentum pullback resuming at EMA50
 
 ```
-Ticker: GD
-Current Price: $340.75
-Sector: Industrials — Aerospace & Defense
-Score: 99/115 (A:43 B:25 C:16 D:15 Ded:0)
+Ticker: NVDA
+Current Price: $212.00
+Sector: Technology (Semiconductors)
+Score: 85/115 (A:40 B:10 C:20 D:15 Ded:0 | BX unconfirmed: 0 of 15 pts awarded)
 
 Setup Summary:
-GD has pulled back almost precisely to its daily 50 EMA ($341.79), closing at $340.75 — 
-just 0.35% below it. Volume has been declining during the pullback from the $369.70 
-52-week high (~8% drawdown), and all three scan triggers fired simultaneously: recross 
-above 20 EMA, RSI above 50, and close above prior day's high. The weekly chart shows 
-EMA50 well above EMA200 (golden cross intact) and price above weekly EMA50 — structural 
-uptrend fully in place. RSI at 49.2 is resting at the midpoint, consistent with a healthy 
-reset that has not become oversold.
+NVDA pulled back from the $220s to test its 50-day EMA (~$207), now recrossing above it with
+all three scan triggers firing simultaneously (20 EMA recross, RSI above 50, close above prior
+day high). Volume declining on the pullback confirms healthy consolidation, not distribution.
+The stock is still 12% above its 200-day SMA, with weekly structure fully intact. AI demand
+remains off-the-charts per Jensen Huang's most recent commentary, and S&P just upgraded NVIDIA's
+credit rating, citing "insatiable demand."
 
-Entry Zone: $337–$343 (50 EMA zone)
-Stop Loss: $328.00 — below recent swing low and consolidation base
-Target 1: $370.00 — 52-week high / prior resistance  (R:R 2.2:1)
-Target 2: $392.00 — analyst mean consensus target     (R:R 4.1:1)
-Risk/Reward: 4.1:1 to Target 2 (using $341 entry, $328 stop)
+Entry Zone: $209–$215
+Stop Loss: $198.50 — below recent swing low and well below EMA50
+Target 1: $238 — above 52-week high ($236.54); near-term resistance and prior ATH zone
+Target 2: $265 — measured move from consolidation base (~25% extension)
+Risk/Reward: ~1.9:1 to T1 (→ 10 pts); ~3.9:1 to T2
 
 Key Risks:
-- Earnings July 22, 2026 (~44 days) — CLEAR of 3-week rule
-- Analysts mixed since Q1: Citi lowered target to $364 (May 18), several others trimmed;
-  only Overweight raised to $400. Consensus drift to hold/neutral is a headwind
-- GD is trading near its 200-day SMA ($342 SMA vs $334 EMA); a break below both would 
-  be bearish and is the key stop trigger
+- Next earnings Aug 26, 2026 (72 days away — well clear of 3-week filter)
+- High beta (2.20): volatile on macro news, tariff headlines, China export restrictions
+- Already up ~49% YTD; some mean-reversion risk if AI spending narrative softens
 
 Fundamental Note:
-Q1 2026: EPS $4.10 vs est. $3.69 (+11.1%); revenue +10.3% YoY; raised FY 2026 EPS 
-guidance to $16.45–$16.55. Record backlog of $131B (up 48% YoY), book-to-bill 2:1. 
-June 5 catalyst: GDOTS awarded U.S. Army contract for next-gen 155mm extended-range 
-artillery projectile. Total estimated contract value of $188B underpins multi-year 
-revenue visibility.
+Q1 FY2027 (reported May 20, 2026): EPS $1.87 vs $1.76 est (+6.25% beat). Revenue up 62% YoY
+to $57B. Consensus PT $303–$311 (42–54% upside from $212). Strong Buy from 97% of 39 covering
+analysts. S&P credit upgrade to AA in June 2026 on "insatiable AI demand."
 ```
 
-**Instrument — Paired Debit Spread (Preferred)**
-
-```
-Instrument: Paired Debit Spread
+**Instrument: Paired Debit Spread (Preferred)**
 Bias: Bullish
-Expiry: July 17, 2026 (~39 DTE)
+Expiry: Jul 17, 2026 (~32 DTE)
 
+```
 Primary Spread:
   Structure: Bull Call Spread
-  Size: N contracts
-  Strikes: Long $340 call / Short $350 call
-  Mid prices (Jun 8): $340C ~$10.50 / $350C ~$6.10
-  Net Debit: ~$4.40 per spread (R)
-  Max Profit: ~$5.60 (if GD ≥ $350 at expiry)
-  Max Loss: ~$4.40
+  Size: 2 contracts
+  Strikes: Long $210 / Short $215
+  Net Debit: ~$2.48/share (~$496 total for 2 contracts)
+  Max Profit: ~$2.52/share (~$504 total) if NVDA ≥ $215 at expiry
+  Max Loss: ~$496
 
 Opposite Hedge:
   Structure: Bear Put Spread
-  Size: N/2 contracts
-  Strikes: Long $330 put / Short $320 put
-  Mid prices (Jun 8): $330P ~$5.45 / $320P ~$3.08
-  Net Debit: ~$2.37 per spread
-  Max Profit: ~$7.63 (if GD ≤ $320 at expiry)
-  Max Loss: ~$2.37
+  Size: 1 contract (half-size)
+  Strikes: Long $205 / Short $195  (estimated; confirm live chain)
+  Net Debit: ~$3.50/share (~$350 estimated)
+  Max Profit: ~$6.50/share (~$650 if NVDA ≤ $195)
+  Max Loss: ~$350
 
-Combined Position (N primary / N/2 hedge):
-  Total Debit / Max Loss: ~$5.59 × N
-  Expected Payout if bullish thesis right: ~$5.60 × N
-  Expected Payout on violent break lower: ~$3.82 × N (hedge at half-size)
-  Main Risk: drift / time decay without break above $345+
-  ⚠ Note: GD options show wide bid-ask spreads (low open interest). Use limit orders 
-    at mid-price. Consider stock + protective put instead if fills are poor.
+Combined Position:
+  Total Debit / Max Loss: ~$846
+  Expected Payout if NVDA ≥ $215 (thesis correct): +$504 primary − $350 hedge = net ~+$154
+  Expected Payout if NVDA ≤ $195 (violent drop): +$650 hedge − $496 primary = net ~+$154
+  Main Risk: NVDA drifts sideways or pins between $195–$215 at Jul 17 expiry — full $846 at risk
+  Note: Put prices are estimated; verify live bid/ask before order entry
 ```
 
 ---
 
-### 2. XOM — Exxon Mobil (Score: 98/115)
+### 2. WELL — Healthcare REIT EMA50 recross with fresh catalysts
 
 ```
-Ticker: XOM
-Current Price: $151.78
-Sector: Energy — Oil & Gas Integrated
-Score: 98/115 (A:43 B:25 C:15 D:15 Ded:0)
+Ticker: WELL
+Current Price: $213.68
+Sector: Real Estate (REIT — Healthcare Facilities)
+Score: 85/115 (A:40 B:10 C:20 D:15 Ded:0 | BX unconfirmed: 0 of 15 pts awarded)
 
 Setup Summary:
-XOM has pulled back to its daily 50 EMA ($151.09) with volume declining to well below 
-its 20-day average — a textbook healthy consolidation in an uptrend. All three triggers 
-fired: recross above 20 EMA, RSI crossed above 50 (currently 50.6), and close above 
-prior day's high. The weekly golden cross (EMA50 > EMA200) is firmly intact, price is 
-above the weekly EMA50. The backdrop is exceptional: Barclays, Mizuho, Citi, and Piper 
-Sandler all raised their XOM price targets in May–June 2026, driven by tightening global 
-oil inventory and Middle East supply disruptions. Beta of only 0.15 keeps this a 
-lower-volatility vehicle.
+Welltower pulled back to its 50-day EMA (~$210) and is now recovering, triggering all three scan
+conditions. Volume declined throughout the pullback, and on Jun 9 the stock jumped 3.36% on
+strong Q1 2026 results and a dividend increase signal. Multiple analysts moved to Buy/Overweight
+with raised price targets in the same session. The senior-housing demographic tailwind
+(ageing population) remains structurally intact and is accelerating NOI growth.
 
-Entry Zone: $149–$153 (50 EMA zone)
-Stop Loss: $145.00 — below recent swing low / below prior consolidation
-Target 1: $163.00 — prior resistance zone             (R:R 2.0:1)
-Target 2: $170.00 — analyst mean consensus (~$170)    (R:R 3.2:1)
-Risk/Reward: 3.2:1 to Target 2 (using $151 entry, $145 stop)
+Entry Zone: $210–$216
+Stop Loss: $200.00 — below recent pullback low and clear of EMA50 support
+Target 1: $240 — analyst consensus average price target ($239.61)
+Target 2: $265 — toward analyst high-end target ($277)
+Risk/Reward: ~1.9:1 to T1 (→ 10 pts); ~3.7:1 to T2
 
 Key Risks:
-- Earnings July 31, 2026 (~53 days) — CLEAR of 3-week rule
-- EPS declined YoY in Q1 2026 ($1.16 adj. vs $1.76 in Q1 2025) due to lower realized 
-  oil prices in the quarter; recovery depends on sustained elevated crude prices
-- Stock pulled back from 52-week high of $176.41; if Middle East tensions ease, oil 
-  could give back recent gains quickly — high event/headline risk
+- Next earnings Jul 27, 2026 (42 days — clear of 3-week filter)
+- Interest-rate sensitivity: "higher-for-longer" environment pressures REIT valuations
+- Wide bid/ask on options chain (see instrument note below)
 
 Fundamental Note:
-Q1 2026: EPS $1.16 (adj.) vs est. $1.02 (+13.7% beat); Golden Pass Train 1 LNG 
-production online. Multiple analyst target raises in June (Barclays to $182, Mizuho to 
-$175, Citi to $175, Piper Sandler to $186). Reported to be in advanced talks to re-enter 
-Venezuelan production (~6 fields). Shareholder distributions of $9.2B in Q1 ($4.3B 
-dividends + $4.9B buybacks). Forward P/E ~14.3x vs trailing 25.6x — earnings recovery 
-expected in H2 2026 if oil stays elevated.
+Q1 2026 beat on both EPS and revenue; same-store NOI growth strong in the Seniors Housing
+Operating (SHO) portfolio. Revenue $10.84B in 2025 (+38% YoY). 15% anticipated dividend
+increase for Q2 2026 announced. Analyst average PT $239.61; multiple Buy/Overweight upgrades
+in late May/early June 2026.
 ```
 
-**Instrument — Paired Debit Spread (Preferred)**
+**Instrument: Stock preferred (options illiquidity)**
+Welltower's option chain has only 5 monthly expiries and $10-wide strikes with wide bid/ask
+spreads (≥$1.50 on near-ATM calls). The paired debit spread math breaks down at these spreads.
 
 ```
-Instrument: Paired Debit Spread
-Bias: Bullish
-Expiry: July 17, 2026 (~39 DTE)
+Recommended: Buy shares
+Entry: $210–$216 zone
+Stop: $200.00
+Target 1: $240 | Target 2: $265
+Position size: risk-managed per standard stop-loss sizing
 
-Primary Spread:
-  Structure: Bull Call Spread
-  Size: N contracts
-  Strikes: Long $150 call / Short $155 call
-  Mid prices (Jun 8): $150C ~$7.60 / $155C ~$5.15
-  Net Debit: ~$2.45 per spread (R)
-  Max Profit: ~$2.55 (if XOM ≥ $155 at expiry)
-  Max Loss: ~$2.45
-
-Opposite Hedge:
-  Structure: Bear Put Spread
-  Size: N/2 contracts
-  Strikes: Long $145 put / Short $140 put
-  Mid prices (Jun 8): $145P ~$3.12 / $140P ~$1.85
-  Net Debit: ~$1.27 per spread
-  Max Profit: ~$3.73 (if XOM ≤ $140 at expiry)
-  Max Loss: ~$1.27
-
-Combined Position (N primary / N/2 hedge):
-  Total Debit / Max Loss: ~$3.09 × N
-  Expected Payout if bullish thesis right: ~$2.55 × N
-  Expected Payout on violent break lower: ~$1.87 × N (hedge at half-size)
-  Main Risk: drift / chop between $150–$155; headline risk if Strait of Hormuz reopens
-  ✓ Good liquidity on XOM chains — mid fills realistic
+Alternative (if options preferred):
+  Bull Call Spread only — Long Jul 17 $210 call / Short Jul 17 $220 call
+  Estimated debit at mid: ~$5.35/share ($535/contract)
+  Max profit if WELL ≥ $220: ~$4.65/share ($465/contract) — 0.87:1 R:R (below ideal)
+  Note: Favorable fills possible near bid-side, which improves effective R:R to ~1.3:1
 ```
 
 ---
 
-### 3. ETN — Eaton Corporation (Score: 96/115)
+### 3. ETN — Eaton data-center electrification breakout resumption
 
 ```
 Ticker: ETN
-Current Price: $406.40
-Sector: Industrials — Specialty Industrial Machinery / AI Power Infrastructure
-Score: 96/115 (A:36 B:25 C:20 D:15 Ded:0)
+Current Price: $411.00
+Sector: Industrials (Specialty Industrial Machinery)
+Score: 85/115 (A:40 B:10 C:20 D:15 Ded:0 | BX unconfirmed: 0 of 15 pts awarded)
 
 Setup Summary:
-ETN pulled back to its 50 EMA zone (~$396) over the past 2 weeks and is now recovering, 
-currently 2.61% above the EMA50. Volume has been declining on the pullback from the 
-$435.43 52-week high (~7.5% pullback). All three triggers fired on the bounce. The 
-technical setup is slightly less clean than GD/XOM (further above EMA50) but the 
-fundamental story is arguably the strongest of the three: Eaton is emerging as the 
-dominant grid-to-chip infrastructure supplier for AI data centers. The stock has the 
-best R:R to analyst targets ($430–$435 Jefferies/Bernstein) and the most convincing 
-multi-year growth narrative.
+Eaton pulled back approximately 8–10% from recent highs to its 50-day EMA (~$396), then
+recrossed with all three triggers firing. Volume was below average during the pullback.
+The company is a direct beneficiary of AI data-center buildout (power management, switchgear,
+liquid cooling) and has raised FY2026 guidance. JPMorgan raised its price target from $406 to
+$445 on May 8, 2026. ETN is up 32% YTD. The pullback to EMA50 offers an improved entry vs
+chasing the prior breakout.
 
-Entry Zone: $396–$407 (prefer closer to EMA50 at $396 for better R:R)
-Stop Loss: $385.00 — below recent swing low / below EMA support cluster
-Target 1: $435.00 — 52-week high / near Jefferies $430 target   (R:R 2.3:1 from $400 entry)
-Target 2: $460.00 — measured move / extended analyst range       (R:R 4.0:1 from $400 entry)
-Risk/Reward: 4.0:1 to Target 2 (using $400 entry, $385 stop)
+Entry Zone: $408–$415
+Stop Loss: $391.00 — below EMA50 support and recent swing low of the pullback
+Target 1: $445 — JPMorgan price target (post-upgrade), ~8.3% upside
+Target 2: $480 — measured move from consolidation base
+Risk/Reward: ~1.7:1 to T1 (→ 10 pts); ~3.4:1 to T2
 
 Key Risks:
-- Earnings ~August 4, 2026 (~57 days) — CLEAR of 3-week rule
-- Premium valuation: trailing P/E ~39.7x, forward ~25.8x; multiple compression risk if 
-  AI spending momentum slows
-- High implied volatility (40%+) on options — spreads are expensive; the paired debit 
-  spread debit is disproportionately large relative to spread width
+- Next earnings Aug 4, 2026 (50 days — clear of 3-week filter)
+- Premium valuation (fwd P/E ~26x) leaves limited margin of error
+- Tariff exposure on global supply chain for electrical components
 
 Fundamental Note:
-Q1 2026: Net sales +17% YoY (record); data center orders +240% YoY; raised FY 2026 
-organic growth guidance to 10%. Boyd Thermal acquisition closed — adding liquid-cooling 
-capability to complete grid-to-chip stack. NVIDIA collaboration: Eaton Beam Rubin DSX 
-platform launched at GTC 2026 (March 16). 228 GW data center backlog. Analyst upgrades: 
-Jefferies Buy $430 (reinstated), Bernstein Buy $428. Mobility segment spin-off planned 
-Q1 2027 to create a pure-play power management company.
+Q1 2026: EPS $2.81 vs $2.73 est (beat by $0.08). Revenue $7.5B (+16.8% YoY). Raised FY2026 EPS
+guidance to $13.05–$13.50 midpoint $13.28. Liquid cooling backlog doubled over 6 months. Long-
+term earnings growth rate pegged at 11.7%. JPMorgan Overweight, raised PT $406→$445 May 8.
 ```
 
-**Instrument — Paired Debit Spread (Preferred)**
-
-```
-Instrument: Paired Debit Spread
+**Instrument: Paired Debit Spread (Preferred)**
 Bias: Bullish
-Expiry: July 17, 2026 (~39 DTE)
+Expiry: Jul 17, 2026 (~32 DTE)
 
+```
 Primary Spread:
   Structure: Bull Call Spread
-  Size: N contracts
-  Strikes: Long $410 call / Short $420 call
-  Mid prices (Jun 8): $410C ~$19.95 / $420C ~$16.00
-  Net Debit: ~$4.00 per spread (R)
-  Max Profit: ~$6.00 (if ETN ≥ $420 at expiry)
-  Max Loss: ~$4.00
+  Size: 2 contracts
+  Strikes: Long $410 / Short $420
+  Net Debit: ~$4.80/share (~$960 total for 2 contracts)
+  Max Profit: ~$5.20/share (~$1,040 total) if ETN ≥ $420 at expiry
+  Max Loss: ~$960
 
 Opposite Hedge:
   Structure: Bear Put Spread
-  Size: N/2 contracts
-  Strikes: Long $390 put / Short $380 put
-  Mid prices (Jun 8): $390P ~$14.75 / $380P ~$10.85
-  Net Debit: ~$3.90 per spread
-  Max Profit: ~$6.10 (if ETN ≤ $380 at expiry)
-  Max Loss: ~$3.90
+  Size: 1 contract (half-size)
+  Strikes: Long $400 / Short $390  (estimated; confirm live chain)
+  Net Debit: ~$4.50/share (~$450 estimated)
+  Max Profit: ~$5.50/share (~$550 if ETN ≤ $390)
+  Max Loss: ~$450
 
-Combined Position (N primary / N/2 hedge):
-  Total Debit / Max Loss: ~$5.95 × N
-  Expected Payout if bullish thesis right: ~$6.00 × N
-  Expected Payout on violent break lower: ~$3.05 × N (hedge at half-size)
-  Main Risk: drift / expensive theta burn; ETN IV ~40% inflates costs
-  ⚠ Consider August 21 expiry for more time buffer given elevated IV.
-    Verify liquidity (OI on $410/$420 strikes is better than $400/$430).
+Combined Position:
+  Total Debit / Max Loss: ~$1,410
+  Expected Payout if ETN ≥ $420 (thesis correct): +$1,040 primary − $450 hedge = net ~+$590
+  Expected Payout if ETN ≤ $390 (violent drop): +$550 hedge − $960 primary = net ~−$410
+  Main Risk: ETN drifts sideways or pins between $390–$420 at Jul 17 expiry — ~$1,410 at risk
+  Note: Put prices are estimated; verify live bid/ask before order entry
 ```
 
 ---
 
 ## Watchlist
+_Constructive scan/research but no immediate entry this run._
 
-_Names with constructive scan/research but no immediate entry._
-
-| Ticker | Score | Why watching | Trigger to revisit |
-|--------|-------|--------------|-------------------|
-| AFL | 67/115 | Volume declining on pullback, all 3 triggers, EMA50 intact. But Q1 EPS slight miss (-2.78%), limited upside to 52-week high ($119.81 vs current $115.47) constrains R:R. | Break and close above $120 on volume — opens measured move to $130+ and improves R:R to ≥2:1 |
-| CVX | ~78/115 | Same energy setup as XOM (1.09% above EMA50, volume declining, all 3 triggers), strong Middle East tailwind. Excluded from top-3 to avoid double Energy concentration. Q1 adjusted EPS declined YoY. | XOM position closed / rotated, or CVX sets up independently with cleaner pullback to $185 |
-| COST | ~65/115 | Classic quality compounder at EMA50 zone (-2.48% below), volume declining. Only "close above prior high" trigger. No material news catalyst. | RSI recross above 50 + recross above 20 EMA on increasing volume; ideally with a market-wide catalyst |
-| KO | ~62/115 | At 1.38% above EMA50 with RSI just crossed above 50. Defensive/safe but limited upside in current risk-on environment. | Consumer staples sector rotation or portfolio defensive hedge requirement |
+| Ticker | Why watching | Trigger to revisit |
+|--------|--------------|-------------------|
+| GOOGL | All 3 triggers, vol declining, strong Cloud/AI fundamentals. Trading near 52-week high ($404). Q1 adjusted EPS missed slightly ($2.62 vs $2.63 est); massive GAAP beat included equity gains. Strong buy consensus, PT $409. | Pullback toward $355–$360 (EMA50 zone); also watch Q2 2026 earnings Jul 22 — strong Cloud print above 55% growth would confirm momentum |
+| OKE | All 3 triggers, vol declining, right at EMA50. Q1 2026: net income +12%, EBITDA +13%, guidance raised. Clean setup. | R:R to nearest resistance (~$96) is approximately 1.7:1 with stop at $83.50 — borderline. Watch for a confirmed pull back toward $85 for a better entry; or wait for price to break above $92 to confirm new uptrend leg |
+| NSC | All 3 triggers, vol declining, tightest EMA50 proximity (+0.6%). Q1 2026 EPS beat. UP/NS merger under STB review; supplemental info due Jul 27, 2026. | Hold-heavy analyst consensus (16 holds vs 6 buys). R:R to $330 (~1.3:1) is weak. Revisit if STB accepts merger timeline or if price breaks through $320 with volume |
 
 ---
 
 ## Open Trades
-_User-confirmed trades from the last 14 days, outcome not yet recorded._
+_No open trades — no confirmed entries in the prior 14-day window._
 
 | Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
 |------|--------|------------|------|----------|----------|-----|
 | — | — | — | — | — | — | — |
 
-_No confirmed open trades in log._
-
 ---
 
 ## Performance Summary
-_All closed trades (outcome recorded)._
+_No closed trades yet — log is new, prior run was an empty scan._
 
 | Date | Ticker | Entry Price | Outcome Price | % Change | Result |
 |------|--------|-------------|---------------|----------|--------|
 | — | — | — | — | — | — |
-
-_Previous run (2026-04-16): Empty scan — no tickers found (market was in April sell-off; yfinance scan returned 0 results). No trades to track._
 
 ### Aggregate Stats
 - **Total closed trades:** 0
@@ -297,29 +236,11 @@ _Previous run (2026-04-16): Empty scan — no tickers found (market was in April
 
 ---
 
-## Scan Details
-
-**Full universe scanned (fallback list — 150 tickers; Wikipedia S&P 500 fetch returned 403):**  
-All 24 passing tickers sorted by technical quality (closest to EMA50, declining volume, most triggers):
-
-| Rank | Ticker | Price | % from EMA50 | Vol Declining | Triggers | RSI |
-|------|--------|-------|--------------|---------------|----------|-----|
-| 1 | GD | $340.75 | -0.35% | ✓ | All 3 | 49.2 |
-| 2 | XOM | $151.78 | +0.47% | ✓ | All 3 | 50.6 |
-| 3 | OKE | $88.21 | +0.78% | ✓ | All 3 | 49.5 |
-| 4 | PM | $175.44 | +0.48% | ✓ | RSI+PH | 47.3 |
-| 5 | NVDA | $208.66 | +0.94% | ✓ | 20EMA | 46.9 |
-| 6 | CVX | $189.24 | +1.09% | ✓ | All 3 | 52.8 |
-| 7 | NSC | $311.25 | +1.19% | ✓ | All 3 | 50.9 |
-| 8 | AFL | $115.47 | +1.45% | ✓ | All 3 | 52.3 |
-| 9 | PLD | $142.70 | +1.35% | ✗ | All 3 | 50.5 |
-| 10 | KO | $79.53 | +1.38% | ✗ | 20EMA+RSI | 51.7 |
-| 11 | ETN | $406.40 | +2.61% | ✓ | All 3 | 51.9 |
-| 12 | LIN | $504.11 | +1.03% | ✗ | All 3 | 50.9 |
-| — | GOOGL | $363.57 | +0.63% | ✗ | PH only | 43.5 |
-| — | BAC | $53.83 | +4.47% | ✗ | PH only | 64.8 |
-| — | EOG | $140.49 | +3.49% | ✓ | 20EMA+PH | 55.0 |
-| — | MO | $71.48 | +3.01% | ✓ | All 3 | 53.3 |
-| — | others | — | — | — | — | — |
-
-_NSC excluded: R:R < 1.5:1 (stock at analyst median target $298-313; 52-week high $326 only $15 above current $311 with $13 stop → sub-1.2:1). Final score 49/115 — below 55 threshold._
+## Scan Metadata
+- **Scanner:** Momentum after pullback (yfinance fallback — browser-use unavailable)
+- **Scan timestamp:** 2026-06-15 19:02 UTC
+- **Universe:** S&P 500 (150-ticker fallback list; Wikipedia fetch returned 403)
+- **Symbols found:** 34
+- **Full ticker list:** AAPL, NVDA, AMZN, GOOGL, TSLA, AVGO, JPM, JNJ, MRK, CVX, ORCL, KO, QCOM, LIN, PM, CAT, ADI, UNP, EOG, MO, CL, NSC, GD, ETN, USB, MCHP, FDX, EMR, NXPI, WELL, AFL, TFC, OKE, GM
+- **TradingView visual check:** Not performed (browser-use unavailable); B-Xtrender/Fair Value Band points not awarded (0 of 15 BX pts in all scores)
+- **Trades logged:** None (scheduled/unattended run — no confirmed entries to log)
