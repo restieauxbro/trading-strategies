@@ -1,264 +1,256 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-06-21_
+_Last updated: 2026-06-22_
 
 ---
 
 ## Market Context
 
-The S&P 500 (SPY) is trading at $746.74, sitting 9.1% above its 200-day SMA ($684.49) and 2.6% above its 50-day SMA ($727.82) — a clean, confirmed uptrend. VIX closed at ~16.8 on Friday (June 19), well below the 25 elevated threshold. The macro backdrop remains risk-on: large-cap tech and semiconductors are leading, AI infrastructure spending remains a dominant theme, and there is no sign of broad market deterioration. Stricter filters are NOT required. This is a favourable environment for momentum-pullback entries.
+The S&P 500 (SPY) closed at $744.14, sitting 8.6% above its 200-day SMA ($685.02) and 2.1% above its 50-day SMA ($729.14) — confirming a healthy bull market uptrend. VIX is at 17.26, well below the elevated threshold of 25, indicating moderate implied volatility and a low-fear environment. Overall market conditions are supportive of continuation setups. No downtrend filter is applied. With markets having recovered sharply from the April 2026 tariff-driven lows, many S&P 500 names have now pulled back to their 50-day EMAs after initial momentum, creating the exact orderly pullback-to-support conditions this strategy targets.
 
-> **⚠️ Scan method note:** TrendSpider live scan via `browser-use` is unavailable in this environment. The scan was replicated using yfinance against a 276-ticker S&P 500 universe, applying all four condition groups from `config.md` (trend alignment, rising EMAs, ±3% proximity to daily 50 EMA in last 5 bars, and at least one timing trigger). Nine tickers qualified; the top five were researched in full.
-
-> **⚠️ TradingView visual check (Step 4b):** Could NOT be completed — `browser-use` unavailable. B-Xtrender scores (up to ±15 pts) are excluded from all scoring below. Actual scores may be higher (if trend-following) or lower (if deteriorating). Treat stated scores as conservative baselines.
+> ⚠️ **BX Visual Confirmation Not Available**: TradingView browser-use sessions are unavailable in this scheduled/unattended environment. B-Xtrender scores (up to 15 pts) are excluded from all scores below. Each pick should receive BX confirmation before live execution.
 
 ---
 
 ## Today's Suggested Trades
 
-### 1. NVDA — NVIDIA (Semiconductors / Technology)
+### 1. NVDA — Pullback to EMA50 with AI infrastructure catalyst
 
 ```
 Ticker: NVDA
-Current Price: $210.69
-Sector: Technology — Semiconductors
-Score: 86/115 (A:33 B:18 C:20 D:15 Ded:0) [B-Xtrender not scored — see note]
+Current Price: $208.38
+Sector: Technology / Semiconductors
+Score: 100/115 (A:40 B:25 C:20 D:15 Ded:0) [BX unconfirmed — potential +15 pts if green]
 
 Setup Summary:
-NVDA has been consolidating in a tight range at the daily 50 EMA ($206.76–$211) for three
-weeks (June 3–18), after pulling back from its 52-week high of $236. The stock is now
-back above all short-term EMAs, with the 50 EMA and 200 EMA both clearly rising. On June
-18, NVIDIA completed a $25 billion bond offering that was oversubscribed 3.4× ($85B in
-orders), signalling exceptional institutional confidence in the long-term AI hardware cycle.
-RSI recovered to 51.8 — just reclaiming the 50 line. Weekly chart shows a strong golden
-cross with price 15% above the weekly EMA50, confirming the broader uptrend.
+NVDA has pulled back from its May 2026 post-earnings peak of ~$236 to the daily 50 EMA zone
+($206.83 EMA50), with price 0.89% above the EMA and volume declining on the pullback
+(5-day avg 86% of 20-day avg). Weekly structure remains impeccable: weekly EMA50 ($264.20)
+above weekly EMA200 ($212.68), and price well above both. The stock has now recrossed the
+20 EMA, RSI has crossed back above 50, and Friday's close was above Thursday's high — all
+three Group 4 triggers firing simultaneously, a high-quality re-entry signal.
 
-Entry Zone: $208–$213
-Stop Loss: $199.00 — below 20-day swing low (June 9–10 base)
-Target 1: $232 — prior swing high (June 2 candle high)
-Target 2: $250 — measured move / consensus analyst target zone (PT $265)
-Risk/Reward: 2.0:1 (to T1) | 3.7:1 (to T2)
+Entry Zone: $205–$212
+Stop Loss: $199 — below recent 20-day swing low ($199.34), invalidates EMA50 support thesis
+Target 1: $220 — prior resistance / consolidation ceiling from mid-June 2026
+Target 2: $232 — May 2026 52-week high
+Risk/Reward: 4.5:1 (using entry $205, T2 $232, stop $199)
 
 Key Risks:
-- NVDA has a pattern of selling off on great earnings (happened May 20). Next earnings
-  Aug 26, 2026 (66 days — comfortably outside filter).
-- China revenue excluded from guidance (export control overhang).
-- Down-day average volume (180M) slightly exceeds up-day volume (166M) in recent range —
-  mild distribution concern.
-- $25B debt offering volume spike (241M on June 18) may distort recent averages.
+- Earnings Aug 26, 2026 (64 days — clear of the 3-week hard filter)
+- Post-earnings consolidation range $199–$232 could produce chop before directional break
+- Sector re-rating risk if macro/AI capex narrative shifts
 
 Fundamental Note:
-Q1 FY2027 (May 20, 2026): Revenue $81.6B (+85% YoY), Data Center $75.2B (+92% YoY),
-EPS $1.87 vs $1.76 est (+6.25% beat). FY2026 full-year revenue $215.9B (+65% YoY). Board
-added $80B to buyback authorisation in May 2026. Vera Rubin (next data center platform) in
-full production for Q3. Business trajectory is exceptional.
+Q1 FY2027 (May 2026): EPS $1.98 vs $1.76 consensus (beat); revenue +85.2% YoY; EPS growth
++214.5% YoY. Q2 guidance $91B vs $86.84B consensus. $80B buyback authorised. Multiple
+analyst upgrades including China Renaissance initiation (Buy, $319 target) on Jun 5. Full
+consensus: Strong Buy, average 12-month target ~$298–$309. Computex catalysts: RTX Spark
+PC chip with Microsoft + Vera Rubin AI platform entering production.
 ```
 
-**Instrument — Paired Debit Spread (Bullish), July 17 2026 (~26 DTE)**
+**Instrument: Paired Debit Spread (Bullish) — Jul 17, 2026 (~25 DTE)**
 
 ```
 Instrument: Paired Debit Spread (preferred)
 Bias: Bullish
-Expiry: July 17, 2026 (~26 DTE)
+Expiry: Jul 17 2026 (~25 DTE)
 
 Primary Spread:
   Structure: Bull Call Spread
-  Strikes: Long $210 / Short $215
-  Net Debit: ~$2.43 per spread
-  Max Profit: ~$2.57 (at or above $215)
-  Max Loss: ~$2.43
+  Size: 2 contracts
+  Strikes: $210 long / $215 short
+  Net Debit: ~$2.25 per spread (~$450 total)
+  Max Profit: ~$2.75 per spread (~$550 total)
+  Max Loss: ~$2.25 per spread (~$450 total)
 
 Opposite Hedge:
   Structure: Bear Put Spread
-  Size: Half the primary (e.g., 1 bear put per 2 bull calls)
-  Strikes: Long $205 / Short $195
-  Net Debit: ~$2.87 per spread (~$1.44 allocated per primary unit)
-  Max Profit: ~$7.13 per spread
-  Max Loss: ~$2.87
+  Size: 1 contract
+  Strikes: $210 long / $205 short
+  Net Debit: ~$2.25 per spread (~$225 total)
+  Max Profit: ~$2.75 per spread (~$275 total)
+  Max Loss: ~$2.25 per spread (~$225 total)
 
-Combined Position (per 2 bull calls + 1 bear put):
-  Total Debit / Max Loss: ~$7.73
-  Expected Payout if NVDA > $215: ~$5.14 (+67%)
-  Expected Payout if NVDA drops hard to ~$195: ~$2.28 (+29% — hedge offsets primary loss)
-  Main Risk: NVDA drifts sideways / stays pinned in the $205–$215 range through July 17
+Combined Position:
+  Total Debit / Max Loss: ~$675
+  Expected Payout if thesis right (NVDA > $215 at expiry): ~$325 net
+  Expected Payout on violent move lower (NVDA < $205): ~−$175 (hedge offsets ~60% of loss)
+  Main Risk: drift / time decay between $205 and $215
 ```
 
 ---
 
-### 2. GOOG — Alphabet Class C (Communication Services / Internet)
+### 2. AAPL — EMA50 bounce, WWDC AI catalyst, approaching ATH
 
 ```
-Ticker: GOOG
-Current Price: $367.46
-Sector: Communication Services — Internet Content & Information
-Score: 80/115 (A:37 B:10 C:19 D:14 Ded:0) [B-Xtrender not scored]
+Ticker: AAPL
+Current Price: $299.17
+Sector: Technology / Consumer Electronics
+Score: 91/115 (A:39 B:25 C:18 D:9 Ded:0) [BX unconfirmed — potential +15 pts if green]
 
 Setup Summary:
-GOOG has spent three weeks oscillating within ±2.5% of its 50 EMA ($359–$365 zone),
-making it one of the cleanest pullback-to-support setups in the current market. The stock
-pulled back from its 3-month high of $404 to $343 (June 11 intraday), then rebounded
-sharply back through the 50 EMA, with RSI recovering to 52.0. Both daily and weekly
-uptrends are intact: weekly golden cross, price well above weekly EMA50. Volume on down
-days is only marginally higher than up days, consistent with rotation rather than
-aggressive distribution. Earnings are 31+ days away (July 22–28), and the July 17 options
-expiry sits 5 days before earnings — no earnings risk in the suggested spread.
+Apple pulled back from its 52-week high of $317.40 to the daily 50 EMA zone (~$290),
+bounced cleanly off the $287 swing low, and is now recrossing the 20 EMA with volume
+declining on the down legs (5-day avg 92% of 20-day avg). Weekly structure is solid:
+weekly EMA50 > weekly EMA200, price comfortably above both. Three Group 4 triggers
+fire: 20 EMA recrossed, RSI above 50, and Friday's close above Thursday's high.
+WWDC 2026 (Jun 9) introduced the upgraded Siri AI and Apple Intelligence platform,
+providing a near-term catalyst even if the market reaction was initially muted.
 
-Entry Zone: $362–$370 (at/near 50 EMA)
-Stop Loss: $354.00 — below June 10 daily close and June 11 intraday low
-Target 1: $390 — prior swing high (June 1 candle)
-Target 2: $404 — 52-week high
-Risk/Reward: 1.8:1 (to T1) | 2.8:1 (to T2)
+Entry Zone: $295–$302
+Stop Loss: $286 — below recent swing low ($287.38) near EMA50 test
+Target 1: $315 — prior resistance / approach to 52-week high
+Target 2: $325 — measured continuation above ATH
+Risk/Reward: 3.3:1 (using entry $295, T2 $325, stop $286)
 
 Key Risks:
-- Earnings July 22–28 (31–37 days). A stock position held past that point carries
-  full earnings risk; the July 17 spread sidesteps this entirely.
-- Q1 2026 EPS beat was inflated by a $37.7B non-recurring net gain — underlying beat
-  is real but magnitude should be discounted.
-- GOOG trades at 28× trailing P/E — any disappointment on AI/search commentary could
-  pressure the stock ahead of earnings.
+- Earnings Jul 30, 2026 (38 days — clear of 3-week filter, but noteworthy for timing)
+- Memory chip inflation headwind (component costs up 3–4×) — margin compression risk
+- KGI Securities downgraded to Hold on Jun 22 (today); limited upside to 52W high
+- WWDC AI rally did not materialise — stock may continue sideways near ATH
 
 Fundamental Note:
-Q1 2026 (April 29): Revenue $109.9B (+22% YoY, beat $107.2B est). EPS $5.11 vs $2.63
-est (+94% beat, includes $37.7B non-recurring gain in other income). Cloud revenue growing
-strongly. Google is integrating Gemini AI deeply into Search and workspace products.
-Analyst consensus remains constructive.
+Revenue growth +16.6% YoY, EPS growth +21.8% YoY; analyst consensus Moderate Buy,
+avg target ~$315 (BofA $380, Wedbush $400, consensus $315). WWDC 2026 showcased
+Siri AI revamp. Tim Cook's final WWDC before handoff to John Ternus — a "baton pass"
+moment noted by Wedbush as setting the AI base for the next product cycle. Downside
+risk from pricing power test as Apple plans device price increases to offset memory inflation.
 ```
 
-**Instrument — Paired Debit Spread (Bullish), July 17 2026 (~26 DTE, expires before earnings)**
+**Instrument: Paired Debit Spread (Bullish) — Jul 17, 2026 (~25 DTE)**
 
 ```
 Instrument: Paired Debit Spread (preferred)
 Bias: Bullish
-Expiry: July 17, 2026 (~26 DTE — expires 5 days before earliest earnings date)
+Expiry: Jul 17 2026 (~25 DTE)
 
 Primary Spread:
   Structure: Bull Call Spread
-  Strikes: Long $365 / Short $375
-  Net Debit: ~$4.73 per spread
-  Max Profit: ~$5.27 (at or above $375)
-  Max Loss: ~$4.73
+  Size: 2 contracts
+  Strikes: $300 long / $305 short
+  Net Debit: ~$2.25 per spread (~$450 total)
+  Max Profit: ~$2.75 per spread (~$550 total)
+  Max Loss: ~$2.25 per spread (~$450 total)
 
 Opposite Hedge:
   Structure: Bear Put Spread
-  Size: Half the primary
-  Strikes: Long $360 / Short $350
-  Net Debit: ~$3.20 per spread (~$1.60 allocated per primary unit)
-  Max Profit: ~$6.80 per spread
-  Max Loss: ~$3.20
+  Size: 1 contract
+  Strikes: $300 long / $295 short
+  Net Debit: ~$2.20 per spread (~$220 total)
+  Max Profit: ~$2.80 per spread (~$280 total)
+  Max Loss: ~$2.20 per spread (~$220 total)
 
-Combined Position (per 2 bull calls + 1 bear put):
-  Total Debit / Max Loss: ~$12.66
-  Expected Payout if GOOG > $375: ~$10.54 (+83%)
-  Expected Payout if GOOG drops to ~$350: ~$2.82 (partial hedge, ~+22% on hedge side)
-  Main Risk: Stock range-bound between $355–$375 at expiry (pinned between spreads)
+Combined Position:
+  Total Debit / Max Loss: ~$670
+  Expected Payout if thesis right (AAPL > $305 at expiry): ~$330 net
+  Expected Payout on violent move lower (AAPL < $295): ~−$170 (hedge offsets ~60% of loss)
+  Main Risk: drift / pinning near ATH resistance between $295 and $305
 ```
 
 ---
 
-### 3. AVGO — Broadcom (Semiconductors / Technology) ⚠️ Elevated Risk
+### 3. AVGO — Post-earnings overreaction bounce, analysts calling it a buy
 
 ```
 Ticker: AVGO
-Current Price: $411.35
-Sector: Technology — Semiconductors
-Score: 73/115 (A:24 B:18 C:20 D:11 Ded:0) [B-Xtrender not scored]
+Current Price: $394.89
+Sector: Technology / Semiconductors
+Score: 90/115 (A:40 B:25 C:20 D:10 Ded:−5) [BX unconfirmed — potential +15 pts if green]
 
 Setup Summary:
-AVGO reported a record quarter on June 3 (AI revenue +143% YoY, total revenue $22.19B
-+48% YoY) but sold off sharply (-25% in 5 days, from $479 to $370) because Q3 AI guidance
-of $16B trailed the "whisper number" of $17.2B, and CEO Hock Tan reiterated rather than
-raised the $100B FY2027 AI target. This is an "expectations reset" selloff, not a
-business deterioration. The stock has since bounced +10.8% from the $370 low, closing
-exactly at the 50 EMA on June 18 ($411.35 vs EMA50 $410.55). The weekly uptrend remains
-strongly intact (price 20% above weekly EMA50). Multiple analysts hold price targets of
-$545–$550 (Jefferies, Wells Fargo).
+Broadcom reported record Q2 FY2026 revenue of $22.19B (beat), EPS beat, and raised guidance,
+yet the stock fell ~22% from $495 to ~$370 because Q3 AI guidance of $16B fell short of the
+analyst whisper of $17.2B. The stock has since stabilised and recovered to the $390–$400 zone,
+now testing daily EMA50 ($399.74) from below. Volume is declining on the recovery (5-day avg
+93% of 20-day avg). All three Group 4 triggers fired in recent sessions. JPMorgan published
+a "Ignore The Noise" note today reiterating Overweight at $580 and calling for "aggressive
+buying." The setup is a post-earnings overreaction bounce with a wide R:R back to pre-
+earnings levels.
 
-⚠️ This is NOT an orderly pullback — the post-earnings gap down was sharp and
-volume-heavy. Treat as a starter/small position. Full conviction entry requires a
-sustained close above $420 on increased volume. Consider this a watchlist candidate
-until that close is confirmed.
-
-Entry Zone: $405–$415 (at 50 EMA zone)
-Stop Loss: $395.00 — below 50 EMA support ($410 EMA − 3.6%)
-Target 1: $450 — pre-earnings trading range (late May levels)
-Target 2: $480 — near pre-earnings all-time high area
-Risk/Reward: 2.4:1 (to T1) | 4.3:1 (to T2)
+Entry Zone: $390–$400
+Stop Loss: $370 — below post-earnings gap low swing ($370.33); clear breakdown level
+Target 1: $435 — prior resistance from pre-earnings consolidation ceiling
+Target 2: $480 — approaching pre-earnings levels (Jan–May 2026 range)
+Risk/Reward: 4.5:1 (using entry $390, T2 $480, stop $370)
 
 Key Risks:
-- Sharp post-earnings selloff driven by guidance gap and CEO "chips only" pivot. If Q3
-  AI revenue guidance of $16B doesn't beat on the Sep 3 print, a second leg down is
-  possible.
-- Gross margin guided lower (74% vs 77.1%) — AI chip mix is lower margin than software.
-- Google confirmed it will use more than one chip supplier, potentially reducing AVGO's
-  concentration advantage.
-- Elevated IV (~50%) makes options expensive on both sides.
-- Down-day volume (38.7M) materially exceeds up-day volume (34.1M).
+- Earnings Sep 3, 2026 (73 days — well clear of 3-week hard filter)
+- Insider selling: "35 recent net-seller transactions" reported (−5 pts deduction applied)
+- CFO flagged structural gross margin headwind (AI ASIC mix compresses margins to ~74%)
+- AI guidance concentration risk: 6-customer concentration; Google diversification
+- If Q3 AI revenue misses $16B, further sharp leg lower likely
 
 Fundamental Note:
-Q2 FY2026 (June 3): Revenue $22.19B (+48% YoY, beat $22.04B est). AI revenue $10.8B
-(+143% YoY). EPS $2.44 vs $2.32 est (+5.2% beat). Q3 guidance: revenue ~$29.4B. Next
-earnings: Sep 3, 2026 (74 days — clear of 3-week filter). Analysts Jefferies ($550 PT),
-Wells Fargo ($545 PT) maintain constructive stance post-selloff.
+Q2 FY2026: Revenue +47.9% YoY; EPS growth +85.4% YoY; AI chip revenue +143% to $10.8B;
+$73B AI backlog. Beat consensus top- and bottom-line. Consensus: Strong Buy, avg target ~$522
+(range $400–$580). Post-earnings, JPMorgan to $580, KeyBanc to $575, Morgan Stanley to $502,
+Bernstein to $550 — analysts raised targets INTO the selloff. One Macquarie downgrade on
+customer concentration concerns.
 ```
 
-**Instrument — Paired Debit Spread (Bullish), July 17 2026 (~26 DTE)**
+**Instrument: Paired Debit Spread (Bullish) — Jul 17, 2026 (~25 DTE)**
 
 ```
-Instrument: Paired Debit Spread (preferred) — reduce size vs standard due to elevated IV
+Instrument: Paired Debit Spread (preferred)
 Bias: Bullish
-Expiry: July 17, 2026 (~26 DTE)
+Expiry: Jul 17 2026 (~25 DTE)
 
 Primary Spread:
   Structure: Bull Call Spread
-  Strikes: Long $410 / Short $420
-  Net Debit: ~$4.68 per spread
-  Max Profit: ~$5.32 (at or above $420)
-  Max Loss: ~$4.68
+  Size: 2 contracts
+  Strikes: $390 long / $400 short
+  Net Debit: ~$5.15 per spread (~$1,030 total)
+  Max Profit: ~$4.85 per spread (~$970 total)
+  Max Loss: ~$5.15 per spread (~$1,030 total)
 
 Opposite Hedge:
   Structure: Bear Put Spread
-  Size: Half the primary
-  Strikes: Long $410 / Short $390
-  Net Debit: ~$8.40 per spread (~$4.20 allocated per primary unit)
-  Max Profit: ~$11.60 per spread
-  Max Loss: ~$8.40
+  Size: 1 contract
+  Strikes: $390 long / $380 short
+  Net Debit: ~$4.70 per spread (~$470 total)
+  Max Profit: ~$5.30 per spread (~$530 total)
+  Max Loss: ~$4.70 per spread (~$470 total)
 
-Combined Position (per 2 bull calls + 1 bear put):
-  Total Debit / Max Loss: ~$17.76
-  Expected Payout if AVGO > $420: ~$10.64 (+60%)
-  Expected Payout if AVGO drops to ~$390: ~$5.76 (partial recovery via hedge)
-  Main Risk: Drift / time decay without directional conviction given elevated IV; consider
-  smaller position size relative to NVDA and GOOG
+Combined Position:
+  Total Debit / Max Loss: ~$1,500
+  Expected Payout if thesis right (AVGO > $400 at expiry): ~$500 net
+  Expected Payout on violent move lower (AVGO < $380): ~−$500 (hedge fully offsets)
+  Main Risk: drift / compression / pinning between $380 and $400
 ```
 
 ---
 
 ## Watchlist
-
 _Names with constructive scan/research but no immediate entry (timing / extension)._
 
 | Ticker | Why watching | Trigger to revisit |
 |--------|--------------|-------------------|
-| DECK | Deckers (HOKA/UGG) pulled back cleanly to 50 EMA but RSI still 48.3, not yet back above 50. Uptrend intact. Score ~58/115. | RSI closing back above 50; sustained close above $110 on volume |
-| AVGO | Included above as pick #3 with caveats. Full conviction entry if stock clears $420 on volume. | Sustained daily close above $420 on >35M volume; confirms post-earnings base |
+| ETN | Eaton Corp in strong uptrend; passed all scan conditions but currently 8.96% above EMA50 — extended | Wait for pullback to EMA50 zone (~$399); enter on a quiet-volume test of that level |
+| GD | General Dynamics at EMA50 zone in defense sector (currently in favour); triggers firing but volume NOT declining | Watch for volume to confirm decline on any dip toward $340; re-run on next scan day |
+| AMGN | Amgen extremely close to EMA50 (0.65%); triggers firing; defensive Biotech in uptrend; but volume not declining | Wait for volume to confirm consolidation; re-assess if volume contracts over next 2–3 sessions |
 
 ---
 
 ## Open Trades
-
 _User-confirmed trades from the last 14 days, outcome not yet recorded._
 
-No open trades — this is a scheduled/unattended run. No trade rows have been confirmed or appended to the CSV.
+| Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
+|------|--------|------------|------|----------|----------|-----|
+| — | — | — | — | — | — | — |
+
+_No open trades. This is a scheduled run — no new trades are confirmed (see note below)._
 
 ---
 
 ## Performance Summary
-
 _All closed trades (outcome recorded)._
 
-No closed trades recorded in `trades-log.csv`. Only row in the log is an empty-scan placeholder from 2026-04-16 (browser-use unavailable that session as well).
+| Date | Ticker | Entry Price | Outcome Price | % Change | Result |
+|------|--------|-------------|---------------|----------|--------|
+| 2026-04-16 | — | — | — | — | Empty scan (no tickers found) |
 
 ### Aggregate Stats
-- **Total closed trades:** 0
+- **Total closed trades:** 0 (one empty-scan run recorded)
 - **Win rate (HIT_T1 or HIT_T2):** N/A
 - **Average % gain on wins:** N/A
 - **Average % loss on stops:** N/A
@@ -268,13 +260,8 @@ No closed trades recorded in `trades-log.csv`. Only row in the log is an empty-s
 
 ---
 
-## Scan Details
-
-| Field | Value |
-|---|---|
-| Scan method | yfinance (browser-use unavailable) — 276 S&P 500 tickers screened |
-| Scan conditions | All 4 condition groups from config.md applied |
-| Tickers qualifying scan | 9 (MTCH, NVDA, GOOG, DECK, AVGO, TGT, ETN, COLM, GLW) |
-| Tickers excluded after research | TGT (weaker technicals), ETN (too extended), COLM (too extended), GLW (too extended), MTCH (business deterioration, score ~40/115) |
-| Market regime | Bull market — no stricter filters needed |
-| B-Xtrender check | NOT completed (browser-use/TradingView unavailable) |
+## Run Notes
+- **Scan method**: yfinance-based scanner (browser-use unavailable in scheduled environment); 150-ticker S&P 500 fallback universe; 21 tickers passed all scan conditions.
+- **BX visual check**: Not performed — `browser-use` not available in this unattended/scheduled run. All three suggested trades carry an unconfirmed BX component (up to +15 pts potential). **Execute only after manual BX confirmation on TradingView chart `z25AhAlV`.**
+- **Scheduled run**: No new trades appended to `trades-log.csv` per Step 6 rules. Trades are suggestions only.
+- **Outcome tracking**: The only prior CSV row (2026-04-16) was an empty-scan placeholder with no ticker — nothing to update.
