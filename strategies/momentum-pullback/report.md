@@ -1,229 +1,232 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-06-23_
+_Last updated: 2026-06-25_
 
 ---
 
 ## Market Context
 
-The S&P 500 closed at approximately 7,389–7,473 on June 22–23, sitting roughly 8% above its 200-day moving average (~6,858) and about 2% above its 50-day MA. The broad uptrend is intact — the 50-day MA has remained above the 200-day MA since July 2025 — but today's session (June 23) introduced a significant rotation risk. The Nasdaq fell ~1.5–2.0% and the Philadelphia Semiconductor Index collapsed 7.6%, driven by investor skepticism over debt-funded AI spending and hawkish commentary from new Fed Chair Kevin Warsh, who has raised the probability of a rate hike by year-end. The VIX spiked to 20.54 (+18% intraday), hitting an over-one-week high. Importantly, the Dow Jones Industrial Average finished slightly positive today, reflecting a clear rotation from high-multiple technology names toward defensive and value-oriented sectors. Only ~58% of S&P 500 stocks are trading above their 50-day MA (healthy markets typically run 70–80%), signalling narrowing breadth beneath the surface. The uptrend remains intact, but the environment calls for selectivity — defensive, non-tech setups are favoured this run.
+The S&P 500 (SPY: $733.06) is trading **+6.8% above its 200-day moving average** and virtually flat to its 50-day MA (+0.1%), confirming a continued **uptrend with a brief period of consolidation**. The index is down approximately 2.1% over the past month, suggesting a mild pullback within the larger bull trend — exactly the backdrop this strategy is designed to exploit. VIX stands at **18.86**, well below the 25 threshold, indicating normal/low fear with no elevated hedging pressure. Overall conditions are constructive for momentum-pullback entries: uptrend intact, VIX benign, sector rotation providing opportunity in Energy, Industrials, and select Defensives.
 
-> **Note — Step 4b TradingView visual check:** This was a scheduled/unattended run. Browser-use and the TradingView B-Xtrender visual check (chart z25AhAlV) could not be executed. All B-Xtrender scores below are estimates inferred from RSI, price-vs-EMA structure, and trigger data. **Before executing any of these trades, perform the mandatory visual check** at `https://www.tradingview.com/chart/z25AhAlV/?symbol=TICKER` for each pick to confirm green B-Xtrender background bars and a green dot on the signal line.
+> **Note:** TradingView visual confirmation (browser-use profile Tim) was unavailable in this environment. B-Xtrender scores are estimated based on EMA relationships and trend structure. Tickers with strong uptrends above rising 50/200 EMAs are assumed to show green background bars; green dot and histogram signals are left unscored pending visual verification.
+
+---
+
+## Scan Results
+
+- **Method:** yfinance-based scan applying TrendSpider Momentum After Pullback logic (Group 1–4 conditions from `config.md`)
+- **Universe:** ~290 S&P 500 constituents screened
+- **Date/Time:** 2026-06-25 ~19:00 UTC
+- **Symbols passing all conditions (33):**
+
+  V, JNJ, MRK, ABBV, KO, LIN, AMGN, PM, HON, UNP, QCOM, ADI, MO, CB, ETN, EMR, CL, FDX, MPC, VLO, PSX, AFL, WAT, EQR, EXR, RF, ETR, LNT, OGE, WEC, EVRG, CNP, TRGP
+
+---
+
+## Outcomes Recorded Today
+
+**0 outcomes recorded.** The only prior entry in `trades-log.csv` is a 2026-04-16 empty-scan marker row (no tickers found that run). No trades are pending review.
 
 ---
 
 ## Today's Suggested Trades
 
-> **Scheduled run — trades are suggested only. No rows have been appended to trades-log.csv. If any of these are opened, manually log them using the `log-trade-csv` skill.**
+> **Scheduled run — no trades logged.** The three picks below are recommendations for user review. Per `AGENT.md` Step 6, trades are only appended to `trades-log.csv` after user confirmation.
 
-### 1. DE — Deere & Company (97/115)
+---
 
-```
-Ticker: DE
-Current Price: $591.26
-Sector: Industrials
-Score: 97/115 (A:53 B:18 C:11 D:15 Ded:0)
-
-Setup Summary:
-DE pulled back from post-earnings highs to test its 50-day SMA ($573.79 SMA / $573.30 EMA)
-and is now bouncing cleanly. Today's volume of ~540K is 57% below the 3-month average
-(1.27M), confirming the pullback is a healthy consolidation rather than distribution.
-The trigger fired via close above prior day's high. The Dow Jones was positive today while
-the S&P sold off — confirming DE's defensive-industrial resilience. Q2 2026 earnings beat
-by 15% vs estimates and the IEEPA tariff recovery ($272M from Feb 2026 Supreme Court ruling)
-provide strong fundamental support.
-
-Entry Zone: $583–$598 (within 3% of 50-day SMA)
-Stop Loss: $562 — below 50-day SMA with $12 buffer
-Target 1: $635 — post-earnings high / prior resistance zone
-Target 2: $670 — approaching 52-week high ($674)
-Risk/Reward: 1.9:1 (T1), 3.6:1 (T2)
-
-Key Risks:
-- Broader market selloff risk if Fed hike materialises (hawkish pivot weighing on all sectors)
-- Farm equipment cycle remains depressed; Q2 EPS was slightly below prior year ($6.55 vs $6.64)
-- Earnings August 20, 2026 (58 days — safe window)
-
-Fundamental Note:
-Q2 2026: EPS $6.55 vs $5.70 estimate (+15% beat); revenue +5.4% YoY to $13.37B. FY2026 net
-income guided to $4.5–5.0B. IEEPA tariff recovery of $272M added in Q2. Earnings growth
-catalyst from recovering farm cycle expected in FY2027 (+25.8% EPS growth per analysts).
-```
-
-**Instrument: Bullish Paired Debit Spread**
+### 1. MPC — Marathon Petroleum Corp.
 
 ```
-Instrument: Paired Debit Spread (preferred)
+Ticker: MPC
+Current Price: $252.46
+Sector: Energy (Integrated Downstream & Midstream)
+Score: 98/115 (A:45 B:18 C:20 D:15 Ded:0)
+```
+
+**Setup Summary:**
+Marathon Petroleum is consolidating near its 50-day EMA ($246.65) after a powerful 2026 run driven by elevated refining crack spreads from the Iran conflict. All three timing triggers are active (above 20 EMA, RSI recrossing 50, close above prior high) and volume is declining on the pullback — a hallmark of healthy continuation vs distribution. The 52-week range ($154.97–$272.46) shows MPC has room to re-test the high. Fwd P/E of 10.5x is compelling for the current earnings trajectory.
+
+```
+Entry Zone:    $247–$253 (around 50-day EMA)
+Stop Loss:     $242 — below 50 EMA with buffer; trend invalidation
+Target 1:      $272 — prior 52-week high / range top
+Target 2:      $295 — measured move; Goldman $291 / TD Cowen $320 target range
+Risk/Reward:   ~2.75:1 (entry $250, stop $242, T1 $272)
+```
+
+**Key Risks:**
+- Up ~60% YTD — extended; street consensus mean target of ~$259 limits near-term upside to ~3% from current price (high targets are $291–$335)
+- Iran conflict resolution would sharply compress crack spreads and earnings trajectory
+- California class action lawsuit (price manipulation allegation) — minor; no financial impact confirmed yet
+- Earnings August 4 — well outside 3-week hard filter; options expiring July 17 avoid earnings risk
+
+**Fundamental Note:**
+Q1 2026 EPS of $1.65 massively beat $0.75 estimate as Iran-driven refining margins surged; revenue grew +8.8% YoY. Post-Q1, Goldman raised target to $291, Wells Fargo to $335, TD Cowen to $320, Morgan Stanley to $265 (June 12). Q2 2026 EPS consensus is ~$11–12, implying ~184% YoY jump as elevated crack spreads flow through a full quarter.
+
+**Instrument (Bullish — Paired Debit Spread):**
+```
+Instrument: Paired Debit Spread
 Bias: Bullish
-Expiry: July 17, 2026 (~24 DTE) — before earnings Aug 20
+Expiry: July 17, 2026 (~22 DTE) — expires before Aug 4 earnings
 
 Primary Spread:
   Structure: Bull Call Spread
-  Size: 2 spreads
-  Strikes: $590 long / $640 short  (50-pt width, ATM)
-  Net Debit: ~$23–26 per spread (~$2,300–2,600 for 2x)
-  Max Profit: ~$24–27 per spread
-  Max Loss: ~$23–26 per spread (debit paid)
+  Size: N contracts
+  Strikes: Long 250 / Short 260
+  Net Debit: ~$4.60 per spread (indicative mid)
+  Max Profit: ~$5.40 per spread
+  Max Loss:   ~$4.60 per spread
 
 Opposite Hedge:
   Structure: Bear Put Spread
-  Size: 1 spread (half size)
-  Strikes: $580 long / $530 short  (50-pt width)
-  Net Debit: ~$15–18 per spread
-  Max Profit: ~$32–35 per spread at full payout
+  Size: N/2 contracts (half-size)
+  Strikes: Long 250 / Short 240 (indicative — verify 240 put liquidity)
+  Net Debit: ~$4.00–$4.50 per spread (indicative)
+  Max Profit: ~$5.50–$6.00 per spread
+  Max Loss:   ~$4.00–$4.50 per spread
 
 Combined Position:
-  Total Debit / Max Loss: ~$61–70 per pair (~$6,100–7,000)
-  Expected Payout if thesis is right: ~$48–54 (primary max profit × 2)
-  Expected Payout on violent move against: ~$32–35 (hedge payout)
-  Main Risk: drift / time decay / index stuck between $540–$640 range
+  Total Debit / Max Loss: ~$6.60–$7.10 (1× primary + 0.5× hedge)
+  Expected Payout if MPC ≥ $260 at expiry: ~$5.40 (primary) + hedge ~breakeven
+  Expected Payout on sharp drop to ≤ $240: primary loses $4.60, hedge nets ~$2.75–$3.00
+  Main Risk: drift / MPC pinned between $240–$260 at expiry; time decay erodes both spreads
 ```
 
 ---
 
-### 2. AMGN — Amgen Inc. (95/115)
+### 2. UNP — Union Pacific Corporation
 
 ```
-Ticker: AMGN
-Current Price: $347.27
-Sector: Healthcare (Biotechnology)
-Score: 95/115 (A:46 B:18 C:16 D:15 Ded:0)
-
-Setup Summary:
-AMGN pulled back from its 52-week high ($391.29) to test the 50-day SMA ($340.04) and
-has bounced cleanly (+1.6% above SMA). The stock gained +0.78% today while the Nasdaq
-dropped 1.7%, confirming its defensive healthcare positioning. Multiple scan triggers fired
-(EMA recross, RSI above 50, close above prior day high). The distance from current price to
-the 52-week high provides a clear, measurable upside path with attractive R:R. Amgen beat
-Q1 2026 EPS estimates by 8.9% and grows EPS at 5%+ YoY.
-
-Entry Zone: $342–$351
-Stop Loss: $333 — below 50-day SMA with $7 buffer
-Target 1: $375 — measured move / prior consolidation resistance
-Target 2: $391 — 52-week high re-test
-Risk/Reward: 2.1:1 (T1), 3.0:1 (T2)
-
-Key Risks:
-- MariTide (obesity/GLP-1 candidate) clinical readouts are binary event risk
-- Earnings August 4, 2026 (42 days — safe window, plan exits or roll before)
-- Biotech sector can move sharply on pipeline news
-
-Fundamental Note:
-Q1 2026 EPS $5.15 vs $4.73 consensus (+8.9% beat). EPS grew +5.1% YoY ($5.15 vs $4.90).
-FY2026 revenue guidance: $37.1–38.5B. Multiple pipeline assets with late-stage readouts
-expected in H2 2026. Consistent earnings beat track record (beat 8 of last 8 quarters).
+Ticker: UNP
+Current Price: $266.38
+Sector: Industrials (Railroads)
+Score: 97/115 (A:45 B:25 C:20 D:7 Ded:0)
 ```
 
-**Instrument: Bullish Paired Debit Spread**
+**Setup Summary:**
+Union Pacific is pulling back cleanly to its 50-day EMA ($261.91) in a confirmed daily and weekly uptrend. All three timing triggers fired simultaneously (above 20 EMA after being below, RSI recrossed 50, close above prior day high) and volume is declining on the pullback, indicating healthy consolidation. The company is advancing the regulatory approval process for America's first transcontinental railroad (UP/BNSF merger), which adds a structural long-term catalyst beyond the quarterly earnings cycle.
 
 ```
-Instrument: Paired Debit Spread (preferred)
+Entry Zone:    $261–$266 (at/near 50-day EMA)
+Stop Loss:     $257 — below 50 EMA with buffer; below recent swing support
+Target 1:      $282 — consensus analyst target; mid-range resistance
+Target 2:      $305 — Susquehanna price target; upper extension
+Risk/Reward:   ~4.0:1 (entry $262, stop $257, T1 $282)
+```
+
+**Key Risks:**
+- Earnings July 23, 2026 (28 days) — passes the 3-week hard filter, but position traders will hold through earnings; July 17 options expire 6 days before earnings (lower IV crush risk, but less time to capture move)
+- Carload volume softness — 1% fewer carloads in Q1 2026 vs Q1 2025
+- Intermodal competition and regulatory uncertainty around the transcontinental merger
+- No strong positive catalyst in the immediate 2-week window
+
+**Fundamental Note:**
+Q1 2026: EPS $2.87 (beat est. $2.84); adjusted EPS $2.93 (+8.5% YoY). Revenue +3%, freight revenue +4%. Operating ratio improved to 59.9% (record). Susquehanna reiterated Positive with $305 target June 5. Consensus: 21 analysts, Moderate Buy, target $282.21. Weiss Ratings upgraded April 21.
+
+**Instrument (Bullish — Paired Debit Spread):**
+```
+Instrument: Paired Debit Spread
 Bias: Bullish
-Expiry: July 17, 2026 (~24 DTE) — before earnings Aug 4
+Expiry: July 17, 2026 (~22 DTE) — expires 6 days before July 23 earnings
 
 Primary Spread:
   Structure: Bull Call Spread
-  Size: 2 spreads
-  Strikes: $345 long / $380 short  (35-pt width, ATM)
-  Net Debit: ~$17–19 per spread (~$1,700–1,900 for 2x)
-  Max Profit: ~$16–18 per spread
-  Max Loss: ~$17–19 per spread (debit paid)
+  Size: N contracts
+  Strikes: Long 265 / Short 275
+  Net Debit: ~$4.60 per spread (265C mid ~$8.05, 275C mid ~$3.45)
+  Max Profit: ~$5.40 per spread
+  Max Loss:   ~$4.60 per spread
 
 Opposite Hedge:
   Structure: Bear Put Spread
-  Size: 1 spread (half size)
-  Strikes: $345 long / $310 short  (35-pt width)
-  Net Debit: ~$12–14 per spread
-  Max Profit: ~$21–23 per spread at full payout
+  Size: N/2 contracts (half-size)
+  Strikes: Long 265 / Short 255
+  Net Debit: ~$3.23 per spread (265P mid ~$5.35, 255P mid ~$2.13)
+  Max Profit: ~$6.77 per spread (≈2.1× its own risk — target 2× met ✓)
+  Max Loss:   ~$3.23 per spread
 
 Combined Position:
-  Total Debit / Max Loss: ~$46–52 per pair (~$4,600–5,200)
-  Expected Payout if thesis is right: ~$32–36 (primary max profit × 2)
-  Expected Payout on violent move against: ~$21–23 (hedge payout)
-  Main Risk: drift / time decay / index stuck between $310–$380 range
+  Total Debit / Max Loss: ~$6.22 (1× primary + 0.5× hedge)
+  Expected Payout if UNP ≥ $275 at expiry: ~$5.40 primary + hedge breakeven
+  Expected Payout on sharp drop to ≤ $255: primary loses $4.60, hedge nets ~$3.39
+  Main Risk: drift between $255–$275 at expiry; earnings overhang limits conviction on longer-dated structures
 ```
+
+> **Alternative instrument for UNP:** Given the July 23 earnings proximity and position-trade style, **stock** (vs. options) may be preferred. Stop at $257, scaling in near $262–$265.
 
 ---
 
-### 3. JNJ — Johnson & Johnson (90/115) ⚠️ Earnings July 15 — Use Defined Risk Only
+### 3. ETN — Eaton Corporation plc
 
 ```
-Ticker: JNJ
-Current Price: $238.41
-Sector: Healthcare (Pharmaceuticals)
-Score: 90/115 (A:46 B:18 C:11 D:15 Ded:0)
-
-Setup Summary:
-JNJ is the standout relative-strength name today, gaining +3.1% while the S&P 500 fell
-1.1%, as investors rotated defensively into healthcare. The stock reclaimed its 50-day SMA
-($230.17) with three simultaneous triggers and displays an extremely low beta (0.256). The
-Icotyde launch (oral IL-23 therapy for psoriasis, April 2026) is a potentially blockbuster
-catalyst — Leerink projects $10.5B in peak sales by 2032. Recommend entering on any mild
-intraday pullback to the $234–237 zone to improve R:R rather than chasing today's +3.1% gap.
-
-Entry Zone: $234–$239 (prefer entry on modest pullback from today's +3.1% gap)
-Stop Loss: $226 — below 50-day SMA ($230.17) with $4 buffer
-Target 1: $252 — just above 52-week high ($251.71), new all-time high territory
-Target 2: $265 — Leerink Partners price target (Outperform, May 13, 2026)
-Risk/Reward: ~1.9:1 (T1 at entry $234), 3.3:1 (T2 at entry $234)
-
-⚠️ EARNINGS WARNING: JNJ reports Q2 on July 15, 2026 — exactly 22 days from today.
-This is 1 day outside the 21-day hard filter. No scoring deduction applied per the rules,
-but this is extremely borderline. Use ONLY defined-risk option spreads (no stock). Plan to
-manage or exit the spread before July 15 if the position has not reached Target 1.
-
-Key Risks:
-- Earnings July 15, 2026 (22 days — critically close, 1 day outside the hard filter)
-- EPS slightly declined YoY (Q1 2026 $2.70 vs Q1 2025 $2.77)
-- Today's +3.1% gap moves entry above the 50-day SMA by 3.5% — wider than ideal
-- Volume today (5.66M) below 3-month average (7.78M) — move partly breadth-driven
-
-Fundamental Note:
-Q1 2026 EPS $2.70 vs $2.67 consensus (beat, +1.1%). Icotyde launched April 2026;
-Leerink projects $10.5B peak sales. Rybrevant (lung cancer) US sales +22% sequentially.
-Leerink upgraded to Outperform with $265 PT on May 13, 2026. Revenue CAGR forecast of
-7.2% for 2026–2031. Innovative Medicine + MedTech divisions growing.
+Ticker: ETN
+Current Price: $417.59
+Sector: Industrials (Power Management / Electrification)
+Score: 86/115 (A:38 B:18 C:20 D:15 Ded:-5)
 ```
 
-**Instrument: Bullish Paired Debit Spread**
+**Setup Summary:**
+Eaton is recovering from a brief pullback to its 20 EMA after a powerful AI/data-center-driven run (stock up +14% in the prior 30 days). All three timing triggers are active (above 20 EMA, RSI recovering through 50, close above prior high). The structural thesis is strong: surging demand for grid-to-chip power infrastructure, record $20B backlog, Boyd Thermal acquisition (liquid-cooling for high-density AI workloads) completed, and 2026 organic growth guidance raised to 9–11%. Volume is elevated on the pullback (a mild concern vs the declining-volume ideal), and $22M in insider selling was noted.
 
 ```
-Instrument: Paired Debit Spread (preferred)
+Entry Zone:    $410–$420 (at 20 EMA recovery; 50 EMA at $400 is deeper support)
+Stop Loss:     $405 — below recent pullback swing low; clear technical invalidation
+Target 1:      $437 — prior 52-week high; near-term resistance
+Target 2:      $470 — measured move / new ATH expansion
+Risk/Reward:   ~2.2:1 (entry $415, stop $405, T1 $437)
+```
+
+**Key Risks:**
+- $22M insider selling noted — reduces conviction; watch for further insider activity
+- Premium valuation at 41× trailing PE (fwd PE ~26×); priced for perfection
+- Elevated volume on pullback (could be distribution, not just normal consolidation)
+- Stock is near its all-time high ($436.74) — limited headroom to T1
+- Earnings August 4 — outside hard filter; options at July 17 safe from earnings
+- U.S. AI data-center concentration risk: capex slowdown would hit ETN disproportionately
+
+**Fundamental Note:**
+Q1 2026: EPS $2.81 (beat $2.73 est, adjusted), revenue $7.45B (beat $7.15B est, +16.8% YoY). Raised 2026 organic growth guidance to 9–11% (from 8%). Record Q1 results with accelerating backlog from AI data-center and electrification demand. Boyd Thermal acquisition adds liquid-cooling expertise. Upcoming Q1 2027 spin-off of vehicle/e-mobility segments will create a pure-play power management company with 26%+ margins.
+
+**Instrument (Bullish — Paired Debit Spread):**
+```
+Instrument: Paired Debit Spread
 Bias: Bullish
-Expiry: September 18, 2026 (~87 DTE) — spans earnings; use defined risk
+Expiry: July 17, 2026 (~22 DTE) — expires before Aug 4 earnings
 
 Primary Spread:
   Structure: Bull Call Spread
-  Size: 2 spreads
-  Strikes: $235 long / $270 short  (35-pt width, slight ITM on pullback entry)
-  Net Debit: ~$18–21 per spread (~$1,800–2,100 for 2x)
-  Max Profit: ~$14–17 per spread
-  Max Loss: ~$18–21 per spread (debit paid)
+  Size: N contracts
+  Strikes: Long 410 / Short 430
+  Net Debit: ~$10.45 per spread (410C mid ~$22.95, 430C mid ~$12.50)
+  Max Profit: ~$9.55 per spread (≈0.91× risk — close to 1:1 ✓)
+  Max Loss:   ~$10.45 per spread
 
 Opposite Hedge:
   Structure: Bear Put Spread
-  Size: 1 spread (half size)
-  Strikes: $230 long / $195 short  (35-pt width)
-  Net Debit: ~$10–13 per spread
-  Max Profit: ~$22–25 per spread at full payout
+  Size: N/2 contracts (half-size)
+  Strikes: Long 410 / Short 390
+  Net Debit: ~$6.75 per spread (410P mid ~$12.90, 390P mid ~$6.15)
+  Max Profit: ~$13.25 per spread (≈1.96× its own risk — target 2× met ✓)
+  Max Loss:   ~$6.75 per spread
 
 Combined Position:
-  Total Debit / Max Loss: ~$46–55 per pair (~$4,600–5,500)
-  Expected Payout if thesis is right: ~$28–34 (primary max profit × 2)
-  Expected Payout on violent move against: ~$22–25 (hedge payout)
-  Main Risk: earnings reaction + drift; time decay is lower with 87 DTE
+  Total Debit / Max Loss: ~$13.83 (1× primary + 0.5× hedge)
+  Expected Payout if ETN ≥ $430 at expiry: ~$9.55 primary + hedge breakeven
+  Expected Payout on sharp drop to ≤ $390: primary loses $10.45, hedge nets ~$6.63
+  Main Risk: drift/chop between $390–$430 erodes both spreads via theta decay
 ```
 
 ---
 
 ## Watchlist
-_Names with constructive scan/research but no immediate entry (timing / extension / requires confirmation)._
+_Names with constructive scan/research but no immediate entry (timing / extension)._
 
 | Ticker | Why watching | Trigger to revisit |
 |--------|--------------|-------------------|
-| AFL | Defensive insurance, up +1.57% today, clean EMA50 pullback. But current price ($118.38) is above most analyst consensus targets ($99–$125 range), and insider selling in May. R:R to T1 ($125) is marginal (<1.5:1). | Pullback to $113–116 (50-day SMA) for better R:R; watch for new analyst upgrades lifting consensus above $120 |
-| ETN | Dropped 6.6% today from $435.78 to $406.88 — right at the 50-day SMA ($405.81). Powerful AI/data center infrastructure thesis; record backlog; 10% organic growth guidance. Too early — selling pressure still active. | Daily close above $415 on declining volume, RSI recovery above 50, confirming reversal at SMA support |
-| NVDA | Semiconductor index (SOX) down 7.6% today; NVDA likely down 5–8% from recent levels. Scan triggered but B-Xtrender almost certainly red given today's severity. | Stabilisation above 50-day EMA/SMA for 3+ sessions; RSI recovery above 50; semiconductor sector calming |
-| AAPL | Holding up today (roughly flat, $297) while sector sold off. Clean EMA50 pullback setup (+2.3% above SMA50). Volume declining. Earnings July 30 (37 days — safe). | Sustained close above $300 on recovering volume; confirm B-Xtrender green dot before entry |
+| KO | Clean uptrend; +1.9% from 50 EMA; strong EPS/revenue (+18%/+12% YoY); Trigger A active. Passed scan but lacks near-term catalyst. | Pull back closer to $78 (50 EMA); or a positive analyst upgrade. Earnings: est. July 29. |
+| HON | All technicals positive (Triggers A+C, declining volume, +3.5% from 50 EMA). EPS growth severely distorted (-42%) by spin-off restructuring charges — not reflective of true business. | Confirm clean earnings print once restructuring normalises; or set alert at 50 EMA retest ~$218. |
+| VLO | Similar refiner setup to MPC (all 3 triggers, +4.2%); Energy sector in favour. Avoid doubling up in same sector with MPC. | Watch if MPC entry is skipped; VLO stop at $235, T1 $265. Earnings: est. late July. |
+| AMGN | Triggers A+C, +3.8% from 50 EMA; Healthcare/Biotech in favour. Requires deeper fundamental review. | Monitor chart for RSI trigger (B) to join; or pull back closer to 50 EMA $340. |
 
 ---
 
@@ -234,7 +237,7 @@ _User-confirmed trades from the last 14 days, outcome not yet recorded._
 |------|--------|------------|------|----------|----------|-----|
 | — | — | — | — | — | — | — |
 
-_No confirmed open trades (scheduled run — trades were not confirmed by user)._
+_No open trades — this is a scheduled run with no prior confirmed entries._
 
 ---
 
@@ -243,7 +246,7 @@ _All closed trades (outcome recorded)._
 
 | Date | Ticker | Entry Price | Outcome Price | % Change | Result |
 |------|--------|-------------|---------------|----------|--------|
-| 2026-04-16 | _(empty scan)_ | — | — | — | — |
+| — | — | — | — | — | — |
 
 ### Aggregate Stats
 - **Total closed trades:** 0
@@ -256,16 +259,40 @@ _All closed trades (outcome recorded)._
 
 ---
 
-## Scan Details
-_Run: 2026-06-23 19:02 UTC via yfinance-based scanner (fallback — browser-use/TrendSpider unavailable in scheduled environment)_
+## Scan Detail — All 33 Passing Tickers
 
-**23 tickers passed all scan conditions:**
-AAPL, NVDA, AVGO, JNJ, ABBV, MRK, KO, QCOM, AMGN, PLD, DE, ADI, EOG, MO, CL, GD, ETN, FDX, AFL, TFC, FAST, FANG, GM
-
-**Eliminated after research/scoring (below 55 pts or clear disqualifier):**
-- NVDA / AVGO / QCOM / ADI: Semiconductor sector in sharp selloff today (-7.6% SOX); B-Xtrender likely red
-- MRK: Q1 2026 EPS negative (-$1.28, massive YoY swing from +$2.22); large acquisition write-down
-- ABBV: RSI 65 (overbought), +7.7% above EMA50 (too extended)
-- KO / CL / MO: Consumer staples; stable but limited R:R given already extended from EMA50
-- PLD / GD / TFC / FAST / FANG / GM: Insufficient R:R or weaker fundamental case vs top picks
-- FDX: Only single trigger (20 EMA recross), volume declining but weaker fundamental context
+| Ticker | % from 50 EMA | Triggers Active | Declining Volume |
+|--------|---------------|-----------------|-----------------|
+| PM | +1.6% | A, B | No |
+| UNP | +1.7% | A, B, C | Yes ✓ |
+| KO | +1.9% | A | No |
+| MPC | +2.4% | A, B, C | Yes ✓ |
+| CB | +2.5% | A | — |
+| EXR | +2.5% | A | — |
+| FDX | +2.9% | A, C | No |
+| OGE | +3.0% | A, C | — |
+| CL | +3.1% | A | — |
+| AFL | +3.2% | A | — |
+| EQR | +3.2% | A, C | — |
+| HON | +3.5% | A, C | Yes ✓ |
+| LIN | +3.6% | C | — |
+| WEC | +3.6% | A, C | — |
+| V | +3.7% | C | — |
+| AMGN | +3.8% | A, C | — |
+| QCOM | +4.1% | C | No |
+| VLO | +4.2% | A, B, C | No |
+| ADI | +4.5% | A, C | No |
+| ETN | +4.3% | A, B, C | No |
+| EMR | +1.5% | A | — |
+| PSX | −0.5% | C | — |
+| LNT | +5.0% | C | — |
+| EVRG | +5.3% | A, C | — |
+| TRGP | +6.4% | A, C | — |
+| MO | +6.0% | A, C | — |
+| JNJ | +6.0% | A, C | — |
+| RF | +6.9% | C | — |
+| WAT | +7.6% | A | — |
+| MRK | +8.1% | A, C | — |
+| ABBV | +11.3% | A, C | — |
+| ETR | +4.1% | C | — |
+| CNP | +3.6% | C | — |
