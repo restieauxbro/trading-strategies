@@ -1,214 +1,132 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-07-09_
+_Last updated: 2026-07-12_
 
 ---
 
 ## Market Context
 
-The S&P 500 is trading near 7,499 (+0.23% on July 9), testing key resistance at the 7,500 level and well above its 200-day moving average. The index has rallied ~19% YTD and hit its 25th all-time high of 2026 on June 2. The VIX stands at 16.74 — down from last week's spike to 18.6 — reflecting reduced but not absent anxiety; Goldman's vol desk notes that 20-day realized vol has nearly doubled since early June (from ~9 to ~18), compressing the implied/realized spread to near zero, a signal worth monitoring for near-term choppiness. The Nasdaq-100 is recovering (+1.01% today) after last week's AI-chip selloff. Industrials, power management, and aerospace remain in favour; managed care faces headwinds from PBM transitions and cost trends. Overall regime: **confirmed bull uptrend** — strategy filters remain in full effect.
+The S&P 500 closed Thursday at **7,575.39** (+0.42%), recording its second consecutive weekly gain and sitting within 1% of its early-June all-time closing high — more than 10% above the start of the year. The bull uptrend is intact across all key timeframes. VIX closed at **15.03** (Jul 10), down from last week's 16.74–18.91 range, signalling low near-term fear and a generally accommodative backdrop for momentum trades. The Nasdaq 100 has recovered its mid-week AI-chip dip. Key risk events this week: CPI (Tuesday), PPI (Wednesday), retail sales (Thursday), and the Q2 earnings season opens with JPMorgan and Goldman Sachs on Monday July 14. Geopolitical tension around Iran and crude near $76/bbl adds macro noise but has not broken the index structure. **Regime: Bull uptrend. No downtrend filters applied.**
+
+---
+
+## Scan Results
+
+**Scan run:** 2026-07-12 19:04 UTC | Universe: 150-ticker S&P 500 fallback (Wikipedia returned HTTP 403)
+
+**34 tickers passed yfinance scan conditions.** After applying the hard earnings filter (no earnings within 21 days — i.e., before August 2, 2026), 23 tickers were eliminated:
+
+> GS (Jul 14), C (Jul 14), PLD (Jul 16), TFC (Jul 17), TXN (Jul 22), PM (Jul 22), NSC (Jul 23), AXP (Jul 24), NUE (Jul 27), CDNS (Jul 27), CARR (Jul 28), KLAC (Jul 28), NXPI (Jul 28), HLT (Jul 28), F (Jul 28), ODFL (Jul 29), SO (Jul 30), AEP (Jul 23), CI (Jul 30), MO (Jul 30), LIN (Jul 31), CL (Jul 31), FAST (Jul 14)
+
+**11 tickers remained for scoring.** After Cat B R:R analysis: O ($63+, R:R < 1.5:1), OKE (~45/115, R:R fail), MCHP (Cat B fail — near-term consensus doesn't support ≥1.5:1 R:R), BRK-B (R:R < 1.5:1), QCOM (EPS declining YoY, RSI 45.5, Cat B borderline), and TJX (RSI 39.5, Cat B fail) were excluded or below threshold.
+
+**Scored above threshold (55 pts):** ETN, PH, ADI, EMR, LRCX.
+
+_Note: B-Xtrender visual confirmation is unavailable in this environment. Per established protocol, the 15 BX points (Cat A items 6–8) are withheld and a −5 deduction is applied to all scores._
 
 ---
 
 ## Today's Suggested Trades
 
-**Scan run:** 2026-07-09 19:03 UTC | Universe: 150 S&P 500 tickers (Wikipedia returned 403; fallback list used) | Tickers passing scan: 28 | After 21-day earnings filter: 14 | Final scored: 7 | Top 3 selected below.
+### 1. ETN — Eaton Corporation | Score: 83/115
 
-_B-Xtrender visual confirmation unavailable (browser-use not installed in cloud environment) — 15 Category A points withheld and −5 deduction applied to all scores. Scores are out of 115._
+```
+Ticker: ETN
+Current Price: $407.28
+Sector: Industrials (Electrical Equipment & Systems)
+Score: 83/115  (A:40  B:18  C:20  D:15  Ded:−10)
+
+Setup Summary:
+ETN is in a confirmed weekly and daily uptrend, sitting just 1.2% above its 50-day EMA after a
+multi-week consolidation. Today's close marks a fresh trigger on all three timing conditions:
+recrossed above the 20 EMA, RSI crossed above 50 (now 50.4), and closed above the prior
+day's high. Volume is declining on the pullback — the hallmarks of healthy continuation.
+The Mobility Group spinoff (to merge with Dana Incorporated into a $10B entity) removes
+lower-margin automotive exposure and sharpens Eaton's focus on its Electrical and Aerospace
+divisions, which are the direct beneficiaries of AI data centre and grid electrification spend.
+
+Entry Zone: $405–$412
+Stop Loss:   $390 — below swing low / below 20-day EMA by a meaningful margin
+Target 1:    $450 — prior resistance / round-number cluster
+Target 2:    $475 — analyst consensus area (avg PT $455–$464); Bernstein $534 long-term
+Risk/Reward: 2.5:1 (to T1)
+
+Key Risks:
+- Earnings August 4 (23 days) — MUST close or roll by July 31
+- BMO Capital lowered PT from $472 → $408 (July 2); put volume elevated
+- Insider selling: ~$200K by Mobility Group President (May 2026, likely plan-related)
+- Mobility Group spin-off integration costs / execution risk in H2 2026
+
+Fundamental Note:
+Q1 2026: Revenue $7.45B (+16.7% YoY), adj EPS $2.81 (beat). FY2026 adj EPS guidance
+$13.05–$13.50. Bernstein maintained Buy with $534 PT (July 6). Strong Buy consensus; 27
+analysts, avg PT $455.79. AI data centre and grid infrastructure demand driving Electrical
+Americas order backlog strength.
+```
 
 ---
 
-### 1. ETN — Eaton Corporation
-**Score: 83/115** (A:40 B:18 C:20 D:15 Ded:−10)
-
-**Current Price:** $409.17  
-**Sector:** Industrials — Power Management & Electrification  
-**Triggers hit (all 3):** Recrossed above 20 EMA | RSI crossed above 50 | Close above prior day high  
-
-**Setup Summary:**  
-ETN pulled back to its daily 50 EMA ($402.37) and has now recrossed above the 20 EMA with all three timing triggers firing simultaneously — the strongest possible scan signal. Volume has declined on the pullback (healthy consolidation). The stock just joined multiple FTSE Russell Growth indices (Russell 1000 Growth, Russell Top 200 Growth, Russell 3000E Growth) in late June, triggering meaningful passive and institutional inflows. A VoltServer Digital Electricity partnership and continued NVIDIA data-centre collaboration reinforce the power-management AI-infrastructure narrative. Eaton's planned spin-off and merger of its Mobility Group with Dana sharpens its profile as a pure-play electrification/data-centre play.
-
-**Fundamentals:**  
-Q1 2026: Record revenue $7.45B (+6% YoY), adj EPS $2.81 (beat $2.73 est). Full-year guidance raised: organic revenue growth 9–11%, adj EPS $13.05–$13.50. Data-centre backlog at 228 GW. Consensus: **Strong Buy**. Average PT: $455–471 (TipRanks avg $470.67, **+15.9% upside**). Analyst highlights: Evercore $480+, RBC $484, Keybanc $480. Earnings Aug 4 (26 days — **SAFE; must close by July 31**).
-
-**Trade Plan:**
-
-| Parameter | Value |
-|-----------|-------|
-| Entry Zone | $405–$412 (near EMA50 recross area) |
-| Stop Loss | $390 — below recent swing low / EMA50 buffer |
-| Target 1 | $450 — below analyst consensus midpoint |
-| Target 2 | $475 — TipRanks avg PT $470.67 |
-| Risk/Reward | ~2.5:1 to T1 |
-
-**Instrument: Paired Debit Spread (preferred)**  
-Bias: Bullish | Expiry: Aug 21 2026 (~43 DTE)
+### 2. PH — Parker Hannifin | Score: 75/115
 
 ```
-Primary Spread:
-  Structure: Bull Call Spread
-  Strikes: $405 / $420 (15-wide)
-  Net Debit: ~$7.50 per spread (estimate — verify live chain)
-  Max Profit: ~$7.50 | Max Loss: ~$7.50
+Ticker: PH
+Current Price: $961.27
+Sector: Industrials (Industrial Machinery)
+Score: 75/115  (A:40  B:10  C:20  D:15  Ded:−10)
 
-Opposite Hedge:
-  Structure: Bear Put Spread (half-size)
-  Strikes: $405 / $390 (15-wide)
-  Net Debit: ~$7.50 per spread
-  Max Profit: ~$7.50 per contract | Max Loss: ~$7.50
+Setup Summary:
+PH has recrossed above its 20 EMA and closed above the prior day's high (2 of 3 triggers)
+with RSI at 56.9 — solidly above the 50-line. The stock pulled back orderly from highs,
+found support near its 50-day EMA ($926), and is now resuming its uptrend. The year-to-date
+underperformance versus peers has attracted significant institutional attention; Deutsche Bank
+placed a Catalyst Call Buy on June 30 citing "short-cycle industrial exposure" as the re-rating
+catalyst. Truist raised its 12-month PT to $1,269 on July 2 citing power, data centre, aerospace,
+and infrastructure tailwinds.
 
-Combined Position:
-  Total Debit / Max Loss: ~$11.25 per lot (1 primary + 0.5 hedge)
-  Payout if ETN rises through $420: ~$3.75 net (primary profits, hedge loses)
-  Payout on violent move through $390: ~$3.75 net (hedge profits, primary loses)
-  Main Risk: drift / time decay without directional expansion
-  Close by: July 31 (before Aug 4 earnings)
+Entry Zone: $955–$970  (patient entry: ideally $955–$960, closer to 20 EMA)
+Stop Loss:   $920 — below swing low from the June consolidation base
+Target 1:    $1,027 — prior resistance / measured move (R:R 1.59:1)
+Target 2:    $1,147 — measured move / mid-point of analyst range
+Risk/Reward: 1.6:1 (T1) | 4.5:1 (T2)
+
+Key Risks:
+- Cat B is borderline at current entry ($961): R:R 1.59:1 → barely above 1.5:1 threshold;
+  patient entry near $955 improves R:R to ~1.82:1
+- Earnings August 6 (25 days) — MUST close by August 1
+- Insider selling ~$3.2M last 3 months (smaller, likely plan-related)
+- CIRCOR Aerospace integration costs remain a near-term headwind
+
+Fundamental Note:
+Q3 FY2026 (Apr 2026): adj EPS $8.17 beat $7.84 est (+6.2% YoY); revenue $5.49B (+10.6% YoY).
+FY2026 guidance: adj EPS $31.20. Truist PT $1,269 (July 2), Bernstein initiated Outperform $1,026
+(June 10), Deutsche Bank Catalyst Buy (June 30). Consensus: Strong Buy, avg PT ~$1,054.
 ```
-
-**Key Risks:**
-- Earnings Aug 4 — must close position by July 31
-- Insider selling: $8.2M sold last 3 months (applied −5 deduction)
-- If Russell inflow thesis is fully priced, momentum may stall at $420–430 before earnings
-- B-Xtrender chart not verified (−5 deduction applied)
-
----
-
-### 2. PH — Parker Hannifin
-**Score: 83/115** (A:40 B:18 C:20 D:15 Ded:−10)
-
-**Current Price:** $953.73  
-**Sector:** Industrials — Motion Control & Aerospace  
-**Triggers hit (2 of 3):** Recrossed above 20 EMA | Close above prior day high  
-
-**Setup Summary:**  
-PH pulled back to its 50-day EMA ($925.46) and has now recrossed above the 20 EMA while closing above the prior day high — a clean two-trigger recovery. The daily trend is rising (50-day EMA now at $925 vs $861 three months ago), and the weekly EMA golden cross is firmly intact. Volume has declined on the pullback. The Citi analyst team opened a 90-day upside catalyst watch on June 8 ahead of Q4 FY2026 results (due Aug 6), and Truist boosted its price target to $1,269 on July 2 (+$122 raise). Parker's $2.55B acquisition of CIRCOR's aerospace division (announced May 21) expands its aerospace exposure at a time when aerospace demand is accelerating.
-
-**Fundamentals:**  
-Q3 FY2026 (April 30): adj EPS $8.17 (beat $7.84 est, +6.2% YoY); revenue $5.49B (beat $5.40B est, +10.6% YoY). FY2026 guidance: reported sales growth 7%, adj EPS ~$31.20. Consensus: **Moderate Buy** (18 Buy, 4 Hold). Average PT: $1,026 (+7.7% upside to avg), with high-conviction targets at $1,269 (Truist), $1,141 (Citi), $1,100 (Jefferies). Earnings Aug 6 (28 days — **SAFE**).
-
-**Trade Plan:**
-
-| Parameter | Value |
-|-----------|-------|
-| Entry Zone | $948–$960 (near EMA50 recross area) |
-| Stop Loss | $920 — below EMA50 ($925.46) with buffer |
-| Target 1 | $1,027 — analyst consensus average |
-| Target 2 | $1,147 — Truist/Jefferies range |
-| Risk/Reward | ~2.2:1 to T1 |
-
-**Instrument: Paired Debit Spread (preferred)**  
-Bias: Bullish | Expiry: Aug 21 2026 (~43 DTE)
-
-```
-Primary Spread:
-  Structure: Bull Call Spread
-  Strikes: $955 / $970 (15-wide)
-  Net Debit: ~$7.50 per spread (estimate — verify live chain; PH is high-priced)
-  Max Profit: ~$7.50 | Max Loss: ~$7.50
-
-Opposite Hedge:
-  Structure: Bear Put Spread (half-size)
-  Strikes: $955 / $940 (15-wide)
-  Net Debit: ~$7.50 per spread
-  Max Profit: ~$7.50 | Max Loss: ~$7.50
-
-Combined Position:
-  Total Debit / Max Loss: ~$11.25 per lot
-  Payout if PH rises through $970: ~$3.75 net
-  Payout on violent move through $940: ~$3.75 net
-  Main Risk: drift / modest moves that don't reach spread width
-  Note: PH options may have lower liquidity at high strikes — verify bid/ask
-```
-
-**Key Risks:**
-- Consensus avg target ($1,027) implies only ~7.7% upside — lower than preferred
-- Insider selling: ~$3.2M last 3 months (applied −5 deduction); wider $18M over last year
-- CIRCOR acquisition integration risk (newly announced)
-- B-Xtrender chart not verified (−5 deduction applied)
-
----
-
-### 3. ADI — Analog Devices
-**Score: 79/115** (A:38 B:18 C:20 D:13 Ded:−10)
-
-**Current Price:** $393.93  
-**Sector:** Technology — Semiconductors  
-**Triggers hit (1 of 3):** Close above prior day high  
-
-**Setup Summary:**  
-ADI is retesting its daily 50-day EMA ($396.41) from just below (−0.63%), with volume declining on the pullback — a healthy consolidation. The weekly golden cross (EMA50 $324 > EMA200 $235) and daily uptrend structure remain intact. This is the fourth consecutive scan where ADI has appeared as a watchlist/pick candidate. The single trigger (close above prior day high) is the weakest of the three possible signals; RSI at 47.6 has not yet crossed above 50, suggesting the recovery is early-stage. Earnings are well over 40 days away, removing event risk entirely from the holding period.
-
-**Fundamentals:**  
-Q2 FY2026 beat: adj EPS $3.09 vs $2.89 est (+6.9%); revenue $3.62B (+3.1% YoY); EPS +67% YoY. Management guided Q3 FY2026 at $3.30–$3.50 EPS. Consensus: **Strong Buy**. Average PT: $453–$460 (17–19% upside); high targets: Cantor $550, Stifel $498, JPM $450, BofA $460. Earnings Aug 19–26 (42–49 days — **very safe**).
-
-**Trade Plan:**
-
-| Parameter | Value |
-|-----------|-------|
-| Entry Zone | $388–$400 (testing EMA50 zone) |
-| Stop Loss | $370 — below recent swing low |
-| Target 1 | $450 — analyst consensus midpoint |
-| Target 2 | $498 — Stifel target |
-| Risk/Reward | ~2.3:1 to T1 |
-
-**Instrument: Paired Debit Spread (preferred)**  
-Bias: Bullish | Expiry: Aug 21 2026 (~43 DTE)
-
-```
-Primary Spread:
-  Structure: Bull Call Spread
-  Strikes: $390 / $405 (15-wide)
-  Net Debit: ~$7.50 per spread (estimate — verify live chain)
-  Max Profit: ~$7.50 | Max Loss: ~$7.50
-
-Opposite Hedge:
-  Structure: Bear Put Spread (half-size)
-  Strikes: $390 / $375 (15-wide)
-  Net Debit: ~$7.50 per spread
-  Max Profit: ~$7.50 | Max Loss: ~$7.50
-
-Combined Position:
-  Total Debit / Max Loss: ~$11.25 per lot
-  Payout if ADI rises through $405: ~$3.75 net
-  Payout on violent move through $375: ~$3.75 net
-  Main Risk: drift in chips sector; single trigger means confirmation still pending
-  Preferred entry: wait for RSI to cross above 50 before opening position
-```
-
-**Key Risks:**
-- Only 1 trigger fired — RSI still below 50 (47.6); entry is early
-- Insider selling: $31.7M last 3 months (large; applied −5 deduction)
-- Semiconductor sector exposed to China trade policy risk
-- B-Xtrender chart not verified (−5 deduction applied)
-- Consider waiting for RSI crossover above 50 as additional confirmation
 
 ---
 
 ## Watchlist
-_Names with constructive scan/research but no immediate entry (timing / risk factors)._
+_Names with constructive scan/research but no immediate entry signal._
 
-| Ticker | Why watching | Trigger to revisit |
-|--------|--------------|-------------------|
-| CI | All 3 triggers fired (strong setup), avg PT $340 (+17% upside), Q1 2026 EPS beat. BUT: earnings July 30 = only 22 days (extremely close to 21-day limit), CEO transition on July 1 (David Cordani → Brian Evanko), removed from Russell Growth indexes (institutional outflows), major insider selling ($59M by CEO Cordani in May). Risk profile too elevated for unattended run. | Q2 2026 earnings pass without negative surprise; new CEO establishes guidance credibility; Russell index removal headwinds abate |
-| LRCX | 1 trigger, recovering pullback, +5.8% from EMA50 (slightly extended), RSI 49.3 (below 50). Semiconductor equipment with strong AI capex tailwind. | RSI crosses above 50; price pulls back to consolidate near EMA50 before next leg |
-| QCOM | 1 trigger, −2.23% from EMA50 (pullback zone), RSI 46.1. Earnings Aug 5 (27 days safe). But EPS declining YoY (Q2 2026 $2.65 vs $2.85 prior year). | EPS trend reversal confirmed in Q3 2026 report; China trade tension resolution |
+| Ticker | Score | Why watching | Trigger to revisit |
+|--------|-------|--------------|-------------------|
+| ADI | 79/115 | Best-scoring ticker after ETN; excellent R:R (2.12:1); Q2 FY2026 EPS $3.09 beat (+67% YoY); avg PT $453–$460; earnings Aug 19–26 (safe). Only 1 trigger; RSI 48.3 — not yet confirmed above 50. | RSI crossover above 50 on daily chart |
+| EMR | 67/115 | Solid fundamentals (Q2 beat, 4% EPS growth YoY); Saudi Aramco corrosion management partnership; AI automation platform launches; Bernstein Outperform $175; avg PT $163–$165. Price below 50-day EMA; RSI 45.9; no news catalyst in last 2 weeks; insider selling June 1. | Price reclaims 50-day EMA ($140.82) + RSI crosses 50 |
+| LRCX | ~62/115 | Semiconductors sector recovering; 1 trigger (close above prior day high); RSI 49.1; earnings Aug 5 (safe). Extended +5.19% above EMA50 — needs pullback to EMA50 zone for cleaner entry. | Pullback to EMA50 ($333) with RSI holding above 45 |
 
 ---
 
 ## Open Trades
-_No user-confirmed trades from prior runs on record._
+_User-confirmed trades from the last 14 days, outcome not yet recorded._
 
-| Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
-|------|--------|------------|------|----------|----------|-----|
-| — | — | — | — | — | — | — |
+_No open trades — this is an unattended scheduled run; no trades have been confirmed._
 
 ---
 
 ## Performance Summary
-_No closed trades with outcome recorded yet._
+_All closed trades (outcome recorded)._
 
 | Date | Ticker | Entry Price | Outcome Price | % Change | Result |
 |------|--------|-------------|---------------|----------|--------|
-| — | — | — | — | — | — |
+| — | — | No closed trades in log | — | — | — |
 
 ### Aggregate Stats
 - **Total closed trades:** 0
@@ -219,15 +137,17 @@ _No closed trades with outcome recorded yet._
 - **Best trade:** N/A
 - **Worst trade:** N/A
 
+_Note: Only the April 16, 2026 empty-scan row exists in the log; no actual trades have been confirmed or closed since strategy inception._
+
 ---
 
-## Scan Details
-_Full scan results for reference._
+## Scan Eliminations Summary
 
-**28 tickers passed yfinance conditions** (fallback universe of 150 from Wikipedia 403 error).
-
-**Hard eliminated (earnings within 21 days):** TXN (Jul 22), AXP (Jul 24), GS (Jul 14), PLD (Jul 16), C (Jul 14), NUE (Jul 27), PCAR (Jul 28), TFC (Jul 17), NXPI (Jul 28), HLT (Jul 28), CDNS (Jul 27), ODFL (Jul 29), KLAC (Jul 28), F (Jul 28).
-
-**Eliminated for other reasons:** MO (analyst consensus PT below current price — Cat B fail), O (at $63+ R:R drops below 1.5:1 — Cat B fail), OKE (Hold consensus, weak fundamentals — score ~45, below threshold), MCHP (analyst targets don't support ≥1.5:1 R:R — Cat B fail).
-
-**BRK-B, QCOM, CL, EMR, BRK-B** scored but ranked below threshold for top 3 (scores ~65–72/115).
+| Stage | Count | Reason |
+|-------|-------|--------|
+| Passed yfinance scan | 34 | Met all Group 1–4 conditions |
+| Eliminated (earnings <21 days) | 23 | Hard filter: no earnings before Aug 2 |
+| Eliminated (Cat B / score <55) | 6 | O, OKE, MCHP, BRK-B, QCOM, TJX |
+| Scored above threshold (55+) | 5 | ETN 83, ADI 79, PH 75, EMR 67, LRCX ~62 |
+| Immediate tradable picks | 2 | ETN (all 3 triggers, RSI confirmed), PH (2 triggers, RSI 56.9) |
+| Watchlist | 3 | ADI, EMR, LRCX |
