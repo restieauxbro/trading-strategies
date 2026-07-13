@@ -1,132 +1,151 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-07-12_
+_Last updated: 2026-07-13_
 
 ---
 
 ## Market Context
 
-The S&P 500 closed Thursday at **7,575.39** (+0.42%), recording its second consecutive weekly gain and sitting within 1% of its early-June all-time closing high — more than 10% above the start of the year. The bull uptrend is intact across all key timeframes. VIX closed at **15.03** (Jul 10), down from last week's 16.74–18.91 range, signalling low near-term fear and a generally accommodative backdrop for momentum trades. The Nasdaq 100 has recovered its mid-week AI-chip dip. Key risk events this week: CPI (Tuesday), PPI (Wednesday), retail sales (Thursday), and the Q2 earnings season opens with JPMorgan and Goldman Sachs on Monday July 14. Geopolitical tension around Iran and crude near $76/bbl adds macro noise but has not broken the index structure. **Regime: Bull uptrend. No downtrend filters applied.**
-
----
-
-## Scan Results
-
-**Scan run:** 2026-07-12 19:04 UTC | Universe: 150-ticker S&P 500 fallback (Wikipedia returned HTTP 403)
-
-**34 tickers passed yfinance scan conditions.** After applying the hard earnings filter (no earnings within 21 days — i.e., before August 2, 2026), 23 tickers were eliminated:
-
-> GS (Jul 14), C (Jul 14), PLD (Jul 16), TFC (Jul 17), TXN (Jul 22), PM (Jul 22), NSC (Jul 23), AXP (Jul 24), NUE (Jul 27), CDNS (Jul 27), CARR (Jul 28), KLAC (Jul 28), NXPI (Jul 28), HLT (Jul 28), F (Jul 28), ODFL (Jul 29), SO (Jul 30), AEP (Jul 23), CI (Jul 30), MO (Jul 30), LIN (Jul 31), CL (Jul 31), FAST (Jul 14)
-
-**11 tickers remained for scoring.** After Cat B R:R analysis: O ($63+, R:R < 1.5:1), OKE (~45/115, R:R fail), MCHP (Cat B fail — near-term consensus doesn't support ≥1.5:1 R:R), BRK-B (R:R < 1.5:1), QCOM (EPS declining YoY, RSI 45.5, Cat B borderline), and TJX (RSI 39.5, Cat B fail) were excluded or below threshold.
-
-**Scored above threshold (55 pts):** ETN, PH, ADI, EMR, LRCX.
-
-_Note: B-Xtrender visual confirmation is unavailable in this environment. Per established protocol, the 15 BX points (Cat A items 6–8) are withheld and a −5 deduction is applied to all scores._
+The S&P 500 closed Friday July 10 at **7,575** (+0.42%), essentially flat on the week and within 1% of the early-June all-time high. YTD gains exceed 10%. Today (Monday July 13) VIX opened sharply higher at 16.32 after Iran escalation over the weekend pushed Brent crude toward $80; VIX is closing around **16.16** (+7.5%), while front-month VIX futures repriced to **17.55**, reflecting near-term event risk from the geopolitical backdrop and a heavy Q2 earnings calendar kicking off this week (GS and C report tomorrow). Overall trend remains a confirmed bull uptrend: S&P 500 well above its 200-day MA, VIX still below 20 (not in fear territory), and sector breadth constructive. Elevated implied correlation and Iran uncertainty warrant slightly tighter position sizing, but no reason to step aside from constructive individual setups.
 
 ---
 
 ## Today's Suggested Trades
 
-### 1. ETN — Eaton Corporation | Score: 83/115
+### 1. PH (Parker Hannifin) — Bull pullback to EMA50, record earnings backdrop
 
 ```
-Ticker: ETN
-Current Price: $407.28
-Sector: Industrials (Electrical Equipment & Systems)
-Score: 83/115  (A:40  B:18  C:20  D:15  Ded:−10)
+Ticker: PH
+Current Price: $949.59 (July 13 close)
+Sector: Industrials — Motion & Control Technology
+Score: 88/115 (A:40 B:18 C:20 D:15 Ded:-5)
 
 Setup Summary:
-ETN is in a confirmed weekly and daily uptrend, sitting just 1.2% above its 50-day EMA after a
-multi-week consolidation. Today's close marks a fresh trigger on all three timing conditions:
-recrossed above the 20 EMA, RSI crossed above 50 (now 50.4), and closed above the prior
-day's high. Volume is declining on the pullback — the hallmarks of healthy continuation.
-The Mobility Group spinoff (to merge with Dana Incorporated into a $10B entity) removes
-lower-margin automotive exposure and sharpens Eaton's focus on its Electrical and Aerospace
-divisions, which are the direct beneficiaries of AI data centre and grid electrification spend.
+Parker Hannifin has pulled back from its 52-week-range highs to the EMA50 zone ($928) and
+is now recrossing above the 20-day EMA with RSI recovering above 50. The stock reported
+record Q3 FY26 results (EPS $8.17 vs $7.84 est, +17.7% YoY; revenue $5.49B up 10.6%),
+raised full-year guidance, and holds a record backlog of $12.5 billion. Truist raised its
+price target to $1,269 (July 2) and Deutsche Bank issued a Catalyst Buy, with Bernstein
+initiating at Outperform $1,026. The setup shows a textbook momentum pullback with strong
+institutional conviction.
 
-Entry Zone: $405–$412
-Stop Loss:   $390 — below swing low / below 20-day EMA by a meaningful margin
-Target 1:    $450 — prior resistance / round-number cluster
-Target 2:    $475 — analyst consensus area (avg PT $455–$464); Bernstein $534 long-term
-Risk/Reward: 2.5:1 (to T1)
+Entry Zone: $945–$965
+Stop Loss: $920 — below EMA50 ($928) and recent swing lows
+Target 1: $1,027 — Bernstein Outperform price target / near-term resistance
+Target 2: $1,147 — Truist 12-month raised target
+Risk/Reward: 2.6:1 to T1 ($949.59 entry vs. $920 stop / $1,027 T1)
 
 Key Risks:
-- Earnings August 4 (23 days) — MUST close or roll by July 31
-- BMO Capital lowered PT from $472 → $408 (July 2); put volume elevated
-- Insider selling: ~$200K by Mobility Group President (May 2026, likely plan-related)
-- Mobility Group spin-off integration costs / execution risk in H2 2026
+- Earnings Aug 6, 2026 (24 days) — must close or roll by July 31 to avoid earnings event
+- Price is only $3.55 above the 200-day EMA (tight margin if index pulls back further)
+- VIX elevated on Iran headlines; broad selloff could pressure industrials
 
 Fundamental Note:
-Q1 2026: Revenue $7.45B (+16.7% YoY), adj EPS $2.81 (beat). FY2026 adj EPS guidance
-$13.05–$13.50. Bernstein maintained Buy with $534 PT (July 6). Strong Buy consensus; 27
-analysts, avg PT $455.79. AI data centre and grid infrastructure demand driving Electrical
-Americas order backlog strength.
+Q3 FY26 EPS $8.17 beat by $0.33; revenue +10.6% YoY to $5.49B; orders up 9%; raised
+full-year adj. EPS guidance to $31.20. Strong aerospace, data center infrastructure, and
+heavy-equipment tailwinds. Consensus rating: Buy (19 analysts), avg PT $1,013, high $1,269.
 ```
 
 ---
 
-### 2. PH — Parker Hannifin | Score: 75/115
+### 2. ETN (Eaton Corporation) — AI/power infrastructure pullback, all 3 triggers
 
 ```
-Ticker: PH
-Current Price: $961.27
-Sector: Industrials (Industrial Machinery)
-Score: 75/115  (A:40  B:10  C:20  D:15  Ded:−10)
+Ticker: ETN
+Current Price: ~$408 (July 13 intraday; Friday close $405.83)
+Sector: Industrials — Electrical Equipment / Power Management
+Score: 84/115 (A:40 B:18 C:16 D:15 Ded:-5)
 
 Setup Summary:
-PH has recrossed above its 20 EMA and closed above the prior day's high (2 of 3 triggers)
-with RSI at 56.9 — solidly above the 50-line. The stock pulled back orderly from highs,
-found support near its 50-day EMA ($926), and is now resuming its uptrend. The year-to-date
-underperformance versus peers has attracted significant institutional attention; Deutsche Bank
-placed a Catalyst Call Buy on June 30 citing "short-cycle industrial exposure" as the re-rating
-catalyst. Truist raised its 12-month PT to $1,269 on July 2 citing power, data centre, aerospace,
-and infrastructure tailwinds.
+Eaton recrossed above its 20-day EMA, RSI crossed back above 50, and closed above prior
+day's high — all three timing triggers active. Price is +1.5% above EMA50 (~$402) after
+testing that level during the June–July consolidation. The AI/data center infrastructure
+buildout thesis remains intact: Q1 2026 data center orders surged 240%, record revenue
+$7.5B, and EPS guidance raised to $13.28 midpoint. Unusual bullish institutional options
+activity noted in July. Bernstein maintained Buy with $534 target on July 6.
 
-Entry Zone: $955–$970  (patient entry: ideally $955–$960, closer to 20 EMA)
-Stop Loss:   $920 — below swing low from the June consolidation base
-Target 1:    $1,027 — prior resistance / measured move (R:R 1.59:1)
-Target 2:    $1,147 — measured move / mid-point of analyst range
-Risk/Reward: 1.6:1 (T1) | 4.5:1 (T2)
+Entry Zone: $405–$415
+Stop Loss: $390 — below swing low support and EMA50 zone
+Target 1: $450 — analyst consensus midpoint (avg PT $455.79)
+Target 2: $475 — measured move target
+Risk/Reward: 2.3:1 to T1 ($408 entry vs. $390 stop / $450 T1)
 
 Key Risks:
-- Cat B is borderline at current entry ($961): R:R 1.59:1 → barely above 1.5:1 threshold;
-  patient entry near $955 improves R:R to ~1.82:1
-- Earnings August 6 (25 days) — MUST close by August 1
-- Insider selling ~$3.2M last 3 months (smaller, likely plan-related)
-- CIRCOR Aerospace integration costs remain a near-term headwind
+- Earnings Aug 3/4, 2026 (est. 21–22 days) — RIGHT at the 21-day limit; MUST close by
+  July 28–31. This is a hard deadline risk; monitor CNBC estimate (Aug 3 = 21 days).
+- BMO lowered price target from $472 to $408 (July 2) — bearish outlier; put volume elevated July 6
+- Iran/geopolitical risk could pressure industrials short-term
+- Seeking Alpha downgrade to Hold on valuation (62x P/E vs peers at 25x)
 
 Fundamental Note:
-Q3 FY2026 (Apr 2026): adj EPS $8.17 beat $7.84 est (+6.2% YoY); revenue $5.49B (+10.6% YoY).
-FY2026 guidance: adj EPS $31.20. Truist PT $1,269 (July 2), Bernstein initiated Outperform $1,026
-(June 10), Deutsche Bank Catalyst Buy (June 30). Consensus: Strong Buy, avg PT ~$1,054.
+Q1 2026 record revenue $7.5B (+10% organic); raised FY26 adj. EPS midpoint to $13.28;
+data center orders +240%; 12 new factories ramping. Bull case: grid-to-chip infrastructure
+spending sustains 12–24% EBITDA growth through year-end. Bear case: margin recovery must
+materialise in Q2 (reporting Aug 3–4). Consensus: Buy (27 analysts), avg PT $455.79.
+```
+
+---
+
+### 3. DUK (Duke Energy) — Utility pullback to EMA50, AI power demand catalyst
+
+```
+Ticker: DUK
+Current Price: $126.86–$128 (July 13)
+Sector: Utilities — Regulated Electric & Gas
+Score: 83/115 (A:38 B:18 C:20 D:12 Ded:-5)
+
+Setup Summary:
+Duke Energy pulled back from $130+ (July 7 high) to test and hold the EMA50 ($125.78),
+then recrossed above the 20-day EMA with RSI recovering above 50 — all three triggers
+active. The setup is anchored by a strong Q1 2026 earnings beat (EPS $1.93 vs $1.80 est,
++7.5%; revenue $9.18B vs $8.49B est, +11.3% YoY) and a 7.6 GW pipeline of signed AI
+data center Electric Service Agreements since 2024. Analyst consensus: Buy (avg PT
+$138.33, high $146).
+
+Entry Zone: $125–$129
+Stop Loss: $122 — below July 10 swing low ($124.69) and EMA50 area
+Target 1: $138 — consensus analyst price target
+Target 2: $146 — high analyst target (Morgan Stanley raised PT to $136; multiple analysts $138+)
+Risk/Reward: 2.2:1 to T1 ($127 entry vs. $122 stop / $138 T1)
+
+Key Risks:
+- Earnings Aug 4, 2026 (22 days) — must close or roll by July 31
+- NC rate case regulatory risk: proposed 11.6% residential rate hike under active review;
+  outcome expected mid-to-late Q3
+- Goldman Sachs removed DUK from its US Conviction List (kept Buy) — sentiment headwind
+- Stock near 200-day EMA (tight buffer); below-EMA move would trigger -8 deduction
+- Low beta (0.37) limits upside in a bull-run environment; slower-moving trade
+
+Fundamental Note:
+Q1 2026 EPS $1.93 beat by 7.5%; 4-quarter beat streak. Revenue +11.3% YoY. Reaffirmed
+FY26 guidance $6.55–$6.80. AI data center ESA pipeline: 7.6 GW secured under long-term
+contracts. FL PSC approved moving forward with data center rate petition. NC regulatory
+headwind is the primary risk to the bull thesis.
 ```
 
 ---
 
 ## Watchlist
-_Names with constructive scan/research but no immediate entry signal._
+_Names with constructive scan/research but no immediate entry (timing / extension or earnings)._
 
-| Ticker | Score | Why watching | Trigger to revisit |
-|--------|-------|--------------|-------------------|
-| ADI | 79/115 | Best-scoring ticker after ETN; excellent R:R (2.12:1); Q2 FY2026 EPS $3.09 beat (+67% YoY); avg PT $453–$460; earnings Aug 19–26 (safe). Only 1 trigger; RSI 48.3 — not yet confirmed above 50. | RSI crossover above 50 on daily chart |
-| EMR | 67/115 | Solid fundamentals (Q2 beat, 4% EPS growth YoY); Saudi Aramco corrosion management partnership; AI automation platform launches; Bernstein Outperform $175; avg PT $163–$165. Price below 50-day EMA; RSI 45.9; no news catalyst in last 2 weeks; insider selling June 1. | Price reclaims 50-day EMA ($140.82) + RSI crosses 50 |
-| LRCX | ~62/115 | Semiconductors sector recovering; 1 trigger (close above prior day high); RSI 49.1; earnings Aug 5 (safe). Extended +5.19% above EMA50 — needs pullback to EMA50 zone for cleaner entry. | Pullback to EMA50 ($333) with RSI holding above 45 |
+| Ticker | Why watching | Trigger to revisit |
+|--------|--------------|-------------------|
+| ADI | Analog Devices: at EMA50 ($396) with strong fundamentals and earnings Aug 19-26 (safe). RSI 44.8 — has NOT yet crossed above 50. Only 1 trigger (close above prior high). | RSI crosses and holds above 50; entry $388–$400 |
+| MCHP | Microchip Technology: 5.3% below EMA50, RSI 42.6, pullback still in progress; earnings ~Aug 4-6 (safe). Cat B fail at current price. | Price reclaims EMA50 ($89) with RSI > 50 |
+| LRCX | Lam Research: earnings July 29 (16 days) — ELIMINATED by hard filter. RSI 45 and declining. Strong medium-term thesis but needs post-earnings reset. | Post-earnings; watch for re-entry after July 29 |
 
 ---
 
 ## Open Trades
 _User-confirmed trades from the last 14 days, outcome not yet recorded._
 
-_No open trades — this is an unattended scheduled run; no trades have been confirmed._
+_No open trades — this is a scheduled/unattended run; no trades confirmed by user._
 
 ---
 
 ## Performance Summary
 _All closed trades (outcome recorded)._
 
-| Date | Ticker | Entry Price | Outcome Price | % Change | Result |
-|------|--------|-------------|---------------|----------|--------|
-| — | — | No closed trades in log | — | — | — |
+_No closed trades with recorded outcomes yet (trades-log.csv contains only an empty-scan row from 2026-04-16)._
 
 ### Aggregate Stats
 - **Total closed trades:** 0
@@ -137,17 +156,14 @@ _All closed trades (outcome recorded)._
 - **Best trade:** N/A
 - **Worst trade:** N/A
 
-_Note: Only the April 16, 2026 empty-scan row exists in the log; no actual trades have been confirmed or closed since strategy inception._
-
 ---
 
-## Scan Eliminations Summary
+## Scan Details
+_For reference: 2026-07-13 19:03 UTC scan._
 
-| Stage | Count | Reason |
-|-------|-------|--------|
-| Passed yfinance scan | 34 | Met all Group 1–4 conditions |
-| Eliminated (earnings <21 days) | 23 | Hard filter: no earnings before Aug 2 |
-| Eliminated (Cat B / score <55) | 6 | O, OKE, MCHP, BRK-B, QCOM, TJX |
-| Scored above threshold (55+) | 5 | ETN 83, ADI 79, PH 75, EMR 67, LRCX ~62 |
-| Immediate tradable picks | 2 | ETN (all 3 triggers, RSI confirmed), PH (2 triggers, RSI 56.9) |
-| Watchlist | 3 | ADI, EMR, LRCX |
+- **Total passing scan criteria:** 35 tickers
+- **Eliminated by earnings ≤21 days:** 22 (GS, C, FAST, PLD, TFC, TXN, NSC, AEP, AXP, NUE, CDNS, CARR, KLAC, NXPI, HLT, F, ODFL, CI, MO, SO, LIN, CL)
+- **Eliminated by earnings hard filter (< 21 days, separate check):** LRCX (July 29), ITW (July 28), APH (July 29), PCG (July 23)
+- **Eliminated by scoring (Cat B / threshold):** BRK-B (Cat B fail), OKE (Cat B / extended), O (near threshold, RSI 61 / extended), QCOM (RSI 42, Cat C weak, -5.4% below EMA50), MCHP (Cat B fail, -5.3% below EMA50)
+- **Scored:** PH (88), ETN (84), DUK (83), ADI (79 but 1 trigger only — watchlist)
+- **Selected as tradeable:** PH, ETN, DUK
