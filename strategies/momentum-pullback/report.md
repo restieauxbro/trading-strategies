@@ -1,238 +1,181 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-07-14_
+_Last updated: 2026-07-15_
 
 ---
 
 ## Market Context
 
-The S&P 500 closed at **7,552.74 (+0.50%)** on Tuesday July 14, recovering from Monday's -0.79% pullback driven by Iran geopolitical risk and AI/semi weakness. **June CPI came in cooler than expected** at -0.4% month-over-month and 3.5% year-over-year (below the -0.2% and 3.8% forecast), which knocked rate-hike expectations sharply lower — CME FedWatch now shows ~16-17% probability of a July Fed move. VIX settled at **16.69** (-2.74%), pulling back from Monday's spike to 17.16. Q2 earnings season is off to a strong start: JPMorgan, Goldman Sachs, and Wells Fargo all beat estimates significantly. The outlier was **IBM (-25%)**, which issued a profit warning on weak software demand — a reminder that individual risk is elevated. Oil sits near $80/bbl on Iran tensions. The broader uptrend remains intact; bull market thesis is intact but valuations are at record price/earnings levels.
+The S&P 500 closed at **7,556** (+0.38%) on July 15, well above its 200-day MA (~6,800 estimated), confirming the primary uptrend remains intact. VIX came in at **16.15** (down from 16.50 yesterday and the recent spike to 17.16 on Monday), signalling low-to-moderate fear and a benign environment for momentum trades. The market was supported by a cooler-than-expected June CPI (-0.4% MoM, 3.5% YoY vs -0.2%/3.8% expected) and a strong Q2 bank earnings sweep (JPM, GS, WFC, C all beat). Fed rate-hike odds for July fell to ~16%. Geopolitical risk (US-Iran Strait of Hormuz) and IBM's profit warning added pockets of weakness, but the bull uptrend remains well-supported. Regime is **bull/uptrend — normal scan conditions apply**.
 
 ---
 
-## Scan Results — July 14, 2026
+## Scan Results
 
-**Scanner:** Momentum after pullback | **Universe:** S&P 500 | **Timestamp:** 2026-07-14 19:03 UTC  
-**Raw pass count:** 35 tickers
+**Scan timestamp:** 2026-07-15 19:02 UTC  
+**Symbols found:** 32 — BRK-B, MRK, KO, LIN, TXN, AMGN, PM, PLD, ADI, C, MO, SO, DUK, LRCX, KLAC, CL, PH, ITW, ETN, APH, MCHP, FAST, CARR, O, ODFL, NUE, PCAR, HLT, OKE, PCG, AEP, F
 
-Raw scan symbols: BRK-B, LIN, TXN, AXP, GS, PLD, ADI, C, MO, SO, DUK, LRCX, CI, KLAC, CL, PH, WFC, ITW, NSC, ETN, APH, CDNS, MCHP, NXPI, TFC, FAST, CARR, O, ODFL, NUE, HLT, OKE, PCG, AEP, F
+### Earnings Filter (hard cutoff: no earnings within 21 days of July 15 = before Aug 5)
 
-**Hard-filter eliminations (earnings ≤ 20 days from today):**
-| Ticker | Earnings Date | Days Away | Status |
-|--------|--------------|-----------|--------|
-| GS | Jul 14 | 0 | Today — ELIMINATED |
-| C | Jul 14 | 0 | Today — ELIMINATED |
-| FAST | Jul 14 | 0 | Today — ELIMINATED |
-| PLD | Jul 16 | 2 | ELIMINATED |
-| TFC | Jul 17 | 3 | ELIMINATED |
-| TXN | Jul 22 | 8 | ELIMINATED |
-| NSC | Jul 23 | 9 | ELIMINATED |
-| PCG | Jul 23 | 9 | ELIMINATED |
-| AEP | Jul 23 | 9 | ELIMINATED |
-| AXP | Jul 24 | 10 | ELIMINATED |
-| NUE | Jul 27 | 13 | ELIMINATED |
-| CDNS | Jul 27 | 13 | ELIMINATED |
-| ITW | Jul 28 | 14 | ELIMINATED |
-| CARR | Jul 28 | 14 | ELIMINATED |
-| KLAC | Jul 28 | 14 | ELIMINATED |
-| NXPI | Jul 28 | 14 | ELIMINATED |
-| HLT | Jul 28 | 14 | ELIMINATED |
-| F | Jul 28 | 14 | ELIMINATED |
-| APH | Jul 29 | 15 | ELIMINATED |
-| LRCX | Jul 29 | 15 | ELIMINATED |
-| ODFL | Jul 29 | 15 | ELIMINATED |
-| CI | Jul 30 | 16 | ELIMINATED |
-| MO | Jul 30 | 16 | ELIMINATED |
-| SO | Jul 30 | 16 | ELIMINATED |
-| LIN | Jul 31 | 17 | ELIMINATED |
-| CL | Jul 31 | 17 | ELIMINATED |
-| ETN | Jul 31 | 17 | ELIMINATED (confirmed Eaton.com press release Jul 13) |
-| BRK-B | Aug 3 | 20 | ELIMINATED (< 21 days) |
-| OKE | Aug 3 | 20 | ELIMINATED (< 21 days) |
+The following were eliminated on the hard earnings rule:
 
-**Survivors after hard filter:** WFC (already reported Jul 14 → Q3 safe), DUK (Aug 4, 21d borderline), PH (Aug 6, 23d), ADI (Aug 19, 36d), O (Aug 5, 22d), MCHP (Aug 4-6, borderline)
+| Ticker | Earnings Date | Days Out | Status |
+|--------|--------------|----------|--------|
+| PLD | Jul 16 | 1 | ELIMINATED |
+| TXN | Jul 22 | 7 | ELIMINATED |
+| PM | Jul 22 | 7 | ELIMINATED |
+| PCG | Jul 23 | 8 | ELIMINATED |
+| AEP | Jul 23 | 8 | ELIMINATED |
+| NUE | Jul 27 | 12 | ELIMINATED |
+| KO | Jul 28 | 13 | ELIMINATED |
+| KLAC | Jul 28 | 13 | ELIMINATED |
+| ITW | Jul 28 | 13 | ELIMINATED |
+| CARR | Jul 28 | 13 | ELIMINATED |
+| PCAR | Jul 28 | 13 | ELIMINATED |
+| HLT | Jul 28 | 13 | ELIMINATED |
+| F | Jul 28 | 13 | ELIMINATED |
+| LRCX | Jul 29 | 14 | ELIMINATED |
+| APH | Jul 29 | 14 | ELIMINATED |
+| ODFL | Jul 29 | 14 | ELIMINATED |
+| MO | Jul 30 | 15 | ELIMINATED |
+| SO | Jul 30 | 15 | ELIMINATED |
+| LIN | Jul 31 | 16 | ELIMINATED |
+| CL | Jul 31 | 16 | ELIMINATED |
+| ETN | Jul 31 | 16 | ELIMINATED |
+| OKE | Aug 3 | 19 | ELIMINATED |
+| BRK-B | Aug 3 | 19 | ELIMINATED |
+| AMGN | Aug 4 | 20 | ELIMINATED |
+| MRK | Aug 4 | 20 | ELIMINATED |
+| DUK | Aug 4 | 20 | ELIMINATED |
+| O | Aug 5 | 21 | BORDERLINE — scored, R:R insufficient |
 
-**WFC note:** WFC reported Q2 2026 earnings today (July 14) — a 16.4% EPS beat ($2.00 vs $1.72). Next earnings Q3 is October 2026. WFC passes the earnings hard filter but the setup is an earnings-day catalyst, not a classic pullback.
+**Additional technical eliminations:**
+- **MCHP** — Price $85.17, -4.37% below EMA50 ($89.06); pullback has broken EMA50 support, not a controlled test. Eliminated.
+- **FAST** — RSI 40.7 (well below 50), -2.21% below EMA50, volume rising (distribution flag). Earnings already reported Jul 14 but setup too weak.
 
-**Further eliminations:**
-- **MCHP**: Price -2.58% below EMA50 (fails Group 3 cleanly); RSI 46.1; Cat B fails (no analyst PTs near term). Eliminated.
-- **O**: RSI 59.7 (elevated from pullback zone), only 1 trigger, +2.95% from EMA50 — setup is extended, not ideal entry. Watchlist-only.
-
-**Qualified for full scoring:** PH, WFC, DUK, ADI
+**Remaining viable candidates after all filters:**
+1. PH (Aug 6 earnings — 22 days, SAFE)
+2. ADI (Aug 19 earnings — 35 days, SAFE)
+3. C (earnings already reported Jul 14 — SAFE)
+4. O (Aug 5, borderline — scored but eliminated on R:R)
 
 ---
 
 ## Today's Suggested Trades
 
-### 1. PH — Parker Hannifin Corporation
-**Score: 88/115** | Industrials — Motion & Control Technologies
+### 1. PH — Parker Hannifin Corporation _(#1 Confirmed Entry)_
 
-| Parameter | Value |
-|-----------|-------|
-| Price | $961.14 |
-| EMA20 | $947.56 |
-| EMA50 | $928.97 |
-| EMA200 | $879.02 |
-| % from EMA50 | +3.46% |
-| RSI | 56.3 |
-| Triggers | Recrossed above 20 EMA; Close above prior day high |
-| Earnings | Aug 6, 2026 (23 days — SAFE) |
+**Score: 95/115** (A:40 B:25 C:20 D:15 Ded:−5)
 
-**Scoring breakdown:**
-- Category A — Technical: **40/40** (weekly uptrend ✅; daily uptrend ✅; pullback to EMA50 zone ✅; volume declining ✅; continuation pattern — recrossed above 20 EMA ✅; B-Xtrender: N/A)
-- Category B — R:R: **18/25** (Entry $961, Stop $930 below EMA50, T1 $1,027 consensus avg PT → risk $31, reward $66, R:R 2.1:1 ≥ 2:1)
-- Category C — Fundamentals: **20/20** (Q3 FY26 EPS $8.17 beat +4.3% ✅; revenue +7.6% YoY ✅; EPS +17.7% YoY ✅; Truist raised to $1,269 Jul 2 + Bernstein Outperform Jun 9 ✅)
-- Category D — Catalyst: **15/15** (Q3 beat + raised guidance $31.20 EPS; aerospace/defense + AI infrastructure demand ✅; Industrials sector in favor ✅)
-- Deductions: **-5** (B-Xtrender unavailable)
+```
+Ticker: PH
+Current Price: $950–953 (intraday Jul 15, 2026; scan close $950.17)
+Sector: Industrials — Motion & Control Technologies
+Score: 95/115 (A:40 B:25 C:20 D:15 Ded:−5)
 
-**Trade plan:**
-- Entry zone: $945–$965
-- Stop: $930 (below EMA50 at $929)
-- Target 1: $1,027 (consensus avg PT, 22 analysts)
-- Target 2: $1,147 (Truist raised PT)
-- R:R (primary): 2.1:1 to T1
-- Trade must close by July 31 (Aug 6 earnings). Duration: ~17 calendar days.
+Setup Summary:
+Parker Hannifin is in a powerful long-term uptrend, with a weekly golden cross firmly in place (weekly EMA50 $865 >> EMA200 $610). The stock is consolidating within 2–3% of its daily 50-day EMA ($929.93) after a sustained advance, pulling back on declining volume — a textbook momentum continuation setup. RSI 52.6 suggests the pullback has found support without becoming oversold, and price is hovering just above EMA20 ($948). Today's slight dip from yesterday's $964 close creates an improved entry price and a more favourable R:R (3.04:1 vs 2.1:1 last week).
 
-**Fundamental context:** Q3 FY26 EPS $8.17 beat consensus $7.83 (+4.3%). Revenue $5.49B. Company raised full-year EPS guidance to $31.20. Aerospace division benefits from defense demand and AI data center build-out. 18 Buy / 4 Hold / 0 Sell from 22 analysts.
+Entry Zone: $945–$960
+Stop Loss: $928 — just below daily EMA50 ($929.93) and recent swing low
+Target 1: $1,027 — conservative analyst consensus (Bernstein Outperform $1,026, mean PT $1,045)
+Target 2: $1,147 — prior Truist target / measured move extension; Truist upgraded PT to $1,269 (Jul 2)
+Risk/Reward: 3.04:1 to T1 (entry $952.50 mid, risk $24.50, reward $74.50)
 
-**Key risks:** 
-- Stock at 3.46% above EMA50 — slightly extended; entry at $945-955 preferred
-- Aug 6 earnings hard limit on trade duration
-- Broad market pullback on IBM-style earnings disappointments could drag Industrials
-- Oil price spike could raise input costs
+Key Risks:
+- Earnings Aug 6, 2026 (22 days) — must exit before Aug 6 or accept earnings risk
+- Industrials broad market rotation risk if risk-off resumes
+- Low trading volume today (93K vs 737K avg) — light session, confirm with next-day volume
 
----
+Fundamental Note:
+Q3 FY2026 (Apr 30): Record adj. EPS $8.17 (+18% YoY, beat $8.07 est.), Record sales $5.5B (+11% YoY, +6.5% organic). Backlog record $12.5B. Raised FY2026 adj. EPS guidance to $31.20. Aerospace Systems organic +14%. 19 Buy ratings, 0 Sell. Truist: $1,269 (Jul 2); Bernstein initiated Outperform $1,026 (Jun 9); Citi opened 90-day upside catalyst watch.
+```
 
-### 2. WFC — Wells Fargo & Company
-**Score: 83/115** | Financials — Commercial Banking
+**Instrument (preferred): Paired Debit Spread — Bullish**
 
-⚠️ **Note: Non-standard setup.** WFC reported Q2 2026 earnings today (July 14) with a massive beat. The scan captured WFC at $85.14 (within the EMA50 zone) just as the post-earnings bounce was underway. This is an earnings-catalyst momentum play, not a classic pullback continuation. Risk is elevated on earnings-day volatility.
+> ⚠️ Target expiry must accommodate exit before Aug 6 earnings. Use Aug 15 expiry (~31 DTE) and plan hard exit by Aug 5.
 
-| Parameter | Value |
-|-----------|-------|
-| Price (scan) | $85.14 → post-earnings ~$87–89 |
-| EMA20 | $84.84 |
-| EMA50 | $82.68 |
-| EMA200 | $81.53 |
-| % from EMA50 | +2.99% (scan) / ~+7% post-earnings |
-| RSI | 53.6 |
-| Triggers | Close above prior day high |
-| Earnings | Already reported Jul 14; next Q3 ~Oct 2026 (SAFE) |
+```
+Instrument: Paired Debit Spread (preferred)
+Bias: Bullish
+Expiry: Aug 15, 2026 (~31 DTE) — PLAN TO CLOSE BEFORE AUG 6 EARNINGS
 
-**Scoring breakdown:**
-- Category A — Technical: **35/40** (weekly uptrend ✅; daily uptrend ✅; pullback to EMA50 zone ✅ at scan time; volume: pullback had declining volume ✅; continuation pattern: earnings gap-up rather than clean chart pattern — partial credit)
-- Category B — R:R: **18/25** (Entry ~$87, Stop $81.53 [200-day EMA], T1 $99.81 [consensus avg PT 29 analysts] → risk $5.47, reward $12.81, R:R 2.34:1 ≥ 2:1)
-- Category C — Fundamentals: **20/20** (Q2 EPS $2.00 vs $1.72 = +16.4% beat ✅; revenue $22.6B +8.6% YoY ✅; EPS +25% YoY ✅; strong consensus buy, upgrades likely post-beat ✅)
-- Category D — Catalyst: **15/15** (Massive Q2 beat; investment banking fees +35%; trading revenue +24%; SpaceX IPO mandate; asset cap removed ✅; Financials sector leading ✅)
-- Deductions: **-5** (B-Xtrender unavailable)
+Primary Spread:
+  Structure: Bull Call Spread
+  Size: N contracts
+  Strikes: 950 / 1000 (50-point wide, ATM)
+  Net Debit: ~$20–22 per spread (verify live)
+  Max Profit: ~$28–30 per spread
+  Max Loss: ~$20–22 per spread (approx 1:1 risk:reward on primary)
 
-**Trade plan:**
-- Entry zone: $85–$89 (earnings day volatility; prefer buy on any intraday dip toward $85)
-- Stop: $81.53 (200-day EMA — hard support floor)
-- Target 1: $99.81 (consensus analyst PT, 29 analysts, +17.5% upside from $85)
-- Target 2: $105 (high PT range)
-- R:R (at $87 entry): 2.3:1 to T1
-- Next earnings: October 2026 — full position trade window available
+Opposite Hedge:
+  Structure: Bear Put Spread (half size)
+  Size: N/2 contracts
+  Strikes: 940 / 900 (40-point wide)
+  Net Debit: ~$10–12 per spread (verify live)
+  Max Profit: ~$18–20 per spread (≥2:1 on hedge — needed to offset primary at half size)
+  Max Loss: ~$10–12 per spread
 
-**Fundamental context:** Q2 net income +17% to $6.41B ($2.00/share). Asset cap removal enables balance sheet expansion. Trading desk revenue +24%. Investment banking fees +35% ($939M). Wealth management AUM +15% YoY to $2.69T. ROE 15.0% vs 12.8% prior year.
+Combined Position:
+  Total Debit / Max Loss: ~$25–27 per combined unit (N bull call + N/2 bear put)
+  Expected Payout if thesis is right (PH → $1,000+): ~$28–30 from primary
+  Expected Payout on sharp decline through $900: ~$9–10 from hedge (at half size)
+  Main Risk: Drift between $950–$1,000, time decay, earnings surprise if held past Aug 5
+```
 
-**Key risks:**
-- Earnings-day volatility — stock may give back gains; prefer buying on a pullback to $85 zone
-- Rising credit losses risk if economy weakens (though charge-offs down YoY)
-- Asset cap just removed — expansion execution risk
-- Oil spike and Iran risk could weigh on broad financials
-
----
-
-### 3. DUK — Duke Energy Corporation
-**Score: 81/115** | Utilities — Electric Power
-
-| Parameter | Value |
-|-----------|-------|
-| Price | $126.23 |
-| EMA20 | $126.09 |
-| EMA50 | $125.56 |
-| EMA200 | $122.73 |
-| % from EMA50 | +0.53% |
-| RSI | 51.0 |
-| Triggers | Recrossed above 20 EMA; RSI crossed above 50; Close above prior day high (ALL 3) |
-| Earnings | Aug 4, 2026 (21 days — tight but technically SAFE) |
-
-**⚠️ Earnings window warning:** Aug 4 = exactly 21 days. Trade must close by July 31 (~17 calendar days). A confirmed entry today only leaves 12–15 trading days to work. Tight but workable for a momentum pop.
-
-**Scoring breakdown:**
-- Category A — Technical: **40/40** (weekly uptrend ✅; daily uptrend ✅; price +0.53% from EMA50 — ideal zone ✅; volume declining ✅; all 3 triggers fired ✅; B-Xtrender: N/A)
-- Category B — R:R: **18/25** (Entry $126.23, Stop $122 [below 200-day EMA], T1 $138 [consensus avg PT] → risk $4.23, reward $11.77, R:R 2.78:1 ≥ 2:1)
-- Category C — Fundamentals: **16/20** (Q1 2026 EPS $1.93 beat +7.5% ✅; revenue +11.3% YoY ✅; EPS growth ✅; no recent analyst upgrade — GS removed from Conviction List; 0 pts on upgrade)
-- Category D — Catalyst: **12/15** (AI data center ESAs 7.6 GW signed ✅; Duke Florida saved $50M customer savings via tax strategy Jul 10 ✅; Utilities re-rating on AI demand, but sector less hot than Tech/Financials: partial)
-- Deductions: **-5** (B-Xtrender unavailable)
-
-**Trade plan:**
-- Entry zone: $124–$128
-- Stop: $122 (below 200-day EMA at $122.73)
-- Target 1: $138 (consensus analyst avg PT)
-- Target 2: $146 (high PT)
-- R:R: 2.78:1 to T1
-- Trade must close by July 31 (Aug 4 earnings). Duration: ~17 calendar days max.
-
-**Fundamental context:** Q1 2026 EPS $1.93 beat; revenue +11.3% YoY; 7.6 GW AI data center ESA pipeline; 8.7M utility customers. Florida saved $50M via innovative tax strategy (July 10 announcement). NC rate case pending.
-
-**Key risks:**
-- Very tight earnings window (Aug 4 = 21 days)
-- Goldman removed from Conviction List (moderate negative catalyst)
-- NC regulatory rate case uncertainty
-- Low beta (0.37) — slow mover; limited upside in 17 days
-- Rising oil/yields may pressure utility sector (rate-sensitive)
+_Secondary option: Buy shares at $945–$960, stop $928, target $1,027 then $1,147. Simple and effective for a confirmed-uptrend name._
 
 ---
 
 ## Watchlist
 
-_Names with constructive setup but no immediate entry signal._
+_Names with constructive scan/research but no immediate entry (timing / extension)._
 
-| Ticker | Why watching | Trigger to revisit |
-|--------|--------------|-------------------|
-| ADI | RSI 47.8 (recovering from 44.8 Jul 13, 48.3 Jul 12). Price -0.62% from EMA50. Only 1 trigger (close above prior high). Earnings Aug 19 (36 days — very safe). Strong momentum AI/chip story. | RSI crosses above 50; or all 3 triggers fire (recross above EMA20 + RSI > 50 + close above prior high) |
-| O | RSI 59.7, +2.95% from EMA50. Earnings Aug 5 (22 days, safe). Only 1 trigger. RSI extended — not a fresh pullback recovery signal. | RSI pulls back below 55 then recovers; or a clear EMA50 retest to $62 zone |
+| Ticker | Score | Why watching | Trigger to revisit |
+|--------|-------|--------------|-------------------|
+| ADI | 86/115 | Excellent fundamentals: Q2 FY2026 EPS $3.09 (+67% YoY), revenue +37%, Empower acquisition (Jul 7), analysts raising PTs to $430–$550. 35 days to Aug 19 earnings. Price at EMA50 ($395.22), within -1.76%. Volume declining. | RSI reclaim of 50 (currently 46.1). Entry: $388–$395 once RSI confirms. Stop: $368–$370 (swing low support), T1: $430 (52-wk high area), R:R ~2.5:1 |
+| C | 60/115 | Citigroup: massive Q2 beat (Jul 14) — EPS $3.15 vs $2.74 est. (+15%), highest revenue in a decade ($24.8B, +14% YoY), net income +45%. Earnings-safe (Q3 in Oct). At EMA50 $134.52. | Volume declining on pullback (currently rising — flag). RSI reclaim of 50 (currently 43.3). R:R needs to improve from current $134 level; entry sub-$130 would offer better R:R to $145–150 T1. |
 
 ---
 
 ## Open Trades
 
-_No user-confirmed trades have been logged to this strategy._
+_No user-confirmed trades currently open. This is a scheduled/unattended run — no new trade rows logged._
 
-_(This is a scheduled/unattended run — no new trade rows are appended per workflow rules.)_
+| Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
+|------|--------|------------|------|----------|----------|-----|
+| — | — | — | — | — | — | — |
 
 ---
 
 ## Performance Summary
 
-_No closed trades yet recorded (strategy log started April 16, 2026)._
+_All closed trades (outcome recorded)._
 
-| Metric | Value |
-|--------|-------|
-| Total closed trades | 0 |
-| Win rate | — |
-| Strategy inception | 2026-04-16 |
+_No closed trades with outcomes to report yet. The trades-log.csv has only one entry (2026-04-16 empty-scan row). All subsequent recommendations in this session log have been unattended/scheduled runs — no confirmed user trades were logged._
 
----
-
-## Eliminated Tickers (Summary)
-
-**Earnings hard filter** (29 of 35 eliminated): GS, C, FAST, PLD, TFC, TXN, NSC, PCG, AEP, AXP, NUE, CDNS, ITW, CARR, KLAC, NXPI, HLT, F, APH, LRCX, ODFL, CI, MO, SO, LIN, CL, ETN, BRK-B, OKE
-
-**Score/setup filter** (2 of remaining 6): MCHP (below EMA50, Cat B fail), O (RSI extended, 1 trigger only)
+### Aggregate Stats
+- **Total closed trades:** 0
+- **Win rate (HIT_T1 or HIT_T2):** N/A
+- **Average % gain on wins:** N/A
+- **Average % loss on stops:** N/A
+- **Expired (inconclusive):** N/A
+- **Best trade:** N/A
+- **Worst trade:** N/A
 
 ---
 
-## Key Macro Notes (July 14, 2026)
+## Scan History (recent — unattended runs, no trades logged)
 
-- **CPI June 2026:** -0.4% MoM, 3.5% YoY — softer than expected. Fed rate hike odds for July: ~16%
-- **Q2 Earnings beats:** JPM, GS, WFC, BAC — financials sector very strong
-- **IBM -25%:** Biggest daily drop ever — profit warning on software weakness. Isolated risk but signals dispersion
-- **Oil:** ~$80/bbl (up from $77s last week) — Iran geopolitical risk
-- **S&P 500:** 7,552 (near all-time highs); 10%+ YTD; bull uptrend intact
-- **VIX:** 16.69 — risk premium declining; complacency risk
+| Date | #1 Pick | Score | #2 Pick | Score | #3 Pick | Score |
+|------|---------|-------|---------|-------|---------|-------|
+| 2026-07-15 | PH | 95/115 | — | — | — | — |
+| 2026-07-14 | PH | 88/115 | WFC | 83/115 | DUK | 81/115 |
+| 2026-07-13 | PH | 88/115 | ETN | 84/115 | DUK | 83/115 |
+| 2026-07-12 | ETN | 83/115 | PH | 83/115 | — | — |
+| 2026-07-09 | ETN | 83/115 | PH | 83/115 | ADI | 79/115 |
+| 2026-07-08 | TJX | 85/115 | ETN | 83/115 | CI | 81/115 |
+| 2026-07-07 | TJX | 85/115 | ETN | 83/115 | CI | 81/115 |
+| 2026-07-06 | ETN | 83/115 | DUK | 82/115 | O | 72/115 |
+| 2026-07-05 | ETN | 76/115 | CI | 74/115 | FDX | 65/115 |
 
----
-
-_Report generated by automated scheduled run. No trades were placed in this run._
+_Note: ETN (Eaton Corp.) confirmed earnings July 31 — consistently eliminated from Jul 14 onwards. CI confirmed earnings July 30. DUK Aug 4 (20 days). Today's scan reduced the tradeable universe significantly with most candidates at 13-20 days to earnings._
