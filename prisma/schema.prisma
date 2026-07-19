@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum WebhookEventStatus {
+  PENDING
+  PREVIEW_FAILED
+  PLACED
+  SKIPPED
+  FAILED
+
+  @@map("trading_webhook_event_status")
+}
+
+model WebhookEvent {
+  id             String             @id @default(cuid())
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+  source         String             @default("trendspider")
+  rawPayload     Json
+  symbol         String?
+  action         String?
+  quantity       Float?
+  limitPrice     Float?
+  botName        String?
+  timeframe      String?
+  botStatus      String?
+  comment        String?
+  status         WebhookEventStatus @default(PENDING)
+  tigerOrderId   String?
+  tigerOrderId2  String?
+  tigerStatus    String?
+  previewJson    Json?
+  error          String?
+
+  @@index([createdAt])
+  @@index([symbol])
+  @@index([status])
+  @@map("trading_webhook_events")
+}
+
+enum TradePromptStatus {
+  PENDING_SCHEDULE
+  SCHEDULED
+  EXECUTING
+  PLACED
+  PARTIALLY_PLACED
+  FAILED
+  SKIPPED
+  CANCELLED
+
+  @@map("trading_trade_prompt_status")
+}
+
+model TradePrompt {
+  id              String            @id @default(cuid())
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  rawPrompt       String
+  scheduledFor    DateTime
+  scheduleKind    String?
+  qstashMessageId String?
+  status          TradePromptStatus @default(PENDING_SCHEDULE)
+  agentTranscript Json?
+  symbol          String?
+  orderSummary    String?
+  legs            Json?
+  error           String?
+  notifiedAt      DateTime?
+
+  @@index([status])
+  @@index([scheduledFor])
+  @@map("trading_trade_prompts")
+}

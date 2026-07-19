@@ -1,5 +1,9 @@
 # Trading Strategy
 
+Primary product: Next.js app that receives TrendSpider Strategy Bot webhooks and executes Tiger Brokers paper limit orders. See [README.md](README.md) and [docs/trendspider-webhooks.md](docs/trendspider-webhooks.md).
+
+Legacy Cursor agent workflows below still apply under `strategies/`.
+
 @.cursor/rules/trading-agent.mdc
 
 Skills are maintained in `.agents/skills`. `.cursor/skills` and `.claude/skills` are compatibility symlinks to the same canonical skill folders.

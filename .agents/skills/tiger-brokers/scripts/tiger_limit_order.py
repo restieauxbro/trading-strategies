@@ -58,6 +58,16 @@ def _json_print(payload: dict[str, Any]) -> None:
     print(json.dumps(payload, indent=2, default=str))
 
 
+def _live_trading_enabled(args: argparse.Namespace) -> bool:
+    if getattr(args, "allow_live", False):
+        return True
+    for key in ("tiger_allow_live", "TIGER_ALLOW_LIVE"):
+        value = os.environ.get(key, "").strip().lower()
+        if value in {"1", "true", "yes", "on"}:
+            return True
+    return False
+
+
 def cmd_place_limit_order(args: argparse.Namespace) -> int:
     from tigeropen.common.exceptions import ApiException
     from tigeropen.common.util.contract_utils import stock_contract
@@ -73,12 +83,13 @@ def cmd_place_limit_order(args: argparse.Namespace) -> int:
     if configured is None:
         _json_print({"ok": False, "stage": "verify_account", "error": "configured account not found"})
         return 1
-    if str(getattr(configured, "account_type", "")).upper() != "PAPER":
+    account_type = str(getattr(configured, "account_type", "")).upper()
+    if account_type != "PAPER" and not _live_trading_enabled(args):
         _json_print(
             {
                 "ok": False,
                 "stage": "verify_account",
-                "error": "configured account is not PAPER",
+                "error": "configured account is not PAPER; pass --allow-live or set tiger_allow_live=true",
                 "account_type": getattr(configured, "account_type", None),
             }
         )
@@ -142,7 +153,7 @@ def cmd_place_limit_order(args: argparse.Namespace) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Place Tiger paper share limit orders")
+    parser = argparse.ArgumentParser(description="Place Tiger share limit orders (paper or live)")
     parser.add_argument("--symbol", required=True, help="US stock symbol, e.g. NVDA")
     parser.add_argument("--action", choices=("BUY", "SELL"), required=True)
     parser.add_argument("--quantity", type=int, required=True)
@@ -152,6 +163,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--props-path", default=None, help="directory containing tiger_openapi_config.properties")
     parser.add_argument("--env-file", default=None, help="optional .env file containing Tiger config")
     parser.add_argument("--dry-run", action="store_true", help="preview only; do not place the order")
+    parser.add_argument(
+        "--allow-live",
+        action="store_true",
+        help="allow non-PAPER accounts (also enabled by tiger_allow_live=true in .env)",
+    )
     return cmd_place_limit_order(parser.parse_args(argv))
 
 

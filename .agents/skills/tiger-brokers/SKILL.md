@@ -1,16 +1,17 @@
 ---
 name: tiger-brokers
-description: Trades and queries Tiger Brokers paper accounts via tigeropen. Use when the user mentions Tiger Brokers, Tiger OpenAPI, tigeropen, paper trading, share limit orders, order preview/place/cancel, account positions, or Tiger option chains.
+description: Trades and queries Tiger Brokers accounts via tigeropen. Use when the user mentions Tiger Brokers, Tiger OpenAPI, tigeropen, paper or live trading, share limit orders, order preview/place/cancel, account positions, or Tiger option chains.
 ---
 
 # Tiger Brokers Trading
 
-Use Tiger OpenAPI through the `tigeropen` Python SDK. Default to paper trading and read-only checks unless the user explicitly asks to place an order.
+Use Tiger OpenAPI through the `tigeropen` Python SDK. Read account type from config before trading. Prefer dry-run / explicit confirmation for live orders.
 
 ## Safety Rules
 
 - Treat all Tiger config and `.env` values as secrets. Never print private keys, account IDs in full unless needed, or commit `.env`/config files.
-- Before placing any order, call `get_managed_accounts()` and verify the configured account has `account_type == "PAPER"`.
+- Before placing any order, call `get_managed_accounts()` and confirm the configured account type (`PAPER` vs live/`STANDARD`).
+- Live trading requires `tiger_allow_live=true` in `.env` and/or `--allow-live` on the limit-order helper.
 - This repo's default order workflow is share limit orders, not market orders or cash-amount orders.
 - For live accounts, stop and ask for explicit confirmation of symbol, action, quantity, limit price, time in force, and account type before placing.
 - Do not place options orders from this skill unless the user explicitly asks and gives full contract details.
@@ -31,13 +32,14 @@ tiger_id=...
 account=...
 license=...
 private_key_pk1=...
+tiger_allow_live=true
 ```
 
 The helper scripts map these to `TIGEROPEN_TIGER_ID`, `TIGEROPEN_ACCOUNT`, `TIGEROPEN_LICENSE`, and `TIGEROPEN_PRIVATE_KEY`.
 
 ## Share Limit Orders
 
-Use the bundled limit-order helper for paper share orders:
+Use the bundled limit-order helper:
 
 ```bash
 python .cursor/skills/tiger-brokers/scripts/tiger_limit_order.py \
@@ -50,7 +52,8 @@ python .cursor/skills/tiger-brokers/scripts/tiger_limit_order.py \
 
 Default behavior:
 
-- Verifies the configured account is `PAPER`.
+- Verifies the configured account exists.
+- Blocks non-`PAPER` accounts unless `tiger_allow_live=true` or `--allow-live` is set.
 - Builds a stock contract for the symbol in USD.
 - Previews the order.
 - Stops if Tiger returns a preview warning.

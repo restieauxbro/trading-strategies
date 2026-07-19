@@ -2,8 +2,27 @@
 __pycache__/
 *.pyc
 .env
+.env*.local
 .claude/worktrees/
 
 # Per-strategy chart screenshots (TradingView / TrendSpider) — regenerated each run
 strategies/**/assets/**
 !strategies/**/assets/.gitkeep
+
+# Next.js / Node
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Prisma
+prisma/*.db
+prisma/*.db-journal
+
+# OS / IDE
+.DS_Store
+*.pem
+
+/app/generated/prisma
