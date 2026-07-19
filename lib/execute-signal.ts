@@ -15,11 +15,6 @@ import { orderGuardrailViolation } from "@/lib/order-guardrails";
 // this for anything beyond small paper-trade testing.
 const FIXED_ORDER_USD = 100;
 
-// Smallest tradable fraction of a share (matches the scale used in
-// lib/tiger.ts's withFractionalQuantity). Below this the order rounds to 0
-// shares and there's nothing to place — requires a Prime-tier Tiger account.
-const MIN_TRADABLE_QUANTITY = 0.0001;
-
 const DEFAULT_LIMIT_BUFFER_PCT = 0.15;
 
 /**
@@ -65,18 +60,13 @@ export async function executeWebhookSignal(
     if (signal.action === "buy") {
       action = "BUY";
       limitPrice = roundToCent(quotePrice * (1 + bufferPct / 100));
-      quantity = Math.round((FIXED_ORDER_USD / limitPrice) * 10000) / 10000;
-
-      if (!quantity || quantity < MIN_TRADABLE_QUANTITY) {
-        return prisma.webhookEvent.update({
-          where: { id: eventId },
-          data: {
-            status: "SKIPPED",
-            limitPrice,
-            error: `Fixed $${FIXED_ORDER_USD} order size resolves to ~0 shares of ${signal.symbol} at $${limitPrice.toFixed(2)}`,
-          },
-        });
-      }
+      // Whole shares only — many symbols/accounts reject fractional-share
+      // orders outright (Tiger accepts the preview but the order comes back
+      // "Invalid" post-submission), so round to the nearest whole share
+      // rather than risk a silent no-fill. Never round down to 0; a single
+      // share is the minimum viable buy even if it overshoots the $100
+      // target notional (orderGuardrailViolation below still caps spend).
+      quantity = Math.max(1, Math.round(FIXED_ORDER_USD / limitPrice));
     } else {
       // "sell" closes the full existing position — TrendSpider's exit
       // webhook sends no size, so there's nothing to size a partial sell to.

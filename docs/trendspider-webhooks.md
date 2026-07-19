@@ -25,7 +25,7 @@ TrendSpider sends only the symbol and direction — **quantity and price are res
 | `bot_status` | No | `%bot_status%` (`in_position` / `not_in_position`) |
 | `comment` | No | Free text for logs |
 
-- `buy` — fetches a live Tiger quote for the symbol and places a limit order sized to a **fixed $100** notional (`Math.floor(100 / limitPrice)` shares). This is a placeholder until an AI portfolio-management skill takes over sizing — see `lib/execute-signal.ts`.
+- `buy` — fetches a live Tiger quote for the symbol and places a limit order sized to a **fixed $100** notional, rounded to the nearest **whole share** (minimum 1 share, even if that overshoots $100 — many symbols/accounts reject fractional-share orders outright). This is a placeholder until an AI portfolio-management skill takes over sizing — see `lib/execute-signal.ts`.
 - `sell` — closes the **entire existing Tiger position** for that symbol (there is no partial-size sell from a webhook; `SKIPPED` if no position is open).
 - The limit price is the Tiger quote nudged by `WEBHOOK_LIMIT_BUFFER_PCT` (default `0.15`%) — above quote for buys, below quote for sells — to improve fill odds on a limit order. Market orders are not supported.
 - Any `quantity`/`limit_price`/`price`/`qty` fields in the payload are ignored if present.
