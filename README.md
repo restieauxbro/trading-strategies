@@ -76,7 +76,8 @@ components/           shadcn UI + dashboard
 lib/                  Tiger client, webhook schema, auth, Prisma
 prisma/               Supabase Postgres schema
 docs/                 TrendSpider webhook templates
-strategies/           Legacy Cursor agent strategies
+strategies/           Legacy Cursor agent strategies (research/recommend)
+trading/              Execution-only agent home (place a literal instruction)
 .agents/skills/       Agent skills (incl. Python Tiger helpers)
 scripts/              Legacy Python scan / yfinance tools
 ```
@@ -92,3 +93,7 @@ Read strategies/overview/AGENT.md and run the market overview.
 ```
 
 See [AGENTS.md](AGENTS.md) for details.
+
+## Execution-only agent (`trading/`)
+
+A separate agent home for scheduled/local-CLI runs that place a specific, already-decided order — no scanning or recommending. Loads only the `tiger-brokers`/`tigeropen` skills, self-enforces the same `MAX_ORDER_SPEND_USD`/`MAX_SHARES`/`MAX_CONTRACTS` caps from `.env`, and logs every run (placed, aborted, or failed) to `trading/orders-log.csv`. See `trading/AGENTS.md`.

@@ -30,6 +30,16 @@ Read strategies/bearish-call-spread/AGENT.md and run the strategy.
 Read strategies/negative-but-strengthening-bx-watchlist/AGENT.md and run the strategy.
 ```
 
+## Executing a Trade (manual or scheduled)
+
+`trading/` is a separate, execution-only agent home — distinct from the research/recommendation workflows above. It loads only the `tiger-brokers` and `tigeropen` skills and follows a literal instruction (no scanning, scoring, or recommending). See `trading/AGENTS.md`. Typical invocation, with `trading/` as the working directory:
+
+```
+claude -p "Buy 100 NVDA, DAY limit $200, paper account"
+```
+
+Every run — placed, aborted, or failed — is logged to `trading/orders-log.csv`.
+
 ## Optional: yfinance Tools
 
 For quotes, moving averages, and option chains without scraping:

@@ -60,6 +60,7 @@ TradePrompt updated (PLACED | PARTIALLY_PLACED | SKIPPED | FAILED) + lib/notify.
 | `prisma/` | Postgres schema (`WebhookEvent`, `TradePrompt`) |
 | `docs/` | Product requirements + TrendSpider setup |
 | `strategies/` | Cursor/agent strategy workflows (research; future subagents) |
+| `trading/` | Execution-only agent home — places a literal instruction via `tiger-brokers`, independent of the web app |
 | `.agents/skills/` | Canonical agent skills (symlinked into `.cursor` / `.claude`) |
 | `scripts/` | Python helpers (TrendSpider scan, yfinance, Tiger CLI) |
 
@@ -212,9 +213,46 @@ strategies/
 | --- | --- |
 | Live TrendSpider bot → Tiger paper orders | Next.js webhook + `lib/execute-signal` |
 | Research scans, ranking, CSV logs, reports | `strategies/<name>/` agents (and future subagents) |
+| Literal, already-decided order execution (local CLI, no research) | `trading/` agent (see below) |
 | Shared Tiger helpers | `.agents/skills/tiger-brokers`, `lib/tiger.ts`, Python scripts |
 
 Subagents scoped to a strategy should treat that strategy’s folder as their working directory and follow its `AGENT.md` + `config.md`. They should not place live orders unless explicitly instructed to use the Tiger skills/app path.
+
+---
+
+## Feature: `trading/` folder (execution-only agent workspace)
+
+A dedicated home for local Claude Code / Cursor CLI sessions (interactive or OS-cron/launchd-scheduled) that need to place a specific, already-decided order — the opposite job from `strategies/`, which researches and recommends. No scanning, scoring, or recommending happens here; the instruction (symbol, action, quantity, limit price) is supplied entirely by the caller as the prompt text.
+
+This is a **separate execution path from `lib/trade-agent/`** — it does not go through the Next.js app, Prisma, QStash, or WhatsApp notification at all. It calls the `tiger-brokers` skill's Python helper (`tiger_limit_order.py`, using the `tigeropen` SDK directly) instead of `lib/tiger.ts`. The two paths are intentionally independent, with their own separately-enforced guardrails, rather than sharing code across the Python/TypeScript boundary.
+
+### Layout
+
+```text
+trading/
+├── AGENTS.md            ← standing contract (skills to load, guardrails, workflow steps)
+├── CLAUDE.md             ← @AGENTS.md (Claude Code auto-load)
+├── orders-log.csv         ← append-only; one row per run — placed, aborted, or failed
+├── .claude/skills/         ← symlinks: tiger-brokers, tigeropen only
+├── .claude/settings.local.json ← headless permission allow-list scoped to this folder
+└── .cursor/skills/         ← same two symlinks, for Cursor CLI
+```
+
+### Behaviour (full detail in `trading/AGENTS.md`)
+
+1. Parse the instruction strictly from the prompt text (symbol, action, quantity, limit price, time in force, paper vs. live intent). Missing/ambiguous fields → abort, never guess.
+2. Self-enforce `MAX_ORDER_SPEND_USD` / `MAX_SHARES` / `MAX_CONTRACTS` from the root `.env` before calling into Tiger — this mirrors, but is a separate implementation from, `lib/order-guardrails.ts`.
+3. Default to the `PAPER` account; a live order requires **both** explicit instruction wording **and** `TIGER_ALLOW_LIVE=true` in `.env`.
+4. Options orders always abort — the bundled helper is stock-only; no bundled options-order script exists yet.
+5. Place via `tiger_limit_order.py`, which independently verifies account type and previews before placing.
+6. Append exactly one row to `orders-log.csv` every run, regardless of outcome.
+
+### Implementation touchpoints
+
+- Contract: `trading/AGENTS.md`, `trading/CLAUDE.md`
+- Execution: `.agents/skills/tiger-brokers/scripts/tiger_limit_order.py` (symlinked into `trading/.claude/skills/` and `trading/.cursor/skills/`)
+- Log: `trading/orders-log.csv`
+- Permissions: `trading/.claude/settings.local.json`
 
 ---
 
@@ -223,6 +261,7 @@ Subagents scoped to a strategy should treat that strategy’s folder as their wo
 - Market orders, options orders from webhooks (webhooks remain stock-only; options/spreads are only reachable via the scheduled trade prompt flow), multi-broker routing
 - Supabase Auth / multi-user accounts
 - Automatic bridging of `strategies/` CSV picks into webhook execution (manual / future work)
+- No shared code/guardrails between `trading/` (local CLI, Python `tigeropen`) and `lib/trade-agent/` (web app, TypeScript/Anthropic SDK) — two independent execution paths by design, each self-enforcing its own caps from the same `.env` values
 - Full NYSE holiday calendar for `market_open`/`market_close` schedule resolution (weekends only, see scheduled-prompt feature above)
 - Native multi-leg combo orders (spreads are two sequential single-leg orders, not an atomic ticket)
 
@@ -240,7 +279,7 @@ See [`.env.example`](../.env.example):
 - `ANTHROPIC_API_KEY`, `TRADE_AGENT_MODEL` — schedule parsing + run-time trade agent
 - `QSTASH_TOKEN`, `QSTASH_CURRENT_SIGNING_KEY`, `QSTASH_NEXT_SIGNING_KEY`, `PUBLIC_BASE_URL` — Upstash QStash scheduling/callback
 - `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_WHATSAPP_FROM`, `TWILIO_WHATSAPP_TO` — WhatsApp notification
-- `MAX_ORDER_SPEND_USD`, `MAX_CONTRACTS`, `MAX_SHARES` — hard guardrails on the trade agent, enforced in code
+- `MAX_ORDER_SPEND_USD`, `MAX_CONTRACTS`, `MAX_SHARES` — hard guardrails, enforced independently in both `lib/trade-agent/tools.ts` (web app) and `trading/AGENTS.md` (local CLI, self-enforced by the agent, not by code)
 
 ### Manual setup required before the trade-prompt feature can run for real
 

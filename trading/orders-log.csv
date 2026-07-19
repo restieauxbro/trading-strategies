@@ -1,0 +1,1 @@
+date,timestamp_utc,instruction,account_type,symbol,action,quantity,order_type,limit_price,time_in_force,status,order_id,filled_quantity,remaining_quantity,error,notes
