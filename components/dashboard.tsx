@@ -55,6 +55,20 @@ type EventsResponse = {
   events?: EventRow[];
 };
 
+type SymbolPnl = {
+  symbol: string;
+  realizedPnl: number;
+  openQuantity: number;
+  openCostBasis: number | null;
+};
+
+type PnlResponse = {
+  ok: boolean;
+  error?: string;
+  bySymbol?: SymbolPnl[];
+  totalRealizedPnl?: number;
+};
+
 function statusVariant(status: string): "default" | "secondary" | "destructive" | "outline" {
   if (status === "PLACED") return "default";
   if (status === "PENDING") return "secondary";
@@ -66,16 +80,19 @@ export function Dashboard() {
   const router = useRouter();
   const [account, setAccount] = useState<AccountResponse | null>(null);
   const [events, setEvents] = useState<EventRow[]>([]);
+  const [pnl, setPnl] = useState<PnlResponse | null>(null);
   const [loading, setLoading] = useState(true);
 
   const load = useCallback(async () => {
     setLoading(true);
-    const [accountRes, eventsRes] = await Promise.all([
+    const [accountRes, eventsRes, pnlRes] = await Promise.all([
       fetch("/api/account").then((res) => res.json() as Promise<AccountResponse>),
       fetch("/api/events").then((res) => res.json() as Promise<EventsResponse>),
+      fetch("/api/pnl").then((res) => res.json() as Promise<PnlResponse>),
     ]);
     setAccount(accountRes);
     setEvents(eventsRes.events ?? []);
+    setPnl(pnlRes);
     setLoading(false);
   }, []);
 
@@ -177,6 +194,61 @@ export function Dashboard() {
           </CardContent>
         </Card>
       </section>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>P&amp;L (provisional)</CardTitle>
+          <CardDescription>
+            Realized P&amp;L from placed webhook trades, FIFO-matched per symbol. Provisional:
+            uses each order&apos;s intended limit price/quantity, not a real reconciled fill —
+            see TODO in <code>lib/pnl.ts</code>.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          {pnl?.ok && pnl.bySymbol && pnl.bySymbol.length > 0 ? (
+            <div className="space-y-3">
+              <div className="text-sm">
+                <span className="text-muted-foreground">Total realized: </span>
+                <span
+                  className={
+                    (pnl.totalRealizedPnl ?? 0) >= 0 ? "text-emerald-600" : "text-destructive"
+                  }
+                >
+                  {pnl.totalRealizedPnl?.toFixed(2) ?? "—"}
+                </span>
+              </div>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Symbol</TableHead>
+                    <TableHead>Realized P&amp;L</TableHead>
+                    <TableHead>Open qty</TableHead>
+                    <TableHead>Open cost basis</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {pnl.bySymbol.map((row) => (
+                    <TableRow key={row.symbol}>
+                      <TableCell className="font-medium">{row.symbol}</TableCell>
+                      <TableCell
+                        className={row.realizedPnl >= 0 ? "text-emerald-600" : "text-destructive"}
+                      >
+                        {row.realizedPnl.toFixed(2)}
+                      </TableCell>
+                      <TableCell>{row.openQuantity || "—"}</TableCell>
+                      <TableCell>{row.openCostBasis?.toFixed(2) ?? "—"}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          ) : (
+            <p className="text-sm text-muted-foreground">
+              {pnl?.ok ? "No placed buy/sell trades yet." : loading ? "Loading…" : "—"}
+            </p>
+          )}
+        </CardContent>
+      </Card>
 
       <TradePrompts />
 

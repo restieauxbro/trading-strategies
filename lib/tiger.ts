@@ -95,6 +95,28 @@ export function findPositionQuantity(positions: Position[], symbol: string) {
   return Math.abs(Number(qty));
 }
 
+/**
+ * Fractional-share orders need an integer `totalQuantity` plus a
+ * `totalQuantityScale` (actual quantity = totalQuantity * 10^-scale) — mirrors
+ * the `totalQuantityScale`/`filledQuantityScale` fields already present on the
+ * `Order` response model. Not in the JS SDK's typed `OrderRequest`, but
+ * confirmed via a live `previewOrder` (isPass: true) that the server honors
+ * it — the request serializer is a generic camelCase→snake_case pass-through,
+ * not a field whitelist. Requires a Prime-tier account; paper/non-Prime
+ * accounts may reject fractional quantities.
+ */
+function withFractionalQuantity(
+  order: ReturnType<typeof limitOrder>,
+  quantity: number,
+  maxScale = 4,
+): ReturnType<typeof limitOrder> {
+  if (Number.isInteger(quantity)) return order;
+  const scaled = order as unknown as Record<string, unknown>;
+  scaled.totalQuantity = Math.round(quantity * 10 ** maxScale);
+  scaled.totalQuantityScale = maxScale;
+  return order;
+}
+
 export async function placeShareLimitOrder(options: {
   trade: TradeClient;
   account: string;
@@ -114,6 +136,7 @@ export async function placeShareLimitOrder(options: {
   order.market = "US";
   order.currency = "USD";
   order.timeInForce = "DAY";
+  withFractionalQuantity(order, options.quantity);
 
   const preview = await options.trade.previewOrder(order);
   if (preview && preview.isPass === false) {

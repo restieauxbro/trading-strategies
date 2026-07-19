@@ -52,8 +52,6 @@ export async function POST(request: Request) {
       rawPayload: body as Prisma.InputJsonValue,
       symbol: signal.symbol,
       action: signal.action,
-      quantity: signal.quantity,
-      limitPrice: signal.limitPrice,
       botName: signal.botName,
       timeframe: signal.timeframe,
       botStatus: signal.botStatus,

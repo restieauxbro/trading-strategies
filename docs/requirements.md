@@ -88,11 +88,12 @@ TradePrompt updated (PLACED | PARTIALLY_PLACED | SKIPPED | FAILED) + lib/notify.
 2. **Auth:** Query param `token` (preferred; TrendSpider cannot set reliable custom headers). Header `x-webhook-token` also accepted.
 3. **Body:** JSON matching the Zod schema in `lib/webhook-schema.ts` (see [trendspider-webhooks.md](./trendspider-webhooks.md)).
 4. **Ack fast:** Persist a `WebhookEvent` with status `PENDING`, return `{ ok, accepted, eventId, … }` immediately, then run Tiger placement in `after()` so TrendSpider’s ~5s timeout is respected.
-5. **Actions:**
-   - `buy` / `sell` — place DAY limit order for given quantity at `limit_price`
-   - `flat` — resolve open long quantity for symbol and sell to flatten; `SKIPPED` if no position
+5. **Actions:** TrendSpider sends only `symbol` + `action` — quantity and price are resolved server-side from a live Tiger quote, not read from the payload.
+   - `buy` — fetches a Tiger quote, places a DAY limit order sized to a **fixed $100** notional (`floor(100 / limitPrice)` shares). Placeholder sizing pending an AI portfolio-management skill — see `lib/execute-signal.ts` TODO.
+   - `sell` — resolves the full open position quantity for the symbol and sells it to close (flatten); `SKIPPED` if no position
+   - Limit price = Tiger quote ± `WEBHOOK_LIMIT_BUFFER_PCT` (default `0.15`%; above quote for buys, below for sells) to improve fill odds
 6. **Order type:** US stock (`STK` / `USD`) DAY **limit** only — no market orders in v1
-7. **Safety:** Non-`PAPER` Tiger accounts blocked unless `TIGER_ALLOW_LIVE=true`; preview must pass before place
+7. **Safety:** Non-`PAPER` Tiger accounts blocked unless `TIGER_ALLOW_LIVE=true`; preview must pass before place; same `MAX_ORDER_SPEND_USD`/`MAX_SHARES` guardrails as the trade agent
 8. **Statuses:** `PENDING` → `PLACED` | `PREVIEW_FAILED` | `SKIPPED` | `FAILED`
 
 ### Payload fields (required vs optional)
@@ -100,10 +101,10 @@ TradePrompt updated (PLACED | PARTIALLY_PLACED | SKIPPED | FAILED) + lib/notify.
 | Field | Required | Notes |
 | --- | --- | --- |
 | `symbol` or `ticker` | Yes | Uppercased |
-| `action` | Yes | `buy` \| `sell` \| `flat` |
-| `quantity` (or `qty` / `order_contracts`) | Yes for buy/sell | Not required for `flat` |
-| `limit_price` or `price` | Yes | Must be a resolved number (not an unresolved `%placeholder%`) |
+| `action` | Yes | `buy` \| `sell` |
 | `bot_name`, `timeframe`, `bot_status`, `comment` | No | Stored for dashboard/logs |
+
+Any `quantity`/`qty`/`order_contracts`/`limit_price`/`price` fields sent in the payload are accepted (passthrough) but ignored — sizing and pricing always come from `lib/execute-signal.ts` + a live Tiger quote.
 
 ### Implementation touchpoints
 
@@ -120,9 +121,16 @@ When changing webhook behaviour, update this file and [trendspider-webhooks.md](
 ## Feature: Dashboard
 
 - Login at `/login` with `DASHBOARD_PASSWORD`
-- Home dashboard shows Tiger account metadata, open positions, recent webhook events, and the scheduled trade prompts panel
-- APIs (session-protected): `GET /api/account`, `GET /api/events`, `GET /api/trade-prompts`, `POST /api/trade-prompts`, `POST /api/trade-prompts/[id]/cancel`
+- Home dashboard shows Tiger account metadata, open positions, provisional P&L, recent webhook events, and the scheduled trade prompts panel
+- APIs (session-protected): `GET /api/account`, `GET /api/events`, `GET /api/pnl`, `GET /api/trade-prompts`, `POST /api/trade-prompts`, `POST /api/trade-prompts/[id]/cancel`
 - Auth routes: `POST /api/auth/login`, `POST /api/auth/logout`
+
+### Provisional P&L (`lib/pnl.ts`, `GET /api/pnl`)
+
+- **No fill reconciliation exists yet.** `computeProvisionalPnl()` treats each `PLACED` webhook event's *intended* `limitPrice`/`quantity` as a stand-in for the real Tiger fill price/quantity, purely to give a rough realized-P&L signal today. `TODO(fill-reconciliation)` in `lib/pnl.ts` flags this — revisit once a job polls `trade.getOrder()` / `getFilledOrders()` for actual `avgFillPrice`/`filledQuantity` and swap the computation over to that.
+- FIFO-matches `sell` events against prior `buy` events **per symbol, using only this app's own webhook event log**. A sell quantity that exceeds what this log ever recorded buying (pre-existing position, or a trade placed outside this webhook path, e.g. via `trading/`) can't be attributed a cost basis and is silently dropped from realized P&L rather than guessed at.
+- Reports realized P&L (closed round-trips) plus each symbol's remaining open quantity/cost-basis. Unrealized P&L for open positions is *not* duplicated here — it's already shown accurately from live Tiger data via `/api/account`'s `positions[].unrealizedPnl`.
+- Deliberately deferred for now (see chat history): a full reconciliation job (recurring QStash schedule polling non-terminal orders, handling DAY orders that don't fill until the next session) was scoped but not built — provisional limit-price-based P&L was chosen instead to get a rough number without that infrastructure.
 
 ---
 

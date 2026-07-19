@@ -14,18 +14,21 @@ POST https://<your-vercel-domain>/api/webhooks/trendspider?token=<WEBHOOK_TOKEN>
 
 ## Canonical JSON schema
 
+TrendSpider sends only the symbol and direction — **quantity and price are resolved server-side**, not read from the payload.
+
 | Field | Required | Notes |
 | --- | --- | --- |
 | `symbol` or `ticker` | Yes | Use `%bot_symbol%` |
-| `action` | Yes | `buy`, `sell`, or `flat` |
-| `quantity` | Yes for buy/sell | Also accepts `qty` / `order_contracts` |
-| `limit_price` or `price` | Yes | Use `%last_price%` (must resolve to a number) |
+| `action` | Yes | `buy` or `sell` |
 | `bot_name` | No | `%bot_name%` |
 | `timeframe` | No | `%bot_timeframe%` |
 | `bot_status` | No | `%bot_status%` (`in_position` / `not_in_position`) |
 | `comment` | No | Free text for logs |
 
-`flat` sells the open Tiger position size for that symbol (long exit). Market orders are not supported.
+- `buy` — fetches a live Tiger quote for the symbol and places a limit order sized to a **fixed $100** notional (`Math.floor(100 / limitPrice)` shares). This is a placeholder until an AI portfolio-management skill takes over sizing — see `lib/execute-signal.ts`.
+- `sell` — closes the **entire existing Tiger position** for that symbol (there is no partial-size sell from a webhook; `SKIPPED` if no position is open).
+- The limit price is the Tiger quote nudged by `WEBHOOK_LIMIT_BUFFER_PCT` (default `0.15`%) — above quote for buys, below quote for sells — to improve fill odds on a limit order. Market orders are not supported.
+- Any `quantity`/`limit_price`/`price`/`qty` fields in the payload are ignored if present.
 
 ## Strategy Bot templates
 
@@ -35,8 +38,6 @@ POST https://<your-vercel-domain>/api/webhooks/trendspider?token=<WEBHOOK_TOKEN>
 {
   "symbol": "%bot_symbol%",
   "action": "buy",
-  "quantity": 10,
-  "limit_price": "%last_price%",
   "bot_name": "%bot_name%",
   "timeframe": "%bot_timeframe%",
   "bot_status": "%bot_status%",
@@ -49,24 +50,10 @@ POST https://<your-vercel-domain>/api/webhooks/trendspider?token=<WEBHOOK_TOKEN>
 ```json
 {
   "symbol": "%bot_symbol%",
-  "action": "flat",
-  "limit_price": "%last_price%",
+  "action": "sell",
   "bot_name": "%bot_name%",
   "bot_status": "%bot_status%",
   "comment": "exit"
-}
-```
-
-### Short entry (sell shares / open short if your account allows)
-
-```json
-{
-  "symbol": "%bot_symbol%",
-  "action": "sell",
-  "quantity": 10,
-  "limit_price": "%last_price%",
-  "bot_name": "%bot_name%",
-  "comment": "short-entry"
 }
 ```
 
@@ -99,8 +86,6 @@ curl -X POST "http://localhost:3000/api/webhooks/trendspider?token=$WEBHOOK_TOKE
   -d '{
     "symbol": "AAPL",
     "action": "buy",
-    "quantity": 1,
-    "limit_price": 100,
     "bot_name": "manual-test",
     "comment": "curl"
   }'
