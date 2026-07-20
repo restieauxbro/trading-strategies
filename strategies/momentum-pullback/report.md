@@ -1,266 +1,233 @@
 # Momentum After Pullback — Current Report
-_Last updated: 2026-07-19_
+_Last updated: 2026-07-20_
 
 ---
 
 ## Market Context
 
-The S&P 500 closed Friday July 17 at 7,457.69, down 1.01% on the session and roughly 1.5% off the week's high near 7,572. VIX jumped 12.19% to 18.77 on Friday — moderately elevated but still below the 20 stress threshold. The pullback was driven by semiconductor weakness (SOX -4% Friday) and several disappointing corporate earnings outlooks. The 10-year Treasury yield sits at 4.55%. The broad index remains well above its 200-day MA and the intermediate uptrend is intact; this week's decline looks like healthy digestion after the Q2 earnings rally rather than a structural breakdown. Conditions remain constructive for momentum-pullback entries in sectors outside semiconductors.
+The S&P 500 closed at **7,486.90** on July 20, 2026 (+0.39%), recovering from Friday's -1.01% sell-off. The VIX eased to **17.90** (-4.64%), pulling back from Friday's spike to 18.77. Semiconductor stocks (SOX) rebounded +2% on the day ahead of major technology earnings this week. The broad market uptrend remains intact — the S&P 500 is materially above its 200-day MA and the weekly trend structure is bullish. Q2 earnings season has been broadly strong with large banks, healthcare, and industrials all printing significant beats. The primary risk this week is big-tech earnings disappointment (TSLA, GOOGL, MSFT reporting), which could cause a temporary risk-off episode. Overall: **uptrend intact, regime GREEN, appropriate to enter new positions.**
 
 ---
 
-## Earnings Filter — Run Summary
+## Scan Results
 
-**Scan found:** 32 tickers passing all technical conditions.
+**30 tickers passed** all four scan condition groups (trend alignment, rising trend confirmation, pullback to EMA50 zone, timing trigger).
 
-**After earnings filter (hard filter: no earnings within 21 days of today July 19):**
-- **22 tickers eliminated** (earnings within 21 days): BRK-B (Aug 3), MRK (Aug 4), KO (Jul 28), TXN (Jul 22), AMGN (Aug 4), PM (Jul 22), VRTX (Aug 3), MO (Jul 30), SO (Jul 30), DUK (Aug 4), LRCX (Jul 29), KLAC (Jul 28), CL (Jul 31), ETN (Jul 31), APH (Jul 29), ECL (Jul 28), CARR (Jul 28), O (Aug 5), ODFL (Jul 29), NUE (Jul 27), HLT (Jul 28), OKE (Aug 3), F (Jul 28), HOOD (Jul 29)
-- **8 tickers survive filter:** DE, FDX, MS, JNJ, AMAT, GE, PLD, FAST
+**22 tickers eliminated by earnings hard filter** (< 21 days to next report as of July 20 = must clear Aug 10):
+BRK-B (Aug 3), KO (Jul 28), AMGN (Aug 4), PM (Jul 22), VRTX (Aug 3), MO (Jul 30), SO (Jul 30), DUK (Aug 4), CL (Jul 31), ITW (Jul 28), ECL (Jul 28), HLT (Jul 28), OKE (Aug 3), ODFL (Jul 29), NUE (Jul 27), HOOD (Jul 29), F (Jul 28), O (Aug 5), EOG (Aug 5), ABNB (Aug 6), GILD (Jul 30 confirmed), MRK (Aug 4).
 
-**Post-filter quality review:**
-- **GE** eliminated: Q2 reported July 16 — beat estimates but stock fell 5.4% on margin compression and supply chain concerns. Market clearly rejected the results; avoid.
-- **PLD** eliminated from picks: RSI 64.9, +5.65% above EMA50, volume not declining. Breakout rather than pullback; does not fit strategy thesis. Watchlist.
-- **FAST** eliminated from picks: Volume NOT declining on pullback (distribution risk). Watchlist.
-- **JNJ** borderline: Extended +4.09% from EMA50, RSI 54.5. Passes technically but at the upper range of the pullback zone. Watchlist — better entry awaited.
-- **AMAT** watchlist: Below EMA20 by 9%, RSI 43.9, semiconductor sector headwinds, projected earnings Aug 13 only 25 days away. Not a clean entry.
+**8 tickers remain after earnings filter:** JNJ, GE, GS, PLD, DE, FDX, TFC, FAST.
 
-**Qualifying for scoring: DE, FDX, MS**
+**Further filtered by setup quality:**
+- **GE** — eliminated: stock fell -5.4% post Q2 earnings on margin concerns; volume not declining.
+- **PLD** — watchlist: extended +3.86% from EMA50, volume not declining. Not a pullback setup.
+- **GS** — watchlist: volume not declining, consensus analyst rating Hold, consensus target at current price level.
+- **TFC** — watchlist: strong Q2 beat but volume not declining.
+- **FAST** — watchlist: RSI 40.2 (too low), volume not declining.
 
 ---
 
 ## Today's Suggested Trades
 
-### 1. DE (Deere & Company) — 93/115 — EMA50 bounce in strong industrial uptrend
+### 1. DE (Deere & Company) — Pullback at EMA50, Volume Declining, Earnings Safe
 
-```
-Ticker: DE
-Current Price: $597.24
-Sector: Industrials — Agricultural & Construction Equipment
-Score: 93/115 (A:40 B:25 C:20 D:13 Ded:-5)
+**Score: 88/115** (A:40 B:25 C:15 D:13 Ded:-5)
 
-Setup Summary:
-Deere has been consolidating just above its daily EMA50 ($588) after a strong run
-from Q2 earnings (May 21 beat: EPS $6.55 vs $5.70 est, +15%). Price is +1.56%
-above EMA50 with RSI at 51.2 — a textbook momentum pullback setup. Multiple
-triggers fired: RSI crossed above 50, recrossed above 20 EMA, and closed above
-prior day high. Volume declining on pullback confirms healthy consolidation.
-Weekly structure is bullish with weekly EMA50 ($539.99) >> EMA200 ($446.61).
+**Current Price:** ~$584.39  
+**Sector:** Industrials — Agricultural/Construction Equipment  
+**Earnings:** **August 20, 2026 (CONFIRMED)** — 31 days away, SAFE
 
-Entry Zone: $590–600 (at or near EMA50)
-Stop Loss: $573 — below recent structural support and well below EMA50
-Target 1: $637 — prior resistance / measured move
-Target 2: $690 — upper analyst target band (consensus $642, Truist $812 bull case)
-Risk/Reward: 1.67:1 to T1 / 3.88:1 to T2 (from $597 entry)
+**Setup Summary:**  
+DE pulled back cleanly from its May-July rally high (~$635+) to test the daily EMA50 ($587.91). Price is -0.6% from EMA50 today, with volume declining throughout the pullback (a textbook healthy consolidation). Multiple triggers fired: recrossed above 20 EMA, RSI crossed above 50, and close above prior day high. The weekly structure is strongly bullish (weekly EMA50 $541 >> weekly EMA200 $448). This is the cleanest setup in the scan with full marks on the technical category.
 
-Key Risks:
-- Earnings August 20 — SAFE (32 days); options expiry Aug 15 clears this
-- Broader market selloff could drag DE lower despite strong fundamentals
-- Agricultural demand softness concern (some analysts cut FY27 estimates)
+**Entry Zone:** $578–595  
+**Stop Loss:** $568 — below recent swing low and well below EMA50  
+**Target 1:** $640 — near 52-week high area / first resistance  
+**Target 2:** $685 — upper analyst target range (Truist $812, DA Davidson $685, consensus $648)  
+**Risk/Reward:** 3.2:1 to T1 from $585 | 5.9:1 to T2
 
-Fundamental Note:
-Q2 2026 (May 21): EPS $6.55 vs $5.70 est (+15%), Revenue $13.37B vs $11.55B
-(+15.7% YoY). DA Davidson reiterated Buy $685 (Jul 17), Truist raised to Buy $812
-(Jul 2), RBC Outperform $752. Consensus $642 implies 7.5% upside. Right-to-repair
-FTC settlement removes overhang. Strong construction pipeline supports near-term.
-```
+**Key Risks:**
+- Ag equipment cycle still in a trough; FY2026 net income guidance $4.5–5.0B (below 2025's $6.2B)
+- Q2 2026 EPS $6.55 beat est by 15%, but below year-ago $6.64 (YoY flat/slight decline)
+- Earnings Aug 20 = hard close/roll deadline for spreads; if using Aug 15 expiry, must close by Aug 19
 
-**Instrument: Paired Debit Spread (Bullish) — Aug 15 expiry (~27 DTE)**
+**Fundamental Note:**  
+Q2 2026 (May 21): EPS $6.55 vs $5.70 est (+15% beat), Revenue $13.37B vs $11.55B est (+15.7%). FY2026 net income guidance $4.5–5.0B maintained. Multiple analyst targets: DA Davidson Buy $685 (Jul 17), Truist Buy $812, RBC Outperform $752, consensus $648. Q3 earnings confirmed August 20.
+
+**Instrument: Paired Debit Spread (Bullish)**
 
 ```
 Instrument: Paired Debit Spread (preferred)
 Bias: Bullish
-Expiry: Aug 15 2026 (~27 DTE) — must close BEFORE Aug 20 earnings
+Expiry: Aug 15, 2026 (~26 DTE) — MUST close before Aug 20 earnings
 
 Primary Spread:
   Structure: Bull Call Spread
-  Strikes: Long $595 call / Short $640 call
-  Width: $45
-  Estimated Net Debit: ~$18–22 per spread
-  Max Profit: ~$23–27 per spread
-  Max Loss: ~$18–22 per spread
+  Size: 2 contracts
+  Strikes: Long 585 / Short 625
+  Net Debit: ~$20 per spread (~$4,000 total)
+  Max Profit: ~$20 per spread (~$4,000 total at $625+)
+  Max Loss: ~$20 per spread (~$4,000 total)
 
 Opposite Hedge:
-  Structure: Bear Put Spread (half-size)
-  Strikes: Long $595 put / Short $550 put
-  Width: $45
-  Estimated Net Debit: ~$8–10 per spread (half-size)
-  Max Profit: ~$23–27 (half-size contribution to full-size primary)
-  Max Loss: ~$8–10 per spread
+  Structure: Bear Put Spread
+  Size: 1 contract
+  Strikes: Long 585 / Short 545
+  Net Debit: ~$22 per spread (~$2,200 total)
+  Max Profit: ~$18 per spread (~$1,800 at $545−)
+  Max Loss: ~$22 per spread (~$2,200 total)
 
 Combined Position:
-  Total Debit / Max Loss: ~$26–32 per unit set
-  Expected Payout if thesis is right: ~$23–27 (bull call)
-  Expected Payout on sharp drop: ~$23–27 (bear put hedge, covers most of primary loss)
-  Main Risk: Drift / time decay / price pinning between $550 and $640
+  Total Debit / Max Loss: ~$6,200
+  Expected Payout if bullish thesis correct: ~$4,000 (primary spreads at max)
+  Expected Payout on sharp down move: hedge offsets ~$1,800 of primary loss
+  Main Risk: drift / expiry between $545 and $625 (both spreads near worthless)
+  Note: Verify exact premiums at execution; strikes/premiums are approximations
 ```
 
 ---
 
-### 2. FDX (FedEx Corporation) — 91/115 — At EMA50 support, Oct earnings very safe
+### 2. FDX (FedEx Corporation) — Deep Pullback, Earnings Safe Oct, Volume Declining
 
-```
-Ticker: FDX
-Current Price: $312.98
-Sector: Industrials — Integrated Freight & Logistics
-Score: 91/115 (A:38 B:25 C:20 D:13 Ded:-5)
+**Score: 87/115** (A:35 B:25 C:20 D:12 Ded:-5)
 
-Setup Summary:
-FedEx is testing its daily EMA50 ($315.15) after a pullback from $325+ highs. Price
-is -0.69% below EMA50, with RSI recovering from an oversold low of 31 (early July)
-to 46.2 — showing accumulation. Volume declining confirms healthy consolidation.
-The RSI briefly crossed above 50 this week before pulling back, with the 20 EMA
-recross trigger also firing. Note: current RSI 46.2 means the cross above 50 has
-NOT been sustained — this is a risk. FY2026 Q4 (June 23) was a strong beat, and
-the FedEx Freight spin-off is now complete, a major strategic overhang removed.
-Next earnings October 28 — the longest earnings runway in the scan.
+**Current Price:** ~$306.96  
+**Sector:** Industrials — Air Freight/Logistics  
+**Earnings:** **October 27, 2026** — 99 days away, SAFE
 
-Entry Zone: $309–316 (at/below EMA50)
-Stop Loss: $299 — below the July support zone / prior swing low
-Target 1: $355–360 — prior resistance / measured move
-Target 2: $420 — upper analyst consensus (JPM $460, Wells $425)
-Risk/Reward: 3.46:1 to T1 / 8.3:1 to T2 (from $312 entry, stop $299)
+**Setup Summary:**  
+FDX has pulled back -2.5% below its daily EMA50 ($314.83) to ~$307, with volume declining throughout. The stock is well off its recent high (~$320) and near multi-week lows. RSI is at 41.5 — lower than ideal but the scan confirms the setup crossed triggers (recrossed above 20 EMA, RSI crossed above 50) within the last 5 bars, suggesting the bounce attempt is underway. The deep pullback creates an attractive risk/reward entry with earnings not until October. The earnings-safe window (99 days) means Sept expiry spreads can be used without event risk.
 
-Key Risks:
-- RSI has not held above 50 (cross was brief this week) — confirm at entry
-- Broader market / logistics sentiment weakness
-- Insider selling under 10b5-1 plan: -5 pt deduction applied
+**Entry Zone:** $302–316  
+**Stop Loss:** $292 — below recent swing lows  
+**Target 1:** $355 — prior resistance / upper channel  
+**Target 2:** $420 — JPM $460, Wells $425, mean analyst target ~$351  
+**Risk/Reward:** 2.9:1 to T1 from $308 | 7.4:1 to T2
 
-Fundamental Note:
-FY2026 Q4 (Jun 23): adj EPS $6.31 vs $5.96 est, Revenue $94.7B (+7.7% YoY).
-FedEx Freight spin-off complete. JPMorgan $460, Wells Fargo $425, Citizens $375
-(Jul 15 initiation). Strong free cash flow; next earnings October 28 provides
-maximum runway for the position.
-```
+**Key Risks:**
+- RSI 41.5 is low for a pullback entry — may continue falling before recovering
+- Morgan Stanley Underweight at $160 (outlier but notable bear case)
+- Amazon expanding lower-cost shipping could pressure pricing (Jul 9 report)
+- Fiscal year calendar change (May → Dec 31) creates comps complexity
+- Morgan Stanley's concerns about margin pressure during Freight spin transition
 
-**Instrument: Paired Debit Spread (Bullish) — Aug 15 expiry (~27 DTE)**
+**Fundamental Note:**  
+FY2026 Q4 (Jun 23): adj EPS $6.31 vs $5.96 est (+$0.35 beat), Revenue $25B up 12.6% YoY. FedEx Freight spin-off complete. Calendar 2026 adj EPS guidance $16.90–18.10 (implied +20% growth). 16 Buy + 3 Outperform vs 6 Hold, 1 Underperform, 1 Sell (MS). Citizens initiated Outperform Jul 15. Mean price target $351. Structural positive: narrowing to core parcel business post-Freight spin.
+
+**Instrument: Paired Debit Spread (Bullish)**
 
 ```
 Instrument: Paired Debit Spread (preferred)
 Bias: Bullish
-Expiry: Aug 15 2026 (~27 DTE)
+Expiry: Sep 19, 2026 (~61 DTE)
 
 Primary Spread:
   Structure: Bull Call Spread
-  Strikes: Long $310 call / Short $345 call
-  Width: $35
-  Estimated Net Debit: ~$12–15 per spread
-  Max Profit: ~$20–23 per spread
-  Max Loss: ~$12–15 per spread
+  Size: 2 contracts
+  Strikes: Long 305 / Short 340
+  Net Debit: ~$16 per spread (~$3,200 total)
+  Max Profit: ~$19 per spread (~$3,800 total at $340+)
+  Max Loss: ~$16 per spread (~$3,200 total)
 
 Opposite Hedge:
-  Structure: Bear Put Spread (half-size)
-  Strikes: Long $310 put / Short $280 put
-  Width: $30
-  Estimated Net Debit: ~$6–8 per spread (half-size)
-  Max Profit: ~$12–15 (half-size contribution)
-  Max Loss: ~$6–8 per spread
+  Structure: Bear Put Spread
+  Size: 1 contract
+  Strikes: Long 305 / Short 270
+  Net Debit: ~$18 per spread (~$1,800 total)
+  Max Profit: ~$17 per spread (~$1,700 at $270−)
+  Max Loss: ~$18 per spread (~$1,800 total)
 
 Combined Position:
-  Total Debit / Max Loss: ~$18–23 per unit set
-  Expected Payout if thesis is right: ~$20–23 (bull call)
-  Expected Payout on sharp drop: ~$12–15 (bear put hedge)
-  Main Risk: RSI not holding above 50; drift without directional expansion
+  Total Debit / Max Loss: ~$5,000
+  Expected Payout if bullish thesis correct: ~$3,800 (primary spreads at max)
+  Expected Payout on sharp down move: hedge offsets ~$1,700 of primary loss
+  Main Risk: drift / chop between $270 and $340
+  Note: Verify exact premiums at execution; strikes/premiums are approximations
 ```
 
 ---
 
-### 3. MS (Morgan Stanley) — 83/115 — Record Q2 beat, financials in favour; volume watch
+### 3. JNJ (Johnson & Johnson) — Post-Earnings Recovery, Strong Analyst Support
 
-```
-Ticker: MS
-Current Price: $215.50
-Sector: Financials — Investment Banking & Brokerage
-Score: 83/115 (A:28 B:25 C:20 D:15 Ded:-5)
+**Score: 82/115** (A:29 B:25 C:20 D:13 Ded:-5)
 
-Setup Summary:
-Morgan Stanley posted a record Q2 on July 15 (EPS $3.46 vs $2.94 est, Rev
-$21.35B vs $19.64B, net income +58% YoY, equities trading record $6.3B). Stock
-has consolidated at its EMA50 ($210.20) over the past week and is now +2.52%
-above it with trigger firing on close above prior day high. Weekly structure is
-strongly bullish. RSI at 48.4 (just below 50) and volume is NOT declining on this
-pullback — the key concern for this setup. The volume signal reflects high post-
-earnings activity rather than typical distribution, but it must be noted. Analyst
-upgrades flooded in post-Q2: Barclays $262, Goldman $241, Keefe Bruyette $250,
-Freedom Capital upgraded to Strong-Buy (Jul 18). Dividend raised 15%.
+**Current Price:** ~$249–253 (pulled back from $267 ATH, bouncing from EMA50 zone)  
+**Sector:** Healthcare — Pharmaceuticals/MedTech  
+**Earnings:** **Q3 October 2026** — next quarter, SAFE
 
-Entry Zone: $213–217 (at/near EMA50 zone)
-Stop Loss: $200 — below post-earnings support gap
-Target 1: $240 — prior resistance
-Target 2: $262–265 — Barclays target / analyst cluster
-Risk/Reward: 1.67:1 to T1 / 3.13:1 to T2 (from $215 entry)
+**Setup Summary:**  
+JNJ beat Q2 2026 estimates on July 15 and has received a wave of analyst upgrades since, triggering a bounce from its EMA50 zone ($243). The stock pulled from the July 7 ATH of $267.24 to a low of $246.30 (Jul 16) before recovering — a clean -7.8% pullback into EMA50 support. RSI just crossed back above 50, and price recrossed above the 20 EMA on strong volume. The primary weakness is that volume is NOT declining on the pullback (volume is elevated due to post-earnings institutional repositioning), which is a strategy deduction. However, the elevated volume is more attributable to bullish order flow than distribution, given the multiple upgrades.
 
-Key Risks:
-- Volume NOT declining on pullback (primary concern)
-- RSI 48.4 — has not crossed above 50 since earnings week
-- Market-sensitive stock: VIX spike to 18.77 can compress multiples quickly
-- Q3 earnings Oct 14 — SAFE but note 87-day window
+**Entry Zone:** $248–256 (ideally closer to $250 for tighter stop placement)  
+**Stop Loss:** $240 — below EMA50 ($243) and recent pullback low ($246)  
+**Target 1:** $267 — prior ATH / near-term resistance  
+**Target 2:** $290 — mid-range of analyst targets (Citi $298, Morgan Stanley $294, HSBC $290)  
+**Risk/Reward:** 1.7:1 to T1 from $252 | 3.2:1 to T2 from $252
 
-Fundamental Note:
-Q2 2026 (Jul 15): EPS $3.46 vs $2.94 est (+17.7%), Revenue $21.35B vs $19.64B
-(+8.6%); net income +58% YoY. Record equities trading $6.3B (+69% YoY). Dividend
-raised 15% to $1.15/share. Multiple analyst upgrades. TIKR model target $258,
-Freedom Capital upgraded to Strong-Buy July 18.
-```
+**Key Risks:**
+- Volume not declining on pullback (primary setup concern — 0 pts for that criterion)
+- Stock is only +2.58% from EMA50, close to resistance at ATH $267
+- Lawsuit overhang (talc litigation, though substantially resolved)
+- MedTech segment mixed; primary growth from Innovative Medicine
 
-**Instrument: Paired Debit Spread (Bullish) — Aug 15 expiry (~27 DTE)**
+**Fundamental Note:**  
+Q2 2026 (Jul 15): adj EPS $2.90 vs $2.85 est (BEAT), Revenue $25.31B vs $25.05B est, guidance raised. YoY EPS growth ~+9%. Multiple upgrades following earnings: Freedom Capital Strong Buy (Jul 18), Raymond James Outperform $265 (Jul 17), Wells Fargo OW $272 (Jul 17), Morgan Stanley OW $294, TD Cowen Buy $300 (Jul 13), HSBC Buy $290. Consensus $265.30, 20 Buy, 7 Hold.
+
+**Instrument: Paired Debit Spread (Bullish)**
 
 ```
 Instrument: Paired Debit Spread (preferred)
 Bias: Bullish
-Expiry: Aug 15 2026 (~27 DTE)
+Expiry: Sep 19, 2026 (~61 DTE)
 
 Primary Spread:
   Structure: Bull Call Spread
-  Strikes: Long $215 call / Short $250 call
-  Width: $35
-  Estimated Net Debit: ~$12–14 per spread
-  Max Profit: ~$21–23 per spread
-  Max Loss: ~$12–14 per spread
+  Size: 2 contracts
+  Strikes: Long 250 / Short 285
+  Net Debit: ~$17 per spread (~$3,400 total)
+  Max Profit: ~$18 per spread (~$3,600 total at $285+)
+  Max Loss: ~$17 per spread (~$3,400 total)
 
 Opposite Hedge:
-  Structure: Bear Put Spread (half-size)
-  Strikes: Long $215 put / Short $185 put
-  Width: $30
-  Estimated Net Debit: ~$6–7 per spread (half-size)
-  Max Profit: ~$12–14 (half-size contribution)
-  Max Loss: ~$6–7 per spread
+  Structure: Bear Put Spread
+  Size: 1 contract
+  Strikes: Long 250 / Short 220
+  Net Debit: ~$15 per spread (~$1,500 total)
+  Max Profit: ~$15 per spread (~$1,500 at $220−)
+  Max Loss: ~$15 per spread (~$1,500 total)
 
 Combined Position:
-  Total Debit / Max Loss: ~$18–21 per unit set
-  Expected Payout if thesis is right: ~$21–23 (bull call)
-  Expected Payout on sharp drop: ~$12–14 (bear put hedge)
-  Main Risk: Volume not declining; if market pulls back further, MS exposed
+  Total Debit / Max Loss: ~$4,900
+  Expected Payout if bullish thesis correct: ~$3,600 (primary spreads at max)
+  Expected Payout on sharp down move: hedge offsets ~$1,500 of primary loss
+  Main Risk: chop between $220 and $285 with no directional movement
+  Note: Verify exact premiums at execution; strikes/premiums are approximations
 ```
 
 ---
 
 ## Watchlist
-_Names with constructive scan/research but no immediate entry (timing / extension)._
+_Names with constructive scan/research but no immediate entry (timing / extension / volume)._
 
 | Ticker | Why watching | Trigger to revisit |
 |--------|--------------|-------------------|
-| AMAT | At EMA50 (-0.85%), Q2 record revenue, strong AI chip capex theme | RSI cross above 50; EMA20 reclaim ($579 → needs $540 first); after Aug 13 earnings confirmed |
-| JNJ | Post-Q2 beat (Jul 15), RSI 54.5, but +4.09% extended above EMA50. Good fundamentals | Pullback to EMA50 zone ($243–246); RSI hold above 50 on dip |
-| PLD | Record leasing Q2 (Jul 16), raised guidance twice. Not a pullback — breakout mode | Consolidation and retest of breakout level ~$145–148 |
-| FAST | Q2 beat Jul 14 (EPS +13.8%, Rev +14.7% YoY). RSI 44.9, at EMA50 | Volume must decline on pullback; RSI cross above 50 |
+| TFC | Q2 2026 beat (EPS $1.23 vs $1.08 est, +37% YoY, Rev $5.31B +5.5%); RSI 50.3; scan signal valid — but volume NOT declining on pullback | Volume starts declining while near EMA50 ($50.05) with RSI 40–50 |
+| GS | Record Q2 2026: EPS $20.98 (+44.99% surprise), Rev $20.3B (+23.3% surprise); but analyst consensus Hold (13 hold vs 9 buy); volume not declining; consensus target at current price level | Post-retracement setup with volume declining; price pulls to EMA50 ($1028) zone |
+| VRTX | Strong scan signal (all triggers, RSI 49.7, volume declining, EMA50 $469) — Aug 3 earnings eliminate | Revisit post-Aug 3 earnings if setup remains intact |
 
 ---
 
 ## Open Trades
-_No user-confirmed trades currently open (scheduled run — no new rows appended)._
+_User-confirmed trades from the last 14 days, outcome not yet recorded._
 
-| Date | Ticker | Entry Zone | Stop | Target 1 | Target 2 | R:R |
-|------|--------|------------|------|----------|----------|-----|
-| — | — | — | — | — | — | — |
+No confirmed open trades. All previous runs were scheduled/unattended — no user-confirmed entries.
 
 ---
 
 ## Performance Summary
-_No closed trades with recorded outcomes yet._
+_All closed trades (outcome recorded)._
 
-| Date | Ticker | Entry Price | Outcome Price | % Change | Result |
-|------|--------|-------------|---------------|----------|--------|
-| — | — | — | — | — | — |
+No closed trades with outcomes recorded yet.
 
 ### Aggregate Stats
 - **Total closed trades:** 0
@@ -273,10 +240,5 @@ _No closed trades with recorded outcomes yet._
 
 ---
 
-## Scan Notes — July 19, 2026
-
-- **32 tickers found** in scan (yfinance implementation of TrendSpider conditions)
-- **22 eliminated by earnings filter** (within 21 days)
-- **B-Xtrender visual confirmation unavailable** (browser-use not installed in cloud environment): 15 pts withheld from Cat A scoring; -5 pt deduction applied to all scores
-- **TradingView visual confirmation** (indicators skill) also unavailable in this environment
-- Suggested trades are unattended/scheduled-run recommendations only — no trades logged to CSV until user confirms
+## B-Xtrender Note
+_TradingView visual confirmation (B-Xtrender, Fair Value Bands) is unavailable in this cloud environment (browser-use not installed). Per scoring rules: 15 B-Xtrender points withheld from Category A for all tickers; standard -5 deduction applied. Scores reported as X/115 (effective max 95 without B-Xtrender). TradingView confirmation recommended before executing any of the above trades._
