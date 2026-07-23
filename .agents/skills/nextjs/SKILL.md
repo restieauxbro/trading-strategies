@@ -35,7 +35,7 @@ If that path is missing (older Next.js), check `.next-docs/` at the project root
 
 ## Workflow
 
-1. Confirm the change against `docs/requirements.md` (especially webhook contract and safety rules).
+1. Confirm the change against `docs/requirements.md` and the relevant feature doc it links to (especially `docs/feature-webhooks.md` for webhook contract and safety rules).
 2. Identify the feature (routing, data fetching, Route Handlers, Server Actions, proxy, caching, etc.).
 3. Open the matching guide or API reference under `node_modules/next/dist/docs/`.
 4. Follow those docs for APIs and file conventions — do not invent patterns from memory.
