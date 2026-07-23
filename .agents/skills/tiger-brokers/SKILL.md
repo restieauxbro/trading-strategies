@@ -14,7 +14,7 @@ Use Tiger OpenAPI through the `tigeropen` Python SDK. Read account type from con
 - Live trading requires `tiger_allow_live=true` in `.env` and/or `--allow-live` on the limit-order helper.
 - This repo's default order workflow is share limit orders, not market orders or cash-amount orders.
 - For live accounts, stop and ask for explicit confirmation of symbol, action, quantity, limit price, time in force, and account type before placing.
-- Do not place options orders from this skill unless the user explicitly asks and gives full contract details.
+- Options orders are limited to 2-leg vertical spreads via the bundled combo-order helper below. Do not place a single-leg option order or any other multi-leg structure (straddle, strangle, calendar, diagonal, covered, protective) — no bundled execution path exists for those; they require manual entry in Tiger's platform.
 
 ## Environment
 
@@ -61,6 +61,29 @@ Default behavior:
 - Prints order status, filled quantity, remaining quantity, and IDs.
 
 Use `--dry-run` to preview without placing.
+
+## Vertical Spread (Combo) Orders
+
+Use the bundled combo-order helper for a 2-leg vertical spread (bull/bear call spread, bull/bear put spread) — same symbol, same expiry, same put/call type, two strikes, one leg BUY and one leg SELL:
+
+```bash
+python .cursor/skills/tiger-brokers/scripts/tiger_combo_order.py \
+  --symbol AAPL \
+  --expiry 20250829 \
+  --put-call CALL \
+  --sell-strike 165 \
+  --buy-strike 175 \
+  --action SELL \
+  --quantity 1 \
+  --limit-price 2.00 \
+  --env-file .env
+```
+
+- `--action SELL` = credit spread (net premium received) — e.g. a bear call spread.
+- `--action BUY` = debit spread (net premium paid) — e.g. a bull call spread or bear put spread.
+- `--limit-price` is always the positive net price per spread; `--quantity` is the number of spreads (contracts per leg).
+- Same account-type, preview, and `--dry-run`/`--allow-live` behavior as the stock limit-order helper above.
+- Only supports 2-leg vertical spreads. Any other option structure (single leg, straddle, strangle, calendar, diagonal, covered, protective) has no bundled script — construct and place it manually via the raw SDK calls in the `tigeropen` skill reference, with explicit user confirmation.
 
 ## Option Chain Lookup
 

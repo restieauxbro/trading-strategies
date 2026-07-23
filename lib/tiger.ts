@@ -1,9 +1,11 @@
 import {
   createClientConfig,
   HttpClient,
+  TigerError,
   TradeClient,
   QuoteClient,
   limitOrder,
+  type AssetsRequest,
   type ClientConfig,
   type ManagedAccount,
   type OptionChainRow,
@@ -17,6 +19,31 @@ export type TigerClients = {
   trade: TradeClient;
   quote: QuoteClient;
 };
+
+/**
+ * Tiger enforces its own 60s-rolling-window rate limits per account (see
+ * .agents/skills/tigeropen/references/quickstart.md "请求频率限制" — 120/min
+ * for orders+quotes, 60/min for assets/positions, 10/min for low-frequency
+ * endpoints), independent of anything on our side. The webhook queue
+ * (lib/qstash.ts) already spaces out *new* signals to stay under these, but
+ * a single signal's own handful of sequential calls — or the fixed-window
+ * boundary — can still occasionally land on a `code=5` (rate_limit)
+ * response. Retry those with exponential backoff rather than failing the
+ * whole webhook event outright; anything else (bad params, rejected
+ * preview, etc.) is not retryable and rethrows immediately.
+ */
+async function withTigerRetry<T>(fn: () => Promise<T>, maxRetries = 3): Promise<T> {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      return await fn();
+    } catch (error) {
+      const isRateLimited = error instanceof TigerError && error.category === "rate_limit";
+      if (!isRateLimited || attempt >= maxRetries) throw error;
+      const waitMs = 2 ** attempt * 1000;
+      await new Promise((resolve) => setTimeout(resolve, waitMs));
+    }
+  }
+}
 
 function env(name: string, aliases: string[] = []) {
   for (const key of [name, ...aliases]) {
@@ -68,7 +95,7 @@ export function createTigerClients(): TigerClients {
 }
 
 export async function assertPaperOrAllowed(trade: TradeClient, account: string) {
-  const accounts = (await trade.getManagedAccounts()) ?? [];
+  const accounts = (await withTigerRetry(() => trade.getManagedAccounts())) ?? [];
   const configured = accounts.find((item) => String(item.account) === String(account));
 
   if (!configured) {
@@ -85,14 +112,89 @@ export async function assertPaperOrAllowed(trade: TradeClient, account: string) 
   return configured;
 }
 
-export function findPositionQuantity(positions: Position[], symbol: string) {
-  const match = positions.find(
+/**
+ * Open positions with the same rate-limit retry as everything else here.
+ * Prefer this over calling `trade.getPositions` directly (execute-signal.ts
+ * used to) so a transient Tiger `code=5` doesn't fail the whole webhook
+ * event when the queue's own throttling still lets one slip through.
+ */
+export async function getOpenPositions(
+  trade: TradeClient,
+  params: Parameters<TradeClient["getPositions"]>[0],
+): Promise<Position[]> {
+  return withTigerRetry(() => trade.getPositions(params));
+}
+
+/** Full position row for a symbol (case-insensitive), or undefined if not held. */
+export function findPosition(positions: Position[], symbol: string): Position | undefined {
+  return positions.find(
     (position) => String(position.symbol ?? "").toUpperCase() === symbol.toUpperCase(),
   );
+}
+
+export function findPositionQuantity(positions: Position[], symbol: string) {
+  const match = findPosition(positions, symbol);
   if (!match) return undefined;
   const qty = match.positionQty ?? match.salableQty ?? match.position;
   if (qty === undefined || qty === null) return undefined;
   return Math.abs(Number(qty));
+}
+
+export type AccountCash = {
+  /** Total account value (cash + market value of all positions) — a.k.a. "net liquidation". */
+  totalEquity: number;
+  /** Cash sitting uninvested and available to spend, before any new order. */
+  availableCash: number;
+  /** Dollar value currently tied up in open positions. */
+  investedValue: number;
+  source: "prime" | "standard";
+};
+
+/**
+ * Account-level cash/equity snapshot used to size new buys and decide whether
+ * a trim is needed to fund one (see lib/portfolio.ts). Prefers `getPrimeAssets`
+ * (fields live on `segments`, keyed 'S'=securities/'G'=global — pick whichever
+ * is present) and falls back to `getAssets` for non-Prime (e.g. plain PAPER/
+ * STANDARD) accounts, mirroring the realtime→delayed quote fallback above.
+ * `baseCurrency` isn't in the JS SDK's typed `AssetsRequest` but is honored by
+ * the server the same way as the untyped fractional-quantity fields on orders
+ * — the request serializer is a generic camelCase→snake_case pass-through.
+ */
+export async function getAccountCash(trade: TradeClient): Promise<AccountCash> {
+  try {
+    const primeAssets = await withTigerRetry(() =>
+      trade.getPrimeAssets({ baseCurrency: "USD" } as AssetsRequest),
+    );
+    const segments = primeAssets?.segments ?? [];
+    const segment =
+      segments.find((seg) => seg.category === "S") ??
+      segments.find((seg) => seg.category === "G") ??
+      segments[0];
+
+    if (segment && typeof segment.netLiquidation === "number") {
+      return {
+        totalEquity: segment.netLiquidation,
+        availableCash: segment.cashAvailableForTrade ?? segment.cashBalance ?? 0,
+        investedValue: segment.grossPositionValue ?? 0,
+        source: "prime",
+      };
+    }
+  } catch {
+    // fall through to the non-Prime assets endpoint
+  }
+
+  const assets = await withTigerRetry(() => trade.getAssets());
+  const asset = assets?.[0];
+  if (!asset || typeof asset.netLiquidation !== "number") {
+    throw new Error("No account asset data available from Tiger (getPrimeAssets/getAssets both empty)");
+  }
+  const cashValue = asset.cashValue ?? 0;
+  return {
+    totalEquity: asset.netLiquidation,
+    availableCash: cashValue || asset.buyingPower || 0,
+    investedValue: Math.max(0, asset.netLiquidation - cashValue),
+    source: "standard",
+  };
 }
 
 /**
@@ -138,13 +240,13 @@ export async function placeShareLimitOrder(options: {
   order.timeInForce = "DAY";
   withFractionalQuantity(order, options.quantity);
 
-  const preview = await options.trade.previewOrder(order);
+  const preview = await withTigerRetry(() => options.trade.previewOrder(order));
   if (preview && preview.isPass === false) {
     const message = preview.message ?? "Tiger preview rejected the order";
     throw Object.assign(new Error(message), { stage: "preview", preview });
   }
 
-  const placed = await options.trade.placeOrder(order);
+  const placed = await withTigerRetry(() => options.trade.placeOrder(order));
   return { preview, placed };
 }
 
@@ -174,13 +276,13 @@ export async function placeOptionLegOrder(options: {
   order.strike = String(options.strike);
   order.right = options.right;
 
-  const preview = await options.trade.previewOrder(order);
+  const preview = await withTigerRetry(() => options.trade.previewOrder(order));
   if (preview && preview.isPass === false) {
     const message = preview.message ?? "Tiger preview rejected the option order";
     throw Object.assign(new Error(message), { stage: "preview", preview });
   }
 
-  const placed = await options.trade.placeOrder(order);
+  const placed = await withTigerRetry(() => options.trade.placeOrder(order));
   return { preview, placed };
 }
 
@@ -198,7 +300,7 @@ export async function getStockQuote(
   const upper = symbol.toUpperCase();
 
   try {
-    const briefs = await quote.getRealTimeQuote({ symbols: [upper] });
+    const briefs = await withTigerRetry(() => quote.getRealTimeQuote({ symbols: [upper] }));
     const price = briefs[0]?.latestPrice ?? briefs[0]?.close ?? briefs[0]?.preClose;
     if (typeof price === "number") {
       return { symbol: upper, price, source: "realtime" };
@@ -207,7 +309,7 @@ export async function getStockQuote(
     // fall through to delayed quote
   }
 
-  const delayed = await quote.getDelayedQuote({ symbols: [upper] });
+  const delayed = await withTigerRetry(() => quote.getDelayedQuote({ symbols: [upper] }));
   const price = delayed[0]?.latestPrice ?? delayed[0]?.close ?? delayed[0]?.preClose;
   if (typeof price !== "number") {
     throw new Error(`No quote price available for ${upper}`);

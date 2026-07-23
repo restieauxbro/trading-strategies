@@ -25,6 +25,13 @@ type AccountResponse = {
     status: string | null;
     liveTradingEnabled: boolean;
   };
+  cash?: {
+    totalEquity: number;
+    availableCash: number;
+    investedValue: number;
+    investedPct: number;
+    minInvestedPct: number;
+  };
   positions?: Array<{
     symbol?: string;
     quantity?: number;
@@ -34,6 +41,14 @@ type AccountResponse = {
     unrealizedPnl?: number;
     latestPrice?: number;
   }>;
+};
+
+type TrimRow = {
+  symbol: string;
+  quantity: number;
+  limitPrice: number;
+  tigerOrderId: string | null;
+  pnlPct: number;
 };
 
 type EventRow = {
@@ -47,6 +62,8 @@ type EventRow = {
   status: string;
   tigerOrderId: string | null;
   error: string | null;
+  targetPositionSizeUsd: number | null;
+  trimsJson: TrimRow[] | null;
 };
 
 type EventsResponse = {
@@ -71,8 +88,9 @@ type PnlResponse = {
 
 function statusVariant(status: string): "default" | "secondary" | "destructive" | "outline" {
   if (status === "PLACED") return "default";
-  if (status === "PENDING") return "secondary";
+  if (status === "PENDING" || status === "PROCESSING") return "secondary";
   if (status === "SKIPPED") return "outline";
+  if (status === "PARTIALLY_PLACED") return "secondary";
   return "destructive";
 }
 
@@ -152,6 +170,27 @@ export function Dashboard() {
                   <span className="text-muted-foreground">Capability / status: </span>
                   {account.account.capability ?? "—"} / {account.account.status ?? "—"}
                 </div>
+                {account.cash ? (
+                  <div className="space-y-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-muted-foreground">Invested:</span>
+                      <Badge
+                        variant={
+                          account.cash.investedPct >= account.cash.minInvestedPct
+                            ? "default"
+                            : "outline"
+                        }
+                      >
+                        {account.cash.investedPct.toFixed(1)}% (target ≥{" "}
+                        {account.cash.minInvestedPct.toFixed(0)}%)
+                      </Badge>
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Total equity ${account.cash.totalEquity.toFixed(2)} · Available cash $
+                      {account.cash.availableCash.toFixed(2)}
+                    </div>
+                  </div>
+                ) : null}
               </>
             ) : (
               <p className="text-destructive">{account?.error ?? (loading ? "Loading…" : "Unavailable")}</p>
@@ -274,6 +313,7 @@ export function Dashboard() {
                   <TableHead>Limit</TableHead>
                   <TableHead>Status</TableHead>
                   <TableHead>Tiger order</TableHead>
+                  <TableHead>Trimmed to fund</TableHead>
                   <TableHead>Error</TableHead>
                 </TableRow>
               </TableHeader>
@@ -292,6 +332,16 @@ export function Dashboard() {
                       <Badge variant={statusVariant(event.status)}>{event.status}</Badge>
                     </TableCell>
                     <TableCell className="font-mono text-xs">{event.tigerOrderId ?? "—"}</TableCell>
+                    <TableCell className="max-w-[200px] text-xs">
+                      {event.trimsJson && event.trimsJson.length > 0
+                        ? event.trimsJson
+                            .map(
+                              (trim) =>
+                                `${trim.symbol} -${trim.quantity} (${trim.pnlPct.toFixed(1)}%)`,
+                            )
+                            .join(", ")
+                        : "—"}
+                    </TableCell>
                     <TableCell className="max-w-[220px] truncate text-xs text-destructive">
                       {event.error ?? ""}
                     </TableCell>

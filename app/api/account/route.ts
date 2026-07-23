@@ -3,8 +3,10 @@ import { isAuthenticated } from "@/lib/auth";
 import {
   assertPaperOrAllowed,
   createTigerClients,
+  getAccountCash,
   isLiveTradingEnabled,
 } from "@/lib/tiger";
+import { computeInvestedPct, resolvePortfolioConfig } from "@/lib/portfolio";
 
 export const runtime = "nodejs";
 
@@ -17,6 +19,8 @@ export async function GET() {
     const { config, trade } = createTigerClients();
     const account = await assertPaperOrAllowed(trade, config.account);
     const positions = await trade.getPositions({ market: "US", secType: "STK" });
+    const cash = await getAccountCash(trade);
+    const { minInvestedPct } = resolvePortfolioConfig();
 
     return NextResponse.json({
       ok: true,
@@ -26,6 +30,13 @@ export async function GET() {
         capability: account.capability ?? null,
         status: account.status ?? null,
         liveTradingEnabled: isLiveTradingEnabled(),
+      },
+      cash: {
+        totalEquity: cash.totalEquity,
+        availableCash: cash.availableCash,
+        investedValue: cash.investedValue,
+        investedPct: computeInvestedPct(cash.investedValue, cash.totalEquity),
+        minInvestedPct,
       },
       positions: (positions ?? []).map((position) => ({
         symbol: position.symbol,

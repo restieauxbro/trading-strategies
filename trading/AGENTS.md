@@ -32,19 +32,26 @@ Extract, strictly from the given instruction text:
 
 - Symbol
 - Action (`BUY` / `SELL`)
-- Quantity (shares or contracts)
+- Quantity (shares, or number of spreads for a vertical spread)
 - Order type (default `LIMIT` if not stated — this repo does not use market orders)
 - Limit price
 - Time in force (default `DAY` if not stated)
 - Account intent: **paper** unless the instruction explicitly says "live" / "real account" / "real money" / names a specific non-paper account
 
-**If any required field (symbol, action, quantity, limit price) is missing or ambiguous, stop here.** Do not guess, infer a "reasonable" price, or fill gaps with judgement. Go straight to Step 5 (Abort) with `reason = "ambiguous instruction: <what's missing>"`.
+**If the instruction describes a 2-leg vertical option spread** (bull/bear call spread, bull/bear put spread), also extract:
+- Put/call type (same for both legs)
+- Expiry (same for both legs)
+- Sell strike and buy strike
+- Net action: `SELL` for a credit spread (net premium received), `BUY` for a debit spread (net premium paid)
+- Net limit price (always positive)
+
+**If any required field is missing or ambiguous, stop here.** Do not guess, infer a "reasonable" price/strike, or fill gaps with judgement. Go straight to Step 5 (Abort) with `reason = "ambiguous instruction: <what's missing>"`.
 
 ### Step 2 — Guardrail check (self-enforced, mirrors `lib/order-guardrails.ts`)
 
 Using the `.env` values read in Setup:
 
-- `estimated_spend = quantity × limit_price × (100 if option else 1)`
+- `estimated_spend = quantity × limit_price × (100 if option/spread else 1)`
 - If `MAX_ORDER_SPEND_USD` is set and `estimated_spend > MAX_ORDER_SPEND_USD` → **abort**
 - If stock and `MAX_SHARES` is set and `quantity > MAX_SHARES` → **abort**
 - If option and `MAX_CONTRACTS` is set and `quantity > MAX_CONTRACTS` → **abort**
@@ -57,11 +64,11 @@ Call `get_managed_accounts()` (per the `tiger-brokers` skill) and confirm the co
 
 - **Default and safe path:** proceed only against a `PAPER` account.
 - **Live is allowed only when BOTH are true:** (a) the instruction explicitly asked for a live/real-money order, **and** (b) `.env` has `TIGER_ALLOW_LIVE=true` / `tiger_allow_live=true`. If only one is true, **abort** — do not treat an explicit live request with the flag off (or vice versa) as sufficient. When both are true, pass `--allow-live` in Step 4.
-- Options orders: the bundled helper only places **stock** limit orders. There is no bundled options-order script. If the instruction asks for an options order, **abort** with `reason = "options order requested — no bundled execution path; place manually"` — do not attempt it via raw `tigeropen` SDK calls unsupervised, even with full contract details.
+- Options orders: the bundled helpers place **stock limit orders** and **2-leg vertical option spreads** (bull/bear call spread, bull/bear put spread) only. If the instruction asks for a single-leg option order or any other multi-leg structure (straddle, strangle, calendar, diagonal, covered, protective), **abort** with `reason = "unsupported option structure requested — no bundled execution path; place manually"` — do not attempt it via raw `tigeropen` SDK calls unsupervised, even with full contract details.
 
 ### Step 4 — Place the order
 
-Use the bundled helper from the `tiger-brokers` skill, e.g.:
+For a stock order, use the bundled limit-order helper from the `tiger-brokers` skill:
 
 ```bash
 python .claude/skills/tiger-brokers/scripts/tiger_limit_order.py \
@@ -69,7 +76,17 @@ python .claude/skills/tiger-brokers/scripts/tiger_limit_order.py \
   --limit-price <PRICE> --time-in-force <TIF> --env-file ../.env [--allow-live]
 ```
 
-The script itself also verifies account type and blocks non-`PAPER` accounts without `--allow-live`, and stops on any Tiger preview warning — treat any non-zero exit or `"ok": false` in its JSON output as a stop condition (abort per Step 5), not something to retry or push through.
+For a 2-leg vertical option spread, use the bundled combo-order helper:
+
+```bash
+python .claude/skills/tiger-brokers/scripts/tiger_combo_order.py \
+  --symbol <SYMBOL> --expiry <YYYYMMDD> --put-call <CALL|PUT> \
+  --sell-strike <STRIKE> --buy-strike <STRIKE> \
+  --action <BUY|SELL> --quantity <N> \
+  --limit-price <NET_PRICE> --time-in-force <TIF> --env-file ../.env [--allow-live]
+```
+
+Both scripts verify account type and block non-`PAPER` accounts without `--allow-live`, and stop on any Tiger preview warning — treat any non-zero exit or `"ok": false` in its JSON output as a stop condition (abort per Step 5), not something to retry or push through.
 
 The script prints one JSON object. Capture from it: `status`, `returned_order_id` / `order_global_id`, `filled`, `remaining`, and `error` (when `ok` is `false`).
 
@@ -84,6 +101,7 @@ date,timestamp_utc,instruction,account_type,symbol,action,quantity,order_type,li
 - `status` ∈ `PLACED`, `PARTIALLY_PLACED`, `ABORTED`, `FAILED` (derive from the script's JSON: `ok: true` + `remaining: 0` → `PLACED`; `ok: true` + `remaining > 0` → `PARTIALLY_PLACED`; `ok: false` at the `place_order` stage → `FAILED`; anything stopped before placement in Steps 1–3 → `ABORTED`)
 - `order_id` — the script's `returned_order_id` (or `order_global_id` if that's empty)
 - `instruction` — the raw instruction text this run received (quote it verbatim, escape commas/quotes for CSV)
+- For a vertical spread: `symbol` is the underlying, `order_type` is `VERTICAL`, `limit_price` is the net spread price, and `notes` records `<put_call> <sell_strike>/<buy_strike> exp <expiry>` (e.g. `CALL 165/175 exp 20250829`)
 - On `ABORTED` or `FAILED`, leave order fields empty and put the reason in `error`
 - On success, leave `error` empty
 
@@ -108,5 +126,6 @@ Logged: trading/orders-log.csv
 - Never guess a missing symbol, quantity, or price — abort instead.
 - Never place a live order without both explicit instruction wording **and** `TIGER_ALLOW_LIVE=true`.
 - Never exceed `MAX_ORDER_SPEND_USD` / `MAX_SHARES` / `MAX_CONTRACTS` from `.env`.
-- Never place an options order — the bundled helper is stock-only; abort and note that it needs manual execution.
+- Never place an options order other than a 2-leg vertical spread via the bundled combo-order helper — abort any single-leg option or other multi-leg structure and note that it needs manual execution.
+- Never guess a missing strike, expiry, or put/call type for a spread — abort instead, same as a missing symbol/price.
 - This agent only executes. If asked to "find a good trade" or anything scan/research-shaped, say that belongs in `strategies/`, not here.
