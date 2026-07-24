@@ -1,6 +1,6 @@
 import type { Prisma, WebhookEvent } from "@prisma/client";
 import { prisma } from "@/lib/db";
-import type { ParsedTrendspiderSignal } from "@/lib/webhook-schema";
+import type { ParsedWebhookSignal } from "@/lib/webhook-schema";
 import {
   assertPaperOrAllowed,
   createTigerClients,
@@ -59,7 +59,7 @@ type TrimRecord = {
 
 export async function executeWebhookSignal(
   eventId: string,
-  signal: ParsedTrendspiderSignal,
+  signal: ParsedWebhookSignal,
 ): Promise<WebhookEvent> {
   try {
     const { config, trade, quote } = createTigerClients();
@@ -111,7 +111,7 @@ export async function executeWebhookSignal(
  */
 async function executeSellSignal(options: {
   eventId: string;
-  signal: ParsedTrendspiderSignal;
+  signal: ParsedWebhookSignal;
   trade: TigerClients["trade"];
   account: string;
   quotePrice: number;
@@ -177,7 +177,7 @@ async function executeSellSignal(options: {
  */
 async function executeBuySignal(options: {
   eventId: string;
-  signal: ParsedTrendspiderSignal;
+  signal: ParsedWebhookSignal;
   trade: TigerClients["trade"];
   quote: TigerClients["quote"];
   account: string;

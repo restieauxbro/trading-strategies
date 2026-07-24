@@ -1,0 +1,76 @@
+//@version=6
+
+// =============================================================================
+// Webhook EMA Cross (template)
+// -----------------------------------------------------------------------------
+// Minimal Pine strategy that fires webhook alerts compatible with this repo's
+// generic signal endpoint. See docs/webhooks.md for the full JSON schema and
+// portfolio-sizing/execution behaviour on the receiving end.
+//
+// Swap `longCondition` / `exitCondition` for your own entry/exit logic — the
+// `alert()` wiring at the bottom is the reusable part; everything above it is
+// just an example signal (fast/slow EMA cross) so the script runs as-is.
+//
+// One-time setup in TradingView:
+//   1. Add this script to a chart (Pine Editor → paste → "Add to chart").
+//      `strategy()` (rather than `indicator()`) also gives you the Strategy
+//      Tester tab for a quick backtest of the example logic, but is not
+//      required for the webhook itself — the alert() calls fire independently
+//      of strategy.entry/close.
+//   2. Right-click the chart → Add alert (or the bell icon). Condition =
+//      this script, "Any alert() function call". Trigger = "Once Per Bar
+//      Close" (belt-and-braces with alert.freq_once_per_bar_close below —
+//      avoids duplicate/intrabar-repaint fires).
+//   3. Under Notifications, enable "Webhook URL" and paste:
+//        https://<your-domain>/api/webhooks/signal?token=<WEBHOOK_TOKEN>
+//      (Webhook alerts require a paid TradingView plan — Essential or above.)
+//   4. Leave the alert's Message box untouched — each alert() call below
+//      supplies its own JSON body, the dialog's message field is unused.
+// =============================================================================
+
+strategy(
+     "Webhook EMA Cross (template)",
+     overlay             = true,
+     default_qty_type    = strategy.percent_of_equity,
+     default_qty_value   = 100,
+     calc_on_every_tick  = false)
+
+fastLen = input.int(20, "Fast EMA length")
+slowLen = input.int(50, "Slow EMA length")
+botName = input.string("pine-ema-cross", "bot_name sent in webhook payload")
+
+fastMA = ta.ema(close, fastLen)
+slowMA = ta.ema(close, slowLen)
+
+longCondition = ta.crossover(fastMA, slowMA)
+exitCondition = ta.crossunder(fastMA, slowMA)
+
+if longCondition
+    strategy.entry("Long", strategy.long)
+
+if exitCondition
+    strategy.close("Long")
+
+plot(fastMA, "Fast EMA", color = color.new(color.teal, 0))
+plot(slowMA, "Slow EMA", color = color.new(color.orange, 0))
+
+// -----------------------------------------------------------------------------
+// Webhook payload — field names match lib/webhook-schema.ts on the receiving
+// app. Only `symbol` + `action` are required there; `source`/`bot_name`/
+// `timeframe`/`comment` are optional metadata carried through to the
+// dashboard's webhook-events log. Quantity/price are always resolved
+// server-side (see docs/webhooks.md), so none is sent here.
+// -----------------------------------------------------------------------------
+buildPayload(action, comment) =>
+    '{"symbol":"'   + syminfo.ticker    +
+     '","action":"' + action            +
+     '","source":"tradingview"'         +
+     ',"bot_name":"' + botName          +
+     '","timeframe":"' + timeframe.period +
+     '","comment":"' + comment + '"}'
+
+if longCondition
+    alert(buildPayload("buy", "ema-cross-entry"), alert.freq_once_per_bar_close)
+
+if exitCondition
+    alert(buildPayload("sell", "ema-cross-exit"), alert.freq_once_per_bar_close)

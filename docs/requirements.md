@@ -6,14 +6,14 @@ Canonical description of this repo’s shape and features for development agents
 
 | Doc | Covers |
 | --- | --- |
-| [feature-webhooks.md](./feature-webhooks.md) | TrendSpider → Tiger webhooks: behaviour, portfolio sizing/trim-to-fund, payload schema |
+| [feature-webhooks.md](./feature-webhooks.md) | Webhook → Tiger orders: behaviour, portfolio sizing/trim-to-fund, payload schema |
 | [feature-dashboard.md](./feature-dashboard.md) | Dashboard + provisional P&L |
 | [feature-trade-prompts.md](./feature-trade-prompts.md) | Scheduled natural-language trade prompts |
 | [feature-strategies.md](./feature-strategies.md) | `strategies/` research/subagent workspace |
 | [feature-trading-cli.md](./feature-trading-cli.md) | `trading/` execution-only agent workspace |
 | [environment.md](./environment.md) | Full env var reference + manual setup checklist |
 | [tiger-accounts.md](./tiger-accounts.md) | Paper vs live Tiger account ids, how to switch |
-| [trendspider-webhooks.md](./trendspider-webhooks.md) | Operational webhook setup: bot templates, curl smoke test |
+| [webhooks.md](./webhooks.md) | Operational webhook setup: TrendSpider bot templates, TradingView Pine Script template, curl smoke test |
 
 Legacy Cursor agent strategy workflows live under [`strategies/`](../strategies/) — see [feature-strategies.md](./feature-strategies.md).
 
@@ -23,7 +23,7 @@ Legacy Cursor agent strategy workflows live under [`strategies/`](../strategies/
 
 Build and maintain a **Next.js (Vercel) app** that:
 
-1. Accepts **TrendSpider Strategy Bot** webhook signals
+1. Accepts webhook trade signals from any source (**TrendSpider Strategy Bots**, **TradingView Pine Script**, manual curl)
 2. Places **Tiger Brokers paper** US share **limit** orders
 3. Exposes a **password-gated dashboard** for account, positions, and webhook event history
 4. Lets Tim lodge a **scheduled natural-language trade prompt** (stocks, single-leg options, or vertical spreads) that a Claude tool-calling agent executes unattended at the resolved run time
@@ -35,10 +35,10 @@ Legacy Cursor agent strategy workflows remain in `strategies/` for research and 
 ## System shape
 
 ```text
-TrendSpider Strategy Bot
+TrendSpider Strategy Bot / TradingView Pine alert() / curl
         │  POST JSON + ?token=
         ▼
-app/api/webhooks/trendspider     ← auth, validate, persist PENDING
+app/api/webhooks/signal          ← auth, validate, persist PENDING
         │  after()
         ▼
 lib/execute-signal.ts            ← Tiger preview + place
@@ -112,4 +112,4 @@ When implementing or changing product behaviour:
 3. Prefer existing patterns in `app/api/`, `lib/`, and `proxy.ts`
 4. Keep webhook contract and dashboard event statuses consistent with the linked feature docs
 5. For strategy/subagent work, start from `strategies/<name>/AGENT.md` — do not invent a parallel strategy layout
-6. When changing a feature, update its doc (and [trendspider-webhooks.md](./trendspider-webhooks.md) too, for webhook changes) in the same change
+6. When changing a feature, update its doc (and [webhooks.md](./webhooks.md) too, for webhook changes) in the same change

@@ -3,19 +3,19 @@ import type { NextRequest } from "next/server";
 import { verifySignatureAppRouter } from "@upstash/qstash/nextjs";
 import { prisma } from "@/lib/db";
 import { executeWebhookSignal } from "@/lib/execute-signal";
-import type { ParsedTrendspiderSignal } from "@/lib/webhook-schema";
+import type { ParsedWebhookSignal } from "@/lib/webhook-schema";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
 /**
- * QStash-invoked worker for a single queued TrendSpider signal (enqueued by
- * app/api/webhooks/trendspider/route.ts via lib/qstash.ts's
- * scheduleWebhookSignalExecution, with `flowControl: { parallelism: 1 }` so
- * these run strictly one-at-a-time account-wide — see the comment there for
- * why). Reconstructs the parsed signal from the already-persisted
- * WebhookEvent row rather than round-tripping it through the queue message,
- * since every field it needs was already written by the POST handler.
+ * QStash-invoked worker for a single queued webhook signal (enqueued by
+ * lib/webhook-ingest.ts via lib/qstash.ts's scheduleWebhookSignalExecution,
+ * with `flowControl: { parallelism: 1 }` so these run strictly one-at-a-time
+ * account-wide regardless of source — see the comment there for why).
+ * Reconstructs the parsed signal from the already-persisted WebhookEvent row
+ * rather than round-tripping it through the queue message, since every field
+ * it needs was already written by the ingesting POST handler.
  */
 async function handler(request: NextRequest) {
   let body: unknown;
@@ -54,9 +54,10 @@ async function handler(request: NextRequest) {
     return NextResponse.json({ ok: false, error: "queued event is missing symbol/action" }, { status: 500 });
   }
 
-  const signal: ParsedTrendspiderSignal = {
+  const signal: ParsedWebhookSignal = {
     symbol: event.symbol,
     action: event.action as "buy" | "sell",
+    source: event.source ?? undefined,
     botName: event.botName ?? undefined,
     timeframe: event.timeframe ?? undefined,
     botStatus: event.botStatus ?? undefined,

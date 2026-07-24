@@ -1,0 +1,11 @@
+//@version=4
+study("B-Xtrender @Puppytherapy")
+
+short_l1 = input(5 , title="Short - L1")
+short_l2 = input(20, title="Short - L2")
+short_l3 = input(5, title="Short - L3")
+
+shortTermXtrender = rsi(ema(close, short_l1) - ema(close, short_l2), short_l3 ) - 50
+
+shortXtrenderCol = shortTermXtrender > 0 ? shortTermXtrender > shortTermXtrender[1] ? color.lime : #228B22 : shortTermXtrender > shortTermXtrender[1] ? color.red : #8B0000
+plot(shortTermXtrender, color=shortXtrenderCol, style=plot.style_columns, linewidth=1, title="B-Xtrender Osc. - Histogram", transp = 50)

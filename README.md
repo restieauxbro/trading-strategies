@@ -1,6 +1,6 @@
-# Trading Strategy — TrendSpider → Tiger Brokers
+# Trading Strategy — Webhooks → Tiger Brokers
 
-Next.js app (Vercel) that accepts TrendSpider Strategy Bot webhooks and places Tiger Brokers **paper** share limit orders. Includes a password-gated shadcn dashboard for account, positions, and recent webhook events.
+Next.js app (Vercel) that accepts trade-signal webhooks — from TrendSpider Strategy Bots, a TradingView Pine Script `alert()`, or a manual curl test — and places Tiger Brokers **paper** share limit orders. Includes a password-gated shadcn dashboard for account, positions, and recent webhook events.
 
 Legacy Cursor agent strategy workflows still live under `strategies/` and `.agents/skills/` (see [AGENTS.md](AGENTS.md)).
 
@@ -38,15 +38,17 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000), sign in with `DASHBOARD_PASSWORD`.
 
-### 5. TrendSpider
+### 5. Webhooks (TrendSpider / TradingView)
 
-Point the Strategy Bot Entry/Exit webhook URLs at:
+Point Strategy Bot / Pine Script alert webhook URLs at:
 
 ```text
-https://<your-domain>/api/webhooks/trendspider?token=<WEBHOOK_TOKEN>
+https://<your-domain>/api/webhooks/signal?token=<WEBHOOK_TOKEN>
 ```
 
-JSON body templates: [docs/trendspider-webhooks.md](docs/trendspider-webhooks.md).
+(`/api/webhooks/trendspider` also works — a back-compat alias for bots already configured with that URL.)
+
+JSON body templates + Pine Script setup: [docs/webhooks.md](docs/webhooks.md).
 
 ---
 

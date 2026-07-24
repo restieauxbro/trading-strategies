@@ -1,0 +1,81 @@
+//@version=6
+
+// =============================================================================
+// Noisy Webhook Test (fires almost every bar)
+// -----------------------------------------------------------------------------
+// NOT a trading strategy — there is no price-based logic here at all. It
+// exists solely to generate a reliable stream of buy/sell webhook alerts so
+// you can test the full TradingView alert → /api/webhooks/signal →
+// QStash → Tiger paper order pipeline end to end without waiting for a real
+// setup to occur.
+//
+// Logic: alternates buy/sell on a plain bar-index counter — buy when flat,
+// sell when in a (script-tracked) position, every `Fire every N bars` bars.
+// On a Daily chart with the default N=1 that's one alert every session,
+// alternating direction, forever. Bump N up (e.g. 5) to space signals out
+// once you've confirmed the pipeline works and want less noise.
+//
+// One-time setup in TradingView:
+//   1. Add this script to a chart (Pine Editor → paste → "Add to chart").
+//      Any timeframe works; Daily is the easiest to reason about ("fires
+//      once a day").
+//   2. Right-click the chart → Add alert. Condition = this script, "Any
+//      alert() function call". Trigger = "Once Per Bar Close".
+//   3. Under Notifications, enable "Webhook URL" and paste:
+//        https://<your-domain>/api/webhooks/signal?token=<WEBHOOK_TOKEN>
+//      (Webhook alerts require a paid TradingView plan — Essential or above.)
+//   4. Leave the alert's Message box untouched — each alert() call below
+//      supplies its own JSON body.
+//
+// Remove the alert (or delete the script from the chart) once you're done
+// testing — this is not meant to be left running as a real strategy.
+// =============================================================================
+
+strategy(
+     "Noisy Webhook Test (fires every bar)",
+     overlay             = true,
+     default_qty_type    = strategy.percent_of_equity,
+     default_qty_value   = 100,
+     calc_on_every_tick  = false)
+
+everyNBars = input.int(1, "Fire every N bars", minval = 1, tooltip = "1 = alternate buy/sell every bar close (e.g. every day on a Daily chart). Increase to space test signals out.")
+botName    = input.string("pine-noise-test", "bot_name sent in webhook payload")
+
+var bool inPosition = false
+
+fireBar = bar_index % everyNBars == 0
+
+longCondition = fireBar and not inPosition
+exitCondition = fireBar and inPosition
+
+if longCondition
+    inPosition := true
+    strategy.entry("Long", strategy.long)
+
+if exitCondition
+    inPosition := false
+    strategy.close("Long")
+
+plotshape(longCondition, title = "Buy signal", style = shape.triangleup, location = location.belowbar, color = color.new(color.lime, 0), size = size.tiny)
+plotshape(exitCondition, title = "Sell signal", style = shape.triangledown, location = location.abovebar, color = color.new(color.red, 0), size = size.tiny)
+
+// -----------------------------------------------------------------------------
+// Webhook payload — field names match lib/webhook-schema.ts on the receiving
+// app. Only `symbol` + `action` are required there; `source`/`bot_name`/
+// `timeframe`/`comment` are optional metadata carried through to the
+// dashboard's webhook-events log. Quantity/price are always resolved
+// server-side (see docs/webhooks.md), so none is sent here.
+// -----------------------------------------------------------------------------
+buildPayload(action, comment) =>
+    '{"symbol":"'   + syminfo.ticker    +
+     '","action":"' + action            +
+     '","source":"tradingview"'         +
+     ',"bot_name":"' + botName          +
+     '","timeframe":"' + timeframe.period +
+     '","comment":"' + comment + '"}'
+
+if longCondition
+    alert(buildPayload("buy", "noise-test-entry"), alert.freq_once_per_bar_close)
+
+if exitCondition
+    alert(buildPayload("sell", "noise-test-exit"), alert.freq_once_per_bar_close)

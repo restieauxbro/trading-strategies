@@ -1,23 +1,24 @@
 ← [Requirements overview](./requirements.md)
 
-# Feature: TrendSpider → Tiger webhooks
+# Feature: Webhook → Tiger orders
 
-Operational setup (bot templates, curl smoke test) lives in [trendspider-webhooks.md](./trendspider-webhooks.md); this doc covers behaviour and implementation.
+Operational setup (TrendSpider bot templates, TradingView Pine Script template, curl smoke test) lives in [webhooks.md](./webhooks.md); this doc covers behaviour and implementation.
 
 ## Behaviour
 
-1. **Endpoint:** `POST /api/webhooks/trendspider?token=<WEBHOOK_TOKEN>`
-2. **Auth:** Query param `token` (preferred; TrendSpider cannot set reliable custom headers). Header `x-webhook-token` also accepted.
-3. **Body:** JSON matching the Zod schema in `lib/webhook-schema.ts` (see [trendspider-webhooks.md](./trendspider-webhooks.md)).
-4. **Ack fast:** Persist a `WebhookEvent` with status `PENDING`, return `{ ok, accepted, eventId, … }` immediately. Accepts any number of simultaneous POSTs — there is no rate limit on the endpoint itself.
-5. **Queue + throttle:** rather than running Tiger placement inline, the event is enqueued to QStash (`lib/qstash.ts`'s `scheduleWebhookSignalExecution`, `flowControl: { parallelism: 1, rate: WEBHOOK_QUEUE_RATE_PER_MINUTE }`) so many simultaneous signals (e.g. a whole watchlist rotating at market close) drain **one-at-a-time** at a controlled rate instead of executing concurrently. This avoids both blowing through Tiger's own account-level API rate limits (60s rolling window; see `.agents/skills/tigeropen/references/quickstart.md`) and racing on the shared account snapshot the portfolio manager reads (see below). QStash delivers to `POST /api/webhooks/trendspider/execute` (signature-verified), which atomically claims the row (`PENDING` → `PROCESSING`) before running it. **Falls back to firing immediately/concurrently via `after()`** when `QSTASH_TOKEN`/`PUBLIC_BASE_URL` aren't configured — fine for manual testing, not for a real burst. See [trendspider-webhooks.md](./trendspider-webhooks.md) "Concurrency / rate limiting".
-6. **Actions:** TrendSpider sends only `symbol` + `action` — quantity and price are resolved server-side from a live Tiger quote, not read from the payload.
+1. **Endpoint:** `POST /api/webhooks/signal?token=<WEBHOOK_TOKEN>` (canonical; `/api/webhooks/trendspider` is a back-compat alias, identical handler, for TrendSpider bots already configured with that URL).
+2. **Auth:** Query param `token` (preferred; most alerting platforms cannot set reliable custom headers). Header `x-webhook-token` also accepted.
+3. **Body:** JSON matching the Zod schema in `lib/webhook-schema.ts` (see [webhooks.md](./webhooks.md)).
+4. **Ack fast:** Persist a `WebhookEvent` with status `PENDING`, return `{ ok, accepted, eventId, … }` immediately. Accepts any number of simultaneous POSTs, from any source — there is no rate limit on the endpoint itself.
+5. **Queue + throttle:** rather than running Tiger placement inline, the event is enqueued to QStash (`lib/qstash.ts`'s `scheduleWebhookSignalExecution`, `flowControl: { parallelism: 1, rate: WEBHOOK_QUEUE_RATE_PER_MINUTE }`) so many simultaneous signals (e.g. a whole watchlist rotating at market close) drain **one-at-a-time** at a controlled rate instead of executing concurrently, regardless of which source they came from. This avoids both blowing through Tiger's own account-level API rate limits (60s rolling window; see `.agents/skills/tigeropen/references/quickstart.md`) and racing on the shared account snapshot the portfolio manager reads (see below). QStash delivers to `POST /api/webhooks/signal/execute` (signature-verified), which atomically claims the row (`PENDING` → `PROCESSING`) before running it. **Falls back to firing immediately/concurrently via `after()`** when `QSTASH_TOKEN`/`PUBLIC_BASE_URL` aren't configured — fine for manual testing, not for a real burst. See [webhooks.md](./webhooks.md) "Concurrency / rate limiting".
+6. **Sources:** currently TrendSpider Strategy Bots and a TradingView Pine `alert()` template (`pinescript/ema-cross-webhook-alert.pine`) both send the same JSON shape to the same handler; an optional `source` field on the payload labels the `WebhookEvent` row for the dashboard (defaults to whichever route the signal hit if omitted).
+7. **Actions:** every source sends only `symbol` + `action` — quantity and price are resolved server-side from a live Tiger quote, not read from the payload.
    - `buy` — sized by the portfolio manager (even-split + trim-to-fund, see below) rather than a fixed dollar amount; skipped if a position is already held in that symbol.
    - `sell` — resolves the full open position quantity for the symbol and sells it to close (flatten); `SKIPPED` if no position
    - Limit price = Tiger quote ± `WEBHOOK_LIMIT_BUFFER_PCT` (default `0.15`%; above quote for buys, below for sells) to improve fill odds
-7. **Order type:** US stock (`STK` / `USD`) DAY **limit** only — no market orders in v1
-8. **Safety:** Non-`PAPER` Tiger accounts blocked unless `TIGER_ALLOW_LIVE=true`; preview must pass before place; same `MAX_ORDER_SPEND_USD`/`MAX_SHARES` guardrails as the trade agent, enforced on every trim order as well as the buy itself. Individual Tiger calls (`lib/tiger.ts`'s `withTigerRetry`) retry with exponential backoff on a `code=5` rate-limit response, as a second line of defense on top of the queue throttling.
-9. **Statuses:** `PENDING` → `PROCESSING` → `PLACED` | `PARTIALLY_PLACED` | `PREVIEW_FAILED` | `SKIPPED` | `FAILED`. `PROCESSING` means claimed off the queue and actively running (should be transient). `PARTIALLY_PLACED` means one or more positions were trimmed to raise cash but the new buy itself then failed/was rejected — check `error` and `trimsJson` on the event.
+8. **Order type:** US stock (`STK` / `USD`) DAY **limit** only — no market orders in v1
+9. **Safety:** Non-`PAPER` Tiger accounts blocked unless `TIGER_ALLOW_LIVE=true`; preview must pass before place; same `MAX_ORDER_SPEND_USD`/`MAX_SHARES` guardrails as the trade agent, enforced on every trim order as well as the buy itself. Individual Tiger calls (`lib/tiger.ts`'s `withTigerRetry`) retry with exponential backoff on a `code=5` rate-limit response, as a second line of defense on top of the queue throttling.
+10. **Statuses:** `PENDING` → `PROCESSING` → `PLACED` | `PARTIALLY_PLACED` | `PREVIEW_FAILED` | `SKIPPED` | `FAILED`. `PROCESSING` means claimed off the queue and actively running (should be transient). `PARTIALLY_PLACED` means one or more positions were trimmed to raise cash but the new buy itself then failed/was rejected — check `error` and `trimsJson` on the event.
 
 ## Portfolio management (sizing + trim-to-fund)
 
@@ -38,19 +39,22 @@ Replaces the earlier fixed-$100-per-buy placeholder. Implemented in [lib/portfol
 | --- | --- | --- |
 | `symbol` or `ticker` | Yes | Uppercased |
 | `action` | Yes | `buy` \| `sell` |
+| `source` | No | Labels the `WebhookEvent` row (e.g. `"tradingview"`); defaults to whichever route received it |
 | `bot_name`, `timeframe`, `bot_status`, `comment` | No | Stored for dashboard/logs |
 
 Any `quantity`/`qty`/`order_contracts`/`limit_price`/`price` fields sent in the payload are accepted (passthrough) but ignored — sizing and pricing always come from `lib/execute-signal.ts` + `lib/portfolio.ts` + a live Tiger quote.
 
 ## Implementation touchpoints
 
-- Route: `app/api/webhooks/trendspider/route.ts` (accepts + enqueues), `app/api/webhooks/trendspider/execute/route.ts` (QStash-invoked worker, one-at-a-time)
+- Routes: `app/api/webhooks/signal/route.ts` (canonical, accepts + enqueues), `app/api/webhooks/trendspider/route.ts` (back-compat alias, same handler), `app/api/webhooks/signal/execute/route.ts` (QStash-invoked worker, one-at-a-time)
+- Shared ingest logic: `lib/webhook-ingest.ts`
 - Queue/throttle: `lib/qstash.ts`'s `scheduleWebhookSignalExecution`
 - Schema: `lib/webhook-schema.ts`
 - Execution: `lib/execute-signal.ts`
+- Pine Script template: `pinescript/ema-cross-webhook-alert.pine`
 - Portfolio sizing/trim logic: `lib/portfolio.ts`
 - Broker: `lib/tiger.ts` (`getAccountCash`, `findPosition`, `findPositionQuantity`, `placeShareLimitOrder`, `getOpenPositions`, `withTigerRetry`)
 - Persistence: `prisma/schema.prisma` → `WebhookEvent`
 - Dashboard: `app/api/account/route.ts` (invested % + cash), `components/dashboard.tsx` (invested % indicator, per-buy trims column)
 
-When changing webhook behaviour, update this file and [trendspider-webhooks.md](./trendspider-webhooks.md) together.
+When changing webhook behaviour, update this file and [webhooks.md](./webhooks.md) together.

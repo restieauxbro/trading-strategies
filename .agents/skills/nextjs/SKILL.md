@@ -14,7 +14,7 @@ Before any Next.js work in this repo:
 1. Read **[docs/requirements.md](../../../docs/requirements.md)** — product shape, webhook behaviour, dashboard, and `strategies/` for future subagents.
 2. Find and read the relevant doc in `node_modules/next/dist/docs/`. Your training data is outdated — the docs are the source of truth.
 
-Webhook setup templates: [docs/trendspider-webhooks.md](../../../docs/trendspider-webhooks.md).
+Webhook setup templates: [docs/webhooks.md](../../../docs/webhooks.md).
 
 ## Docs location
 
@@ -45,6 +45,6 @@ If that path is missing (older Next.js), check `.next-docs/` at the project root
 ## References
 
 - Product requirements: [docs/requirements.md](../../../docs/requirements.md)
-- TrendSpider webhooks: [docs/trendspider-webhooks.md](../../../docs/trendspider-webhooks.md)
+- Webhooks (TrendSpider + TradingView): [docs/webhooks.md](../../../docs/webhooks.md)
 - Next.js agent setup: https://nextjs.org/docs/app/guides/ai-agents
 - Full docs index (online): https://nextjs.org/docs/llms.txt

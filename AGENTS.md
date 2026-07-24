@@ -1,6 +1,6 @@
 # Trading Strategy
 
-Primary product: Next.js app that receives TrendSpider Strategy Bot webhooks and executes Tiger Brokers paper limit orders. See [README.md](README.md) and [docs/trendspider-webhooks.md](docs/trendspider-webhooks.md).
+Primary product: Next.js app that receives trade-signal webhooks (TrendSpider Strategy Bots, TradingView Pine Script `alert()`, manual curl) and executes Tiger Brokers paper limit orders. See [README.md](README.md) and [docs/webhooks.md](docs/webhooks.md).
 
 Legacy Cursor agent workflows below still apply under `strategies/`.
 
